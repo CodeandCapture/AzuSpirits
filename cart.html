@@ -1,1 +1,662 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Azu Spirits</title>
+    <meta name="description" content="Review your cart and proceed to checkout for premium whisky and gin tasting sets." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+    
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #2c2c2c;
+            background: #f9f9f9;
+        }
+
+        /* Header Styles */
+        .site-header {
+            background: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+
+        .header-inner img {
+            height: 80px;
+            cursor: pointer;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .site-nav li + li {
+            margin-left: 1.5rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .site-nav a:hover {
+            color: #A4343A;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #A4343A;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .cart-items {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem;
+            color: #777;
+        }
+
+        .empty-cart-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-image {
+            width: 100px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .item-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .item-price {
+            color: #A4343A;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quantity-controls button {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 0.25rem 0.75rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .quantity-controls button:hover {
+            background: #e0e0e0;
+        }
+
+        .quantity-controls span {
+            padding: 0 1rem;
+            font-weight: bold;
+        }
+
+        .item-actions {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .item-total {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #A4343A;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .remove-btn:hover {
+            color: #8a2b30;
+        }
+
+        .cart-summary {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+            height: fit-content;
+        }
+
+        .cart-summary h2 {
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-row.total {
+            border-bottom: none;
+            border-top: 2px solid #1a1a1a;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: black;
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .checkout-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .checkout-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .payment-methods {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .payment-methods h3 {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: #777;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .payment-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .continue-shopping {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #A4343A;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .continue-shopping:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: #f8f8f8;
+            border-top: 1px solid #ddd;
+            padding: 40px 20px;
+            margin-top: 3rem;
+        }
+
+        .footer-badges {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer-badges div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-badges img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .footer-badges p {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .site-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #f8f8f8;
+                border-top: 1px solid #ddd;
+                padding: 1rem;
+                z-index: 100;
+            }
+
+            .site-nav.open {
+                display: block;
+            }
+
+            .site-nav ul {
+                flex-direction: column;
+            }
+
+            .site-nav li + li {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .header-inner {
+                position: relative;
+            }
+
+            .header-inner img {
+                height: 60px;
+            }
+
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-item {
+                grid-template-columns: 80px 1fr;
+                gap: 1rem;
+            }
+
+            .item-actions {
+                grid-column: 1 / -1;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" alt="Azu Spirits" onclick="window.location.href='/'">
+            
+            <div class="header-right">
+                <nav class="site-nav" id="siteNav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/tasting-gift-sets">Tasting Gift Sets</a></li>
+                        <li><a href="/bottle-shop">Bottle Shop</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/about-us">About / Contact</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="cart-icon" onclick="window.location.href='/cart.html'">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Shopping Cart</h1>
+
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be inserted here -->
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">£0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="shipping">FREE</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total">£0.00</span>
+                </div>
+
+                <button class="checkout-btn" id="stripeCheckoutBtn" onclick="checkoutWithStripe()">
+                    Proceed to Checkout
+                </button>
+
+                <div class="payment-methods">
+                    <h3>We Accept</h3>
+                    <div class="payment-logos">
+                        <span>💳 Visa</span>
+                        <span>💳 Mastercard</span>
+                        <span>💳 PayPal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="/whisky-gifts.html" class="continue-shopping">← Continue Shopping</a>
+    </div>
+
+    <footer class="site-footer">
+        <section class="footer-badges">
+            <div>
+                <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/d96dae12-2182-4384-a646-a5f0f06e30ad/Family.png?format=500w" alt="Family-Run Business">
+                <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/db9adba8-55ab-4ea5-8f17-dd2d5df2fb18/Untitled+design+%2837%29.png?format=500w" alt="Woman-Owned Business">
+            </div>
+            <p>Shop with confidence and support small business.</p>
+        </section>
+        
+        <div class="footer-inner">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="/shipping-returns">Shipping & Returns</a></li>
+                    <li><a href="/terms">Terms & Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                </ul>
+            </nav>
+            <div class="site-info">
+                <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/cart.js"></script>
+    <script>
+        // Mobile nav toggle
+        function toggleNav() {
+            const nav = document.getElementById('siteNav');
+            nav.classList.toggle('open');
+        }
+
+        // Initialize Stripe (replace with your publishable key)
+        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY_HERE');
+
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalEl = document.getElementById('total');
+            const checkoutBtn = document.getElementById('stripeCheckoutBtn');
+
+            if (cart.items.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <h2>Your cart is empty</h2>
+                        <p>Add some products to get started!</p>
+                    </div>
+                `;
+                checkoutBtn.disabled = true;
+                subtotalEl.textContent = '£0.00';
+                totalEl.textContent = '£0.00';
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+
+            cartItemsContainer.innerHTML = cart.items.map(item => `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="item-image">
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <div class="item-price">£${item.price.toFixed(2)}</div>
+                        <div class="quantity-controls">
+                            <button onclick="updateItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <div class="item-total">£${(item.price * item.quantity).toFixed(2)}</div>
+                        <button class="remove-btn" onclick="removeItem('${item.id}')">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+
+            const total = cart.getTotal();
+            subtotalEl.textContent = `£${total.toFixed(2)}`;
+            totalEl.textContent = `£${total.toFixed(2)}`;
+        }
+
+        function updateItemQuantity(productId, newQuantity) {
+            cart.updateQuantity(productId, newQuantity);
+            renderCart();
+        }
+
+        function removeItem(productId) {
+            if (confirm('Remove this item from your cart?')) {
+                cart.removeItem(productId);
+                renderCart();
+            }
+        }
+
+        async function checkoutWithStripe() {
+            // This is where you'd create a Stripe Checkout session
+            // In production, you need a serverless function or backend endpoint
+            
+            try {
+                // Example: Call your backend to create checkout session
+                const response = await fetch('/api/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        items: cart.getCheckoutItems()
+                    })
+                });
+
+                const session = await response.json();
+                
+                // Redirect to Stripe Checkout
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id
+                });
+
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            } catch (error) {
+                console.error('Checkout error:', error);
+                alert('There was an error processing your checkout. Please try again.');
+            }
+        }
+
+        // Render cart on page load
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+</body>
+</html>

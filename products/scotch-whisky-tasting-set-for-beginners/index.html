@@ -410,32 +410,42 @@
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" alt="Azu Spirits">
-            
-            <div class="header-right">
-                <nav class="site-nav" id="siteNav">
-                    <ul>
-                        <li><a href="/AzuSpirits/index.html">Home</a></li>
-                        <li><a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a></li>
-                        <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
-                        <li><a href="/AzuSpirits/events">Events</a></li>
-                        <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
-                        <li><a href="/AzuSpirits/blog">Blog</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="cart-icon" onclick="window.location.href='/cart.html'">
-                    🛒
-                    <span class="cart-count">0</span>
-                </div>
-                
-                <button class="nav-toggle" onclick="toggleNav()">☰</button>
-            </div>
-        </div>
-    </header>
-
+   <header class="site-header">
+  <div class="header-inner container">
+    <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" style="height: 80px; margin-left: 30px;" onclick="window.location.href='/'">
+    
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          
+          <!-- Dropdown for Tasting Gift Sets -->
+          <li class="has-dropdown">
+            <a href="/tasting-gift-sets">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="/whisky-gifts">Whisky Tasting Gift Sets</a></li>
+              <li><a href="/gin-gifts">Gin Tasting Gift Sets</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/bottleshop">Bottle Shop</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/about-us">About / Contact</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='/cart.html'">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+      
+      <!-- Mobile Menu Toggle - REMOVE THE INLINE STYLE -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </div>
+</header>
     <div class="product-container">
         <div class="product-image-container">
             <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-main.jpg" alt="Six Styles of Scotch Whisky Tasting Set" class="product-image" id="productImage">

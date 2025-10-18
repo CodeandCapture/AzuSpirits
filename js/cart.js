@@ -9,9 +9,9 @@ class ShoppingCart {
 
   // Load cart from memory or initialize empty
   loadCart() {
-   {
   const saved = localStorage.getItem('azuSpiritsCart');
   this.items = saved ? JSON.parse(saved) : [];
+    console.log('[Cart] Loaded items:', this.items);
 }
 
   // Save cart to memory

@@ -659,7 +659,9 @@
         </div>
     </footer>
 
-<script src="/js/cart.js" defer></script>
+<script src="/js/cart.js"></script>
+    <script>// Render cart on page load
+        document.addEventListener('DOMContentLoaded', renderCart); </script>
 
     <script>
         // Mobile nav toggle
@@ -772,8 +774,6 @@ async function checkoutWithStripe() {
     }
 }
     
-        // Render cart on page load
-        document.addEventListener('DOMContentLoaded', renderCart);
     </script>
 </body>
 </html>

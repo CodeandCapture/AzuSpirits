@@ -728,38 +728,49 @@
             }
         }
 
-        async function checkoutWithStripe() {
-            // This is where you'd create a Stripe Checkout session
-            // In production, you need a serverless function or backend endpoint
-            
-            try {
-                // Example: Call your backend to create checkout session
-                const response = await fetch('/api/create-checkout-session', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        items: cart.getCheckoutItems()
-                    })
-                });
+async function checkoutWithStripe() {
+    try {
+        // Show loading state
+        const checkoutBtn = document.getElementById('stripeCheckoutBtn');
+        checkoutBtn.textContent = 'Processing...';
+        checkoutBtn.disabled = true;
 
-                const session = await response.json();
-                
-                // Redirect to Stripe Checkout
-                const result = await stripe.redirectToCheckout({
-                    sessionId: session.id
-                });
+        // Call your Netlify function
+        const response = await fetch('/.netlify/functions/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                items: cart.getCheckoutItems()
+            })
+        });
 
-                if (result.error) {
-                    alert(result.error.message);
-                }
-            } catch (error) {
-                console.error('Checkout error:', error);
-                alert('There was an error processing your checkout. Please try again.');
-            }
+        const session = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(session.error || 'Checkout failed');
         }
+        
+        // Redirect to Stripe Checkout
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id
+        });
 
+        if (result.error) {
+            alert(result.error.message);
+            checkoutBtn.textContent = 'Proceed to Checkout';
+            checkoutBtn.disabled = false;
+        }
+    } catch (error) {
+        console.error('Checkout error:', error);
+        alert('There was an error processing your checkout. Please try again.');
+        const checkoutBtn = document.getElementById('stripeCheckoutBtn');
+        checkoutBtn.textContent = 'Proceed to Checkout';
+        checkoutBtn.disabled = false;
+    }
+}
+    
         // Render cart on page load
         document.addEventListener('DOMContentLoaded', renderCart);
     </script>

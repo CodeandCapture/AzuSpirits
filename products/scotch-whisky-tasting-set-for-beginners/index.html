@@ -54,6 +54,60 @@
         .site-nav li + li {
             margin-left: 1.5rem;
         }
+        /* Dropdown Menu Styles */
+.site-nav li {
+    position: relative;
+}
+
+.has-dropdown {
+    position: relative;
+}
+
+.has-dropdown > a::after {
+    content: ' ▾';
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    margin-top: 0.5rem;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0 !important;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: #A4343A;
+    color: white;
+}
 
         .site-nav a {
             text-decoration: none;
@@ -356,6 +410,29 @@
                 z-index: 100;
             }
 
+    .dropdown-menu {
+        position: static;
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+    }
+    
+    .has-dropdown.open .dropdown-menu {
+        display: block;
+    }
+    
+    .has-dropdown > a::after {
+        float: right;
+    }
+    
+    .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+    }
+}
             .site-nav.open {
                 display: block;
             }
@@ -509,47 +586,81 @@
         </div>
     </footer>
 
-    <script src="/js/cart.js"></script>
-    <script>
-        // Mobile nav toggle
-        function toggleNav() {
-            const nav = document.getElementById('siteNav');
-            nav.classList.toggle('open');
+  <script src="/js/cart.js"></script>
+<script>
+    // Mobile nav toggle
+    function toggleNav() {
+        const nav = document.getElementById('siteNav');
+        nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        // Only add click handlers on mobile
+        if (window.innerWidth <= 768) {
+            const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+            
+            dropdownParents.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.has-dropdown').forEach(function(item) {
+                        if (item !== parent) {
+                            item.classList.remove('open');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    parent.classList.toggle('open');
+                });
+            });
         }
-
-        // Product data (in production, this would come from your database or product files)
-        const product = {
-            id: 'six-styles-scotch-whisky-tasting-set',
-            name: 'Six Styles of Scotch Whisky: Blind Tasting Gift Set',
-            price: 48.00,
-            image: 'https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/ef0bc2e7-26c3-433d-8e58-1ab83f0b697d/Six+Styles+%283%29.png?format=2500w', 
-            description: 'Six classic styles of single malt Scotch whisky, perfect for beginners.',
-            features: [
-                '6 Numbered Bottles - Six renowned single malts, each 30ml',
-                'Tasting Guide - Helpful notes and tips',
-                'Information Cards - Insights into flavour characteristics',
-                'Wax-Sealed Envelope - Contains your results'
-            ]
-        };
-
-        function increaseQuantity() {
-            const input = document.getElementById('quantity');
-            input.value = parseInt(input.value) + 1;
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+                item.classList.remove('open');
+            });
         }
+    });
 
-        function decreaseQuantity() {
-            const input = document.getElementById('quantity');
-            if (parseInt(input.value) > 1) {
-                input.value = parseInt(input.value) - 1;
-            }
-        }
+    // Product data
+    const product = {
+        id: 'six-styles-scotch-whisky-tasting-set',
+        name: 'Six Styles of Scotch Whisky: Blind Tasting Gift Set',
+        price: 48.00,
+        image: 'https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/ef0bc2e7-26c3-433d-8e58-1ab83f0b697d/Six+Styles+%283%29.png?format=2500w', 
+        description: 'Six classic styles of single malt Scotch whisky, perfect for beginners.',
+        features: [
+            '6 Numbered Bottles - Six renowned single malts, each 30ml',
+            'Tasting Guide - Helpful notes and tips',
+            'Information Cards - Insights into flavour characteristics',
+            'Wax-Sealed Envelope - Contains your results'
+        ]
+    };
 
-        function addProductToCart() {
-            const quantity = parseInt(document.getElementById('quantity').value);
-            for (let i = 0; i < quantity; i++) {
-                addToCart(product.id, product.name, product.price, product.image);
-            }
+    function increaseQuantity() {
+        const input = document.getElementById('quantity');
+        input.value = parseInt(input.value) + 1;
+    }
+
+    function decreaseQuantity() {
+        const input = document.getElementById('quantity');
+        if (parseInt(input.value) > 1) {
+            input.value = parseInt(input.value) - 1;
         }
-    </script>
+    }
+
+    function addProductToCart() {
+        const quantity = parseInt(document.getElementById('quantity').value);
+        for (let i = 0; i < quantity; i++) {
+            addToCart(product.id, product.name, product.price, product.image);
+        }
+    }
+</script>
 </body>
 </html>

@@ -7,13 +7,13 @@ class ShoppingCart {
     this.loadCart();
   }
 
-// Load cart from memory or initialize empty
+// Load cart from localStorage
 loadCart() {
   const saved = localStorage.getItem('azuSpiritsCart');
   this.items = saved ? JSON.parse(saved) : [];
 }
 
-// Save cart to memory
+// Save cart to localStorage
 saveCart() {
   localStorage.setItem('azuSpiritsCart', JSON.stringify(this.items));
   this.updateCartDisplay();

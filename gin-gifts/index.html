@@ -453,6 +453,10 @@
         🛒
         <span class="cart-count">0</span>
       </div>
+        <!-- Mobile Menu Toggle - REMOVE THE INLINE STYLE -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </div>
       
       <!-- Mobile Menu Toggle - REMOVE THE INLINE STYLE -->
       <button class="nav-toggle" onclick="toggleNav()">☰</button>
@@ -623,31 +627,71 @@
   
   </footer>
 
-  <script src="script.js" defer></script>
-
-  
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-  document.querySelectorAll('.gin-box').forEach(box => {
-    box.addEventListener('click', () => {
-      const info = box.querySelector('.more-info');
-      info.style.maxHeight = info.style.maxHeight ? null : '200px';
-      info.style.opacity = info.style.opacity === '1' ? '0' : '1';
+    AOS.init();
+  </script>
+
+  <script>
+    document.querySelectorAll('.gin-box').forEach(box => {
+      box.addEventListener('click', () => {
+        const info = box.querySelector('.more-info');
+        info.style.maxHeight = info.style.maxHeight ? null : '200px';
+        info.style.opacity = info.style.opacity === '1' ? '0' : '1';
+      });
     });
-  });
-</script>
-  <!-- Slick Carousel CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  </script>
 
-<!-- Slick Carousel JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="/js/cart.js"></script>
+  <!-- Slick Carousel CSS & JS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+  <!-- Cart JS -->
+  <script src="/js/cart.js"></script>
 
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only add click handlers on mobile
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+          item.classList.remove('open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>

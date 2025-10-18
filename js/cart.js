@@ -113,19 +113,18 @@ saveCart() {
   }
 
   // Get items for Stripe/PayPal
-  getCheckoutItems() {
-    return this.items.map(item => ({
-      price_data: {
-        currency: 'gbp',
-        product_data: {
-          name: item.name,
-          images: [item.image]
-        },
-        unit_amount: Math.round(item.price * 100) // Convert to pence
+ getCheckoutItems() {
+  return this.items.map(item => ({
+    price_data: {
+      currency: 'gbp',
+      product_data: {
+        name: item.name,
+        images: item.image ? [item.image] : []
       },
-      quantity: item.quantity
-    }));
-  }
+      unit_amount: Math.round(item.price * 100) // Convert to pence
+    },
+    quantity: item.quantity
+  }));
 }
 
 // Initialize cart globally

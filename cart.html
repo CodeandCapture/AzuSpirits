@@ -659,121 +659,108 @@
         </div>
     </footer>
 
-<script src="/js/cart.js"></script>
-    <script>// Render cart on page load
-        document.addEventListener('DOMContentLoaded', renderCart); </script>
+    <script src="/js/cart.js"></script>
+<script>
+// Render cart on page load
+document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+<script>
+    // Mobile nav toggle
+    function toggleNav() {
+        const nav = document.getElementById('siteNav');
+        nav.classList.toggle('open');
+    }
 
-    <script>
-        // Mobile nav toggle
-        function toggleNav() {
-            const nav = document.getElementById('siteNav');
-            nav.classList.toggle('open');
+    function renderCart() {
+        const cartItemsContainer = document.getElementById('cartItems');
+        const subtotalEl = document.getElementById('subtotal');
+        const totalEl = document.getElementById('total');
+        const checkoutBtn = document.getElementById('stripeCheckoutBtn');
+
+        if (cart.items.length === 0) {
+            cartItemsContainer.innerHTML = `
+                <div class="empty-cart">
+                    <div class="empty-cart-icon">🛒</div>
+                    <h2>Your cart is empty</h2>
+                    <p>Add some products to get started!</p>
+                </div>
+            `;
+            checkoutBtn.disabled = true;
+            subtotalEl.textContent = '£0.00';
+            totalEl.textContent = '£0.00';
+            return;
         }
 
-        // Initialize Stripe (replace with your publishable key)
-        const stripe = Stripe('pk_live_51HheA8DLWuae7NssmmXGeAupTsX8Y5e9fVaPR4CaU9IydVCzycqBfhXJMLF1jAlR4TwDMqNRoCsj1S3GPlq56eOU006ZCTPzLV');
+        checkoutBtn.disabled = false;
 
-        function renderCart() {
-            const cartItemsContainer = document.getElementById('cartItems');
-            const subtotalEl = document.getElementById('subtotal');
-            const totalEl = document.getElementById('total');
-            const checkoutBtn = document.getElementById('stripeCheckoutBtn');
-
-            if (cart.items.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="empty-cart">
-                        <div class="empty-cart-icon">🛒</div>
-                        <h2>Your cart is empty</h2>
-                        <p>Add some products to get started!</p>
-                    </div>
-                `;
-                checkoutBtn.disabled = true;
-                subtotalEl.textContent = '£0.00';
-                totalEl.textContent = '£0.00';
-                return;
-            }
-
-            checkoutBtn.disabled = false;
-
-            cartItemsContainer.innerHTML = cart.items.map(item => `
-                <div class="cart-item">
-                    <img src="${item.image}" alt="${item.name}" class="item-image">
-                    <div class="item-details">
-                        <h3>${item.name}</h3>
-                        <div class="item-price">£${item.price.toFixed(2)}</div>
-                        <div class="quantity-controls">
-                            <button onclick="updateItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
-                            <span>${item.quantity}</span>
-                            <button onclick="updateItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
-                        </div>
-                    </div>
-                    <div class="item-actions">
-                        <div class="item-total">£${(item.price * item.quantity).toFixed(2)}</div>
-                        <button class="remove-btn" onclick="removeItem('${item.id}')">Remove</button>
+        cartItemsContainer.innerHTML = cart.items.map(item => `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}" class="item-image">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <div class="item-price">£${item.price.toFixed(2)}</div>
+                    <div class="quantity-controls">
+                        <button onclick="updateItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
                     </div>
                 </div>
-            `).join('');
+                <div class="item-actions">
+                    <div class="item-total">£${(item.price * item.quantity).toFixed(2)}</div>
+                    <button class="remove-btn" onclick="removeItem('${item.id}')">Remove</button>
+                </div>
+            </div>
+        `).join('');
 
-            const total = cart.getTotal();
-            subtotalEl.textContent = `£${total.toFixed(2)}`;
-            totalEl.textContent = `£${total.toFixed(2)}`;
-        }
+        const total = cart.getTotal();
+        subtotalEl.textContent = `£${total.toFixed(2)}`;
+        totalEl.textContent = `£${total.toFixed(2)}`;
+    }
 
-        function updateItemQuantity(productId, newQuantity) {
-            cart.updateQuantity(productId, newQuantity);
+    function updateItemQuantity(productId, newQuantity) {
+        cart.updateQuantity(productId, newQuantity);
+        renderCart();
+    }
+
+    function removeItem(productId) {
+        if (confirm('Remove this item from your cart?')) {
+            cart.removeItem(productId);
             renderCart();
         }
-
-        function removeItem(productId) {
-            if (confirm('Remove this item from your cart?')) {
-                cart.removeItem(productId);
-                renderCart();
-            }
-        }
-
-async function checkoutWithStripe() {
-    try {
-        // Show loading state
-        const checkoutBtn = document.getElementById('stripeCheckoutBtn');
-        checkoutBtn.textContent = 'Processing...';
-        checkoutBtn.disabled = true;
-
-        // Call your Netlify function
-        const response = await fetch('/.netlify/functions/create-checkout-session', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                items: cart.getCheckoutItems()
-            })
-        });
-
-        const session = await response.json();
-        
-        if (!response.ok) {
-            throw new Error(session.error || 'Checkout failed');
-        }
-        
-        // Redirect to Stripe Checkout
-        const result = await stripe.redirectToCheckout({
-            sessionId: session.id
-        });
-
-        if (result.error) {
-            alert(result.error.message);
-            checkoutBtn.textContent = 'Proceed to Checkout';
-            checkoutBtn.disabled = false;
-        }
-    } catch (error) {
-        console.error('Checkout error:', error);
-        alert('There was an error processing your checkout. Please try again.');
-        const checkoutBtn = document.getElementById('stripeCheckoutBtn');
-        checkoutBtn.textContent = 'Proceed to Checkout';
-        checkoutBtn.disabled = false;
     }
-}
-    
-    </script>
+
+    function checkoutWithStripe() {
+        // Map product IDs to their Stripe Payment Links
+        const paymentLinks = {
+            'six-styles-scotch-whisky-tasting-set': 'https://buy.stripe.com/bJeeVd4o95hrcJpd7s9AA00',
+            // Add more products as you create their payment links:
+            // 'regions-scotland-whisky-tasting-set': 'https://buy.stripe.com/test_xxxxx',
+            // 'luxury-whisky-tasting-set': 'https://buy.stripe.com/test_xxxxx',
+        };
+        
+        if (cart.items.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        
+        if (cart.items.length === 1) {
+            // Single item - use payment link with quantity
+            const item = cart.items[0];
+            const link = paymentLinks[item.id];
+            
+            if (link) {
+                // Redirect to Stripe with quantity
+                window.location.href = `${link}?quantity=${item.quantity}`;
+                // Clear cart after redirect
+                setTimeout(() => cart.clearCart(), 500);
+            } else {
+                alert('Payment link not configured for this product. Please contact us.');
+            }
+        } else {
+            // Multiple different items
+            alert('Please checkout one product at a time. Remove other items from your cart or contact us for assistance.');
+        }
+    }
+</script>
 </body>
 </html>

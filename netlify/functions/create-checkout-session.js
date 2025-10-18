@@ -27,7 +27,7 @@ exports.handler = async (event) => {
           shipping_rate_data: {
             type: 'fixed_amount',
             fixed_amount: {
-              amount: 4.60, // Free shipping - change if needed
+              amount: 495, // Free shipping - change if needed
               currency: 'gbp',
             },
             display_name: 'Standard Delivery',

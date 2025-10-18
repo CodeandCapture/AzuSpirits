@@ -7,18 +7,18 @@ class ShoppingCart {
     this.loadCart();
   }
 
-  // Load cart from memory or initialize empty
-  loadCart() {
+// Load cart from memory or initialize empty
+loadCart() {
   const saved = localStorage.getItem('azuSpiritsCart');
   this.items = saved ? JSON.parse(saved) : [];
-  
 }
 
-  // Save cart to memory
-  saveCart() {
+// Save cart to memory
+saveCart() {
   localStorage.setItem('azuSpiritsCart', JSON.stringify(this.items));
   this.updateCartDisplay();
 }
+
 
 
   // Add item to cart

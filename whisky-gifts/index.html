@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scotch Whisky Tasting Gift Sets | Azu Spirits</title>
   <meta name="description" content="Whisky tasting gift sets featuring single malt Scotch whisky. Gifts for whisky lovers, from curious beginners to avid enthusiasts." />
   
-<head>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,146 +15,154 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* Cart Icon Styles */
-.cart-icon {
-  position: relative;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #333;
-  transition: transform 0.2s;
-}
-
-.cart-icon:hover {
-  transform: scale(1.1);
-}
-
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #A4343A;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #f8f8f8;
-    border-top: 1px solid #ddd;
-    padding: 1rem;
-    z-index: 100;
-  }
-  
-  .site-nav.open {
-    display: block;
-  }
-  
-  .site-nav ul {
-    flex-direction: column;
-  }
-  
-  .site-nav li + li {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-  
-  .nav-toggle {
-    display: block;
-  }
-  
-  .header-inner {
-    position: relative;
-  }
-}
-    
-    .site-header, .site-footer {
-  background: #f8f8f8;
-  border-bottom: 1px solid #ddd;
-  padding: 20px;
-}
-  
-    
-.header-inner, .footer-inner {
-  display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;
-}
-.site-logo { font-size: 1.5rem; font-weight: bold; text-decoration: none; color: #333; }
-
-.site-nav ul, .footer-nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
-.site-nav li + li, .footer-nav li + li { margin-left: 1.5rem; }
-.site-nav a, .footer-nav a { text-decoration: none; color: #333; }
-.site-nav a:hover { color:  #A4343A; }
-    
-    
-    
-
-.hero { text-align: center; padding: 3rem 1rem; }
-.hero h1 { font-size: 2rem; margin-bottom: .5rem; }
-
-.promo-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; margin: 2rem 0; }
-.promo { background: #fafafa; border: 1px solid #ddd; padding: 2rem; text-align: center; }
-
-.content { margin: 2rem 0; }
-.content h2 { margin-bottom: 1rem; }
-
-.blog-preview ul { list-style: none; padding: 0; }
-.blog-preview li { margin-bottom: .5rem; }
-
-.btn {
-  display: inline-block;
-  background: #0077cc;
-  color: #fff;
-  padding: .6rem 1.2rem;
-  border-radius: 4px;
-  text-decoration: none;
-}
-.btn:hover { background: #005fa3; }
-.btn--secondary { background: #eee; color: #333; }
-.btn--secondary:hover { background: #ddd; }
-
-.site-footer { border-top: 1px solid #ddd; padding: 2rem 0; margin-top: 3rem; }
-.site-info { font-size: .9rem; color: #666; }
-
-@media (max-width: 768px) {
-  .site-nav { display: none; }
-  .site-nav.open { display: block; position: absolute; top: 60px; right: 0; background: #fff; padding: 1rem; border: 1px solid #ddd; }
-  .site-nav ul { flex-direction: column; }
-  .site-nav li + li { margin-left: 0; margin-top: 1rem; }
-  .nav-toggle { display: block; }
-}
-    
+    /* Base Styles */
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
     }
 
+    /* Header & Footer */
+    .site-header, .site-footer {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner, .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .site-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Navigation */
+    .site-nav ul, .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .site-nav li + li, .footer-nav li + li {
+      margin-left: 1.5rem;
+    }
+
+    .site-nav a, .footer-nav a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .site-nav a:hover {
+      color: #A4343A;
+    }
+
+    /* Dropdown Menu Styles */
+    .site-nav li {
+      position: relative;
+    }
+
+    .has-dropdown {
+      position: relative;
+    }
+
+    .has-dropdown > a::after {
+      content: ' ▾';
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 220px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      margin-top: 0.5rem;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li {
+      margin: 0 !important;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background: #A4343A;
+      color: white;
+    }
+
+    /* Cart Icon Styles */
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+      transition: transform 0.2s;
+    }
+
+    .cart-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #A4343A;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Hero Section */
     section.hero {
       background-image: url('https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1742650880421-NRKLBO2P7BVN3E1OMY6Q/Share%2Bthe%2Bspirit%2Bof%2Bdiscovery%2Bthis%2BValentines%2BDay%2B%25281%2529.jpg?format=1000w');
       background-size: cover;
@@ -166,18 +173,9 @@
       color: white;
       position: relative;
     }
- section.main {
-      background-color:white;
-      background-size: cover;
-      height: auto;
-      padding: 20px 20px;
-      color: black;
-      position: relative;
-    }
 
-    
     .overlay {
-      background: rgba(0, 0, 0, 0.6); /* dark overlay for contrast */
+      background: rgba(0, 0, 0, 0.6);
       padding: 40px 20px;
     }
 
@@ -189,287 +187,334 @@
       margin-bottom: 20px;
     }
 
+    /* Main Section */
     section.main {
-  background-color: white;
-  padding: 20px;
-  position: relative;
-  color: black;
-}
-
-section.main .container {
-  border: 2px solid #ccc;  /* Light grey border */
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px;
-  box-sizing: border-box;
-}
-
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 0px;
-  text-transform: uppercase;
-   box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  background-color: white;
-  color: white;
-
-}
-
-
-
-    .columns a:hover {
-      background-color: #ccc;
+      background-color: white;
+      padding: 20px;
+      position: relative;
+      color: black;
     }
 
-    @media screen and (max-width: 768px) {
+    section.main .container {
+      border: 2px solid #ccc;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1200px;
+      box-sizing: border-box;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 0px;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      background-color: white;
+      color: white;
+    }
+
+    .gin-box {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      position: relative;
+      width: 250px;
+      border-radius: 0px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gin-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .gin-box h3 {
+      margin-top: 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .more-info {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .gin-box:hover .more-info {
+      opacity: 1;
+      max-height: 200px;
+    }
+
+    /* Logo Carousel */
+    .logo-carousel {
+      padding: 40px 20px;
+      background-color: white;
+    }
+
+    .slick-carousel {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .slick-carousel img {
+      max-height: 80px;
+      max-width: 100%;
+      object-fit: contain;
+      margin: 0 auto;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .slick-carousel .slick-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slick-carousel .slick-slide:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid #ddd;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .site-info {
+      font-size: .9rem;
+      color: #666;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+      
+      .site-nav.open {
+        display: block;
+      }
+      
+      .site-nav ul {
+        flex-direction: column;
+      }
+      
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+      
+      .nav-toggle {
+        display: block;
+      }
+      
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+        margin-left: 10px;
+      }
+
+      /* Mobile Dropdown */
+      .dropdown-menu {
+        position: static;
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+      
+      .has-dropdown.open .dropdown-menu {
+        display: block;
+      }
+      
+      .has-dropdown > a::after {
+        float: right;
+      }
+      
+      .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+      }
+
       .columns {
         flex-direction: column;
         align-items: center;
       }
     }
-    
-    .gin-box {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  position: relative;
-  width: 250px;
-  border-radius: 0px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.gin-box:hover {
-  transform: translateY(-5px);
-}
-
-.gin-box h3 {
-  margin-top: 0;
-  font-size: 18px;
-  text-align: center;
-}
-
-.more-info {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
-  font-size: 14px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.gin-box:hover .more-info {
-  opacity: 1;
-  max-height: 200px;
-}
-    
-    .logo-carousel {
-  padding: 40px 20px;
-  background-color: white;
-}
-
-.slick-carousel {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.slick-carousel img {
-  max-height: 80px;
-  max-width: 100%;
-  object-fit: contain;
-  margin: 0 auto;
-  transition: transform 0.3s ease-in-out;
-}
-
-.slick-carousel .slick-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Optional: Add hover effect for the logos */
-.slick-carousel .slick-slide:hover img {
-  transform: scale(1.1);
-}
-
-
-    
   </style>
 </head>
 <body>
-
   <header class="site-header">
-  <div class="header-inner container">
-    <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" style="height: 80px; margin-left: 30px;" onclick="window.location.href='/'">
-    
-    <div class="header-right" style="display: flex; align-items: center; gap: 1.5rem;">
-      <nav class="site-nav" id="siteNav">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/tasting-gift-sets">Tasting Gift Sets</a></li>
-          <li><a href="/bottleshop">Bottle Shop</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/about-us">About / Contact</a></li>
-          <li><a href="/blog">Blog</a></li>
-        </ul>
-      </nav>
+    <div class="header-inner container">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" style="height: 80px; margin-left: 30px;" onclick="window.location.href='/'">
       
-      <!-- Cart Icon -->
-      <div class="cart-icon" onclick="window.location.href='/cart.html'" style="position: relative; cursor: pointer; font-size: 1.5rem; color: #333;">
-        🛒
-        <span class="cart-count" style="position: absolute; top: -8px; right: -8px; background: #A4343A; color: white; border-radius: 50%; width: 20px; height: 20px; display: none; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold;">0</span>
+      <div class="header-right">
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            
+            <!-- Dropdown for Tasting Gift Sets -->
+            <li class="has-dropdown">
+              <a href="/tasting-gift-sets">Tasting Gift Sets</a>
+              <ul class="dropdown-menu">
+                <li><a href="/whisky-gifts.html">Whisky Tasting Gift Sets</a></li>
+                <li><a href="/gin-gifts.html">Gin Tasting Gift Sets</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/bottle-shop">Bottle Shop</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/about-us">About / Contact</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Cart Icon -->
+        <div class="cart-icon" onclick="window.location.href='/cart.html'">
+          🛒
+          <span class="cart-count">0</span>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
       </div>
-      
-      <!-- Mobile Menu Toggle -->
-      <button class="nav-toggle" onclick="toggleNav()" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #333;">☰</button>
     </div>
-  </div>
-</header>
+  </header>
   
-<section class="hero">
-  <div class="overlay">
-    <h1>Unique Scotch Whisky Tasting Gift Sets</h1>
-    <h2 style= "font-weight: 200; text-align: center; padding: 20px;">Explore  <strong>six</strong> diverse single malts through an unusual blind tasting experience. Themed collections made for whisky lovers, from curious beginners to avid enthusiasts.</h2>
-    </section>
+  <section class="hero">
+    <div class="overlay">
+      <h1>Unique Scotch Whisky Tasting Gift Sets</h1>
+      <h2 style="font-weight: 200; text-align: center; padding: 20px;">Explore <strong>six</strong> diverse single malts through an unusual blind tasting experience. Themed collections made for whisky lovers, from curious beginners to avid enthusiasts.</h2>
+    </div>
+  </section>
+
   <section class="logo-carousel">
-  <h2 style="text-align: center; font-size: 20px;">Featuring Exclusively Single Malt Scotch Whisky</h2>
-  <div class="slick-carousel">
-    <!-- Replace with your gin logos -->
-    <div><img src="https://www.whiskyshop.com/content/wp-content/uploads/sites/2/2021/10/Kilchoman-Stamp-600x600.png" alt="Whisky logo 1"></div>
-    <div><img src="https://media.licdn.com/dms/image/v2/C560BAQGCI_nKUqEfKQ/company-logo_200_200/company-logo_200_200/0/1630563339185/bladnoch_distillery_logo?e=2147483647&v=beta&t=7wsccFYhl-rQo1YVfDAJtO1OlV7kcHmvzDon3zrGldw" alt="Whisky Logo 2"></div>
-    <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtgY2516XtdCekFsqdwsQQNTtrnsz2kVlrBw&s" alt="Gin Logo 3"></div>
-    <div><img src="https://shop.marklittler.com/cdn/shop/collections/bruichladdich.jpg?v=1668945432" alt="Gin Logo 4"></div>
-    <div><img src="https://www.tulleeho.com/wp-content/uploads/2022/04/Talisker-Logo-e1651037840179.png" alt="Gin Logo 5"></div>
-
-  </div>
-    <h3 style="text-align: center; font-style: italic; padding: 20px;">Explore their diversity and find your favourite style.
-     <br>A 10% discount code is included in each tasting box to purchase your favourite bottle.</h3>
-</section>
-
+    <h2 style="text-align: center; font-size: 20px;">Featuring Exclusively Single Malt Scotch Whisky</h2>
+    <div class="slick-carousel">
+      <div><img src="https://www.whiskyshop.com/content/wp-content/uploads/sites/2/2021/10/Kilchoman-Stamp-600x600.png" alt="Whisky logo 1"></div>
+      <div><img src="https://media.licdn.com/dms/image/v2/C560BAQGCI_nKUqEfKQ/company-logo_200_200/company-logo_200_200/0/1630563339185/bladnoch_distillery_logo?e=2147483647&v=beta&t=7wsccFYhl-rQo1YVfDAJtO1OlV7kcHmvzDon3zrGldw" alt="Whisky Logo 2"></div>
+      <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtgY2516XtdCekFsqdwsQQNTtrnsz2kVlrBw&s" alt="Gin Logo 3"></div>
+      <div><img src="https://shop.marklittler.com/cdn/shop/collections/bruichladdich.jpg?v=1668945432" alt="Gin Logo 4"></div>
+      <div><img src="https://www.tulleeho.com/wp-content/uploads/2022/04/Talisker-Logo-e1651037840179.png" alt="Gin Logo 5"></div>
+    </div>
+    <h3 style="text-align: center; font-style: italic; padding: 20px;">Explore their diversity and find your favourite style.<br>A 10% discount code is included in each tasting box to purchase your favourite bottle.</h3>
+  </section>
 
   <section class="main">
-    <div class= "container">
-
+    <div class="container">
       <h2 style="text-align: center;">SHOP OUR THEMED COLLECTIONS</h2>
-<div class="columns">
-  <div class="gin-box">
-    <h3>Regions of Scotland</h3>
-    <div class="more-info">
-      Take a tour through the whisky-making regions of Scotland. Can you identify the regional characteristics in the blind tasting?
-    </div>
-  </div>
+      <div class="columns">
+        <div class="gin-box">
+          <h3>Regions of Scotland</h3>
+          <div class="more-info">
+            Take a tour through the whisky-making regions of Scotland. Can you identify the regional characteristics in the blind tasting?
+          </div>
+        </div>
 
-  <div class="gin-box">
-    <h3>Six Styles of Scotch</h3>
-    <div class="more-info">
-     Six classic styles, perfect for beginners discovering what they like best.
-    </div>
-  </div>
+        <div class="gin-box">
+          <h3>Six Styles of Scotch</h3>
+          <div class="more-info">
+            Six classic styles, perfect for beginners discovering what they like best.
+          </div>
+        </div>
 
-  <div class="gin-box">
-    <h3>Luxury Single Malt Whisky</h3>
-    <div class="more-info">
-     One for the Scotch whisky connoisseurs. The very finest single malt, six whiskies together worth over £1000.
-    </div>
-  </div>
+        <div class="gin-box">
+          <h3>Luxury Single Malt Whisky</h3>
+          <div class="more-info">
+            One for the Scotch whisky connoisseurs. The very finest single malt, six whiskies together worth over £1000.
+          </div>
+        </div>
 
-  <div class="gin-box">
-    <h3>Limited Edition: The Founders Selection</h3>
-    <div class="more-info">
-     A mystery collection, our best value box with six single malts selected by the founder.
-    </div>
-  </div>
-    <div class="gin-box">
-    <h3>Whisky and the Barrel (SOLD OUT)</h3>
-    <div class="more-info">
-      Explore the diversity created in the barrel. Loved by whisky enthusiasts, back soon.
-    </div>
-  </div>
-    <div class="gin-box">
-    <h3>Peat in Scotch Whisky (COMING SOON)</h3>
-    <div class="more-info">
-      Explore how peat impacts Scotch whisky. From unpeated malts to the super heavily peated Octomore. The ultimate sensory experience, out just in time for Christmas.
-    </div>
-  </div>
-</div>
+        <div class="gin-box">
+          <h3>Limited Edition: The Founders Selection</h3>
+          <div class="more-info">
+            A mystery collection, our best value box with six single malts selected by the founder.
+          </div>
+        </div>
 
-      
-      
+        <div class="gin-box">
+          <h3>Whisky and the Barrel (SOLD OUT)</h3>
+          <div class="more-info">
+            Explore the diversity created in the barrel. Loved by whisky enthusiasts, back soon.
+          </div>
+        </div>
+
+        <div class="gin-box">
+          <h3>Peat in Scotch Whisky (COMING SOON)</h3>
+          <div class="more-info">
+            Explore how peat impacts Scotch whisky. From unpeated malts to the super heavily peated Octomore. The ultimate sensory experience, out just in time for Christmas.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   
-<div style="background-color: white; color: black; padding: 40px 20px;">
-  <h3 style="font-size: 22px; text-transform: uppercase; margin-bottom: 30px; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700;">
-    What's in the Box
-  </h3>
+  <div style="background-color: white; color: black; padding: 40px 20px;">
+    <h3 style="font-size: 22px; text-transform: uppercase; margin-bottom: 30px; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+      What's in the Box
+    </h3>
 
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    justify-items: center;
-  ">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; justify-items: center;">
+      <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1719651744890-Y8RISWQKG8EZTZ1AWEJC/DSC03591.jpg?format=2500w" alt="Tasting Guide" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
+        <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Tasting Guide</p>
+        <p style="font-size: 16px;">Helpful notes and tips for our blind whisky tasting</p>
+      </div>
 
-    
+      <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1719651621800-ZRAAE0BS0ESA5IHIYMQ4/DSC03594.jpg?format=2500w" alt="Information Cards" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
+        <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Information Cards</p>
+        <p style="font-size: 16px;">Insights into the flavour characteristics and production techniques to help you identify the whiskies.</p>
+      </div>
 
-    <!-- Item 2 -->
-    <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1719651744890-Y8RISWQKG8EZTZ1AWEJC/DSC03591.jpg?format=2500w" alt="Tasting Guide" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
-      <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Tasting Guide</p>
-      <p style="font-size: 16px;">Helpful notes and tips for our blind whisky tasting</p>
+      <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/ef0bc2e7-26c3-433d-8e58-1ab83f0b697d/Six+Styles+%283%29.png?format=2500w" alt="Six Numbered Bottles" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
+        <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">6 Numbered Bottles</p>
+        <p style="font-size: 16px;">Six renowned single malts, each containing 30ml. Carefully selected for their diversity</p>
+      </div>
+
+      <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1719651653448-3UCCAG8AYHTR7G4EB7BM/DSC03595.jpg?format=2500w" alt="Wax-Sealed Envelope" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
+        <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Wax-Sealed Envelope</p>
+        <p style="font-size: 16px;">Contains your blind tasting results and info about the distilleries, whiskies & where to buy.</p>
+      </div>
     </div>
-
-    <!-- Item 3 -->
-    <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1719651621800-ZRAAE0BS0ESA5IHIYMQ4/DSC03594.jpg?format=2500w" alt="Information Cards" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
-      <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Information Cards</p>
-      <p style="font-size: 16px;">Insights into the flavour characteristics and production techniques to help you identify the whiskies.</p>
-    </div>
-
-    <!-- Item 1 -->
-    <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/ef0bc2e7-26c3-433d-8e58-1ab83f0b697d/Six+Styles+%283%29.png?format=2500w" alt="Six Numbered Bottles" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
-      <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">6 Numbered Bottles</p>
-      <p style="font-size: 16px;">Six renowned single malts, each containing 30ml. Carefully selected for their diversity</p>
-    </div>
-
-    <!-- Item 4 -->
-    <div style="text-align: center; height: 360px; display: flex; flex-direction: column; justify-content: flex-start;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1719651653448-3UCCAG8AYHTR7G4EB7BM/DSC03595.jpg?format=2500w" alt="Wax-Sealed Envelope" style="width: 100%; max-width: 250px; height: 180px; object-fit: cover; margin-bottom: 10px;">
-      <p style="font-weight: bold; font-size: 16px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Wax-Sealed Envelope</p>
-      <p style="font-size: 16px;">Contains your blind tasting results and info about the distilleries, whiskies & where to buy.</p>
-    </div>
-
   </div>
-</div>
 
-  </section>
-  <section style="background-color:white;
-      background-size: cover;
-      height: auto;
-      padding: 20px 20px;
-      color: black;
-      position: relative;
-      text-align: center;">
-    
+  <section style="background-color:white; background-size: cover; height: auto; padding: 20px 20px; color: black; position: relative; text-align: center;">
     <a style="background-color: black; padding: 20px; text-align: center; color: white; justify-content: center;">Head to our Bottle Shop</a> 
   </section>
   
-   <footer class="site-footer" style="padding: 20px;">
-     
-        
-     <section style="background:#fffff; padding:10px; border-radius:12px; margin-bottom:10px; text-align:center;">
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px;">
-    <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/d96dae12-2182-4384-a646-a5f0f06e30ad/Family.png?format=500w" alt="Family-Run Business" style="max-width:150px; height:auto;">
-    <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/db9adba8-55ab-4ea5-8f17-dd2d5df2fb18/Untitled+design+%2837%29.png?format=500w" alt="Woman-Owned Business" style="max-width:150px; height:auto;">
-  </div>
-  <p style="margin-top:15px; font-size:25px; color:#555; font-style: italic;">Shop with confidence and support small business.</p>
-</section>
+  <footer class="site-footer" style="padding: 20px;">
+    <section style="background:#fffff; padding:10px; border-radius:12px; margin-bottom:10px; text-align:center;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/d96dae12-2182-4384-a646-a5f0f06e30ad/Family.png?format=500w" alt="Family-Run Business" style="max-width:150px; height:auto;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/db9adba8-55ab-4ea5-8f17-dd2d5df2fb18/Untitled+design+%2837%29.png?format=500w" alt="Woman-Owned Business" style="max-width:150px; height:auto;">
+      </div>
+      <p style="margin-top:15px; font-size:25px; color:#555; font-style: italic;">Shop with confidence and support small business.</p>
+    </section>
      
     <div class="footer-inner container">
       <nav class="footer-nav">
@@ -484,35 +529,74 @@ section.main .container {
         <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
       </div>
     </div>
-  
   </footer>
 
-  <script src="script.js" defer></script>
-
-  
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-  document.querySelectorAll('.gin-box').forEach(box => {
-    box.addEventListener('click', () => {
-      const info = box.querySelector('.more-info');
-      info.style.maxHeight = info.style.maxHeight ? null : '200px';
-      info.style.opacity = info.style.opacity === '1' ? '0' : '1';
+    AOS.init();
+  </script>
+
+  <script>
+    document.querySelectorAll('.gin-box').forEach(box => {
+      box.addEventListener('click', () => {
+        const info = box.querySelector('.more-info');
+        info.style.maxHeight = info.style.maxHeight ? null : '200px';
+        info.style.opacity = info.style.opacity === '1' ? '0' : '1';
+      });
     });
-  });
-</script>
-  <!-- Slick Carousel CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  </script>
 
-<!-- Slick Carousel JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="/js/cart.js"></script>
+  <!-- Slick Carousel CSS & JS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+  <!-- Cart JS -->
+  <script src="/js/cart.js"></script>
 
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only add click handlers on mobile
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+          item.classList.remove('open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 

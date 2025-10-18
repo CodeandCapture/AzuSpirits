@@ -9,18 +9,17 @@ class ShoppingCart {
 
   // Load cart from memory or initialize empty
   loadCart() {
-    // In production, you would use localStorage here:
-    // const saved = localStorage.getItem('azuSpiritsCart');
-    // this.items = saved ? JSON.parse(saved) : [];
-    this.items = [];
-  }
+   {
+  const saved = localStorage.getItem('azuSpiritsCart');
+  this.items = saved ? JSON.parse(saved) : [];
+}
 
   // Save cart to memory
   saveCart() {
-    // In production, you would use localStorage here:
-    // localStorage.setItem('azuSpiritsCart', JSON.stringify(this.items));
-    this.updateCartDisplay();
-  }
+  localStorage.setItem('azuSpiritsCart', JSON.stringify(this.items));
+  this.updateCartDisplay();
+}
+
 
   // Add item to cart
   addItem(product) {
@@ -146,4 +145,5 @@ function addToCart(productId, productName, productPrice, productImage) {
 document.addEventListener('DOMContentLoaded', () => {
   cart.updateCartDisplay();
 });
+
 

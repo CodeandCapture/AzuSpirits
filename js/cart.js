@@ -1,25 +1,21 @@
 // Cart Management System for Azu Spirits
-// Store cart in memory (no localStorage due to artifact limitations)
-
 class ShoppingCart {
   constructor() {
     this.items = [];
     this.loadCart();
   }
 
-// Load cart from localStorage
-loadCart() {
-  const saved = localStorage.getItem('azuSpiritsCart');
-  this.items = saved ? JSON.parse(saved) : [];
-}
+  // Load cart from localStorage
+  loadCart() {
+    const saved = localStorage.getItem('azuSpiritsCart');
+    this.items = saved ? JSON.parse(saved) : [];
+  }
 
-// Save cart to localStorage
-saveCart() {
-  localStorage.setItem('azuSpiritsCart', JSON.stringify(this.items));
-  this.updateCartDisplay();
-}
-
-
+  // Save cart to localStorage
+  saveCart() {
+    localStorage.setItem('azuSpiritsCart', JSON.stringify(this.items));
+    this.updateCartDisplay();
+  }
 
   // Add item to cart
   addItem(product) {
@@ -84,7 +80,7 @@ saveCart() {
     if (cartCount) {
       const count = this.getItemCount();
       cartCount.textContent = count;
-      cartCount.style.display = count > 0 ? 'block' : 'none';
+      cartCount.style.display = count > 0 ? 'flex' : 'none';
     }
   }
 
@@ -96,7 +92,7 @@ saveCart() {
     notification.innerHTML = `
       <div class="notification-content">
         <span>✓ ${productName} added to cart</span>
-        <a href="/cart" class="view-cart-link">View Cart</a>
+        <a href="/cart.html" class="view-cart-link">View Cart</a>
       </div>
     `;
     
@@ -113,19 +109,20 @@ saveCart() {
   }
 
   // Get items for Stripe/PayPal
- getCheckoutItems() {
-  return this.items.map(item => ({
-    price_data: {
-      currency: 'gbp',
-      product_data: {
-        name: item.name,
-        images: item.image ? [item.image] : []
+  getCheckoutItems() {
+    return this.items.map(item => ({
+      price_data: {
+        currency: 'gbp',
+        product_data: {
+          name: item.name,
+          images: item.image ? [item.image] : []
+        },
+        unit_amount: Math.round(item.price * 100) // Convert to pence
       },
-      unit_amount: Math.round(item.price * 100) // Convert to pence
-    },
-    quantity: item.quantity
-  }));
-}
+      quantity: item.quantity
+    }));
+  }
+} // ← CLOSING BRACE FOR CLASS - This was missing!
 
 // Initialize cart globally
 const cart = new ShoppingCart();
@@ -144,5 +141,3 @@ function addToCart(productId, productName, productPrice, productImage) {
 document.addEventListener('DOMContentLoaded', () => {
   cart.updateCartDisplay();
 });
-
-

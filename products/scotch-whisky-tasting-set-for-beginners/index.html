@@ -42,6 +42,7 @@
 
         .header-inner img {
             height: 80px;
+            cursor: pointer;
         }
 
         .site-nav ul {
@@ -50,60 +51,62 @@
             padding: 0;
             display: flex;
         }
-      /* Dropdown Menu Styles */
-.site-nav li {
-    position: relative;
-}
 
-.has-dropdown {
-    position: relative;
-}
+        /* Dropdown Menu Styles */
+        .site-nav li {
+            position: relative;
+        }
 
-.has-dropdown > a::after {
-    content: ' ▾';
-    font-size: 0.8rem;
-    margin-left: 0.3rem;
-}
+        .has-dropdown {
+            position: relative;
+        }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    min-width: 220px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 1000;
-    margin-top: 0.5rem;
-}
+        .has-dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
 
-.has-dropdown:hover .dropdown-menu {
-    display: block;
-}
+        .dropdown-menu {
+            display: none !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
 
-.dropdown-menu li {
-    margin: 0 !important;
-    border-bottom: 1px solid #f0f0f0;
-}
+        .has-dropdown:hover .dropdown-menu {
+            display: flex !important;
+          
+        }
 
-.dropdown-menu li:last-child {
-    border-bottom: none;
-}
+        .dropdown-menu li {
+            margin: 0 !important;
+            border-bottom: 1px solid #f0f0f0;
+        }
 
-.dropdown-menu a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: #333;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-}
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
 
-.dropdown-menu a:hover {
-    background: #A4343A;
-    color: white;
-}
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #A4343A;
+            color: white;
+        }
 
         .site-nav li + li {
             margin-left: 1.5rem;
@@ -115,8 +118,8 @@
             transition: color 0.3s;
         }
 
-        .site-nav a:hover {
-            color: #A4343A;
+        .dropdown-menu .site-nav a:hover {
+            color: white;
         }
 
         /* Mobile Menu Toggle */
@@ -141,9 +144,14 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: #333;
+            transition: transform 0.2s;
         }
 
-        .cart-count {
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+       .cart-count {
             position: absolute;
             top: -8px;
             right: -8px;
@@ -152,7 +160,7 @@
             border-radius: 50%;
             width: 20px;
             height: 20px;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.75rem;
@@ -180,6 +188,7 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
         }
 
         .product-details h1 {
@@ -290,6 +299,7 @@
             transition: all 0.3s;
             width: 100%;
             text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .add-to-cart-btn:hover {
@@ -396,139 +406,162 @@
             color: #666;
         }
 
-    /* Responsive */
-@media (max-width: 768px) {
-    .site-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #f8f8f8;
-        border-top: 1px solid #ddd;
-        padding: 1rem;
-        z-index: 100;
-    }
+        /* Responsive - ONLY ONE @media QUERY */
+        @media (max-width: 768px) {
+            .site-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #f8f8f8;
+                border-top: 1px solid #ddd;
+                padding: 1rem;
+                z-index: 100;
+            }
 
-    .site-nav.open {
-        display: block;
-    }
+            .site-nav.open {
+                display: block;
+            }
 
-    .site-nav ul {
-        flex-direction: column;
-    }
+            .site-nav ul {
+                flex-direction: column;
+            }
 
-    .site-nav li + li {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
+            .site-nav li + li {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
 
-    .nav-toggle {
-        display: block;
-    }
+            .nav-toggle {
+                display: block;
+            }
 
-    .header-inner {
-        position: relative;
-    }
+            .header-inner {
+                position: relative;
+            }
 
-    .header-inner img {
-        height: 60px;
-        margin-left: 0;
-    }
+            .header-inner img {
+                height: 60px;
+                margin-left: 10px;
+            }
 
-    /* Reorder product layout on mobile */
-    .product-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin: 2rem auto;
-        display: flex;
-        flex-direction: column;
-    }
+            /* Mobile Dropdown Styles */
+            .dropdown-menu {
+                position: static;
+                display: none;
+                border: none;
+                box-shadow: none;
+                background: #f0f0f0;
+                margin-top: 0.5rem;
+                border-radius: 4px;
+            }
+            
+            .has-dropdown.open .dropdown-menu {
+                display: block;
+            }
+            
+            .has-dropdown > a::after {
+                float: right;
+            }
+            
+            .dropdown-menu a {
+                padding-left: 2rem;
+                font-size: 0.95rem;
+            }
 
-    /* Move product details (text/button) to top */
-    .product-details {
-        order: 1;
-    }
+            /* Reorder product layout on mobile */
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin: 2rem auto;
+                display: flex;
+                flex-direction: column;
+            }
 
-    /* Move images to bottom */
-    .product-image-container {
-        order: 2;
-        position: relative;
-        top: 0;
-    }
+            /* Move product details (text/button) to top */
+            .product-details {
+                order: 1;
+            }
 
-    .product-details h1 {
-        font-size: 1.8rem;
-    }
+            /* Move images to bottom */
+            .product-image-container {
+                order: 2;
+                position: relative;
+                top: 0;
+                margin-top: 2rem;
+            }
 
-    .footer-inner {
-        flex-direction: column;
-        text-align: center;
-    }
+            .product-details h1 {
+                font-size: 1.8rem;
+            }
 
-    .footer-nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-   <header class="site-header">
-  <div class="header-inner container">
-    <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" style="height: 80px; margin-left: 30px;" onclick="window.location.href='/'">
-    
-    <div class="header-right">
-      <nav class="site-nav" id="siteNav">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          
-          <!-- Dropdown for Tasting Gift Sets -->
-          <li class="has-dropdown">
-            <a href="/tasting-gift-sets">Tasting Gift Sets</a>
-            <ul class="dropdown-menu">
-              <li><a href="/whisky-gifts">Whisky Tasting Gift Sets</a></li>
-              <li><a href="/gin-gifts">Gin Tasting Gift Sets</a></li>
-            </ul>
-          </li>
-          
-          <li><a href="/bottleshop">Bottle Shop</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/about-us">About / Contact</a></li>
-          <li><a href="/blog">Blog</a></li>
-        </ul>
-      </nav>
-      
-      <!-- Cart Icon -->
-      <div class="cart-icon" onclick="window.location.href='/cart.html'">
-        🛒
-        <span class="cart-count">0</span>
-      </div>
-      
-      <!-- Mobile Menu Toggle - REMOVE THE INLINE STYLE -->
-      <button class="nav-toggle" onclick="toggleNav()">☰</button>
-    </div>
-  </div>
-</header>
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" alt="Azu Spirits" onclick="window.location.href='/'">
+            
+            <div class="header-right">
+                <nav class="site-nav" id="siteNav">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        
+                        <li class="has-dropdown">
+                            <a href="/tasting-gift-sets">Tasting Gift Sets</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/whisky-gifts.html">Whisky Tasting Gift Sets</a></li>
+                                <li><a href="/gin-gifts.html">Gin Tasting Gift Sets</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="/bottleshop.html">Bottle Shop</a></li>
+                        <li><a href="/events.html">Events</a></li>
+                        <li><a href="/about-us.html">About / Contact</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="cart-icon" onclick="window.location.href='/cart.html'">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            </div>
+        </div>
+    </header>
+
     <div class="product-container">
         <div class="product-image-container">
-            <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-main.jpg" alt="Six Styles of Scotch Whisky Tasting Set" class="product-image" id="productImage">
-           <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-alt2.jpg" alt="Six Styles of Scotch Whisky Tasting Set" class="product-image" id="productImage">
-           <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-alt1.jpg" alt="Six Styles of Scotch Whisky Tasting Set" class="product-image" id="productImage">
+            <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-main.jpg" alt="Six Styles of Scotch Whisky Tasting Set" class="product-image">
+            <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-alt2.jpg" alt="Six Styles of Scotch Whisky Tasting Set Contents" class="product-image">
+            <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-alt1.jpg" alt="Six Styles of Scotch Whisky Tasting Set Detail" class="product-image">
         </div>
 
         <div class="product-details">
-            <h1 id="productName">Six Styles of Scotch Whisky: Blind Tasting Gift Set</h1>
-            <div class="product-price" id="productPrice">£48.00</div>
+            <h1>Six Styles of Scotch Whisky: Blind Tasting Gift Set</h1>
+            <div class="product-price">£48.00</div>
             
-            <div class="product-description" id="productDescription">
+            <div class="product-description">
                 <p>Whether you're just starting your whisky journey or looking for a unique gift, this blind tasting set is the ideal way to explore the diverse styles of Scotch. Discover the range of flavours from smoky, rich, oily to delicate, grassy and soft. Featuring Bladnoch Vinaya, Glenfiddich 15 Solera, Kilchoman Machir Bay, Ledaig 10, Glen Scotia 15 and Dalmore 12.</p>
                 <p>A unique tasting experience designed by specialists for Scotch whisky lovers.</p>
             </div>
 
             <div class="product-features">
                 <h3>What's Included:</h3>
-                <ul id="productFeatures">
+                <ul>
                     <li>6 Numbered Bottles - Six renowned single malts, each 30ml</li>
                     <li>Tasting Guide - Helpful notes and tips for blind whisky tasting</li>
                     <li>Information Cards - Insights into flavour characteristics and production techniques</li>
@@ -573,81 +606,74 @@
         </div>
     </footer>
 
-   <script src="/js/cart.js"></script>
-<script>
-    // Mobile nav toggle
-    function toggleNav() {
-        const nav = document.getElementById('siteNav');
-        nav.classList.toggle('open');
-    }
-    
-    // Mobile dropdown toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        // Only add click handlers on mobile
-        if (window.innerWidth <= 768) {
-            const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+    <script src="/js/cart.js"></script>
+    <script>
+        // Mobile nav toggle
+        function toggleNav() {
+            const nav = document.getElementById('siteNav');
+            nav.classList.toggle('open');
+        }
+        
+        // Mobile dropdown toggle - ONLY on mobile
+        function initMobileDropdowns() {
+            const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
             
-            dropdownParents.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const parent = this.parentElement;
-                    
-                    // Close other dropdowns
-                    document.querySelectorAll('.has-dropdown').forEach(function(item) {
-                        if (item !== parent) {
-                            item.classList.remove('open');
-                        }
+            if (window.innerWidth <= 768) {
+                dropdownLinks.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        
+                        // Close other dropdowns
+                        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+                            if (item !== parent) {
+                                item.classList.remove('open');
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        parent.classList.toggle('open');
                     });
-                    
-                    // Toggle current dropdown
-                    parent.classList.toggle('open');
                 });
-            });
+            }
         }
-    });
-    
-    // Re-initialize on window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            document.querySelectorAll('.has-dropdown').forEach(function(item) {
-                item.classList.remove('open');
-            });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initMobileDropdowns);
+
+        // Product data
+        const product = {
+            id: 'six-styles-scotch-whisky-tasting-set',
+            name: 'Six Styles of Scotch Whisky: Blind Tasting Gift Set',
+            price: 48.00,
+            image: 'https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-main.jpg',
+            description: 'Six classic styles of single malt Scotch whisky, perfect for beginners.',
+            features: [
+                '6 Numbered Bottles - Six renowned single malts, each 30ml',
+                'Tasting Guide - Helpful notes and tips',
+                'Information Cards - Insights into flavour characteristics',
+                'Wax-Sealed Envelope - Contains your results'
+            ]
+        };
+
+        function increaseQuantity() {
+            const input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 1;
         }
-    });
 
-    // Product data
-    const product = {
-        id: 'six-styles-scotch-whisky-tasting-set',
-        name: 'Six Styles of Scotch Whisky: Blind Tasting Gift Set',
-        price: 48.00,
-        image: 'https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/ef0bc2e7-26c3-433d-8e58-1ab83f0b697d/Six+Styles+%283%29.png?format=2500w', 
-        description: 'Six classic styles of single malt Scotch whisky, perfect for beginners.',
-        features: [
-            '6 Numbered Bottles - Six renowned single malts, each 30ml',
-            'Tasting Guide - Helpful notes and tips',
-            'Information Cards - Insights into flavour characteristics',
-            'Wax-Sealed Envelope - Contains your results'
-        ]
-    };
-
-    function increaseQuantity() {
-        const input = document.getElementById('quantity');
-        input.value = parseInt(input.value) + 1;
-    }
-
-    function decreaseQuantity() {
-        const input = document.getElementById('quantity');
-        if (parseInt(input.value) > 1) {
-            input.value = parseInt(input.value) - 1;
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
         }
-    }
 
-    function addProductToCart() {
-        const quantity = parseInt(document.getElementById('quantity').value);
-        for (let i = 0; i < quantity; i++) {
-            addToCart(product.id, product.name, product.price, product.image);
+        function addProductToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            for (let i = 0; i < quantity; i++) {
+                addToCart(product.id, product.name, product.price, product.image);
+            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>

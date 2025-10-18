@@ -50,11 +50,7 @@
             padding: 0;
             display: flex;
         }
-
-        .site-nav li + li {
-            margin-left: 1.5rem;
-        }
-        /* Dropdown Menu Styles */
+      /* Dropdown Menu Styles */
 .site-nav li {
     position: relative;
 }
@@ -108,6 +104,10 @@
     background: #A4343A;
     color: white;
 }
+
+        .site-nav li + li {
+            margin-left: 1.5rem;
+        }
 
         .site-nav a {
             text-decoration: none;
@@ -409,30 +409,8 @@
                 padding: 1rem;
                 z-index: 100;
             }
+          
 
-    .dropdown-menu {
-        position: static;
-        display: none;
-        border: none;
-        box-shadow: none;
-        background: #f0f0f0;
-        margin-top: 0.5rem;
-        border-radius: 4px;
-    }
-    
-    .has-dropdown.open .dropdown-menu {
-        display: block;
-    }
-    
-    .has-dropdown > a::after {
-        float: right;
-    }
-    
-    .dropdown-menu a {
-        padding-left: 2rem;
-        font-size: 0.95rem;
-    }
-}
             .site-nav.open {
                 display: block;
             }
@@ -586,7 +564,7 @@
         </div>
     </footer>
 
-  <script src="/js/cart.js"></script>
+   <script src="/js/cart.js"></script>
 <script>
     // Mobile nav toggle
     function toggleNav() {

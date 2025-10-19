@@ -667,55 +667,58 @@
         nav.classList.toggle('open');
     }
 
-    function renderCart() {
-        const cartItemsContainer = document.getElementById('cartItems');
-        const subtotalEl = document.getElementById('subtotal');
-        const totalEl = document.getElementById('total');
-        const checkoutBtn = document.getElementById('stripeCheckoutBtn');
+   function renderCart() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const subtotalEl = document.getElementById('subtotal');
+    const shippingEl = document.getElementById('shipping');
+    const totalEl = document.getElementById('total');
+    const checkoutBtn = document.getElementById('stripeCheckoutBtn');
 
-        if (cart.items.length === 0) {
-            cartItemsContainer.innerHTML = `
-                <div class="empty-cart">
-                    <div class="empty-cart-icon">🛒</div>
-                    <h2>Your cart is empty</h2>
-                    <p>Add some products to get started!</p>
-                </div>
-            `;
-            checkoutBtn.disabled = true;
-            subtotalEl.textContent = '£0.00';
-            totalEl.textContent = '£0.00';
-            return;
-        }
+    if (cart.items.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h2>Your cart is empty</h2>
+                <p>Add some products to get started!</p>
+            </div>
+        `;
+        checkoutBtn.disabled = true;
+        subtotalEl.textContent = '£0.00';
+        shippingEl.textContent = '£0.00';
+        totalEl.textContent = '£0.00';
+        return;
+    }
 
-        checkoutBtn.disabled = false;
+    checkoutBtn.disabled = false;
 
-        cartItemsContainer.innerHTML = cart.items.map(item => `
-            <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}" class="item-image">
-                <div class="item-details">
-                    <h3>${item.name}</h3>
-                    <div class="item-price">£${item.price.toFixed(2)}</div>
-                    <div class="quantity-controls">
-                        <button onclick="updateItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
-                        <span>${item.quantity}</span>
-                        <button onclick="updateItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
-                    </div>
-                </div>
-                <div class="item-actions">
-                    <div class="item-total">£${(item.price * item.quantity).toFixed(2)}</div>
-                    <button class="remove-btn" onclick="removeItem('${item.id}')">Remove</button>
+    cartItemsContainer.innerHTML = cart.items.map(item => `
+        <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" class="item-image">
+            <div class="item-details">
+                <h3>${item.name}</h3>
+                <div class="item-price">£${item.price.toFixed(2)}</div>
+                <div class="quantity-controls">
+                    <button onclick="updateItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="updateItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
                 </div>
             </div>
-        `).join('');
+            <div class="item-actions">
+                <div class="item-total">£${(item.price * item.quantity).toFixed(2)}</div>
+                <button class="remove-btn" onclick="removeItem('${item.id}')">Remove</button>
+            </div>
+        </div>
+    `).join('');
 
-      const subtotal = cart.getTotal();
-const shipping = 4.95; // Your shipping cost
-const total = subtotal + shipping;
+    // Calculate totals
+    const subtotal = cart.getTotal();
+    const shipping = 4.95; // Your shipping cost
+    const total = subtotal + shipping;
 
-subtotalEl.textContent = `£${subtotal.toFixed(2)}`;
-totalEl.textContent = `£${total.toFixed(2)}`;
-        
-    }
+    subtotalEl.textContent = `£${subtotal.toFixed(2)}`;
+    shippingEl.textContent = `£${shipping.toFixed(2)}`;
+    totalEl.textContent = `£${total.toFixed(2)}`;
+}
 
     function updateItemQuantity(productId, newQuantity) {
         cart.updateQuantity(productId, newQuantity);

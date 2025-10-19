@@ -3,11 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ pageTitle }} | Azu Spirits</title>
-  <meta name="description" content="{{ pageDescription }}" />
-  <!-- Add any other SEO / OpenGraph / canonical tags here -->
-  <link rel="stylesheet" href="styles.css" />
-   <style>
+  <title>Azu Spirits | Premium Whisky & Gin Tasting Gift Sets | Trade Services</title>
+  <meta name="description" content="Premium whisky and gin tasting gift sets featuring craft spirits and single malt whisky. Blind tasting experiences for enthusiasts, plus whisky training and bar consultancy for trade. UK-based, family-run." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+  
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
     /* Base Styles */
     body {
       margin: 0;
@@ -40,7 +47,6 @@
             margin: 0;
             padding: 0;
             display: flex;
-       
         }
 
         /* Dropdown Menu Styles */
@@ -92,7 +98,9 @@
             color: #333;
             text-decoration: none;
             transition: background 0.2s, color 0.2s;
-        }
+           
+    }
+        
 
         .dropdown-menu a:hover {
             background: #A4343A;
@@ -161,7 +169,7 @@
 
     /* Hero Section */
     section.hero {
-      background-image: url('https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1742650880421-NRKLBO2P7BVN3E1OMY6Q/Share%2Bthe%2Bspirit%2Bof%2Bdiscovery%2Bthis%2BValentines%2BDay%2B%25281%2529.jpg?format=1000w');
+      background-image: url('https://codeandcapture.github.io/AzuSpirits/images/products/tasting-gift-sets.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -177,8 +185,15 @@
     }
 
     .hero h1 {
-      font-size: 35px;
+      font-size: 30px;
       text-transform: uppercase;
+      font-weight: 200;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .hero h2 {
+      font-size: 20px;
       font-weight: 200;
       text-align: center;
       margin-bottom: 20px;
@@ -278,8 +293,137 @@
     .slick-carousel .slick-slide:hover img {
       transform: scale(1.1);
     }
+    
+    /* Featured Collections Section */
+.featured-collections {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+}
 
-     /* Footer Styles */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-box {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.featured-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-box:hover .featured-image img {
+  transform: scale(1.05);
+}
+
+.featured-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.featured-content h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.featured-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+  min-height: 60px; /* Keeps alignment consistent */
+}
+
+.featured-cta {
+  display: inline-block;
+  background-color: #A4343A;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.featured-cta:hover {
+  background-color: #8a2c31;
+  transform: translateY(-2px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .featured-image {
+    height: 200px;
+  }
+}
+    
+    /* Price Badge Circle */
+.price-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #A4343A;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.featured-box:hover .price-badge {
+  transform: scale(1.1);
+  background-color: #8a2c31;
+}
+
+/* Make sure the image container supports absolute positioning */
+.featured-image {
+  position: relative; /* This is crucial! */
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+   /* Footer Styles */
         .site-footer {
             background: #f8f8f8;
             border-top: 1px solid #ddd;
@@ -338,11 +482,42 @@
             text-decoration: none;
             color: #333;
         }
-
-        .site-info {
+     .site-info {
             font-size: 0.9rem;
             color: #666;
         }
+    
+ 
+    
+   /* Container for the buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px;
+  flex-wrap: wrap; /* Stack on mobile if needed */
+}
+
+/* Individual button styles */
+.primary-cta {
+  background-color: white;
+  padding: 15px 30px; /* Top/bottom and left/right padding */
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  display: inline-block; /* Important! Makes padding work properly */
+  border-radius: 4px; /* Optional: rounded corners */
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.primary-cta:hover {
+  background-color: #A4343A;
+  color: white;
+  transform: translateY(-2px); /* Optional: subtle lift effect */
+}
 
     /* Mobile Styles */
     @media (max-width: 868px) {
@@ -416,38 +591,130 @@
   </style>
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="header-inner container">
-      <a href="/" class="site-logo">Azu Spirits</a>
-      <button class="nav-toggle" aria-expanded="false">Menu</button>
-      <nav class="site-nav">
+   <header class="site-header">
+  <div class="header-inner container">
+    <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" style="height: 80px; margin-left: 30px;" onclick="window.location.href='/'">
+    
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/tasting-gift-sets">Tasting Gift Sets</a></li>
-          <li><a href="/bottle-shop">Bottle Shop</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/about-us">About / Contact</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="/AzuSpirits/index.html">Home</a></li>
+          
+          <!-- Dropdown for Tasting Gift Sets -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Gift Sets</a></li>
+              <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Gift Sets</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
+          <li><a href="/AzuSpirits/events">Events</a></li>
+          <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
+          <li><a href="/AzuSpirits/blog">Blog</a></li>
         </ul>
       </nav>
+      
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart.html'">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+      
+      <!-- Mobile Menu Toggle - REMOVE THE INLINE STYLE -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
     </div>
-  </header>
+  </div>
+</header>
+  
+  <section class="hero">
+  <div class="overlay">
+    <h1>Unique Scotch Whisky & Gin Tasting Gift Sets</h1>
+    <h2>Blind tasting experiences made for spirit lovers. From curious beginners to seasoned enthusiasts.</h2>
+    <div class="cta-buttons">
+      <a href="/whisky-gifts" class="primary-cta">Shop Whisky Sets</a>
+      <a href="/gin-gifts" class="primary-cta">Shop Gin Sets</a>
+    </div>
+   
+  <p style="font-size: 14px; margin-top: 20px; text-align: center;">
+      Trade services available · <a href="/trade" style="text-decoration: underline; color: white;">Staff training & consultancy</a>
+    </p>
+    
+  </div>
+</section>
+  
+  <section class="featured-collections">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 28px; margin-bottom: 40px; text-transform: uppercase;">Featured Collections</h2>
+    
+    <div class="featured-grid">
+      <!-- Whisky Set 1 -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland whisky tasting set">  <span class="price-badge">£48</span>
+        </div>
+        <div class="featured-content">
+          <h3>Regions of Scotland</h3>
+          <p>Tour through Scotland's whisky-making regions. Can you identify the regional characteristics? </p>
+          
+          <a href="/AzuSpirits/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Shop Now</a>
+        </div>
+      </div>
 
-  <main class="site-main container">
-    <!-- Each page injects its own hero or leading section -->
-    <section class="page-hero">
-      <h1>{{ pageHeading }}</h1>
-      <p>{{ heroSubtitle }}</p>
+      <!-- Whisky Set 2 -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-alt2.jpg" alt="Six styles of Scotch whisky tasting set for beginners">  <span class="price-badge">£48</span>
+        </div>
+        <div class="featured-content">
+          <h3>Six Styles of Scotch</h3>
+          <p>Perfect for beginners discovering what they like best. Classic styles, expertly curated.</p>
+          <a href="/AzuSpirits/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">Shop Now</a>
+        </div>
+      </div>
+
+      <!-- Gin Set 1 -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/cotswolds-gin-gift-alt1.jpg" alt="Cotswolds craft gin tasting set">  <span class="price-badge">£45</span>
+        </div>
+        <div class="featured-content">
+          <h3>Craft Gins of the Cotswolds</h3>
+          <p>Six premium gins handpicked from the Cotswolds. Perfect for countryside lovers.</p>
+          <a href="/AzuSpirits/products/cotswolds-gin-tasting-set" class="featured-cta">Shop Now</a>
+        </div>
+      </div>
+
+      <!-- Gin Set 2 -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/london-gins.jpg" alt="London dry gin tasting gift set">  <span class="price-badge">£45</span>
+        </div>
+        <div class="featured-content">
+          <h3>London Gins</h3>
+          <p>Iconic London Dry gins with classic botanicals and bold flavors. A refined selection.</p>
+          <a href="/AzuSpirits/products/london-gins-tasting-gift" class="featured-cta">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <section style="background-color:white; background-size: cover; height: auto; padding: 20px 20px; color: black; position: relative; text-align: center; margin: 20px;">
+    <a style="background-color: black; padding: 20px; text-align: center; color: white; justify-content: center;">Head to our Bottle Shop</a> 
+  </section>
+  
+  <footer class="site-footer" style="padding: 20px;">
+    <section style="background:#fffff; padding:10px; border-radius:12px; margin-bottom:10px; text-align:center;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/d96dae12-2182-4384-a646-a5f0f06e30ad/Family.png?format=500w" alt="Family-Run Business" style="max-width:150px; height:auto;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/db9adba8-55ab-4ea5-8f17-dd2d5df2fb18/Untitled+design+%2837%29.png?format=500w" alt="Woman-Owned Business" style="max-width:150px; height:auto;">
+      </div>
+      <p style="margin-top:15px; font-size:25px; color:#555; font-style: italic;">Shop with confidence and support small business.</p>
     </section>
-
-    <section class="content-section">
-      <!-- page-specific content here -->
-      {{ contentHtml }}
-    </section>
-  </main>
-
-  <footer class="site-footer">
+     
     <div class="footer-inner container">
       <nav class="footer-nav">
         <ul>
@@ -462,6 +729,75 @@
       </div>
     </div>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    document.querySelectorAll('.gin-box').forEach(box => {
+      box.addEventListener('click', () => {
+        const info = box.querySelector('.more-info');
+        info.style.maxHeight = info.style.maxHeight ? null : '200px';
+        info.style.opacity = info.style.opacity === '1' ? '0' : '1';
+      });
+    });
+  </script>
+
+  <!-- Slick Carousel CSS & JS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+  <!-- Cart JS -->
+  <script src="/js/cart.js"></script>
+
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only add click handlers on mobile
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+          item.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
 
   <script src="script.js" defer></script>
 </body>

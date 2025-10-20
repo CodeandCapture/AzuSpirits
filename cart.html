@@ -733,37 +733,42 @@
     }
 
     function checkoutWithStripe() {
-        // Map product IDs to their Stripe Payment Links
-        const paymentLinks = {
-            'six-styles-scotch-whisky-tasting-set': 'https://buy.stripe.com/bJeeVd4o95hrcJpd7s9AA00',
-            // Add more products as you create their payment links:
-            // 'regions-scotland-whisky-tasting-set': 'https://buy.stripe.com/test_xxxxx',
-            // 'luxury-whisky-tasting-set': 'https://buy.stripe.com/test_xxxxx',
-        };
-        
-        if (cart.items.length === 0) {
-            alert('Your cart is empty!');
-            return;
-        }
-        
-        if (cart.items.length === 1) {
-            // Single item - use payment link with quantity
-            const item = cart.items[0];
-            const link = paymentLinks[item.id];
-            
-            if (link) {
-                // Redirect to Stripe with quantity
-                window.location.href = `${link}?quantity=${item.quantity}`;
-                // Clear cart after redirect
-                setTimeout(() => cart.clearCart(), 500);
-            } else {
-                alert('Payment link not configured for this product. Please contact us.');
-            }
-        } else {
-            // Multiple different items
-            alert('Please checkout one product at a time. Remove other items from your cart or contact us for assistance.');
-        }
+    // Map product IDs to their Stripe Payment Links
+    const paymentLinks = {
+        'six-styles-scotch-whisky-tasting-set': 'https://buy.stripe.com/bIeeVd4o95hrcJpd7s9AA00',
+        // Add more products as you create their payment links:
+        // 'regions-scotland-whisky-tasting-set': 'https://buy.stripe.com/test_xxxxx',
+        // 'luxury-whisky-tasting-set': 'https://buy.stripe.com/test_xxxxx',
+    };
+    
+    if (cart.items.length === 0) {
+        alert('Your cart is empty!');
+        return;
     }
+    
+    if (cart.items.length === 1) {
+        // Single item - use payment link with quantity
+        const item = cart.items[0];
+        const link = paymentLinks[item.id];
+        
+        if (link) {
+            // Build URL with quantity parameter
+            const checkoutUrl = `${link}?quantity=${item.quantity}`;
+            console.log('Redirecting to:', checkoutUrl); // For debugging
+            
+            // Redirect to Stripe with quantity
+            window.location.href = checkoutUrl;
+            
+            // Note: Don't clear cart here - let the user clear it manually
+            // or clear it on a thank-you page after successful payment
+        } else {
+            alert('Payment link not configured for this product. Please contact us.');
+        }
+    } else {
+        // Multiple different items
+        alert('Please checkout one product at a time. Remove other items from your cart or contact us for assistance.');
+    }
+}
 
     // Render cart on page load - MOVED TO THE END
     document.addEventListener('DOMContentLoaded', renderCart);

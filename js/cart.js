@@ -17,21 +17,26 @@ class ShoppingCart {
     this.updateCartDisplay();
   }
 
-  // Add item to cart
-  addItem(product) {
-    const existingItem = this.items.find(item => item.id === product.id);
-    
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      this.items.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        quantity: 1
-      });
-    }
+// Add item to cart
+addItem(product) {
+  const existingItem = this.items.find(item => item.id === product.id);
+  
+  if (existingItem) {
+    existingItem.quantity += product.quantity || 1;
+  } else {
+    this.items.push({
+      id: product.id,
+      priceId: product.priceId, // Store Stripe Price ID
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: product.quantity || 1
+    });
+  }
+  
+  this.saveCart();
+  this.showAddedNotification(product.name);
+}
     
     this.saveCart();
     this.showAddedNotification(product.name);

@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scotch Whisky Tasting Set for Beginners | Six Styles of Scotch Whisky Tasting Set | Azu Spirits</title>
     <meta name="description" content="Explore six classic styles of single malt Scotch whisky. Perfect for beginners discovering what they like best. Unique blind tasting gift set." />
+  
+   <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Six Styles of Scotch Whisky: Blind Tasting Gift Set",
+    "description": "Six classic single malt whiskies in a unique tasting gift set",
+    "image": "https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-main.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "Azu Spirits"
+    },
+    "sku": "AZU-SIX-STYLES-SCOTCH-001",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners",
+      "priceCurrency": "GBP",
+      "price": "48.00",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "Azu Spirits Ltd"
+      }
+    },
+    "category": "Whisky Tasting Gift Sets",
+    "alcoholWarning": "Must be 18 or over to purchase"
+  }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.azuspirits.co.uk"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Whisky Tasting Gift Sets",
+        "item": "https://www.azuspirits.co.uk/whisky-gifts"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Six Styles of Scotch Whisky",
+        "item": "https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners"
+      }
+    ]
+  }
+  </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -674,6 +733,8 @@
         const product = {
             id: 'six-styles-scotch-whisky-tasting-set',
             name: 'Six Styles of Scotch Whisky: Blind Tasting Gift Set',
+          productId: 'prod_TG62eTVmez6gqN', // Add Stripe Product ID
+    priceId: 'price_1SJZqbDLWuae7Nss2eXLPOu0', // Add Stripe Price ID
             price: 48.00,
             image: 'https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-main.jpg',
             description: 'Six classic styles of single malt Scotch whisky, perfect for beginners.',

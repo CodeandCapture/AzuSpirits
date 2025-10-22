@@ -1,1 +1,690 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Devon Gin Tasting Gift Set | 6 Coastal Craft Gins | Azu Spirits</title>
+  <meta name="description" content="Six premium Devon craft gins including Copper Frog, Dartmouth & Exeter Dry Gin. Blind tasting gift set with guide & 10% discount. UK delivery." />
+  
+  <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Devon Gins Blind Tasting Gift Set",
+    "description": "Six premium craft gins from Devon featuring coastal botanicals and seaside aromas. A unique blind tasting experience perfect for gin lovers.",
+    "image": "https://www.azuspirits.co.uk/AzuSpirits/images/products/devon-gin-tasting.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "Azu Spirits"
+    },
+    "sku": "AZU-DEVON-GIN-001",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.azuspirits.co.uk/products/devon-gin-tasting-set",
+      "priceCurrency": "GBP",
+      "price": "45.00",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "Azu Spirits Ltd"
+      }
+    },
+    "category": "Gin Tasting Gift Sets",
+    "alcoholWarning": "Must be 18 or over to purchase"
+  }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.azuspirits.co.uk"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Gin Tasting Gift Sets",
+        "item": "https://www.azuspirits.co.uk/gin-gifts"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Devon Gins",
+        "item": "https://www.azuspirits.co.uk/products/devon-gin-tasting-set"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+    }
+
+    /* Header Styles */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    .header-inner img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .site-nav li {
+      position: relative;
+    }
+
+    .site-nav li + li {
+      margin-left: 1.5rem;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    .site-nav a:hover {
+      color: #A4343A;
+    }
+
+    .has-dropdown > a::after {
+      content: ' ▾';
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 220px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      margin-top: 0.5rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li {
+      margin: 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #333;
+    }
+
+    .dropdown-menu a:hover {
+      background: #A4343A;
+      color: white;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+      transition: transform 0.2s;
+    }
+
+    .cart-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #A4343A;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Product Page Styles */
+    .product-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .product-images {
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product-details h1 {
+      font-size: 32px;
+      margin: 0 0 20px 0;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .product-price {
+      font-size: 28px;
+      color: #A4343A;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .product-description {
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .product-description p {
+      margin-bottom: 15px;
+    }
+
+    .product-features {
+      background: #f8f8f8;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .product-features h3 {
+      margin-top: 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .product-features ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .product-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .product-features li:last-child {
+      border-bottom: none;
+    }
+
+    .product-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 30px 0;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .highlight-icon {
+      font-size: 32px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .highlight-text {
+      flex: 1;
+    }
+
+    .highlight-text strong {
+      display: block;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .highlight-text p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .quantity-input {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .quantity-input button {
+      background: #f8f8f8;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .quantity-input button:hover {
+      background: #A4343A;
+      color: white;
+    }
+
+    .quantity-input input {
+      width: 60px;
+      text-align: center;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .add-to-cart-btn {
+      width: 100%;
+      background: #A4343A;
+      color: white;
+      border: none;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .add-to-cart-btn:hover {
+      background: #8a2c31;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .site-info {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 868px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .product-images {
+        position: static;
+      }
+
+      .product-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+
+      .has-dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png" onclick="window.location.href='/AzuSpirits/index.html'">
+      
+      <div class="header-right">
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="/AzuSpirits/index.html">Home</a></li>
+            <li class="has-dropdown">
+              <a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a>
+              <ul class="dropdown-menu">
+                <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Gift Sets</a></li>
+                <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Gift Sets</a></li>
+              </ul>
+            </li>
+            <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
+            <li><a href="/AzuSpirits/events">Events</a></li>
+            <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
+            <li><a href="/AzuSpirits/blog">Blog</a></li>
+          </ul>
+        </nav>
+        
+        <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart.html'">
+          🛒
+          <span class="cart-count">0</span>
+        </div>
+        
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="product-container">
+    <div class="product-images">
+      <img src="/AzuSpirits/images/products/devon-gin-tasting.jpg" alt="Devon gin tasting gift set with six coastal craft gins" class="main-image">
+    </div>
+
+    <div class="product-details">
+      <h1>Devon Gins: Blind Tasting Gift Set</h1>
+      <div class="product-price">£45.00</div>
+      
+      <div class="product-description">
+        <p>Discover six premium craft gins from Devon's coastal distilleries in a unique blind tasting experience.</p>
+        <p>Perfect for gin lovers who appreciate seaside botanicals and maritime aromas. From crisp coastal blends to robust juniper expressions, explore the distinctive character of Devon's gin-making tradition before the big reveal.</p>
+        <p style="margin-top: 10px; font-style: italic; color: white; background-color: #A4343A; padding: 10px;">Featuring Copper Frog Gin, Dartmouth Gin, Exeter Dry Gin, Papillon Original Gin, Thunderflower Gin & Brixham Gin Tattered Sails (selection may vary by availability)</p>
+      </div>
+      
+      <div class="product-features">
+        <h3>What's Included:</h3>
+        <ul>
+          <li>6 Numbered Bottles - Six premium Devon craft gins, each 30ml</li>
+          <li>Tasting Guide - Expert tips and flavor profiles for blind gin tasting</li>
+          <li>Information Cards - Insights into coastal botanicals and regional distilling</li>
+          <li>Wax-Sealed Envelope - Contains your blind tasting results, distillery info & 10% discount code</li>
+        </ul>
+      </div>
+
+      <div class="product-highlights">
+        <div class="highlight-item">
+          <div class="highlight-icon">🌊</div>
+          <div class="highlight-text">
+            <strong>Coastal Heritage</strong>
+            <p>Gins from Devon's seaside distilleries</p>
+          </div>
+        </div>
+        
+        <div class="highlight-item">
+          <div class="highlight-icon">🎁</div>
+          <div class="highlight-text">
+            <strong>Perfect Gift</strong>
+            <p>Beautifully packaged for gin enthusiasts</p>
+          </div>
+        </div>
+        
+        <div class="highlight-item">
+          <div class="highlight-icon">👁️</div>
+          <div class="highlight-text">
+            <strong>Blind Tasting</strong>
+            <p>Challenge yourself before the reveal</p>
+          </div>
+        </div>
+        
+        <div class="highlight-item">
+          <div class="highlight-icon">💰</div>
+          <div class="highlight-text">
+            <strong>10% Discount</strong>
+            <p>Code for your favourite bottle included</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quantity-selector">
+        <label for="quantity">Quantity:</label>
+        <div class="quantity-input">
+          <button onclick="decreaseQuantity()">-</button>
+          <input type="number" id="quantity" value="1" min="1" max="10">
+          <button onclick="increaseQuantity()">+</button>
+        </div>
+      </div>
+      
+      <button class="add-to-cart-btn" onclick="addProductToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/shipping-returns">Shipping & Returns</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </nav>
+      <div class="site-info">
+        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/AzuSpirits/js/cart.js"></script>
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    function initMobileDropdowns() {
+      const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
+      
+      if (window.innerWidth <= 768) {
+        dropdownLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', initMobileDropdowns);
+    
+    // Product data - UPDATE THESE VALUES
+    const product = {
+      id: 'devon-gins-tasting-gift',
+      productId: 'prod_TG6DArbbBUHZbZ',
+      priceId: 'price_1SJa0zDLWuae7NssBPuh6Rlp',
+      name: 'Devon Gins: Blind Tasting Gift Set',
+      price: 45.00,
+      image: '/AzuSpirits/images/products/devon-gin-tasting.jpg',
+      description: 'Six premium Devon craft gins in a unique blind tasting gift set',
+      features: [
+        '6 Numbered Bottles - Six premium Devon craft gins, each 30ml',
+        'Tasting Guide - Expert tips and flavor profiles',
+        'Information Cards - Insights into coastal botanicals',
+        'Wax-Sealed Envelope - Contains your results & 10% discount'
+      ]
+    };
+    
+    function increaseQuantity() {
+      const input = document.getElementById('quantity');
+      input.value = parseInt(input.value) + 1;
+    }
+    
+    function decreaseQuantity() {
+      const input = document.getElementById('quantity');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    }
+    
+    function addProductToCart() {
+      const quantity = parseInt(document.getElementById('quantity').value);
+      for (let i = 0; i < quantity; i++) {
+        addToCart(product.id, product.name, product.price, product.image, product.priceId);
+      }
+    }
+  </script>
+</body>
+</html>

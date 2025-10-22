@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasting Gift for Whisky Lovers | Regions of Scotland Whisky Tasting Set | Azu Spirits</title>
     <meta name="description" content="A tasting tour around the whisky making regions of Scotland. Perfect for whisky lovers and beginners discovering diverse styles. Unique blind tasting gift set." />
+
+    <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Regions of Scotland Whisky Tasting Set",
+    "description": "Tour through Scotland's whisky-making regions with six diverse single malts. Can you identify the regional characteristics in the blind tasting?",
+    "image": "https://codeandcapture.github.io/AzuSpirits/images/products/regions-of-scotland-gift.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "Azu Spirits"
+    },
+    "sku": "AZU-REGIONS-SCOTLAND-001",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set",
+      "priceCurrency": "GBP",
+      "price": "48.00",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "Azu Spirits Ltd"
+      }
+    },
+    "category": "Whisky Tasting Gift Sets",
+    "alcoholWarning": "Must be 18 or over to purchase"
+  }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.azuspirits.co.uk"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Whisky Tasting Gift Sets",
+        "item": "https://www.azuspirits.co.uk/whisky-gifts"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Regions of Scotland",
+        "item": "https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set"
+      }
+    ]
+  }
+  </script>
+  
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -669,21 +729,23 @@
         
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', initMobileDropdowns);
-
-        // Product data
-        const product = {
-            id: 'regions-of-scotland-whisky-tasting-set',
+        
+      // Product data
+const product = {
+    id: 'regions-of-scotland-whisky-tasting-set',
             name: 'Regions of Scotland: Blind Tasting Whisky Gift Set',
-            price: 48.00,
-            image: 'https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-main.jpg',
-            description: 'Regions of Scotland whisky tasting set made for whisky lovers',
-            features: [
+    productId: 'prod_TG67VFHJ5aPE76', // Add Stripe Product ID
+    priceId: 'price_1SJZvFDLWuae7NssERQCAb1r', // Add Stripe Price ID
+    price: 48.00, 
+    image: 'https://codeandcapture.github.io/AzuSpirits/images/products/regions-of-scotland-gift.jpg',
+    description: 'Regions of Scotland whisky tasting set made for whisky lovers',
+    features: [
                 '6 Numbered Bottles - Six renowned single malts, each 30ml',
                 'Tasting Guide - Helpful notes and tips',
                 'Information Cards - Insights into flavour characteristics',
                 'Wax-Sealed Envelope - Contains your results'
             ]
-        };
+};
 
         function increaseQuantity() {
             const input = document.getElementById('quantity');

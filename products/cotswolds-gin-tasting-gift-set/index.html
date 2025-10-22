@@ -503,12 +503,11 @@
 
             /* Reorder product layout on mobile */
             .product-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                margin: 2rem auto;
-                display: flex;
-                flex-direction: column;
-            }
+    grid-template-columns: 1fr;
+    gap: 30px;
+    display: flex; /* Change from grid to flex */
+    flex-direction: column; /* Stack vertically */
+  }
 
             /* Move product details (text/button) to top */
             .product-details {

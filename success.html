@@ -1,1 +1,207 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | Azu Spirits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .success-container {
+            background: white;
+            border-radius: 8px;
+            padding: 3rem;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .order-id {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+            color: #333;
+        }
+        
+        .info-box {
+            background: #fff9e6;
+            border-left: 4px solid #A4343A;
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .info-box h3 {
+            color: #A4343A;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .info-box p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: black;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .secondary-btn {
+            display: inline-block;
+            background: white;
+            color: #A4343A;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border: 2px solid #A4343A;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 1rem 0.5rem 0 0.5rem;
+        }
+        
+        .secondary-btn:hover {
+            background: #A4343A;
+            color: white;
+        }
+        
+        @media (max-width: 600px) {
+            .success-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .success-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase from Azu Spirits. Your order has been successfully placed and you will receive a confirmation email from Stripe shortly.</p>
+        
+        <div class="order-id" id="orderId">
+            Loading order details...
+        </div>
+        
+        <div class="info-box">
+            <h3>📦 What Happens Next?</h3>
+            <p><strong>• Confirmation Email:</strong> Check your inbox for payment confirmation from Stripe</p>
+            <p><strong>• Order Processing:</strong> We'll prepare your tasting set with care</p>
+            <p><strong>• Shipping:</strong> Your order will be dispatched within 1-2 business days</p>
+            <p><strong>• Tracking:</strong> You'll receive tracking information once shipped</p>
+        </div>
+        
+        <p style="margin-top: 2rem;">Questions about your order? Contact us at <strong>hello@azuspirits.co.uk</strong></p>
+        
+        <a href="/AzuSpirits/index.html" class="btn">Back to Home</a>
+        <a href="/AzuSpirits/whisky-gifts.html" class="secondary-btn">Continue Shopping</a>
+    </div>
+    
+    <script src="/AzuSpirits/js/cart.js"></script>
+    <script>
+        // Get session ID from URL and display
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        if (sessionId) {
+            // Display shortened order ID for customer reference
+            const shortId = sessionId.substring(sessionId.indexOf('_') + 1, sessionId.indexOf('_') + 21);
+            document.getElementById('orderId').innerHTML = `
+                <strong>Order Reference:</strong><br>${shortId}
+            `;
+            
+            // Clear the cart after successful purchase
+            if (typeof cart !== 'undefined') {
+                cart.clearCart();
+            } else {
+                // If cart.js isn't loaded properly, clear localStorage directly
+                localStorage.removeItem('cart');
+            }
+            
+            // Update cart count in case user navigates back
+            setTimeout(() => {
+                const cartCountElements = document.querySelectorAll('.cart-count');
+                cartCountElements.forEach(el => el.textContent = '0');
+            }, 100);
+        } else {
+            document.getElementById('orderId').textContent = 'Order ID not found';
+        }
+    </script>
+</body>
+</html>

@@ -1,1 +1,686 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxury Single Malt Whisky Tasting Set | Premium Scotch Gift | Azu Spirits</title>
+  <meta name="description" content="Six exceptional single malts including Tobermory 24, Bunnahabhain 22yr & Octomore 14.4. Luxury blind tasting gift set worth over £1000. Perfect for whisky connoisseurs. UK delivery." />
+  
+  <!-- Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Luxury Single Malt Whisky Tasting Set",
+    "description": "Six exceptional single malt Scotch whiskies including rare and aged expressions. The very finest single malts for whisky connoisseurs, worth over £1000.",
+    "image": "https://www.azuspirits.co.uk/AzuSpirits/images/products/luxury-whisky-tasting.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "Azu Spirits"
+    },
+    "sku": "AZU-LUXURY-WHISKY-001",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set",
+      "priceCurrency": "GBP",
+      "price": "95.00",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "Azu Spirits Ltd"
+      }
+    },
+    "category": "Whisky Tasting Gift Sets",
+    "alcoholWarning": "Must be 18 or over to purchase"
+  }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.azuspirits.co.uk"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Whisky Tasting Gift Sets",
+        "item": "https://www.azuspirits.co.uk/whisky-gifts"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Luxury Single Malt Whisky",
+        "item": "https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    .header-inner img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .site-nav li {
+      position: relative;
+    }
+
+    .has-dropdown {
+      position: relative;
+    }
+
+    .has-dropdown > a::after {
+      content: ' ▾';
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+
+    .dropdown-menu {
+      display: none !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 220px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      margin-top: 0.5rem;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+      display: flex !important;
+    }
+
+    .dropdown-menu li {
+      margin: 0 !important;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background: #A4343A;
+      color: white;
+    }
+
+    .site-nav li + li {
+      margin-left: 1.5rem;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+      transition: transform 0.2s;
+    }
+
+    .cart-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #A4343A;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    /* Product Section */
+    .product-container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .product-image-container {
+      position: sticky;
+      top: 2rem;
+      height: fit-content;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+
+    .product-details h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .product-price {
+      font-size: 2rem;
+      color: #A4343A;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+    }
+
+    .product-description {
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .product-features {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      border: 1px solid #ddd;
+    }
+
+    .product-features h3 {
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
+
+    .product-features ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .product-features li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .product-features li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #A4343A;
+      font-weight: bold;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .quantity-selector label {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .quantity-input {
+      display: flex;
+      align-items: center;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .quantity-input button {
+      background: #f5f5f5;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    .quantity-input button:hover {
+      background: #e0e0e0;
+    }
+
+    .quantity-input input {
+      border: none;
+      width: 60px;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    .add-to-cart-btn {
+      background: black;
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .add-to-cart-btn:hover {
+      background: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px;
+      margin-top: 3rem;
+    }
+
+    .footer-badges {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .footer-badges div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-badges img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .footer-badges p {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #555;
+      font-style: italic;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .site-info {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 868px) {
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+        margin-left: 10px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+      
+      .has-dropdown.open .dropdown-menu {
+        display: block;
+      }
+      
+      .has-dropdown > a::after {
+        float: right;
+      }
+      
+      .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-details {
+        order: 1;
+      }
+
+      .product-image-container {
+        order: 2;
+        position: relative;
+        top: 0;
+        margin-top: 2rem;
+      }
+
+      .product-details h1 {
+        font-size: 1.8rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png" onclick="window.location.href='/AzuSpirits/index.html'">
+      
+      <div class="header-right">
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="/AzuSpirits/index.html">Home</a></li>
+            <li class="has-dropdown">
+              <a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a>
+              <ul class="dropdown-menu">
+                <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Gift Sets</a></li>
+                <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Gift Sets</a></li>
+              </ul>
+            </li>
+            <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
+            <li><a href="/AzuSpirits/events">Events</a></li>
+            <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
+            <li><a href="/AzuSpirits/blog">Blog</a></li>
+          </ul>
+        </nav>
+        
+        <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart.html'">
+          🛒
+          <span class="cart-count">0</span>
+        </div>
+        
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="product-container">
+    <div class="product-details">
+      <h1>Luxury Single Malt Whisky: Blind Tasting Gift Set</h1>
+      <div class="product-price">£95.00</div>
+      
+      <div class="product-description">
+        <p>An exceptional collection of six rare and aged single malt Scotch whiskies for the true connoisseur.</p>
+        <p>This luxury blind tasting experience features some of Scotland's most sought-after expressions, with bottles together worth over £1,000. From aged island malts to heavily peated Octomore and rare sherry finishes, discover the pinnacle of Scotch whisky craftsmanship.</p>
+        <p style="margin-top: 10px; font-style: italic; color: white; background-color: #A4343A; padding: 10px;">Featuring Tobermory 24 Hebridean Series, Bunnahabhain 1997 Pedro Ximenez Finish 22 Year Old, Edradour 21, Octomore 14.4 & Dalmore Portwood (selection may vary by availability)</p>
+      </div>
+      
+      <div class="product-features">
+        <h3>What's Included:</h3>
+        <ul>
+          <li>6 Numbered Bottles - Six exceptional single malts, each 30ml</li>
+          <li>Tasting Guide - Expert notes for connoisseur-level blind whisky tasting</li>
+          <li>Information Cards - Detailed insights into rare production techniques and maturation</li>
+          <li>Wax-Sealed Envelope - Contains your blind tasting results, distillery provenance & 10% discount code</li>
+        </ul>
+      </div>
+
+      <div class="quantity-selector">
+        <label for="quantity">Quantity:</label>
+        <div class="quantity-input">
+          <button onclick="decreaseQuantity()">-</button>
+          <input type="number" id="quantity" value="1" min="1" max="10">
+          <button onclick="increaseQuantity()">+</button>
+        </div>
+      </div>
+      
+      <button class="add-to-cart-btn" onclick="addProductToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product-image-container">
+      <img src="/AzuSpirits/images/products/luxury-whisky-tasting.jpg" alt="Luxury single malt whisky tasting gift set" class="product-image">
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <section class="footer-badges">
+      <div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/d96dae12-2182-4384-a646-a5f0f06e30ad/Family.png?format=500w" alt="Family-Run Business">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/db9adba8-55ab-4ea5-8f17-dd2d5df2fb18/Untitled+design+%2837%29.png?format=500w" alt="Woman-Owned Business">
+      </div>
+      <p>Shop with confidence and support small business.</p>
+    </section>
+     
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/shipping-returns">Shipping & Returns</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </nav>
+      <div class="site-info">
+        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/AzuSpirits/js/cart.js"></script>
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    function initMobileDropdowns() {
+      const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
+      
+      if (window.innerWidth <= 768) {
+        dropdownLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', initMobileDropdowns);
+    
+    const product = {
+      id: 'luxury-single-malt-whisky',
+      productId: 'prod_TG6GlsebkwmL1q',
+      priceId: 'price_1SJa3jDLWuae7NssZDfSyGhH',
+      name: 'Luxury Single Malt Whisky: Blind Tasting Gift Set',
+      price: 95.00,
+      image: '/AzuSpirits/images/products/luxury-whisky-tasting.jpg',
+      description: 'Six exceptional single malt Scotch whiskies for connoisseurs',
+      features: [
+        '6 Numbered Bottles - Six exceptional single malts, each 30ml',
+        'Tasting Guide - Expert notes for connoisseur-level tasting',
+        'Information Cards - Detailed insights into rare production',
+        'Wax-Sealed Envelope - Contains results & 10% discount'
+      ]
+    };
+    
+    function increaseQuantity() {
+      const input = document.getElementById('quantity');
+      input.value = parseInt(input.value) + 1;
+    }
+    
+    function decreaseQuantity() {
+      const input = document.getElementById('quantity');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    }
+    
+    function addProductToCart() {
+      const quantity = parseInt(document.getElementById('quantity').value);
+      for (let i = 0; i < quantity; i++) {
+        addToCart(product.id, product.name, product.price, product.image, product.priceId);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -127,13 +127,15 @@ class ShoppingCart {
 // Initialize cart globally
 const cart = new ShoppingCart();
 
-// Add to cart button handler
-function addToCart(productId, productName, productPrice, productImage) {
+// Add to cart button handler (updated to accept priceId)
+function addToCart(productId, productName, productPrice, productImage, priceId) {
   cart.addItem({
     id: productId,
+    priceId: priceId, // Now includes Stripe Price ID
     name: productName,
     price: productPrice,
-    image: productImage
+    image: productImage,
+    quantity: 1
   });
 }
 

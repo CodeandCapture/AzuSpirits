@@ -610,7 +610,7 @@
                 </div>
                 <div class="summary-row">
                     <span>Shipping</span>
-                    <span id="shipping">£4.95</span>
+                    <span id="shipping">£0.00</span>
                 </div>
                 <div class="summary-row total">
                     <span>Total</span>
@@ -712,7 +712,7 @@
 
     // Calculate totals
     const subtotal = cart.getTotal();
-    const shipping = 4.95; // Your shipping cost
+    const shipping = 0.00; // FREE SHIPPING
     const total = subtotal + shipping;
 
     subtotalEl.textContent = `£${subtotal.toFixed(2)}`;

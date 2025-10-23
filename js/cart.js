@@ -153,7 +153,7 @@ const products = {
     priceId: 'price_1SLSdlDLWuae7Nss8iCw26SW',
     image: '/AzuSpirits/images/products/regions-of-scotland-gift.jpg'
   },
-  'six-styles-scotch': {
+  'six-styles-scotch-whicky-tasting-set': {
     name: 'Six Styles of Scotch Tasting Gift Set',
     price: 63.00,
     priceId: 'price_1SLSeHDLWuae7Nss2SEy0Fmy',

@@ -122,25 +122,25 @@ const products = {
   // GIN TASTING SETS (£55 each)
   'cotswolds-gins-tasting-gift': {
     name: 'Craft Gins of the Cotswolds Tasting Gift Set',
-    price: 55.00,
+    price: 52.00,
     priceId: 'price_1SLSSSDLWuae7NssXA2c2K50',
     image: 'https://codeandcapture.github.io/AzuSpirits/images/products/cotswolds-gin-gift-alt1.jpg'
   },
   'london-gins-tasting-gift': {
     name: 'London Gin Tasting Set',
-    price: 55.00,
+    price: 52.00,
     priceId: 'price_1SLSUCDLWuae7NssKYS4Jx7b',
     image: 'https://codeandcapture.github.io/AzuSpirits/images/products/london-gins.jpg'
   },
   'devon-gins-tasting-gift': {
     name: 'Devon Gins Tasting Set',
-    price: 55.00,
+    price: 52.00,
     priceId: 'price_1SLSd6DLWuae7NssLsJuYrMT',
     image: '/AzuSpirits/images/products/devon-gin-tasting.jpg'
   },
   'yorkshire-gin-gift-set': {
     name: 'Yorkshire Gin Gift Set',
-    price: 55.00,
+    price: 52.00,
     priceId: 'price_1SLSX1DLWuae7NssYC9gC2aT',
     image: '/AzuSpirits/images/products/yorkshire-gin.jpg'
   },

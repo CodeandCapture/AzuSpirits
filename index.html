@@ -165,6 +165,36 @@
             font-size: 0.75rem;
             font-weight: bold;
         }
+   /* Christmas Banner */
+        .christmas-banner {
+            background: linear-gradient(135deg, var(--christmas-red) 0%, var(--deep-red) 100%);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+        }
+
+        .christmas-banner span {
+            display: inline-block;
+            margin: 0 10px;
+        }
+    
+     /* Christmas Theme Colors */
+        :root {
+            --christmas-red: #C41E3A;
+            --christmas-green: #165B33;
+            --christmas-gold: #D4AF37;
+            --christmas-silver: #C0C0C0;
+            --deep-red: #8B1538;
+        }
 
 
     /* Hero Section */
@@ -588,9 +618,70 @@
         align-items: center;
       }
     }
+    
+    .bottle-highlights {
+  background: #f8f8f8;
+  padding: 12px;
+  margin: 12px 0;
+  border-left: 3px solid #A4343A;
+  border-radius: 2px;
+}
+
+.bottle-highlights p:first-child {
+  color: #A4343A;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.featured-content {
+  padding: 20px;
+}
+
+.featured-content h3 {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.featured-cta {
+  display: inline-block;
+  background: #A4343A;
+  color: white;
+  padding: 10px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.featured-cta:hover {
+  background: #8B1538;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bottle-highlights p {
+    font-size: 12px !important;
+  }
+  
+  .featured-content h3 {
+    font-size: 18px;
+  }
+}
   </style>
 </head>
 <body>
+  
+  <div class="christmas-banner">
+        USE CODE DISCOVERY FOR 10% OFF <span>•</span> FREE DPD SHIPPING 
+    </div> 
    <header class="site-header">
   <div class="header-inner container">
     <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" style="height: 80px; margin-left: 30px;" onclick="window.location.href='/'">
@@ -640,62 +731,96 @@
   </div>
 </section>
   
+ 
+  
   <section class="featured-collections">
   <div class="container">
     <h2 style="text-align: center; font-size: 28px; margin-bottom: 40px; text-transform: uppercase;">Featured Collections</h2>
     
     <div class="featured-grid">
-      <!-- Whisky Set 1 -->
+      <!-- Whisky Set 1 - Regions of Scotland -->
       <div class="featured-box">
         <div class="featured-image">
-          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland whisky tasting set">  <span class="price-badge">£58</span>
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland whisky tasting set">
+          <span class="price-badge">£58</span>
         </div>
         <div class="featured-content">
           <h3>Regions of Scotland</h3>
-          <p>Tour through Scotland's whisky-making regions. Can you identify the regional characteristics? </p>
-          
-          <a href="/AzuSpirits/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Shop Now</a>
+          <div class="bottle-highlights">
+            <p><strong>Featuring 15-Year Expressions:</strong></p>
+            <p style="font-size: 13px; line-height: 1.6; color: #666; margin: 8px 0;">
+              Glenfiddich 15 Solera • Glen Scotia 15 • Dalmore 12<br>
+              Plus: Ledaig 10, Kilchoman Machir Bay & Bladnoch Vinaya
+            </p>
+          </div>
+          <p style="font-size: 14px; margin-top: 12px;">Tour Scotland's legendary regions. Can you identify each distillery's signature character?</p>
+          <a href="/AzuSpirits/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Explore Scotland</a>
         </div>
       </div>
 
-      <!-- Whisky Set 2 -->
+      <!-- Whisky Set 2 - Six Styles of Scotch -->
       <div class="featured-box">
         <div class="featured-image">
-          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-alt2.jpg" alt="Six styles of Scotch whisky tasting set for beginners">  <span class="price-badge">£62</span>
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/six-styles-scotch-alt2.jpg" alt="Six styles of Scotch whisky tasting set for beginners">
+          <span class="price-badge">£63</span>
         </div>
         <div class="featured-content">
           <h3>Six Styles of Scotch</h3>
-          <p>Perfect for beginners discovering what they like best. Classic styles, expertly curated.</p>
-          <a href="/AzuSpirits/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">Shop Now</a>
+          <div class="bottle-highlights">
+            <p><strong>Includes Rare 18-Year Expression:</strong></p>
+            <p style="font-size: 13px; line-height: 1.6; color: #666; margin: 8px 0;">
+              Ledaig 18 (£140 bottle) • Oban 14 • Talisker 10<br>
+              Plus: Glenkinchie 12, Auchentoshan American Oak & Glen Moray Peated
+            </p>
+          </div>
+          <p style="font-size: 14px; margin-top: 12px;">From smooth & sweet to bold & peaty. Discover your perfect style before investing in full bottles.</p>
+          <a href="/AzuSpirits/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">Find Your Style</a>
         </div>
       </div>
 
-      <!-- Gin Set 1 -->
+      <!-- Whisky Set 3 - Luxury Single Malt -->
       <div class="featured-box">
         <div class="featured-image">
-          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/cotswolds-gin-gift-alt1.jpg" alt="Cotswolds craft gin tasting set">  <span class="price-badge">£52</span>
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/luxury-single-malt.jpg" alt="Luxury single malt whisky tasting set">
+          <span class="price-badge">£110</span>
+        </div>
+        <div class="featured-content">
+          <h3>Luxury Single Malt</h3>
+          <div class="bottle-highlights">
+            <p><strong>Extraordinary Aged Expressions:</strong></p>
+            <p style="font-size: 13px; line-height: 1.6; color: #666; margin: 8px 0;">
+              Bunnahabhain 22 Year PX Finish (£350+ bottle)<br>
+              Tobermory 24 Hebridean Series • Edradour 21<br>
+              Octomore 14.4 • Dalmore Portwood
+            </p>
+          </div>
+          <p style="font-size: 14px; margin-top: 12px;">Ultra-premium whiskies rarely available in tasting format. An exceptional collection for the discerning enthusiast.</p>
+          <a href="/AzuSpirits/products/luxury-single-malt-whisky-tasting-set" class="featured-cta">Experience Luxury</a>
+        </div>
+      </div>
+
+      <!-- Gin Set 1 - Cotswolds -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/cotswolds-gin-gift-alt1.jpg" alt="Cotswolds craft gin tasting set">
+          <span class="price-badge">£55</span>
         </div>
         <div class="featured-content">
           <h3>Craft Gins of the Cotswolds</h3>
-          <p>Six premium gins handpicked from the Cotswolds. Perfect for countryside lovers.</p>
-          <a href="/AzuSpirits/products/cotswolds-gin-tasting-set" class="featured-cta">Shop Now</a>
-        </div>
-      </div>
-
-      <!-- Gin Set 2 -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <img src="https://codeandcapture.github.io/AzuSpirits/images/products/london-gins.jpg" alt="London dry gin tasting gift set">  <span class="price-badge">£52</span>
-        </div>
-        <div class="featured-content">
-          <h3>London Gins</h3>
-          <p>Iconic London Dry gins with classic botanicals and bold flavors. A refined selection.</p>
-          <a href="/AzuSpirits/products/london-gins-tasting-gift" class="featured-cta">Shop Now</a>
+          <div class="bottle-highlights">
+            <p><strong>Award-Winning Artisan Distilleries:</strong></p>
+            <p style="font-size: 13px; line-height: 1.6; color: #666; margin: 8px 0;">
+              Six premium craft gins from England's most beautiful countryside, expertly curated to showcase distinct botanical profiles
+            </p>
+          </div>
+          <p style="font-size: 14px; margin-top: 12px;">Each distillery crafts unique expressions celebrating local botanicals and traditional methods.</p>
+          <a href="/AzuSpirits/products/cotswolds-gin-tasting-set" class="featured-cta">Taste the Cotswolds</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
   
   <section style="background-color:white; background-size: cover; height: auto; padding: 20px 20px; color: black; position: relative; text-align: center; margin: 20px;">
@@ -703,14 +828,7 @@
   </section>
   
   <footer class="site-footer" style="padding: 20px;">
-    <section style="background:#fffff; padding:10px; border-radius:12px; margin-bottom:10px; text-align:center;">
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px;">
-        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/d96dae12-2182-4384-a646-a5f0f06e30ad/Family.png?format=500w" alt="Family-Run Business" style="max-width:150px; height:auto;">
-        <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/db9adba8-55ab-4ea5-8f17-dd2d5df2fb18/Untitled+design+%2837%29.png?format=500w" alt="Woman-Owned Business" style="max-width:150px; height:auto;">
-      </div>
-      <p style="margin-top:15px; font-size:25px; color:#555; font-style: italic;">Shop with confidence and support small business.</p>
-    </section>
-     
+  
     <div class="footer-inner container">
       <nav class="footer-nav">
         <ul>

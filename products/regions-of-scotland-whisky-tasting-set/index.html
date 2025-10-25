@@ -600,6 +600,11 @@
     .view-cart-link:hover {
       color: #8B1538;
     }
+    
+        /* Mobile Hero Image - hidden on desktop */
+    .mobile-hero-image {
+      display: none;
+    }
 
     /* Footer Styles */
     .site-footer {
@@ -802,6 +807,26 @@
         left: 10px;
         min-width: auto;
       }
+      
+         /* Show mobile hero image */
+      .mobile-hero-image {
+        display: block;
+        order: 0;  /* Shows first */
+        margin-bottom: 2rem;
+      }
+
+      .mobile-hero-image .product-image {
+        margin-bottom: 0;
+      }
+
+      /* Hide the full image gallery on mobile */
+      .product-image-container {
+        display: none;
+      }
+
+      .product-details {
+        order: 1;
+      }
     }
   </style>
 </head>
@@ -857,6 +882,14 @@
 
   <!-- Product Section -->
   <div class="product-container">
+      
+    <!-- MOBILE HERO IMAGE - Shows first on mobile only -->
+    <div class="mobile-hero-image">
+      <img src="https://codeandcapture.github.io/AzuSpirits/images/products/regions-of-scotland-alt3.jpg" 
+           alt="Product Name"
+           class="product-image">
+    </div>
+    
     
     <!-- Product Images -->
     <div class="product-image-container">
@@ -884,6 +917,22 @@
         £58.00
         <span class="savings-badge">Save 10% with code DISCOVERY</span>
       </div>
+      
+        <!-- Quantity and Add to Cart -->
+      <div class="quantity-selector">
+        <label for="quantity">Quantity:</label>
+        <div class="quantity-input">
+          <button onclick="decreaseQuantity()">−</button>
+          <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+          <button onclick="increaseQuantity()">+</button>
+        </div>
+      </div>
+
+      <button class="add-to-cart-btn" onclick="addToCart()">
+        Add to Cart
+      </button>
+
+  
 
       <!-- Premium Spirits Highlight -->
       <div class="premium-spirits-box">
@@ -954,22 +1003,7 @@
           <li>Free DPD delivery (UK)</li>
         </ul>
       </div>
-
-      <!-- Quantity and Add to Cart -->
-      <div class="quantity-selector">
-        <label for="quantity">Quantity:</label>
-        <div class="quantity-input">
-          <button onclick="decreaseQuantity()">−</button>
-          <input type="number" id="quantity" value="1" min="1" max="10" readonly>
-          <button onclick="increaseQuantity()">+</button>
-        </div>
-      </div>
-
-      <button class="add-to-cart-btn" onclick="addToCart()">
-        Add to Cart
-      </button>
-
-      <!-- Trust Badges -->
+    <!-- Trust Badges -->
       <div class="trust-badges">
         <div class="trust-badge">Free DPD Delivery</div>
         <div class="trust-badge">18+ Only</div>
@@ -986,6 +1020,7 @@
       <a href="/cart.html" class="view-cart-link">View Cart & Checkout →</a>
     </div>
   </div>
+    
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -1118,4 +1153,3 @@
   </script>
 </body>
 </html>
- 

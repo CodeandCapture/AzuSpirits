@@ -410,7 +410,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
     cursor: pointer;
   }
 
@@ -530,32 +531,6 @@
     font-size: 20px;
   }
 
-  /* Carousel Controls (optional - dots) */
-  .carousel-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 2;
-  }
-
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .carousel-dot.active {
-    background: white;
-    width: 24px;
-    border-radius: 4px;
-  }
-    
      /* Hero Carousel Container */
   .hero-carousel {
     position: relative;
@@ -574,6 +549,7 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
     position: absolute;
+        box-sizing: border-box;
     top: 0;
     left: 0;
     width: 100%;
@@ -622,6 +598,7 @@
     gap: 15px;
     flex-wrap: wrap;
     margin-top: 25px;
+    
   }
 
   .primary-cta {
@@ -904,7 +881,7 @@
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .featured-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1053,13 +1030,16 @@
   border-radius: 4px; /* Optional: rounded corners */
   font-weight: 500;
   text-transform: uppercase;
-  transition: all 0.3s ease; /* Smooth hover effect */
+  transition: all 0.3s ease; 
+  box-sizing: border-box;
+  
 }
 
 .primary-cta:hover {
   background-color: #A4343A;
   color: white;
   transform: translateY(-2px); /* Optional: subtle lift effect */
+ 
 }
 
     /* Mobile Styles */
@@ -1070,7 +1050,7 @@
     }
 
     .banner-christmas .banner-content {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .banner-christmas .festive-icon {
@@ -1328,10 +1308,10 @@
   <div class="hero-slide hero-slide-2">
     <div class="overlay">
       <span class="christmas-badge">🎄 Limited Edition 🎄</span>
-      <h1>Christmas Whisky Crackers</h1>
-      <h2>Four premium single malts in luxury festive crackers. The perfect gift for whisky lovers this Christmas. </h2>
+      <h1>Scotch Whisky & Christmas Crackers</h1>
+      <h2>Four premium single malts or gins in luxury festive crackers. The perfect gift for spirits lovers this Christmas. </h2>
       <div class="cta-buttons">
-        <a href="/AzuSpirits/products/whisky-christmas-crackers" class="primary-cta">Shop Crackers - £58</a>
+        <a href="/AzuSpirits/products/whisky-christmas-crackers" class="primary-cta">Shop Crackers</a>
         <a href="/AzuSpirits/christmas-gifts" class="primary-cta">View All Christmas Gifts</a>
       </div>
     </div>
@@ -1604,7 +1584,7 @@ function goToBannerSlide(index) {
 }
 
 function startBannerAutoPlay() {
-  bannerAutoPlayInterval = setInterval(nextBannerSlide, 5000);
+  bannerAutoPlayInterval = setInterval(nextBannerSlide, 8000);
 }
 
 // Pause banner on hover

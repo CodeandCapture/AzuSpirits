@@ -1118,10 +1118,12 @@
     function addToCart() {
       const product = {
         id: 'regions-of-scotland-whisky-tasting-set',
-        name: 'Regions of Scotland Whisky Tasting Set',
+        name: 'Regions of Scotland Whisky Tasting Gift Set',
+        productId: 'prod_TG67VFHJ5aPE76',
+        priceId: 'price_1SLSdlDLWuae7Nss8iCw26SW',
         price: 58.00,
         quantity: parseInt(document.getElementById('quantity').value),
-        image: 'https://codeandcapture.github.io/AzuSpirits/images/products/regions-of-scotland-gift.jpg'
+        image: '/AzuSpirits/images/products/regions-of-scotland-gift.jpg'
       };
 
       let cart = JSON.parse(localStorage.getItem('cart')) || [];

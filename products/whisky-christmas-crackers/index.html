@@ -581,6 +581,54 @@
             line-height: 1.8;
         }
 
+        .cart-notification {
+      position: fixed;
+      pointer-events: none;
+      top: 120px;
+      right: 20px;
+      background: linear-gradient(135deg, white, #fafafa);
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s;
+      z-index: 10000;
+      border: 3px solid var(--luxury-gold);
+      min-width: 320px;
+    }
+
+    .cart-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .notification-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .notification-content strong {
+      color: var(--deep-burgundy);
+      font-size: 18px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .view-cart-link {
+      color: var(--deep-burgundy);
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 8px;
+      transition: color 0.3s;
+    }
+
+    .view-cart-link:hover {
+      color: var(--luxury-gold);
+    }
+
+
         /* Footer Styles */
         .site-footer {
             background: white;
@@ -896,7 +944,13 @@ Small Batch - Only 50 sets available • Secure yours today
             <p>Premium aged Highland. Rich honeyed character, stewed fruits and sherried tones. Perfectly balanced and smooth.</p>
         </div>
 
-        
+        <div class="cart-notification" id="cart-notification">
+    <div class="notification-content">
+      <strong>✓ Added to Cart</strong>
+      <span>Luxury Single Malt Whisky has been added to your cart.</span>
+      <a href="/cart.html" class="view-cart-link">View Cart & Checkout →</a>
+    </div>
+  </div>
 
     <footer class="site-footer">
         <section class="footer-badges">

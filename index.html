@@ -553,11 +553,14 @@
     top: 0;
     left: 0;
     width: 100%;
+    pointer-events: none;
   }
 
   .hero-slide.active {
     opacity: 1;
     position: relative;
+    pointer-events: auto;
+    
   }
 
   /* Slide 1: Original Tasting Sets */
@@ -591,36 +594,7 @@
     margin-bottom: 20px;
   }
 
-  /* CTA Buttons */
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-    
-  }
-
-  .primary-cta {
-    background-color: #D4AF37;
-    color: #1a1a1a;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    transition: all 0.3s;
-    display: inline-block;
-    font-size: 14px;
-  }
-
-  .primary-cta:hover {
-    background-color: #C41E3A;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
+  
 
   /* Christmas badge */
   .christmas-badge {

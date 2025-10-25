@@ -600,38 +600,173 @@
     }
   }
     
-   
-    /* Hero Section */
-    section.hero {
-      background-image: url('https://codeandcapture.github.io/AzuSpirits/images/products/tasting-gift-sets.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: auto;
-      padding: 60px 20px;
-      color: white;
-      position: relative;
+     /* Hero Carousel Container */
+  .hero-carousel {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .hero-slide {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    padding: 60px 20px;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+    position: relative;
+  }
+
+  /* Slide 1: Original Tasting Sets */
+  .hero-slide-1 {
+    background-image: url('https://codeandcapture.github.io/AzuSpirits/images/products/tasting-gift-sets.jpg');
+  }
+
+  /* Slide 2: Christmas Crackers */
+  .hero-slide-2 {
+    background-image: url('https://codeandcapture.github.io/AzuSpirits/images/products/london-gin-christmas-crackers.jpg');
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px 20px;
+    border-radius: 8px;
+  }
+
+  .hero-slide h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .hero-slide h2 {
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* CTA Buttons */
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+  }
+
+  .primary-cta {
+    background-color: #D4AF37;
+    color: #1a1a1a;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .primary-cta:hover {
+    background-color: #C41E3A;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+
+  /* Christmas badge */
+  .christmas-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.25);
+    color: #D4AF37;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Carousel Navigation Dots */
+  .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+  }
+
+  .dot.active {
+    background: #D4AF37;
+    border-color: white;
+    transform: scale(1.2);
+  }
+
+  .dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .hero-slide h1 {
+      font-size: 24px;
     }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px 20px;
+    .hero-slide h2 {
+      font-size: 16px;
     }
 
-    .hero h1 {
-      font-size: 30px;
-      text-transform: uppercase;
-      font-weight: 200;
-      text-align: center;
-      margin-bottom: 20px;
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
     }
-    
-    .hero h2 {
-      font-size: 20px;
-      font-weight: 200;
+
+    .primary-cta {
+      width: 100%;
+      max-width: 300px;
       text-align: center;
-      margin-bottom: 20px;
     }
+
+    .carousel-dots {
+      bottom: 15px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
+ 
 
     /* Main Section */
     section.main {
@@ -1177,17 +1312,41 @@
   </div>
 </header>
   
-  <section class="hero">
-  <div class="overlay">
-    <h1>Unique Scotch Whisky & Gin Tasting Gift Sets</h1>
-    <h2>Blind tasting experience gifts made for spirit lovers. From curious beginners to seasoned enthusiasts.</h2>
-    <div class="cta-buttons">
-      <a href="/AzuSpirits/whisky-gifts" class="primary-cta">Shop Whisky Sets</a>
-      <a href="/AzuSpirits/gin-gifts" class="primary-cta">Shop Gin Sets</a>
+  <section class="hero-carousel">
+  
+  <!-- Slide 1: Original Tasting Sets -->
+  <div class="hero-slide hero-slide-1 active">
+    <div class="overlay">
+      <h1>Unique Scotch Whisky & Gin Tasting Gift Sets</h1>
+      <h2>Blind tasting experience gifts made for spirit lovers. From curious beginners to seasoned enthusiasts.</h2>
+      <div class="cta-buttons">
+        <a href="/AzuSpirits/whisky-gifts" class="primary-cta">Shop Whisky Sets</a>
+        <a href="/AzuSpirits/gin-gifts" class="primary-cta">Shop Gin Sets</a>
+      </div>
     </div>
-    
   </div>
+
+  <!-- Slide 2: Christmas Crackers -->
+  <div class="hero-slide hero-slide-2">
+    <div class="overlay">
+      <span class="christmas-badge">🎄 Limited Edition 🎄</span>
+      <h1>Christmas Whisky Crackers</h1>
+      <h2>Four premium single malts in luxury festive crackers. The perfect gift for whisky lovers this Christmas. </h2>
+      <div class="cta-buttons">
+        <a href="/AzuSpirits/products/whisky-christmas-crackers" class="primary-cta">Shop Crackers - £58</a>
+        <a href="/AzuSpirits/christmas-gifts" class="primary-cta">View All Christmas Gifts</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="carousel-dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+  </div>
+
 </section>
+ 
   
  
   
@@ -1410,58 +1569,109 @@
       }
     });
   </script>
-  <script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.banner-slide');
-  const dots = document.querySelectorAll('.carousel-dot');
-  const totalSlides = slides.length;
-  let autoPlayInterval;
+  
+  
+<!-- FIXED JAVASCRIPT - REPLACE YOUR EXISTING CAROUSEL SCRIPTS -->
+<!-- Place this at the bottom of your page, BEFORE </body> -->
 
-  // Function to show a specific slide
-  function showSlide(index) {
-    // Remove active class from all slides and dots
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Add active class to current slide and dot
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-    
-    currentSlide = index;
-  }
+<script>
+// ========================================
+// BANNER CAROUSEL (Top rotating banner)
+// ========================================
+let currentBannerSlide = 0;
+const bannerSlides = document.querySelectorAll('.banner-slide');
+const bannerDots = document.querySelectorAll('.carousel-dot');
+const totalBannerSlides = bannerSlides.length;
+let bannerAutoPlayInterval;
 
-  // Function to go to next slide
-  function nextSlide() {
-    let next = (currentSlide + 1) % totalSlides;
-    showSlide(next);
-  }
+function showBannerSlide(index) {
+  bannerSlides.forEach(slide => slide.classList.remove('active'));
+  bannerDots.forEach(dot => dot.classList.remove('active'));
+  
+  bannerSlides[index].classList.add('active');
+  bannerDots[index].classList.add('active');
+  
+  currentBannerSlide = index;
+}
 
-  // Function to go to specific slide (for dots)
-  function goToSlide(index) {
-    showSlide(index);
-    // Reset autoplay
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-  }
+function nextBannerSlide() {
+  let next = (currentBannerSlide + 1) % totalBannerSlides;
+  showBannerSlide(next);
+}
 
-  // Auto-play functionality
-  function startAutoPlay() {
-    autoPlayInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
-  }
+function goToBannerSlide(index) {
+  showBannerSlide(index);
+  clearInterval(bannerAutoPlayInterval);
+  startBannerAutoPlay();
+}
 
-  // Pause on hover
-  const carousel = document.querySelector('.banner-carousel');
-  carousel.addEventListener('mouseenter', () => {
-    clearInterval(autoPlayInterval);
+function startBannerAutoPlay() {
+  bannerAutoPlayInterval = setInterval(nextBannerSlide, 5000);
+}
+
+// Pause banner on hover
+const bannerCarousel = document.querySelector('.banner-carousel');
+if (bannerCarousel) {
+  bannerCarousel.addEventListener('mouseenter', () => {
+    clearInterval(bannerAutoPlayInterval);
   });
 
-  carousel.addEventListener('mouseleave', () => {
-    startAutoPlay();
+  bannerCarousel.addEventListener('mouseleave', () => {
+    startBannerAutoPlay();
+  });
+}
+
+// Start banner autoplay
+startBannerAutoPlay();
+
+// ========================================
+// HERO CAROUSEL (Main hero section)
+// ========================================
+let currentHeroSlide = 0;
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots = document.querySelectorAll('.carousel-dots .dot');
+let heroAutoPlayInterval;
+
+function showHeroSlide(index) {
+  heroSlides.forEach(slide => slide.classList.remove('active'));
+  heroDots.forEach(dot => dot.classList.remove('active'));
+  
+  heroSlides[index].classList.add('active');
+  heroDots[index].classList.add('active');
+  
+  currentHeroSlide = index;
+}
+
+function nextHeroSlide() {
+  let next = (currentHeroSlide + 1) % heroSlides.length;
+  showHeroSlide(next);
+}
+
+function goToSlide(index) {
+  showHeroSlide(index);
+  clearInterval(heroAutoPlayInterval);
+  startHeroAutoPlay();
+}
+
+function startHeroAutoPlay() {
+  heroAutoPlayInterval = setInterval(nextHeroSlide, 10000);
+}
+
+// Pause hero on hover (optional)
+const heroCarousel = document.querySelector('.hero-carousel');
+if (heroCarousel) {
+  heroCarousel.addEventListener('mouseenter', () => {
+    clearInterval(heroAutoPlayInterval);
   });
 
-   
-  // Start autoplay on page load
-  startAutoPlay();
+  heroCarousel.addEventListener('mouseleave', () => {
+    startHeroAutoPlay();
+  });
+}
+
+// Start hero autoplay
+startHeroAutoPlay();
 </script>
+  
 </body>
 </html>

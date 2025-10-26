@@ -172,11 +172,11 @@ const products = {
   },
   
   // CHRISTMAS CRACKERS
-  'scotch-whisky-christmas-crackers': {
-    name: 'Scotch Whisky Christmas Crackers',
+  'luxury-whisky-christmas-crackers': {
+    name: 'Luxury Whisky Christmas Crackers',
     price: 58.00,
     priceId: 'price_1SLSiIDLWuae7NssttgxBG5i',
-    image: '/AzuSpirits/images/products/christmas-crackers-whisky-main.jpg'
+    image: '/AzuSpirits/images/products/christmas-crackers-whisky-alt1.jpg'
   }
 };
 

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scotch Whisky Christmas Crackers | Limited Edition Gift Set | Azu Spirits</title>
-    <meta name="description" content="Limited edition Scotch Whisky Christmas Crackers. Six premium single malt samples beautifully packaged in festive crackers. The perfect luxury gift for whisky lovers this Christmas." />
+    <title>Luxury Whisky Christmas Crackers | Premium Single Malts | Azu Spirits</title>
+    <meta name="description" content="Limited edition Luxury Whisky Christmas Crackers featuring Lagavulin 16, Auchentoshan American Oak, Aberfeldy 16 & Kilchoman Machir Bay. Four premium 30ml samples in beautifully crafted festive crackers." />
     
     <!-- Product Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org/",
         "@type": "Product",
-        "name": "Scotch Whisky Christmas Crackers",
-        "description": "Limited edition Christmas crackers containing six high end single malt Scotch whiskies. Each cracker contains a 30ml sample, tasting notes, and festive surprises.",
+        "name": "Luxury Whisky Christmas Crackers",
+        "description": "Limited edition Christmas crackers containing four exceptional single malt Scotch whiskies. Each cracker contains a 30ml sample, tasting card, fun fact, and festive surprises.",
         "image": "https://codeandcapture.github.io/AzuSpirits/images/products/scotch-whisky-christmas-crackers.jpg",
         "brand": {
             "@type": "Brand",
@@ -40,7 +40,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -51,23 +51,22 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            color: #2c2c2c;
+            color: #333;
             line-height: 1.6;
-            background: #fafafa;
+            background: #fff;
         }
 
-        /* Christmas Theme Colors */
+        /* Color Variables */
         :root {
-            --christmas-red: #C41E3A;
-            --christmas-green: #165B33;
+            --primary-red: #A4343A;
+            --dark-red: #8B1538;
             --christmas-gold: #D4AF37;
-            --christmas-silver: #C0C0C0;
-            --deep-red: #8B1538;
+            --light-grey: #f8f8f8;
         }
 
         /* Header Styles */
         .site-header {
-            background: #f8f8f8;
+            background: var(--light-grey);
             border-bottom: 1px solid #ddd;
             padding: 20px;
         }
@@ -143,7 +142,7 @@
         }
 
         .dropdown-menu a:hover {
-            background: #A4343A;
+            background: var(--primary-red);
             color: white;
         }
 
@@ -188,7 +187,7 @@
             position: absolute;
             top: -8px;
             right: -8px;
-            background: var(--christmas-red);
+            background: var(--primary-red);
             color: white;
             border-radius: 50%;
             width: 20px;
@@ -202,467 +201,392 @@
 
         /* Christmas Banner */
         .christmas-banner {
-            background: linear-gradient(135deg, var(--christmas-red) 0%, var(--deep-red) 100%);
+            background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
             color: white;
             text-align: center;
-            padding: 15px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.95; }
-        }
-
-        .christmas-banner span {
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        /* Limited Edition Badge */
-        .limited-badge {
-            background: var(--christmas-gold);
-            color: #000;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            padding: 12px 20px;
+             font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
         }
 
         /* Product Container */
         .product-container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+            margin: 60px auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+            gap: 60px;
+            align-items: start;
         }
 
         .product-image-container {
             position: sticky;
-            top: 2rem;
-            height: fit-content;
+            top: 20px;
         }
 
         .product-image {
             width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            margin-bottom: 1rem;
-            transition: transform 0.3s;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
 
-        .product-image:hover {
-            transform: scale(1.02);
-        }
-
-        /* Christmas decorative elements */
+        /* Product Details */
         .product-details {
-            position: relative;
+            padding: 20px 0;
         }
 
-        .product-details::before {
-            content: "🎄";
-            position: absolute;
-            top: -20px;
-            right: 20px;
-            font-size: 2.5rem;
-            opacity: 0.15;
-            animation: sway 3s ease-in-out infinite;
-        }
-
-        @keyframes sway {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
+        .limited-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--christmas-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
         .product-details h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--deep-red);
-            font-weight: 700;
+            font-size: 36px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 20px;
             line-height: 1.2;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .product-price {
-            font-size: 2.2rem;
-            color: var(--christmas-red);
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary-red);
+            margin-bottom: 20px;
         }
 
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.5rem;
-            font-weight: normal;
+        .stock-warning {
+            background: var(--light-grey);
+            border-left: 3px solid var(--primary-red);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
         }
 
         .product-description {
-            margin-bottom: 2rem;
-            line-height: 1.9;
-            color: #444;
-            font-size: 1.05rem;
+            margin-bottom: 35px;
         }
 
         .product-description p {
-            margin-bottom: 1rem;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #f8f0e3 0%, #fef9f3 100%);
-            border-left: 4px solid var(--christmas-gold);
-            padding: 1.2rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-            font-style: italic;
-            color: #333;
+        /* Premium Whiskies Section */
+        .premium-whiskies {
+            background: var(--light-grey);
+            padding: 25px;
+            border-radius: 6px;
+            margin: 30px 0;
         }
 
-        /* Product Features - Christmas Style */
-        .product-features {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-            padding: 1.8rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border: 2px solid var(--christmas-gold);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
-        }
-
-        .product-features h3 {
-            margin-bottom: 1.2rem;
-            color: var(--deep-red);
+        .premium-whiskies h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--primary-red);
+            margin-bottom: 20px;
             text-transform: uppercase;
-            font-size: 1.2rem;
-            font-weight: 700;
             letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        .product-features h3::before {
-            content: "🎁";
-            font-size: 1.5rem;
+        .whisky-list {
+            display: grid;
+            gap: 15px;
         }
 
-        .product-features ul {
-            list-style: none;
-            padding-left: 0;
+        .whisky-item-compact {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--christmas-gold);
         }
 
-        .product-features li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.05rem;
+        .whisky-item-compact h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
         }
 
-        .product-features li:before {
-            content: "✨";
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
+        .whisky-item-compact p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
         }
 
-        /* Christmas Highlights Grid */
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 25px 0;
+        }
+
+        /* Feature Cards */
         .christmas-highlights {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 35px 0;
         }
 
         .highlight-card {
             background: white;
-            border: 2px solid #f0f0f0;
-            border-radius: 10px;
-            padding: 1.2rem;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 6px;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .highlight-card:hover {
-            border-color: var(--christmas-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
         }
 
         .highlight-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
         .highlight-card h4 {
-            color: var(--deep-red);
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.3rem;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
         }
 
         .highlight-card p {
-            font-size: 0.9rem;
+            font-size: 12px;
             color: #666;
         }
 
-        /* Quantity and Button */
+        /* Product Features */
+        .product-features {
+            background: white;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+
+        .product-features h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-features ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .product-features ul li:last-child {
+            border-bottom: none;
+        }
+
+        .product-features ul li:before {
+            content: "✓";
+            color: var(--primary-red);
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        /* Quantity Selector */
         .quantity-selector {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 15px;
+            margin: 30px 0;
         }
 
         .quantity-selector label {
-            font-weight: bold;
-            text-transform: uppercase;
-            color: var(--deep-red);
+            font-weight: 600;
+            font-size: 14px;
         }
 
         .quantity-input {
             display: flex;
-            align-items: center;
-            border: 2px solid var(--christmas-gold);
-            border-radius: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
             overflow: hidden;
         }
 
         .quantity-input button {
-            background: #f5f5f5;
+            background: var(--light-grey);
             border: none;
-            padding: 0.6rem 1.2rem;
+            padding: 10px 20px;
             cursor: pointer;
-            font-size: 1.3rem;
-            transition: background 0.3s;
-            font-weight: bold;
-            color: var(--deep-red);
+            font-size: 18px;
+            font-weight: 600;
+            transition: background 0.2s;
         }
 
         .quantity-input button:hover {
-            background: var(--christmas-gold);
-            color: white;
+            background: #e0e0e0;
         }
 
         .quantity-input input {
             border: none;
-            width: 70px;
             text-align: center;
-            font-size: 1.1rem;
-            padding: 0.6rem;
-            font-weight: bold;
+            width: 60px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px;
         }
 
+        /* Add to Cart Button */
         .add-to-cart-btn {
-            background: linear-gradient(135deg, var(--christmas-red) 0%, var(--deep-red) 100%);
+            width: 100%;
+            background: var(--primary-red);
             color: white;
             border: none;
-            padding: 1.2rem 3rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
+            padding: 18px 30px;
+            font-size: 16px;
+            font-weight: 600;
             text-transform: uppercase;
-            font-family: 'Montserrat', sans-serif;
             letter-spacing: 1px;
-            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .add-to-cart-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.6);
-        }
-
-        .add-to-cart-btn:active {
-            transform: translateY(-1px);
-        }
-
-        /* Stock Warning */
-        .stock-warning {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            color: #856404;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-            animation: warning-pulse 2s infinite;
-        }
-
-        @keyframes warning-pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
-        }
-
-        .stock-warning::before {
-            content: "⚠️ ";
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(164, 52, 58, 0.3);
         }
 
         /* What's Inside Section */
         .whats-inside-section {
-            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 2rem auto;
             max-width: 1200px;
-            border: 2px solid var(--christmas-gold);
+            margin: 80px auto;
+            padding: 60px 20px;
+            background: var(--light-grey);
         }
 
         .whats-inside-section h2 {
-            text-align: center;
-            color: var(--deep-red);
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #222;
         }
 
-        .whats-inside-section h2::before,
-        .whats-inside-section h2::after {
-            content: "❄️";
-            margin: 0 15px;
-            opacity: 0.6;
+        .whisky-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
 
         .whisky-item {
             background: white;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--christmas-red);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            transition: all 0.3s;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
         }
 
         .whisky-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
         }
 
         .whisky-item h3 {
-            color: var(--christmas-red);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 20px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
         }
 
         .whisky-item p {
+            font-size: 14px;
+            line-height: 1.7;
             color: #555;
-            line-height: 1.8;
         }
 
+        /* Cart Notification */
         .cart-notification {
-      position: fixed;
-      pointer-events: none;
-      top: 120px;
-      right: 20px;
-      background: linear-gradient(135deg, white, #fafafa);
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.3s;
-      z-index: 10000;
-      border: 3px solid var(--luxury-gold);
-      min-width: 320px;
-    }
-
-    .cart-notification.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .notification-content {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .notification-content strong {
-      color: var(--deep-burgundy);
-      font-size: 18px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .view-cart-link {
-      color: var(--deep-burgundy);
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 8px;
-      transition: color 0.3s;
-    }
-
-    .view-cart-link:hover {
-      color: var(--luxury-gold);
-    }
-
-
-        /* Footer Styles */
-        .site-footer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
             background: white;
-            color: black;
-            padding: 40px 20px;
-            margin-top: 3rem;
-        }
-
-        .footer-badges {
-            background: #fff;
+            border: 1px solid #ddd;
+            border-left: 4px solid var(--primary-red);
             padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            z-index: 10000;
+            opacity: 0;
+            transform: translateX(400px);
+            transition: all 0.4s ease;
         }
 
-        .footer-badges div {
+        .cart-notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .notification-content {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .footer-badges img {
-            max-width: 150px;
-            height: auto;
+        .notification-content strong {
+            color: var(--primary-red);
+            font-size: 16px;
         }
 
-        .footer-badges p {
-            margin-top: 15px;
-            font-size: 20px;
-            color: #555;
-            font-style: italic;
+        .view-cart-link {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .view-cart-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--light-grey);
+            border-top: 1px solid #ddd;
+            padding: 40px 20px;
+            margin-top: 60px;
         }
 
         .footer-inner {
@@ -677,32 +601,59 @@
 
         .footer-nav ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
             display: flex;
+            gap: 30px;
             flex-wrap: wrap;
-            gap: 1.5rem;
         }
 
         .footer-nav a {
             text-decoration: none;
-            color: white;
+            color: #666;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--primary-red);
         }
 
         .site-info {
-            font-size: 0.9rem;
-            color: #ccc;
+            font-size: 14px;
+            color: #666;
         }
 
-        /* Responsive - Mobile */
+        /* Mobile Responsive */
         @media (max-width: 868px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 30px auto;
+            }
+
+            .product-image-container {
+                position: relative;
+                top: 0;
+            }
+
+            .product-details h1 {
+                font-size: 28px;
+            }
+
+            .christmas-highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .whisky-grid {
+                grid-template-columns: 1fr;
+            }
+
             .site-nav {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: #f8f8f8;
+                background: var(--light-grey);
                 border-top: 1px solid #ddd;
                 padding: 1rem;
                 z-index: 100;
@@ -731,7 +682,6 @@
 
             .header-inner img {
                 height: 60px;
-                margin-left: 10px;
             }
 
             .dropdown-menu {
@@ -748,77 +698,31 @@
                 display: block;
             }
 
-            .has-dropdown > a::after {
-                float: right;
-            }
-
             .dropdown-menu a {
                 padding-left: 2rem;
                 font-size: 0.95rem;
             }
 
-            /* Mobile: Image FIRST, then details */
-            .product-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 2rem 1rem;
-                display: flex;
+            .footer-nav ul {
                 flex-direction: column;
-            }
-
-            .product-image-container {
-                order: 1;
-                position: relative;
-                top: 0;
-                margin-bottom: 1rem;
-            }
-
-            .product-details {
-                order: 2;
-            }
-
-            .product-details h1 {
-                font-size: 2rem;
-            }
-
-            .product-price {
-                font-size: 1.8rem;
-            }
-
-            .christmas-highlights {
-                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
             }
-
-            .footer-nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .christmas-banner {
-                font-size: 0.9rem;
-                padding: 12px;
-            }
-
-            .whats-inside-section h2 {
-                font-size: 1.8rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="christmas-banner">
-        🎄 LIMITED EDITION CHRISTMAS RELEASE <span>•</span> MADE IN SMALL BATCHES <span>•</span> PERFECT LUXURY GIFT 🎁
+        🎄 Limited Edition • Only 50 Sets Available • Order Now for Christmas Delivery 🎁
     </div>
 
     <header class="site-header">
         <div class="header-inner">
-            <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" alt="Azu Spirits" onclick="window.location.href='/AzuSpirits/index.html'">
-            
+            <img src="https://codeandcapture.github.io/AzuSpirits/images/brand/logo.jpg" onclick="window.location.href='/'">
             <div class="header-right">
                 <nav class="site-nav" id="siteNav">
                     <ul>
@@ -831,7 +735,6 @@
                             </ul>
                         </li>
                         <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
-                        <li><a href="/AzuSpirits/events">Events</a></li>
                         <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
                         <li><a href="/AzuSpirits/blog">Blog</a></li>
                     </ul>
@@ -847,44 +750,65 @@
 
     <div class="product-container">
         <div class="product-image-container">
-            <img src="/AzuSpirits/images/products/scotch-whisky-christmas-crackers.jpg" alt="Scotch Whisky Christmas Crackers Gift Set" class="product-image">
-            
+            <img src="https://codeandcapture.github.io/AzuSpirits/images/products/christmas-crackers-whisky-alt1.jpg" alt="Luxury Whisky Christmas Crackers" class="product-image">
         </div>
 
         <div class="product-details">
             <div class="limited-badge">⭐ Limited Edition • Batch 2025</div>
             
-            <h1>Scotch Whisky Christmas Crackers</h1>
+            <h1>Luxury Whisky Christmas Crackers</h1>
             
             <div class="product-price">
                 £58.00
             </div>
 
             <div class="stock-warning">
-               Pre-order now for December 18-20 delivery.
-Small Batch - Only 50 sets available • Secure yours today
+                🎁 Pre-order now for December 18-20 delivery<br>
+                Small Batch - Only 50 sets available • Secure yours today
             </div>
             
             <div class="product-description">
-                <p>Elevate your Christmas celebrations with our exquisite Scotch Whisky Christmas Crackers - a luxury gift that combines festive tradition with exceptional single malt whiskies.</p>
+                <p>Elevate your Christmas celebrations with our exquisite Luxury Whisky Christmas Crackers - a sophisticated gift that combines festive tradition with exceptional single malt whiskies.</p>
                 
-                <p>Each beautifully crafted cracker contains a 30ml sample of premium Scotch whisky, tasting notes, and festive surprises. Can you identify the vanilla sweet Auchentoshan, rich and smoky Lagavulin 16, the rich & fruity Aberfeldy 16 or smoky and soft fruit Kilchoman Machir Bay?  Perfect for the whisky connoisseur who has everything, or as a show-stopping addition to your Christmas table.</p>
-                
-                <div class="highlight-box">
-                    🎅 Made sustainably in small batches • Packaged with care • Each cracker is a gift in itself
+                <p>Each beautifully crafted cracker contains a numbered 30ml sample of premium Scotch whisky, creating an elegant blind tasting experience. Perfect for the whisky connoisseur or as a show-stopping addition to your Christmas table.</p>
+            </div>
+
+            <div class="premium-whiskies">
+                <h3>🥃 Featured Premium Single Malts</h3>
+                <div class="whisky-list">
+                    <div class="whisky-item-compact">
+                        <h4>Lagavulin 16 Year Old</h4>
+                        <p>Legendary Islay peat and maritime complexity. £80+ per bottle.</p>
+                    </div>
+                    <div class="whisky-item-compact">
+                        <h4>Auchentoshan American Oak</h4>
+                        <p>Smooth triple-distilled Lowland elegance with vanilla notes.</p>
+                    </div>
+                    <div class="whisky-item-compact">
+                        <h4>Aberfeldy 16 Year Old</h4>
+                        <p>Rich Highland honey and heather with sherried depth.</p>
+                    </div>
+                    <div class="whisky-item-compact">
+                        <h4>Kilchoman Machir Bay</h4>
+                        <p>Bold Islay coastal character with soft fruit and smoke.</p>
+                    </div>
                 </div>
+            </div>
+
+            <div class="highlight-box">
+                🎅 Handcrafted in small batches • Sustainable packaging • Each cracker is a gift in itself
             </div>
 
             <div class="christmas-highlights">
                 <div class="highlight-card">
                     <div class="icon">🎁</div>
                     <h4>Luxury Gifting</h4>
-                    <p>Beautifully presented & ready to gift</p>
+                    <p>Beautifully presented</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">🌟</div>
                     <h4>Premium Selection</h4>
-                    <p>6 exceptional single malts</p>
+                    <p>4 exceptional single malts</p>
                 </div>
                 <div class="highlight-card">
                     <div class="icon">♻️</div>
@@ -894,17 +818,18 @@ Small Batch - Only 50 sets available • Secure yours today
                 <div class="highlight-card">
                     <div class="icon">🎄</div>
                     <h4>Limited Edition</h4>
-                    <p>Made in small batches</p>
+                    <p>Only 50 sets made</p>
                 </div>
             </div>
             
             <div class="product-features">
-                <h3>What's Included</h3>
+                <h3>What's Inside Each Cracker</h3>
                 <ul>
-                    <li>4 Luxury Christmas Crackers - Each contains 30ml of premium Scotch whisky</li>
-                    <li>Tasting Notes Cards - Expert guidance for each dram</li>
-                    <li>Festive Surprises - Traditional cracker gifts with a premium blind tasting twist</li>
-                    <li>Sustainable Packaging - Beautifully presented in an eco-friendly gift box</li>
+                    <li>30ml numbered mystery bottle of premium single malt</li>
+                    <li>"Which One Am I?" tasting card with flavour notes</li>
+                    <li>Fun whisky fact card</li>
+                    <li>Traditional terrible cracker joke</li>
+                    <li>Mini wax-sealed reveal envelope</li>
                 </ul>
             </div>
 
@@ -917,56 +842,54 @@ Small Batch - Only 50 sets available • Secure yours today
                 </div>
             </div>
 
-            <button class="add-to-cart-btn" onclick="addProductToCart()">🎁 Add to Cart - Christmas Delivery 18-20 Dec</button>
+            <button class="add-to-cart-btn" onclick="addProductToCart()">🎁 Add to Cart - Christmas Delivery</button>
         </div>
     </div>
 
     <div class="whats-inside-section">
-        <h2>Inside Your Christmas Crackers</h2>
+        <h2>The Whiskies Inside Your Crackers</h2>
         
-        <div class="whisky-item">
-            <h3>🥃 Kilchoman Machir Bay</h3>
-            <p>Soft fruit and smoke in this award-winning Kilchoman release. Delightfully light with warming smoke, a perfect winter dram.
-        </div>
+        <div class="whisky-grid">
+            <div class="whisky-item">
+                <h3>🥃 Lagavulin 16 Year Old</h3>
+                <p>An iconic Islay single malt that defines the category. Legendary peat smoke meets rich, warming spice with maritime complexity. The perfect after-dinner dram and a whisky that commands respect. Worth over £80 per bottle, this is a true connoisseur's choice.</p>
+            </div>
 
-        <div class="whisky-item">
-            <h3>🥃 Auchentoshan American Oak</h3>
-            <p>The vanilla sweet and soft Auchentoshan. Triple distilled for a soft pure spirit, unpeated and matured in ex-bourbon American oak casks for delicious vanilla and caramel oak tones.</p>
-        </div>
+            <div class="whisky-item">
+                <h3>🥃 Auchentoshan American Oak</h3>
+                <p>The vanilla-sweet jewel of the Lowlands. Triple distilled for exceptional purity and smoothness, then matured in ex-bourbon American oak casks. Delivers gorgeous vanilla and caramel notes with a silky texture. An elegant, approachable whisky that showcases craftsmanship.</p>
+            </div>
 
-        <div class="whisky-item">
-            <h3>🥃 Lagavulin 16</h3>
-            <p>Iconic Islay single malt. Legendary peat smoke, rich and spiced. A perfect after-dinner treat. £80+ per bottle</p>
-        </div>
+            <div class="whisky-item">
+                <h3>🥃 Aberfeldy 16 Year Old</h3>
+                <p>A premium aged Highland expression with exceptional character. Rich honeyed notes combine with stewed fruits and delicious sherried tones. Perfectly balanced with a smooth, warming finish. This is Highland whisky at its finest - complex yet accessible.</p>
+            </div>
 
-        <div class="whisky-item">
-            <h3>🥃 Aberfeldy 16</h3>
-            <p>Premium aged Highland. Rich honeyed character, stewed fruits and sherried tones. Perfectly balanced and smooth.</p>
+            <div class="whisky-item">
+                <h3>🥃 Kilchoman Machir Bay</h3>
+                <p>Award-winning Islay whisky with a softer touch. Delightfully balanced with soft fruit notes playing against warming smoke. Less aggressive than other Islay malts, making it perfect for exploring peated whisky. A modern classic from this craft distillery.</p>
+            </div>
         </div>
-
-        <div class="cart-notification" id="cart-notification">
-    <div class="notification-content">
-      <strong>✓ Added to Cart</strong>
-      <span>Luxury Single Malt Whisky has been added to your cart.</span>
-      <a href="/cart.html" class="view-cart-link">View Cart & Checkout →</a>
     </div>
-  </div>
+
+    <div class="cart-notification" id="cart-notification">
+        <div class="notification-content">
+            <strong>✓ Added to Cart</strong>
+            <span>Luxury Whisky Christmas Crackers added to your cart.</span>
+            <a href="/cart.html" class="view-cart-link">View Cart & Checkout →</a>
+        </div>
+    </div>
 
     <footer class="site-footer">
-        <section class="footer-badges">
-            <div>
-                <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/d96dae12-2182-4384-a646-a5f0f06e30ad/Family.png?format=500w" alt="Family-Run Business">
-                <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/db9adba8-55ab-4ea5-8f17-dd2d5df2fb18/Untitled+design+%2837%29.png?format=500w" alt="Woman-Owned Business">
-            </div>
-            <p>Shop with confidence and support small business.</p>
-        </section>
         <div class="footer-inner">
             <nav class="footer-nav">
                 <ul>
+                    <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Sets</a></li>
+                    <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Sets</a></li>
+                    <li><a href="/AzuSpirits/christmas-gifts">Christmas Gifts</a></li>
                     <li><a href="/shipping-returns">Shipping & Returns</a></li>
                     <li><a href="/terms">Terms & Conditions</a></li>
                     <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/cookie-policy">Cookie Policy</a></li>
                 </ul>
             </nav>
             <div class="site-info">
@@ -1006,24 +929,27 @@ Small Batch - Only 50 sets available • Secure yours today
 
         // Product data
         const product = {
-            id: 'scotch-whisky-christmas-crackers',
-            name: 'Scotch Whisky Christmas Crackers',
+            id: 'luxury-whisky-christmas-crackers',
+            name: 'Luxury Whisky Christmas Crackers',
             productId: 'prod_TI2nugAxkFW4tt',
             priceId: 'price_1SLSiIDLWuae7NssttgxBG5i',
             price: 58.00,
-            image: 'https://codeandcapture.github.io/AzuSpirits/images/products/christmas-crackers-whisky-main.jpg',
-            description: 'Limited edition Scotch Whisky Christmas Crackers with 4 premium samples',
+            image: 'https://codeandcapture.github.io/AzuSpirits/images/products/christmas-crackers-whisky-alt1.jpg',
+            description: 'Limited edition Luxury Whisky Christmas Crackers with 4 premium single malt samples',
             features: [
-                '4 Luxury Christmas Crackers with 30ml whisky samples',
-                'Tasting notes and festive surprises',
+                '4 Christmas Crackers with 30ml premium whisky samples',
+                'Featuring Lagavulin 16, Auchentoshan American Oak, Aberfeldy 16, Kilchoman Machir Bay',
+                'Tasting cards, fun facts, and festive surprises',
                 'Sustainable eco-friendly packaging',
-                'Limited edition batch 2025'
+                'Limited edition batch 2025 - Only 50 sets'
             ]
         };
 
         function increaseQuantity() {
             const input = document.getElementById('quantity');
-            input.value = parseInt(input.value) + 1;
+            if (parseInt(input.value) < 10) {
+                input.value = parseInt(input.value) + 1;
+            }
         }
 
         function decreaseQuantity() {
@@ -1038,6 +964,13 @@ Small Batch - Only 50 sets available • Secure yours today
             for (let i = 0; i < quantity; i++) {
                 addToCart(product.id, product.name, product.price, product.image);
             }
+            
+            // Show notification
+            const notification = document.getElementById('cart-notification');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
         }
     </script>
 </body>

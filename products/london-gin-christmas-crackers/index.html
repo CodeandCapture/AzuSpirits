@@ -1,0 +1,980 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Gin Christmas Crackers | Premium Craft Gins | Azu Spirits</title>
+    <meta name="description" content="Limited edition London Gin Christmas Crackers featuring Doghouse Renegade, Little Bird London Dry, Half Hitch & Sacred Old Tom. Four premium 30ml samples in beautifully crafted festive crackers." />
+    
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "London Gin Christmas Crackers",
+        "description": "Limited edition Christmas crackers containing four exceptional London craft gins. Each cracker contains a 30ml sample, tasting card, fun fact, and festive surprises.",
+        "image": "https://codeandcapture.github.io/AzuSpirits/images/products/london-gins-christmas-crackers-alt1.jpg",
+        "brand": {
+            "@type": "Brand",
+            "name": "Azu Spirits"
+        },
+        "sku": "AZU-XMAS-CRACKERS-LONDON-GIN",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.azuspirits.co.uk/products/london-gin-christmas-crackers",
+            "priceCurrency": "GBP",
+            "price": "52.00",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/LimitedAvailability",
+            "itemCondition": "https://schema.org/NewCondition",
+            "seller": {
+                "@type": "Organization",
+                "name": "Azu Spirits Ltd"
+            }
+        },
+        "category": "Christmas Gift Sets",
+        "alcoholWarning": "Must be 18 or over to purchase"
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* Color Variables - GIN GREEN THEME */
+        :root {
+            --gin-green: #165B33;
+            --dark-green: #0d4221;
+            --christmas-gold: #D4AF37;
+            --light-grey: #f8f8f8;
+            --accent-green: #1a7a42;
+        }
+
+        /* Header Styles */
+        .site-header {
+            background: var(--light-grey);
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+
+        .header-inner img {
+            height: 80px;
+            cursor: pointer;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .site-nav li {
+            position: relative;
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        .dropdown-menu {
+            display: none !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            display: flex !important;
+        }
+
+        .dropdown-menu li {
+            margin: 0 !important;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--gin-green);
+            color: white;
+        }
+
+        .site-nav li + li {
+            margin-left: 1.5rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--gin-green);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* Christmas Banner - Green Theme */
+        .christmas-banner {
+            background: linear-gradient(135deg, var(--gin-green) 0%, var(--dark-green) 50%, var(--christmas-gold) 100%);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+             font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .product-image-container {
+            position: sticky;
+            top: 20px;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        /* Product Details */
+        .product-details {
+            padding: 20px 0;
+        }
+
+        .limited-badge {
+            display: inline-block;
+            background: rgba(22, 91, 51, 0.1);
+            color: var(--gin-green);
+            border: 1px solid rgba(22, 91, 51, 0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .product-details h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .product-price {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--gin-green);
+            margin-bottom: 20px;
+        }
+
+        .stock-warning {
+            background: var(--light-grey);
+            border-left: 3px solid var(--gin-green);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .product-description {
+            margin-bottom: 35px;
+        }
+
+        .product-description p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Premium Gins Section */
+        .premium-gins {
+            background: var(--light-grey);
+            padding: 25px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+
+        .premium-gins h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--gin-green);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gin-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .gin-item-compact {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--gin-green);
+        }
+
+        .gin-item-compact h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .gin-item-compact p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--gin-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 25px 0;
+        }
+
+        /* Feature Cards */
+        .christmas-highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 35px 0;
+        }
+
+        .highlight-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+            border-color: var(--gin-green);
+        }
+
+        .highlight-card .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .highlight-card p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Product Features */
+        .product-features {
+            background: white;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+
+        .product-features h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-features ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .product-features ul li:last-child {
+            border-bottom: none;
+        }
+
+        .product-features ul li:before {
+            content: "✓";
+            color: var(--gin-green);
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        /* Quantity Selector */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .quantity-selector label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .quantity-input {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .quantity-input button {
+            background: var(--light-grey);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .quantity-input button:hover {
+            background: #e0e0e0;
+        }
+
+        .quantity-input input {
+            border: none;
+            text-align: center;
+            width: 60px;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px;
+        }
+
+        /* Add to Cart Button */
+        .add-to-cart-btn {
+            width: 100%;
+            background: var(--gin-green);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 91, 51, 0.3);
+        }
+
+        /* What's Inside Section */
+        .whats-inside-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 60px 20px;
+            background: var(--light-grey);
+        }
+
+        .whats-inside-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        .gin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .gin-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--gin-green);
+        }
+
+        .gin-item:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        .gin-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .gin-item p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Cart Notification */
+        .cart-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-left: 4px solid var(--gin-green);
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            z-index: 10000;
+            opacity: 0;
+            transform: translateX(400px);
+            transition: all 0.4s ease;
+        }
+
+        .cart-notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .notification-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .notification-content strong {
+            color: var(--gin-green);
+            font-size: 16px;
+        }
+
+        .view-cart-link {
+            color: var(--gin-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .view-cart-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--light-grey);
+            border-top: 1px solid #ddd;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--gin-green);
+        }
+
+        .site-info {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 868px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 30px auto;
+            }
+
+            .product-image-container {
+                position: relative;
+                top: 0;
+            }
+
+            .product-details h1 {
+                font-size: 28px;
+            }
+
+            .christmas-highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .site-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--light-grey);
+                border-top: 1px solid #ddd;
+                padding: 1rem;
+                z-index: 100;
+            }
+
+            .site-nav.open {
+                display: block;
+            }
+
+            .site-nav ul {
+                flex-direction: column;
+            }
+
+            .site-nav li + li {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .header-inner {
+                position: relative;
+            }
+
+            .header-inner img {
+                height: 60px;
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                border: none;
+                box-shadow: none;
+                background: #f0f0f0;
+                margin-top: 0.5rem;
+                border-radius: 4px;
+            }
+
+            .has-dropdown.open .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu a {
+                padding-left: 2rem;
+                font-size: 0.95rem;
+            }
+
+            .footer-nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="christmas-banner">
+        🎄 Limited Edition • Only 50 Sets Available • Order Now for Christmas Delivery 🎁
+    </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="https://codeandcapture.github.io/AzuSpirits/images/brand/logo.jpg" onclick="window.location.href='/'">
+            <div class="header-right">
+                <nav class="site-nav" id="siteNav">
+                    <ul>
+                        <li><a href="/AzuSpirits/index.html">Home</a></li>
+                        <li class="has-dropdown">
+                            <a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Gift Sets</a></li>
+                                <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Gift Sets</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
+                        <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
+                        <li><a href="/AzuSpirits/blog">Blog</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart.html'">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+                <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="product-container">
+        <div class="product-image-container">
+            <img src="https://codeandcapture.github.io/AzuSpirits/images/products/london-gins-christmas-crackers-alt1.jpg" alt="London Gin Christmas Crackers" class="product-image">
+        </div>
+
+        <div class="product-details">
+            <div class="limited-badge">⭐ Limited Edition • Batch 2025</div>
+            
+            <h1>London Gin Christmas Crackers</h1>
+            
+            <div class="product-price">
+                £58.00
+            </div>
+
+            <div class="stock-warning">
+                🎁 Pre-order now for December 18-20 delivery<br>
+                Small Batch - Only 50 sets available • Secure yours today
+            </div>
+            
+            <div class="product-description">
+                <p>Elevate your Christmas celebrations with our exquisite London Gin Christmas Crackers - a sophisticated gift that combines festive tradition with exceptional craft gins from London's finest distilleries.</p>
+                
+                <p>Each beautifully crafted cracker contains a numbered 30ml sample of premium London gin, creating an elegant blind tasting experience. Perfect for the gin connoisseur or as a show-stopping addition to your Christmas table.</p>
+            </div>
+
+            <div class="premium-gins">
+                <h3>🍸 Featured Premium London Gins</h3>
+                <div class="gin-list">
+                    <div class="gin-item-compact">
+                        <h4>Doghouse Renegade Gin</h4>
+                        <p>Bold, innovative London gin with distinctive botanical character and exceptional depth.</p>
+                    </div>
+                    <div class="gin-item-compact">
+                        <h4>Little Bird London Dry</h4>
+                        <p>Classic London Dry with perfect juniper balance and elegant citrus notes.</p>
+                    </div>
+                    <div class="gin-item-compact">
+                        <h4>Half Hitch Gin</h4>
+                        <p>Contemporary London gin showcasing unique botanicals and smooth character.</p>
+                    </div>
+                    <div class="gin-item-compact">
+                        <h4>Sacred Old Tom</h4>
+                        <p>Historic style reimagined - subtly sweetened with complex botanical layers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                🎅 Handcrafted in small batches • Sustainable packaging • Each cracker is a gift in itself
+            </div>
+
+            <div class="christmas-highlights">
+                <div class="highlight-card">
+                    <div class="icon">🎁</div>
+                    <h4>Luxury Gifting</h4>
+                    <p>Beautifully presented</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🌟</div>
+                    <h4>Premium Selection</h4>
+                    <p>4 exceptional London gins</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">♻️</div>
+                    <h4>Sustainable</h4>
+                    <p>Eco-friendly packaging</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="icon">🎄</div>
+                    <h4>Limited Edition</h4>
+                    <p>Only 50 sets made</p>
+                </div>
+            </div>
+            
+            <div class="product-features">
+                <h3>What's Inside Each Cracker</h3>
+                <ul>
+                    <li>30ml numbered mystery bottle of premium London gin</li>
+                    <li>"Which One Am I?" tasting card with botanical notes</li>
+                    <li>Fun gin fact card</li>
+                    <li>Traditional terrible cracker joke</li>
+                    <li>Mini wax-sealed reveal envelope</li>
+                </ul>
+            </div>
+
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <div class="quantity-input">
+                    <button onclick="decreaseQuantity()">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="10">
+                    <button onclick="increaseQuantity()">+</button>
+                </div>
+            </div>
+
+            <button class="add-to-cart-btn" onclick="addProductToCart()">🎁 Add to Cart - Christmas Delivery</button>
+        </div>
+    </div>
+
+    <div class="whats-inside-section">
+        <h2>The Gins Inside Your Crackers</h2>
+        
+        <div class="gin-grid">
+            <div class="gin-item">
+                <h3>🍸 Doghouse Renegade Gin</h3>
+                <p>A bold and innovative London gin that lives up to its name. Doghouse Renegade breaks from tradition while respecting the craft, offering distinctive botanical character with exceptional depth and complexity. This is gin for those who dare to be different - perfectly balanced yet adventurous in spirit.</p>
+            </div>
+
+            <div class="gin-item">
+                <h3>🍸 Little Bird London Dry</h3>
+                <p>A classic London Dry that showcases the essence of traditional gin-making. Perfect juniper balance meets elegant citrus notes in this beautifully crafted expression. Crisp, clean, and quintessentially London - Little Bird is a masterclass in timeless gin distillation with a refined, sophisticated character.</p>
+            </div>
+
+            <div class="gin-item">
+                <h3>🍸 Half Hitch Gin</h3>
+                <p>Contemporary London gin that bridges tradition and innovation. Half Hitch showcases unique botanical combinations with a smooth, approachable character. Expertly crafted with attention to detail, this gin offers layers of flavour that unfold beautifully - perfect neat, in a G&T, or in cocktails.</p>
+            </div>
+
+            <div class="gin-item">
+                <h3>🍸 Sacred Old Tom</h3>
+                <p>A historic gin style reimagined for modern palates. Sacred Old Tom brings back the subtly sweetened character that made this style famous in the 18th century. Complex botanical layers create depth and richness, offering a glimpse into gin's storied past with contemporary quality and craftsmanship.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-notification" id="cart-notification">
+        <div class="notification-content">
+            <strong>✓ Added to Cart</strong>
+            <span>London Gin Christmas Crackers added to your cart.</span>
+            <a href="/cart.html" class="view-cart-link">View Cart & Checkout →</a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Sets</a></li>
+                    <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Sets</a></li>
+                    <li><a href="/AzuSpirits/christmas-gifts">Christmas Gifts</a></li>
+                    <li><a href="/shipping-returns">Shipping & Returns</a></li>
+                    <li><a href="/terms">Terms & Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <div class="site-info">
+                <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/AzuSpirits/js/cart.js"></script>
+    <script>
+        // Mobile nav toggle
+        function toggleNav() {
+            const nav = document.getElementById('siteNav');
+            nav.classList.toggle('open');
+        }
+
+        // Mobile dropdown toggle
+        function initMobileDropdowns() {
+            const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
+            if (window.innerWidth <= 868) {
+                dropdownLinks.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+                            if (item !== parent) {
+                                item.classList.remove('open');
+                            }
+                        });
+                        parent.classList.toggle('open');
+                    });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initMobileDropdowns);
+
+        // Product data
+        const product = {
+            id: 'london-gin-christmas-crackers',
+            name: 'London Gin Christmas Crackers',
+            productId: 'prod_TJApBJjooV6iZK',
+            priceId: 'price_1SMYUCDLWuae7Nss0MtD8DfQ',
+            price: 52.00,
+            image: 'https://codeandcapture.github.io/AzuSpirits/images/products/london-gins-christmas-crackers-alt1.jpg',
+            description: 'Limited edition London Gin Christmas Crackers with 4 premium craft gin samples',
+            features: [
+                '4 Christmas Crackers with 30ml premium gin samples',
+                'Featuring Doghouse Renegade, Little Bird London Dry, Half Hitch, Sacred Old Tom',
+                'Tasting cards, fun facts, and festive surprises',
+                'Sustainable eco-friendly packaging',
+                'Limited edition batch 2025 - Only 50 sets'
+            ]
+        };
+
+        function increaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) < 10) {
+                input.value = parseInt(input.value) + 1;
+            }
+        }
+
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        function addProductToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            for (let i = 0; i < quantity; i++) {
+                addToCart(product.id, product.name, product.price, product.image);
+            }
+            
+            // Show notification
+            const notification = document.getElementById('cart-notification');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

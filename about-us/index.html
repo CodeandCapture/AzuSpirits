@@ -1,1 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us & Contact — Azu Spirits</title>
+  <meta name="description" content="Founded by Scotch whisky expert Ellie Gibson, Azu Spirits curates exceptional single malt whisky and craft gin collections. Shop our expertly selected spirits." />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&display=swap" rel="stylesheet">
+
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles - Matching homepage */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    .header-inner img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+      /* Dropdown Menu Styles */
+        .site-nav li {
+            position: relative;
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        .dropdown-menu {
+            display: none !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            display: flex !important;
+          
+        }
+
+        .dropdown-menu li {
+            margin: 0 !important;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+           
+    }
+        
+
+        .dropdown-menu a:hover {
+            background: #A4343A;
+            color: white;
+        }
+
+        .site-nav li + li {
+            margin-left: 1.5rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .dropdown-menu .site-nav a:hover {
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+       .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #A4343A;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #5C1A1B 0%, #1a1a1a 50%, #5C1A1B 100%);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 36px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #D4AF37;
+      font-style: italic;
+    }
+
+    /* Main Content Section */
+    .about-section {
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .about-column h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .about-column h3 {
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      color: #A4343A;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .about-column p {
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Journey Highlight Box */
+    .journey-box {
+      background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+      padding: 30px;
+      border-left: 4px solid #A4343A;
+      margin: 30px 0;
+      border-radius: 4px;
+    }
+
+    .journey-box h4 {
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #A4343A;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .journey-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .journey-box li {
+      padding: 10px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .journey-box li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #A4343A;
+      font-size: 1.2em;
+    }
+
+    /* Shop Focus Section */
+    .shop-focus {
+      background: #f8f8f8;
+      padding: 80px 20px;
+    }
+
+    .shop-focus h2 {
+      text-align: center;
+      font-size: 32px;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      font-weight: 600;
+      color: #333;
+      letter-spacing: 1px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 35px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 3px solid #A4343A;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(164, 52, 58, 0.15);
+    }
+
+    .feature-box h3 {
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      color: #A4343A;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .feature-box p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-box {
+      background: #f8f8f8;
+      padding: 40px;
+      border-radius: 8px;
+      border-top: 3px solid #A4343A;
+    }
+
+    .contact-box h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .contact-box p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+
+    .contact-detail {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+      border-left: 3px solid #A4343A;
+    }
+
+    .contact-detail h3 {
+      font-size: 12px;
+      color: #A4343A;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .contact-detail p {
+      font-size: 16px;
+      color: #333;
+      margin: 0;
+    }
+
+    .contact-detail a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-detail a:hover {
+      color: #A4343A;
+    }
+
+    .expertise-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .expertise-list li {
+      padding: 10px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .expertise-list li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #A4343A;
+      font-size: 1.2em;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-block;
+      background: #A4343A;
+      color: white;
+      padding: 15px 40px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    .cta-button:hover {
+      background: #8a2c31;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(164, 52, 58, 0.3);
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #A4343A 0%, #8B1538 100%);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta-box h3 {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cta-box p {
+      color: white;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .cta-box .cta-button {
+      background: white;
+      color: #A4343A;
+    }
+
+    .cta-box .cta-button:hover {
+      background: #f0f0f0;
+      color: #8a2c31;
+    }
+
+    /* Footer - Matching homepage */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px;
+      margin-top: 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    .footer-nav a:hover {
+      color: #A4343A;
+      padding-left: 5px;
+    }
+
+    .site-info {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 868px) {
+      .hero-section h1 {
+        font-size: 24px;
+      }
+
+      .hero-section p {
+        font-size: 16px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header - Matching homepage -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <img src="https://codeandcapture.github.io/AzuSpirits/images/brand/logo.jpg" onclick="window.location.href='/'" alt="Azu Spirits Logo">
+
+      <div class="header-right">
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="/AzuSpirits/index.html">Home</a></li>
+                <li class="has-dropdown">
+            <a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Gift Sets</a></li>
+              <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Gift Sets</a></li>
+            </ul>
+          </li>
+            
+            <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
+            <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
+            <li><a href="/AzuSpirits/blog">Blog</a></li>
+          </ul>
+        </nav>
+
+        <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart.html'">
+          🛒
+          <span class="cart-count">0</span>
+        </div>
+
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>About Azu Spirits</h1>
+      <p>Where Industry Expertise Meets Passion for Exceptional Spirits</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        
+        <!-- Column 1 -->
+        <div class="about-column">
+          <h2>Our Story</h2>
+          <p>Founded by Ellie Asthana Gibson, Azu Spirits began with a simple passion: a love for single malt whisky and a desire to share exceptional spirits in a more engaging, personal way. What started as a personal blog exploring the production and science behind spirits has evolved into a carefully curated online shop celebrating quality, diversity, and the rich stories behind every bottle.</p>
+          
+          <p>Since launching in 2021, we've built a reputation for expertise and thoughtful curation. Our collections reflect a deep understanding of spirits—from the subtle regional variations in Scottish single malts to the innovative craft gin movement sweeping Britain.</p>
+
+          <div class="journey-box">
+            <h4>A Journey Through the Industry</h4>
+            <ul>
+              <li>Working in Glasgow's top whisky bars, immersed in Scotland's liquid heritage</li>
+              <li>Showcasing premium brands at whisky festivals across the UK</li>
+              <li>Crafting cocktails at 1806 in Melbourne, one of the world's most celebrated cocktail bars</li>
+              <li>Researching distillation methods and the science of flavour development</li>
+              <li>Building direct relationships with craft distilleries across Britain</li>
+            </ul>
+          </div>
+
+          <h3>Our Philosophy</h3>
+          <p>Every spirit in our collection has been personally selected based on quality, character, and story. We champion craft producers, celebrate regional diversity, and seek out bottles that showcase the artistry and science of distillation. Whether you're exploring single malt whisky or discovering craft gin, we're here to guide and inspire your journey.</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="about-column">
+          <h2>Why Choose Azu Spirits</h2>
+          <p>Our shop isn't just about selling spirits—it's about sharing the knowledge, passion, and expertise gained from years in hospitality and the whisky industry. We understand what makes a spirit truly special.</p>
+
+          <h3>Industry Expertise</h3>
+          <p>From understanding the impact of cask types on whisky maturation to recognising the botanical signatures that define exceptional gin, our selections are informed by genuine expertise and hands-on experience in bars, festivals, and tasting rooms. We taste, research, and curate with care.</p>
+
+          <h3>Rich Diversity & History</h3>
+          <p>Our collections celebrate the incredible range within each spirit category—from delicate Lowland whiskies to robust Islays, from floral London Dry gins to bold contemporary styles. These products illustrate the rich diversity, history, and science we've discovered throughout our journey in spirits.</p>
+
+          <h3>Science Meets Craft</h3>
+          <p>What began as research into production processes and the science behind spirits continues to inform everything we do. We don't just sell bottles—we share the fascinating stories of how terroir, botanicals, fermentation, distillation, and maturation create the flavours you love.</p>
+
+          <h3>Thoughtfully Curated</h3>
+          <p>Our blind tasting gift sets and themed collections offer unique ways to explore spirits. Designed for discovery and comparison, they're perfect for enthusiasts and newcomers alike, bringing the professional tasting experience into your home.</p>
+
+          <p style="margin-top: 30px; font-style: italic;">We also offer bespoke tasting events and mixology experiences for special occasions. <a href="#contact" style="color: #A4343A; text-decoration: none;">Get in touch to learn more.</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Focus Section -->
+  <section class="shop-focus">
+    <div class="container">
+      <h2>What Sets Our Shop Apart</h2>
+      <div class="features-grid">
+        
+        <div class="feature-box">
+          <h3>Curated Single Malts</h3>
+          <p>Discover Scotland's diverse whisky regions through our carefully selected single malts. From the gentle, floral character of Speyside to the bold, peaty expressions of Islay, each bottle represents years of craft and tradition.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Regional Craft Gins</h3>
+          <p>Explore Britain's gin renaissance with our regional collections. From Devon's innovative distilleries to Yorkshire's craft producers, we showcase the quality, creativity, and distinctive botanicals that define modern British gin.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Blind Tasting Collections</h3>
+          <p>Experience spirits the way professionals do. Our blind tasting sets remove preconceptions and let the liquid speak for itself. Compare styles, test your palate, and discover new favourites through guided exploration.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Expert Knowledge</h3>
+          <p>Every product comes with detailed tasting notes, production insights, and serving suggestions. We share the science, history, and stories that make each spirit unique—helping you appreciate every sip.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Premium Selection</h3>
+          <p>We work directly with distilleries and trusted suppliers to bring you exceptional quality. Each spirit is chosen for its character, craftsmanship, and the story it tells about its origin and makers.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Personal Service</h3>
+          <p>Need recommendations? Building a collection? Looking for the perfect gift? We're here to help with personalised advice based on genuine expertise and a passion for great spirits.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <!-- Contact Info -->
+        <div class="contact-box">
+          <h2>Get In Touch</h2>
+          <p>Whether you have questions about our products, need recommendations, or want to discuss a bespoke gift or tasting event, we'd love to hear from you.</p>
+
+          <div class="contact-detail">
+            <h3>Email</h3>
+            <p><a href="mailto:enquiries@azuspirits.co.uk">enquiries@azuspirits.co.uk</a></p>
+          </div>
+
+          <div class="contact-detail">
+            <h3>Phone</h3>
+            <p><a href="tel:07778032247">07778 032247</a></p>
+          </div>
+
+          <div class="contact-detail">
+            <h3>Response Time</h3>
+            <p>We aim to respond to all enquiries within 24 hours during business days.</p>
+          </div>
+        </div>
+
+        <!-- Expertise Section -->
+        <div class="contact-box">
+          <h2>We're Here to Help</h2>
+          <p>Looking for a specific bottle? Need advice on building your whisky collection? Want to explore craft gin from a particular region? Whatever your spirits question, we're here to share our knowledge and passion.</p>
+
+          <p><strong>Our expertise spans:</strong></p>
+          <ul class="expertise-list">
+            <li>Single malt whisky selection and appreciation</li>
+            <li>Craft gin and botanical profiles</li>
+            <li>Spirit production, maturation, and science</li>
+            <li>Gift recommendations and curated collections</li>
+            <li>Cocktail creation and mixology techniques</li>
+          </ul>
+
+          <div class="cta-box">
+            <h3>Ready to Explore?</h3>
+            <p>Browse our carefully curated collection of exceptional spirits</p>
+            <a href="/AzuSpirits/tasting-gift-sets" class="cta-button">Visit Our Shop</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer - Matching homepage -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/about-us">About Us</a></li>
+          <li><a href="/AzuSpirits/blog">Blog</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/shipping-returns">Shipping & Returns</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-info">
+        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+        <p style="margin-top: 10px; font-size: 0.85em;">Please drink responsibly. You must be 18 or over to purchase alcohol.</p>
+      </div>
+    </div>
+  </footer>
+
+   
+  <!-- Cart JS -->
+  <script src="/js/cart.js"></script>
+
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only add click handlers on mobile
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+          item.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

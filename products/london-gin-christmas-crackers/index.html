@@ -724,32 +724,49 @@
     </div>
 
     <header class="site-header">
-        <div class="header-inner">
-            <img src="https://codeandcapture.github.io/AzuSpirits/images/brand/logo.jpg" onclick="window.location.href='/'">
-            <div class="header-right">
-                <nav class="site-nav" id="siteNav">
-                    <ul>
-                        <li><a href="/AzuSpirits/index.html">Home</a></li>
-                        <li class="has-dropdown">
-                            <a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Gift Sets</a></li>
-                                <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Gift Sets</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
-                        <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
-                        <li><a href="/AzuSpirits/blog">Blog</a></li>
-                    </ul>
-                </nav>
-                <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart.html'">
-                    🛒
-                    <span class="cart-count">0</span>
-                </div>
-                <button class="nav-toggle" onclick="toggleNav()">☰</button>
-            </div>
-        </div>
-    </header>
+  <div class="header-inner container">
+    <img src="/AzuSpirits/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/AzuSpirits/'">
+    
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="/AzuSpirits/">Home</a></li>
+          
+          <!-- Dropdown for Tasting Gift Sets -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-gifts/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <!-- Dropdown for Sharing Boxes -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-sharing-boxes/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/AzuSpirits/christmas-gifts/">Christmas Gifts</a></li>
+          <li><a href="/AzuSpirits/about-us/">About</a></li>
+          <li><a href="/AzuSpirits/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart/'">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </div>
+</header>
 
     <div class="product-container">
         <div class="product-image-container">

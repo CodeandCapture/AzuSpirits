@@ -1151,42 +1151,50 @@ text-transform: uppercase;
   </div>
 </div>
 
-   <header class="site-header">
+<header class="site-header">
   <div class="header-inner container">
-    <img src="https://codeandcapture.github.io/AzuSpirits/images/brand/logo.jpg" style="height: 80px; margin-left: 30px;" onclick="window.location.href='/'">
-
+    <img src="images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='./'">
+    
     <div class="header-right">
       <nav class="site-nav" id="siteNav">
         <ul>
-          <li><a href="/AzuSpirits/index.html">Home</a></li>
-
+          <li><a href="./">Home</a></li>
+          
           <!-- Dropdown for Tasting Gift Sets -->
           <li class="has-dropdown">
-            <a href="/AzuSpirits/tasting-gift-sets">Tasting Gift Sets</a>
+            <a href="tasting-gift-sets/">Tasting Gift Sets</a>
             <ul class="dropdown-menu">
-              <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Gift Sets</a></li>
-              <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Gift Sets</a></li>
+              <li><a href="whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="gin-gifts/">Premium Gin</a></li>
             </ul>
           </li>
-
-          <li><a href="/AzuSpirits/bottleshop">Bottle Shop</a></li>
-          <li><a href="/AzuSpirits/about-us">About / Contact</a></li>
-          <li><a href="/AzuSpirits/blog">Blog</a></li>
+          
+          <!-- Dropdown for Sharing Boxes -->
+          <li class="has-dropdown">
+            <a href="sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu">
+              <li><a href="whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="gin-sharing-boxes/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="christmas-gifts/">Christmas Gifts</a></li>
+          <li><a href="about-us/">About</a></li>
+          <li><a href="blog/">Blog</a></li>
         </ul>
       </nav>
-
+      
       <!-- Cart Icon -->
-      <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart.html'">
+      <div class="cart-icon" onclick="window.location.href='cart/'">
         🛒
         <span class="cart-count">0</span>
       </div>
-
-      <!-- Mobile Menu Toggle - REMOVE THE INLINE STYLE -->
+      
+      <!-- Mobile Menu Toggle -->
       <button class="nav-toggle" onclick="toggleNav()">☰</button>
     </div>
   </div>
 </header>
-
   <section class="section-main">
     <h3>A Christmas Twist on the Blind Tasting Experience...</h3>
     <h4>Four luxurious Christmas crackers, each containing a 30ml mystery bottle of exceptional single malt whisky or craft gin. Test your palate, take your guess, and crack open the mini wax-sealed envelope to reveal the answer!</h4>

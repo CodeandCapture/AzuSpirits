@@ -790,39 +790,50 @@
     USE CODE DISCOVERY FOR 10% OFF <span>•</span> FREE DPD DELIVERY
   </div>
   
-  <header class="site-header">
-    <div class="header-inner">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/93862dd4-f9e5-4999-abf9-a5773d0b4b59/LOGOred1.png?format=1500w" 
-           alt="Azu Spirits Logo"
-           onclick="window.location.href='/'">
+ <header class="site-header">
+  <div class="header-inner container">
+    <img src="images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='./'">
+    
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="./">Home</a></li>
+          
+          <!-- Dropdown for Tasting Gift Sets -->
+          <li class="has-dropdown">
+            <a href="tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="gin-gifts/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <!-- Dropdown for Sharing Boxes -->
+          <li class="has-dropdown">
+            <a href="sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu">
+              <li><a href="whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="gin-sharing-boxes/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="christmas-gifts/">Christmas Gifts</a></li>
+          <li><a href="about-us/">About</a></li>
+          <li><a href="blog/">Blog</a></li>
+        </ul>
+      </nav>
       
-      <div class="header-right">
-        <nav class="site-nav" id="siteNav">
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li class="has-dropdown">
-              <a href="/tasting-gift-sets">Tasting Gift Sets</a>
-              <ul class="dropdown-menu">
-                <li><a href="/whisky-gifts">Whisky Tasting Gift Sets</a></li>
-                <li><a href="/gin-gifts">Gin Tasting Gift Sets</a></li>
-              </ul>
-            </li>
-            <li><a href="/bottleshop">Bottle Shop</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/about-us">About / Contact</a></li>
-            <li><a href="/blog">Blog</a></li>
-          </ul>
-        </nav>
-        
-        <div class="cart-icon" onclick="window.location.href='/cart.html'">
-          🛒
-          <span class="cart-count" id="cart-count">0</span>
-        </div>
-        
-        <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='cart/'">
+        🛒
+        <span class="cart-count">0</span>
       </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
     </div>
-  </header>
+  </div>
+</header>
 
   <div class="breadcrumb">
     <a href="/">Home</a>

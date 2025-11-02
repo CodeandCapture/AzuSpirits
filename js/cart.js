@@ -93,7 +93,7 @@ class ShoppingCart {
     notification.innerHTML = `
       <div class="notification-content">
         <span>✓ ${productName} added to cart</span>
-        <a href="/AzuSpirits/cart.html" class="view-cart-link">View Cart</a>
+        <a href="/AzuSpirits/cart/" class="view-cart-link">View Cart</a>
       </div>
     `;
     

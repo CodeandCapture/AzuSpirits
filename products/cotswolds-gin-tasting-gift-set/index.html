@@ -1065,52 +1065,20 @@
 
     // Add to Cart
     function addToCart() {
-      const product = {
+
+     const quantity = parseInt(document.getElementById('quantity').value);
+     const productWithQuantity = {
         id: 'cotswolds-gins-tasting-gift',
-        productId: 'prod_TG6BGhGagffHYV'
         priceId: 'price_1SLSSSDLWuae7NssXA2c2K50',
         name: 'Craft Gins of the Cotswolds Tasting Gift Set',
         price: 55.00,
-        quantity: parseInt(document.getElementById('quantity').value),
+        quantity: quantity
         image: '/AzuSpirits/images/products/cotswolds-gin-gift-alt1.jpg'
       };
 
-      // Get existing cart
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      
-      // Check if item exists
-      const existingIndex = cart.findIndex(item => item.id === product.id);
-      
-      if (existingIndex > -1) {
-        cart[existingIndex].quantity += product.quantity;
-      } else {
-        cart.push(product);
-      }
-      
-      // Save cart
-      localStorage.setItem('cart', JSON.stringify(cart));
-      
-      // Update cart count
-      updateCartCount();
-      
-      // Show notification
-      const notification = document.getElementById('cart-notification');
-      notification.classList.add('show');
-      
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 3000);
+        cart.addItem(productWithQuantity);
     }
-
-    // Update cart count
-    function updateCartCount() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-      document.getElementById('cart-count').textContent = count;
-    }
-
-    // Initialize cart count
-    updateCartCount();
+    
   </script>
 </body>
 </html>

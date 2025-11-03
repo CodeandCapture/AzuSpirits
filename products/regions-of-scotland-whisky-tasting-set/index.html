@@ -555,53 +555,7 @@
       font-size: 16px;
     }
 
-    /* Notification */
-    .cart-notification {
-      position: fixed;
-      pointer-events: none;
-      top: 100px;
-      right: 20px;
-      background: white;
-      padding: 20px 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.3s;
-      z-index: 10000;
-      border-left: 4px solid #A4343A;
-      min-width: 300px;
-    }
-
-    .cart-notification.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .notification-content {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .notification-content strong {
-      color: #A4343A;
-      font-size: 16px;
-    }
-
-    .view-cart-link {
-      color: #A4343A;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 5px;
-      transition: color 0.3s;
-    }
-
-    .view-cart-link:hover {
-      color: #8B1538;
-    }
-    
+   
         /* Mobile Hero Image - hidden on desktop */
     .mobile-hero-image {
       display: none;
@@ -939,7 +893,7 @@
         </div>
       </div>
 
-      <button class="add-to-cart-btn" onclick="addToCart()">
+      <button class="add-to-cart-btn" onclick="addProductToCart()">
         Add to Cart
       </button>
 
@@ -1017,16 +971,6 @@
    
     </div>
   </div>
-
-  <!-- Cart Notification -->
-  <div class="cart-notification" id="cart-notification">
-    <div class="notification-content">
-      <strong>✓ Added to Cart</strong>
-      <span>Regions of Scotland has been added to your cart.</span>
-      <a href="/AzuSpirits/cart.html" class="view-cart-link">View Cart & Checkout →</a>
-    </div>
-  </div>
-    
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -1110,7 +1054,7 @@
     }
 
       // Add to Cart
-  function addToCart() {
+  function addProductToCart() {
     const quantity = parseInt(document.getElementById('quantity').value);
     
     const productWithQuantity = {

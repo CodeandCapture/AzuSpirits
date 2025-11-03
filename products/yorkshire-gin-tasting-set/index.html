@@ -520,66 +520,7 @@
       flex-wrap: wrap;
     }
 
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: #666;
-    }
-
-    .trust-badge::before {
-      content: "✓";
-      color: var(--gin-green);
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .cart-notification {
-      position: fixed;
-      pointer-events: none;
-      top: 100px;
-      right: 20px;
-      background: white;
-      padding: 20px 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.3s;
-      z-index: 10000;
-      border-left: 4px solid var(--gin-green);
-      min-width: 300px;
-    }
-
-    .cart-notification.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .notification-content {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .notification-content strong {
-      color: var(--gin-green);
-      font-size: 16px;
-    }
-
-    .view-cart-link {
-      color: var(--gin-green);
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 5px;
-      transition: color 0.3s;
-    }
-
-    .view-cart-link:hover {
-      color: #0f4123;
-    }
+  
 
     .site-footer {
       background: #f8f8f8;
@@ -772,16 +713,7 @@
         gap: 30px;
       }
 
-      .trust-badges {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .cart-notification {
-        right: 10px;
-        left: 10px;
-        min-width: auto;
-      }
+     
     }
   </style>
 </head>
@@ -883,7 +815,7 @@
         </div>
       </div>
 
-      <button class="add-to-cart-btn" onclick="addToCart()">
+      <button class="add-to-cart-btn" onclick="addProductToCart()">
         Add to Cart
       </button>
 
@@ -938,13 +870,7 @@
     </div>
   </div>
 
-  <div class="cart-notification" id="cart-notification">
-    <div class="notification-content">
-      <strong>✓ Added to Cart</strong>
-      <span>Yorkshire Craft Gins has been added to your cart.</span>
-      <a href="/cart.html" class="view-cart-link">View Cart & Checkout →</a>
-    </div>
-  </div>
+  
 
   <footer class="site-footer">
     
@@ -983,6 +909,7 @@
   <script src="/AzuSpirits/js/cart.js"></script>
 
   <script>
+    // Navigation
     function toggleNav() {
       const nav = document.getElementById('siteNav');
       nav.classList.toggle('open');
@@ -1004,6 +931,7 @@
       }
     });
 
+    // Quantity
     function increaseQuantity() {
       const input = document.getElementById('quantity');
       const max = parseInt(input.max);
@@ -1022,44 +950,20 @@
       }
     }
 
-    function addToCart() {
-      const product = {
+// Add to Cart
+    function addProductToCart() {
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const productWithQuantity = {
         id: 'yorkshire-gin-gift-set',
-        productId: 'prod_THzIcgqwcOkqZE',
-          priceId: 'price_1SLSX1DLWuae7NssYC9gC2aT',
-        name: 'Yorkshire Craft Gins',
+        priceId: 'price_1SLSX1DLWuae7NssYC9gC2aT',
+        name: 'Yorkshire Gin Gift Set',
         price: 52.00,
-        quantity: parseInt(document.getElementById('quantity').value),
-        image: '/AzuSpirits/images/products/yorkshire-gin-tasting-set.jpg'
+        image: '/AzuSpirits/images/products/yorkshire-gin-tasting-set.jpg',
+        quantity: quantity
       };
 
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existingIndex = cart.findIndex(item => item.id === product.id);
-      
-      if (existingIndex > -1) {
-        cart[existingIndex].quantity += product.quantity;
-      } else {
-        cart.push(product);
-      }
-      
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartCount();
-      
-      const notification = document.getElementById('cart-notification');
-      notification.classList.add('show');
-      
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 3000);
+      cart.addItem(productWithQuantity);
     }
-
-    function updateCartCount() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-      document.getElementById('cart-count').textContent = count;
-    }
-
-    updateCartCount();
   </script>
 </body>
 </html>

@@ -546,78 +546,6 @@
       box-shadow: 0 6px 20px rgba(22, 91, 51, 0.3);
     }
 
-    /* Trust Badges */
-    .trust-badges {
-      display: flex;
-      gap: 20px;
-      margin-top: 25px;
-      padding-top: 25px;
-      border-top: 1px solid #e0e0e0;
-      flex-wrap: wrap;
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: #666;
-    }
-
-    .trust-badge::before {
-      content: "✓";
-      color: #A4343A;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-
-       /* Notification */
-    .cart-notification {
-      position: fixed;
-        pointer-events: none;
-      top: 100px;
-      right: 20px;
-      background: white;
-      padding: 20px 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.3s;
-      z-index: 10000;
-      border-left: 4px solid var(--gin-green);
-      min-width: 300px;
-    }
-
-    .cart-notification.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .notification-content {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .notification-content strong {
-      color: var(--gin-green);
-      font-size: 16px;
-    }
-
-    .view-cart-link {
-      color: var(--gin-green);
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 5px;
-      transition: color 0.3s;
-    }
-
-    .view-cart-link:hover {
-      color: #0f4123;
-    }
 
         /* Footer Styles */
         .site-footer {
@@ -778,16 +706,6 @@
         gap: 30px;
       }
 
-      .trust-badges {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .cart-notification {
-        right: 10px;
-        left: 10px;
-        min-width: auto;
-      }
       
       /* Show mobile hero image */
       .mobile-hero-image {
@@ -901,18 +819,6 @@
 
      
 
-  <!-- Cart Notification -->
-  <div class="cart-notification" id="cart-notification">
-    <div class="notification-content">
-      <strong>✓ Added to Cart</strong>
-      <span>Edradour 21 has been added to your cart.</span>
-      <a href="/AzuSpirits/cart.html" class="view-cart-link">View Cart & Checkout →</a>
-    </div>
-  </div>
-    
-
-  
-  
 
     <footer class="site-footer">
        
@@ -934,69 +840,64 @@
 
     <script src="/AzuSpirits/js/cart.js"></script>
     <script>
-        // Mobile nav toggle
-        function toggleNav() {
-            const nav = document.getElementById('siteNav');
-            nav.classList.toggle('open');
-        }
-        
-        // Mobile dropdown toggle - ONLY on mobile
-        function initMobileDropdowns() {
-            const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
-            
-            if (window.innerWidth <= 768) {
-                dropdownLinks.forEach(function(link) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const parent = this.parentElement;
-                        
-                        // Close other dropdowns
-                        document.querySelectorAll('.has-dropdown').forEach(function(item) {
-                            if (item !== parent) {
-                                item.classList.remove('open');
-                            }
-                        });
-                        
-                        // Toggle current dropdown
-                        parent.classList.toggle('open');
-                    });
-                });
-            }
-        }
-        
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', initMobileDropdowns);
+           // Navigation
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
 
-        // Product data
-        const product = {
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) item.classList.remove('open');
+            });
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+
+    // Quantity
+    function increaseQuantity() {
+      const input = document.getElementById('quantity');
+      const max = parseInt(input.max);
+      const current = parseInt(input.value);
+      if (current < max) {
+        input.value = current + 1;
+      }
+    }
+
+    function decreaseQuantity() {
+      const input = document.getElementById('quantity');
+      const min = parseInt(input.min);
+      const current = parseInt(input.value);
+      if (current > min) {
+        input.value = current - 1;
+      }
+    }
+
+
+        // Add to Cart
+        function addProductToCart() {
+        const quantity = parseInt(document.getElementById('quantity').value);   
+        const productWithQuantity = {
             id:  'edradour-21-oloroso-finish',
             name: 'Edradour 21 Oloroso Cask Finish',
-          productId: 'prod_TKF1rgIMErbuBW', // Add Stripe Product ID
-    priceId: 'price_1SNaXiDLWuae7NssJ6WJGvIR', // Add Stripe Price ID
+           priceId: 'price_1SNaXiDLWuae7NssJ6WJGvIR', 
             price: 315.00,
             image: '/AzuSpirits/images/bottleshop/edradour-21-oloroso.jpg',
-            description: 'A very special whisky gift from the Edradour Distillery.',
+            quantity: quantity
             
         };
 
-        function increaseQuantity() {
-            const input = document.getElementById('quantity');
-            input.value = parseInt(input.value) + 1;
+      cart.addItem(productWithQuantity);
         }
-
-        function decreaseQuantity() {
-            const input = document.getElementById('quantity');
-            if (parseInt(input.value) > 1) {
-                input.value = parseInt(input.value) - 1;
-            }
-        }
-
-        function addProductToCart() {
-            const quantity = parseInt(document.getElementById('quantity').value);
-            for (let i = 0; i < quantity; i++) {
-                addToCart(product.id, product.name, product.price, product.image);
-            }
-        }
+        
     </script>
    
 

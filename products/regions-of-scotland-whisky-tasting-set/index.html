@@ -1109,45 +1109,22 @@
       }
     }
 
-    // Add to Cart
-    function addToCart() {
-      const product = {
-        id: 'regions-of-scotland-whisky-tasting-set',
-        name: 'Regions of Scotland Whisky Tasting Gift Set',
-        productId: 'prod_TG67VFHJ5aPE76',
-        priceId: 'price_1SLSdlDLWuae7Nss8iCw26SW',
-        price: 58.00,
-        quantity: parseInt(document.getElementById('quantity').value),
-        image: '/AzuSpirits/images/products/regions-of-scotland-gift.jpg'
-      };
+      // Add to Cart
+  function addToCart() {
+    const quantity = parseInt(document.getElementById('quantity').value);
+    
+    const productWithQuantity = {
+      id: 'regions-of-scotland-whisky-tasting-set',
+      priceId: 'price_1SLSdlDLWuae7Nss8iCw26SW',
+      name: 'Regions of Scotland Whisky Tasting Gift Set',
+      price: 58.00,
+      image: '/AzuSpirits/images/products/regions-of-scotland-gift.jpg',
+      quantity: quantity
+    };
+    
+    cart.addItem(productWithQuantity);
+  }
 
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existingIndex = cart.findIndex(item => item.id === product.id);
-      
-      if (existingIndex > -1) {
-        cart[existingIndex].quantity += product.quantity;
-      } else {
-        cart.push(product);
-      }
-      
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartCount();
-      
-      const notification = document.getElementById('cart-notification');
-      notification.classList.add('show');
-      
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 3000);
-    }
-
-    function updateCartCount() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-      document.getElementById('cart-count').textContent = count;
-    }
-
-    updateCartCount();
   </script>
 </body>
 </html>

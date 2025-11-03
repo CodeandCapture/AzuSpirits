@@ -614,68 +614,6 @@
       flex-wrap: wrap;
     }
 
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: #666;
-      font-weight: 500;
-    }
-
-    .trust-badge::before {
-      content: "✓";
-      color: var(--luxury-gold);
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .cart-notification {
-      position: fixed;
-      pointer-events: none;
-      top: 120px;
-      right: 20px;
-      background: linear-gradient(135deg, white, #fafafa);
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.3s;
-      z-index: 10000;
-      border: 3px solid var(--luxury-gold);
-      min-width: 320px;
-    }
-
-    .cart-notification.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .notification-content {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .notification-content strong {
-      color: var(--deep-burgundy);
-      font-size: 18px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .view-cart-link {
-      color: var(--deep-burgundy);
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 8px;
-      transition: color 0.3s;
-    }
-
-    .view-cart-link:hover {
-      color: var(--luxury-gold);
-    }
 
     .site-footer {
       background: #f8f8f8;
@@ -875,16 +813,6 @@
         gap: 30px;
       }
 
-      .trust-badges {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .cart-notification {
-        right: 10px;
-        left: 10px;
-        min-width: auto;
-      }
     }
   </style>
 </head>
@@ -1021,7 +949,7 @@
         </div>
       </div>
 
-      <button class="add-to-cart-btn" onclick="addToCart()">
+      <button class="add-to-cart-btn" onclick="addProductToCart()">
         Add to Cart
       </button>
       
@@ -1049,13 +977,7 @@
     </div>
   </div>
 
-  <div class="cart-notification" id="cart-notification">
-    <div class="notification-content">
-      <strong>✓ Added to Cart</strong>
-      <span>Luxury Single Malt Whisky has been added to your cart.</span>
-      <a href="/AzuSpirits/cart.html" class="view-cart-link">View Cart & Checkout →</a>
-    </div>
-  </div>
+  
 
   <footer class="site-footer">
     
@@ -1133,44 +1055,19 @@
       }
     }
 
-    function addToCart() {
-      const product = {
+    function addProductToCart() {
+       const quantity = parseInt(document.getElementById('quantity').value);
+      const productWithQuantity = {
         id: 'luxury-single-malt-whisky',
+        priceId: 'price_1SLSbYDLWuae7NssO2HhSFVk',
         name: 'Luxury Single Malt Whisky Tasting Gift Set',
-        productId: 'prod_TG6GlsebkwmL1q',
-         priceId: 'price_1SLSbYDLWuae7NssO2HhSFVk',
         price: 110.00,
-        quantity: parseInt(document.getElementById('quantity').value),
-        image: '/AzuSpirits/images/products/luxury-single-malt.jpg'
+        image: '/AzuSpirits/images/products/luxury-single-malt.jpg',
+        quantity: quantity
       };
 
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existingIndex = cart.findIndex(item => item.id === product.id);
-      
-      if (existingIndex > -1) {
-        cart[existingIndex].quantity += product.quantity;
-      } else {
-        cart.push(product);
-      }
-      
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartCount();
-      
-      const notification = document.getElementById('cart-notification');
-      notification.classList.add('show');
-      
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 3000);
+    cart.addItem(productWithQuantity);
     }
-
-    function updateCartCount() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-      document.getElementById('cart-count').textContent = count;
-    }
-
-    updateCartCount();
   </script>
 </body>
 </html>

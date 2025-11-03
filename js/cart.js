@@ -142,7 +142,7 @@ const products = {
     name: 'Yorkshire Gin Gift Set',
     price: 52.00,
     priceId: 'price_1SLSX1DLWuae7NssYC9gC2aT',
-    image: '/AzuSpirits/images/products/yorkshire-gin.jpg'
+    image: '/AzuSpirits/images/products/yorkshire-gin-tasting-set.jpg'
   },
   
   // WHISKY TASTING SETS

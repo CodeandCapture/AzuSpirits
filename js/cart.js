@@ -183,7 +183,7 @@ const products = {
     name: 'London Gin Christmas Crackers',
     price: 52.00,
     priceId: 'price_1SMYUCDLWuae7Nss0MtD8DfQ',
-    image: '/AzuSpirits/images/products/london-gins-christmas-crackers-alt1.jpg'
+    image: '/AzuSpirits/images/products/london-gins-christmas-crackers-alt1.jpg',
   }
 };
 

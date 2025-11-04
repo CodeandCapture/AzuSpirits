@@ -1,1 +1,734 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms & Conditions — Azu Spirits</title>
+  <meta name="description" content="Terms and conditions for Azu Spirits premium whisky and gin tasting sets. Read our policies on delivery, refunds, age verification, and customer responsibilities." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&display=swap" rel="stylesheet">
+
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles - Matching homepage */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    .header-inner img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+      /* Dropdown Menu Styles */
+        .site-nav li {
+            position: relative;
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        .dropdown-menu {
+            display: none !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            display: flex !important;
+          
+        }
+
+        .dropdown-menu li {
+            margin: 0 !important;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+           
+    }
+        
+
+        .dropdown-menu a:hover {
+            background: #A4343A;
+            color: white;
+        }
+
+        .site-nav li + li {
+            margin-left: 1.5rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .dropdown-menu .site-nav a:hover {
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+       .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #A4343A;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+    /* Hero Section */
+    .hero-section {
+      background: white;
+      color: black;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 36px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      padding:20px;
+      background: white;
+    }
+
+    .hero-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: black;
+      font-style: italic;
+    }
+
+    /* Main Content Section */
+    .about-section {
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .about-column h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .about-column h3 {
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      color: #A4343A;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .about-column p {
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+    
+    /* Refund Policy Section */
+.refund-policy {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.refund-policy h3 {
+  color: #A4343A;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.refund-policy p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.refund-policy a {
+  color: #A4343A;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.refund-policy a:hover {
+  text-decoration: underline;
+}
+
+/* Q&A Section */
+.qa-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.qa-section h3 {
+  color: #A4343A;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.qa-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qa-item {
+  background: #f9f9f9;
+  border-left: 4px solid #A4343A;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.qa-item:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.qa-question {
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: block;
+}
+
+.qa-answer {
+  color: #555;
+  line-height: 1.7;
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .refund-policy,
+  .qa-section {
+    padding: 0 1rem;
+  }
+  
+  .qa-item {
+    padding: 1rem;
+  }
+  
+  .qa-question {
+    font-size: 1rem;
+  }
+}
+
+   
+    /* Footer - Matching homepage */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px;
+      margin-top: 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    .footer-nav a:hover {
+      color: #A4343A;
+      padding-left: 5px;
+    }
+
+    .site-info {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 868px) {
+      .hero-section h1 {
+        font-size: 24px;
+      }
+
+      .hero-section p {
+        font-size: 16px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <img src="/AzuSpirits/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/AzuSpirits/'">
+    
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="/AzuSpirits/">Home</a></li>
+          
+          <!-- Dropdown for Tasting Gift Sets -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-gifts/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <!-- Dropdown for Sharing Boxes -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-sharing-boxes/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/AzuSpirits/christmas-gifts/">Christmas Gifts</a></li>
+          <li><a href="/AzuSpirits/about-us/">About</a></li>
+          <li><a href="/AzuSpirits/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart/'">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Terms & Conditions</h1>
+      
+    </div>
+  </section>
+  
+
+  <!-- About Section -->
+  <section class="about-section">
+    
+        
+        <!-- Column 1 -->
+        <div class="about-column">
+          
+          <h3>Accuracy of Information on the Site</h3>
+          <p>
+
+
+We do our best to ensure that information on the Site is complete, accurate and current. Despite our efforts, however, information on the Site may occasionally be inaccurate, incomplete or out of date.All specifications, products, descriptions and prices of products on the Site are subject to change at any time without notice. We make all reasonable efforts to accurately display the attributes of our products. If any inaccuracy occurs in relation to the informed measurement (of spirits) Azu Spirits Ltd are liable. We do not warrant the accuracy or completeness of the information, content or materials provided through the Site. 
+<br><br>
+The inclusion of any products or services on the Site at a particular time does not imply or warrant that these products or services will be available at any time. We reserve the right to discontinue any product at any time. 
+
+          </p> 
+
+          <h3>Terms of Sale</h3>
+<p>  
+
+By placing an order with us, you are (i) offering to purchase a product, (ii) representing that you are of legal age to purchase alcohol, and (iii) representing that all information you provide to us in connection with such order is true and accurate and you are an authorized user of the payment method provided. The receipt by you of an order confirmation does not constitute our acceptance of an order. We retain the right to refuse any order request made by you.  By submitting information during the payment process, you grant to Azu Spirits and to vendors the right to provide such information to third parties consistent with our privacy policy and their privacy policies. If you have any questions regarding a vendor's privacy policy, please contact us before purchasing a product.<br>
+
+Prior to our acceptance of an order, verification of information may be required. We reserve the right at any time after receipt to accept, modify or decline your order, or any portion thereof, even after your receipt of an order confirmation from us,  for any reason whatsoever. We reserve the right to limit the number of items ordered and to refuse service to you without prior notification. In the event that an item lists an incorrect price, either due to typographical or other error, we shall have the right to refuse or cancel any such order placed for the incorrect price, regardless of whether the order is being or has been processed. If payment has already been made or if your account has already been charged for the purchase and the order is cancelled, we will credit your account in the amount of the incorrect price.
+          </p>
+          <h3>Payment terms</h3>
+<p>
+
+Azu Spirits website is integrated with Stripe which will accept all major credit card and debits. If payment is unaccepted by customers bank the order will not be processed. If customer is unhappy with the quality or there is an issue with stated quantity of the product, or the product is broken, if they can return it, unused, to Azu Spirits within 28 days they are entitled to a full refund from Azu Spirits. (customer is liable for any payment disputes between them and their bank) 
+
+ <br>
+
+This policy is a part of our Terms of Use. By using Azu Spirits Payments, you’re agreeing to this policy and our Terms of Use.
+
+1.     Accepting these terms
+
+2.     Overview
+
+3.     Third-Party Services
+
+4.     Azu Spirits’ Rights and Responsibilities
+
+5.     Payment Processing Fees
+
+          </p>
+          <h3>Shipping & Delivery</h3>
+
+<p>  
+
+Azu Spirits uses DPD delivery for fast and reliable shipping. 
+
+If the delivery address is incorrect, Azu Spirits will not accept any liability for delay or non-delivery. We also reserve the right to charge shipping costs to re-send the package. If you do not wish the goods to be re-sent, Azu Spirits will give you a full refund minis the shipping costs.
+
+We design our packaging to ensure maximum protection of the product(s), if (in the unlikely event that) you receive damaged or incomplete goods, please notify us immediately and we will work out how best to make it up to you. We may ask for a photo, written proof or a return before offering any type of refund or replacement 
+
+Currently we only ship to the UK, but keep your eye out as we aim to expand. 
+
+          </p> 
+         <div class="refund-policy">
+  <h3>Refund Policy</h3>
+  <p><strong>Online Purchases:</strong> If the items you received are incomplete, you were misinformed regarding the information about the product, the items were delivered outside the specified date(s) or you are unhappy with the product, we will give a full refund once the product has been returned.</p>
+  <p>For help contact us at <a href="mailto:enquiries@azuspirits.co.uk">enquiries@azuspirits.co.uk</a></p>
+</div>
+
+<div class="qa-section">
+  <h3>Frequently Asked Questions</h3>
+  
+  <ul class="qa-list">
+    <li class="qa-item">
+      <strong class="qa-question">When will I receive my delivery?</strong>
+      <span class="qa-answer">You should receive your package within 3-5 working days.</span>
+    </li>
+    
+    <li class="qa-item">
+      <strong class="qa-question">Who needs to sign for my delivery?</strong>
+      <span class="qa-answer">Yes. We do require a signature upon acceptance of the delivery.</span>
+    </li>
+    
+    <li class="qa-item">
+      <strong class="qa-question">What am I responsible for upon delivery?</strong>
+      <span class="qa-answer">We may require further identification to ensure the person is above the legal age of drinking alcohol in their jurisdiction.</span>
+    </li>
+    
+    <li class="qa-item">
+      <strong class="qa-question">What additional fees may apply?</strong>
+      <span class="qa-answer">If ordering from outside the UK, additional custom duties and import fees may apply and will be calculated at checkout.</span>
+    </li>
+  </ul>
+</div>
+       
+          <h3>Returns and Cancellations</h3>
+          <h4>Returns Policy</h4>
+<p>   
+
+If you are unhappy with the Azu Spirits Tasting Box or believe the information and content is insufficient, we are happy to give a full refund if the product is returned within 28 days of receiving. Azu Spirits retains the right to refuse a refund if the product has been used or has not been returned to Azu Spirits 
+          </p>
+           <h4>Cancellation Policy</h4>
+<p>  
+
+
+If you wish to cancel your order and have selected standard delivery, let us know within 24 hours and we will cancel and give you a full refund. If your item has already been posted, we will happily give a full refund if returned. </p>
+          <h3>Intellectual property</h3>  
+
+          <p>
+
+The Site and all of its materials, including, but not limited to, its software or HTML code, scripts, text, artwork, photographs, images, video, and audio (collectively “Materials”) are protected by copyright laws and other U.K (and international) laws and treaties and are property of Azu Spirits or its licensors. All Materials are provided through the Site as a service to its current and prospective visitors and may be used only for personal and informational purposes and only if you also retain all copyright and other proprietary notices contained on the Materials. No right, title or interest in Azu Spirits Materials is conveyed to you. You may not copy, reproduce, publish, transmit, distribute, perform, display, post, modify, create derivative works from, sell, license or otherwise exploit the Site or any of its Materials without prior written permission: You may not access of use the Site for any competitive or commercial purpose; nor may you permit any copying of our Materials. Any unauthorizes copying, alteration, distribution, transmission, performance, display, or other use of these Materials is prohibited. Any and all rights not expressly granted are reserved by Azu Spirits, as applicable. </p>
+          <h3>Disclaimer (and waiver) of liability </h3>  
+          <p>
+
+
+ You must be of legal drinking age to enter this site. Azu Spirits does not sell alcohol to persons under the age of (18 in United Kingdom, country specific?). Azu Spirits makes every effort to ensure that alcohol beverages are not delivered to anyone under the age of. By accessing this site, you agree that any alcohol purchased from or received by you from representatives of Azu Spirits is intended for personal consumption and not for resale. If you do not agree with this conditions of use please do not use this site. If you intentionally or unintentionally misrepresent your age in order to provide alcohol to a person under the age of (18), Azu Spirits will prosecute you fully to the extent allowable by law </p>
+          <h4>Health Consequences of Consuming Alcohol</h4>
+          <p>
+
+ We encourage responsible drinking of alcohol, and include health warnings both in our website and on our product. CMO’s low-risk drinking guidelines state;
+
+·  To keep health risks from alcohol to a low level it is safest not to drink more than 14 units a week on a regular basis
+
+·  If you regularly drink as much as 14 units per week, it's best to spread your drinking evenly over three or more days. If you have one or two heavy drinking episodes a week, you increase your risk of long-term illness and injury
+
+·  The risk of developing a range of health problems (including cancers of the mouth, throat and breast) increases the more you drink on a regular basis</p>
+           <h4> Liability Waiver </h4>
+          <p>
+
+In consideration for your being given access to this site, you hereby agree you will not sue Azu Spirits and/or employees from any and all liability, claims, demands, actions and causes of action whatsoever arising out of or relating to any damage to your property or loss, damage or injury that you personally sustain, (or death, whether caused by the negligence of Azu Spirits or not) while using site content and/or attending Azu Spirits Events in person, regardless of location. You hereby assume all risks to your property and person and in no way will Azu Spirits be liabile to you for damages or injuries you sustain.  </p>
+          
+          <h3>External Links</h3>
+          
+          <p>
+
+Links pointing outside of this website are provided for the user’s convenience. Azu Spirits is not responsible for the quality, nature, and reliability of third party content. The inclusion of third party links does not imply endorsement by Azu Spirits.
+
+ <br><br>
+
+-       The Sites may contain links to third party websites (“Other Sites”) that are not under Azu Spirits control. Azu Spirits makes no claim and accepts no responsibility regarding the quality, nature or reliability of the Other Sites that are accessible by hyperlinks from the Sites or link to the Sites. Azu Spirits provides these links to you as a convenience and the inclusion of any link does not imply endorsement by Azu Spirits of Other Sites or any association with the operators of such Other Sites. You are responsible for viewing and abiding by the privacy statements and terms of use posted at any third party sites.
+          </p>
+          
+          <h3>Loyalty Programs and Promotions </h3>
+          <p>
+
+
+Occasionally Azu Spirits offers promotions through voucher codes, emails, catalogs, and advertisements. You will always receive free shipping. As a registered member of Azu  Spirits, you may be eligible to receive email promotions and offers that include special codes for special free samples, free shipping, or other promotions.  <br><br>
+
+**Please note that excessive abuse or misuse of promotions and codes may result in order or item cancellation. In order to allow fair redemption and distribution of promotions to all of our registered clients, Azu Spirits may restrict redemption to one per client. 
+            
+          </p>
+          <h3>Promotion Codes</h3>
+<p>
+
+There is a specific alphanumeric code associated with each Azu Spirits promotion that can use to redeem the promotion. There may be a minimum merchandise purchase requirement (taxes and shipping are excluded). Please note that eGift Certificates and Gift Cards are not considered merchandise and do not count towards the minimum purchase requirement. Enter this code in its entirety in the promotion code field on the payment information page during the checkout process. Azu Spirits promotion code are not case sensitive. You will see the promotion reflected in your shopping basket on the order confirmation page. For more details about a specific promotion, you can click on the description link that is provided in your shopping basket. You may only use one promotion code per order. All promotion codes are available for a limited time, while supplies last and cannot be used once expired. These promotions are not redeemable for cash and are limited to one promotion per order, and in some cases promotions can only be redeemed once per person. 
+
+</p>
+        </div>
+
+        </section>
+       
+
+ 
+
+  <!-- Footer - Matching homepage -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/about-us">About Us</a></li>
+          <li><a href="/AzuSpirits/blog">Blog</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/AzuSpirits/shipping-returns">Shipping & Returns</a></li>
+          <li><a href="/AzuSpirits/terms">Terms & Conditions</a></li>
+          <li><a href="/AzuSpirits/privacy">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-info">
+        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+        <p style="margin-top: 10px; font-size: 0.85em;">Please drink responsibly. You must be 18 or over to purchase alcohol.</p>
+      </div>
+    </div>
+  </footer>
+
+   
+  <!-- Cart JS -->
+  <script src="/AzuSpirits/js/cart.js"></script>
+
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only add click handlers on mobile
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+          item.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

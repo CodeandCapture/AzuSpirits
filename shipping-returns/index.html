@@ -1,1 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shipping & Returns — Azu Spirits</title>
+  <meta name="description" content="Premium Scotch whisky and gin tasting gifts shipped via DPD for fast and reliable delivery." />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&display=swap" rel="stylesheet">
+
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles - Matching homepage */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    .header-inner img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+      /* Dropdown Menu Styles */
+        .site-nav li {
+            position: relative;
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        .dropdown-menu {
+            display: none !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            display: flex !important;
+          
+        }
+
+        .dropdown-menu li {
+            margin: 0 !important;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+           
+    }
+        
+
+        .dropdown-menu a:hover {
+            background: #A4343A;
+            color: white;
+        }
+
+        .site-nav li + li {
+            margin-left: 1.5rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .dropdown-menu .site-nav a:hover {
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+       .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #A4343A;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+    /* Hero Section */
+    .hero-section {
+      background-image: url('/AzuSpirits/images/packaging/flexi-hex-packaging.jpg');
+      background-size: cover;
+      color: black;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 36px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      padding:20px;
+      background: white;
+    }
+
+    .hero-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: black;
+      font-style: italic;
+    }
+
+    /* Main Content Section */
+    .about-section {
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .about-column h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .about-column h3 {
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      color: #A4343A;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .about-column p {
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Journey Highlight Box */
+    .journey-box {
+      background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+      padding: 30px;
+      border-left: 4px solid #A4343A;
+      margin: 30px 0;
+      border-radius: 4px;
+    }
+
+    .journey-box h4 {
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #A4343A;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .journey-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .journey-box li {
+      padding: 10px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .journey-box li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #A4343A;
+      font-size: 1.2em;
+    }
+
+ 
+
+    /* Footer - Matching homepage */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px;
+      margin-top: 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    .footer-nav a:hover {
+      color: #A4343A;
+      padding-left: 5px;
+    }
+
+    .site-info {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 868px) {
+      .hero-section h1 {
+        font-size: 24px;
+      }
+
+      .hero-section p {
+        font-size: 16px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <img src="/AzuSpirits/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/AzuSpirits/'">
+    
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="/AzuSpirits/">Home</a></li>
+          
+          <!-- Dropdown for Tasting Gift Sets -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-gifts/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <!-- Dropdown for Sharing Boxes -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-sharing-boxes/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/AzuSpirits/christmas-gifts/">Christmas Gifts</a></li>
+          <li><a href="/AzuSpirits/about-us/">About</a></li>
+          <li><a href="/AzuSpirits/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart/'">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Shipping & returns</h1>
+      
+    </div>
+  </section>
+  
+
+  <!-- About Section -->
+  <section class="about-section">
+    
+    
+    <div class="container">
+      <div class="about-grid">
+         <div class="journey-box">
+           
+            <ul>
+              <li>Free DPD Delivery</li>
+              <li>Select Preferred Date</li>
+              <li>Leave a Gift Note</li>
+            </ul>
+          </div>
+        
+        <!-- Column 1 -->
+        <div class="about-column">
+          
+          <h3>Where we deliver</h3>
+          <p>Our products are available to deliver to addresses in the British Isles, including mainland UK, Guernsey, Isle of Man, Isle of Wight, Jersey, Northern Ireland, Scottish Highlands and Scottish Islands.</p>
+        
+          <h3>Shipping times</h3>
+          
+          <p>We have a 1 - 2 day handling time and use DPD Next Day service for reliable shipping. </p>
+         
+            
+<p> We will provide a tracking link for your parcel, in the unlikely event the shipment is lost during transit we will send replacement or a full refund.</p>
+          
+          <h3>Returns</h3>
+
+      
+          <p>If you would like to return your order, please email us with the reason for the return. We will send a return label and issue a refund once we have received the item. In the unlikely event that your order arrives damaged, please contact us within 7 days of receiving the item, with proof of damage. We will send a replacement free of charge. </p>
+        </div>
+
+        </section>
+       
+
+ 
+
+  <!-- Footer - Matching homepage -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/about-us">About Us</a></li>
+          <li><a href="/AzuSpirits/blog">Blog</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/AzuSpirits/shipping-returns">Shipping & Returns</a></li>
+          <li><a href="/AzuSpirits/terms">Terms & Conditions</a></li>
+          <li><a href="/AzuSpirits/privacy">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-info">
+        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+        <p style="margin-top: 10px; font-size: 0.85em;">Please drink responsibly. You must be 18 or over to purchase alcohol.</p>
+      </div>
+    </div>
+  </footer>
+
+   
+  <!-- Cart JS -->
+  <script src="/AzuSpirits/js/cart.js"></script>
+
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only add click handlers on mobile
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+          item.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

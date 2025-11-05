@@ -179,6 +179,13 @@ const products = {
     image: '/AzuSpirits/images/products/christmas-crackers-whisky-alt1.jpg'
   },
 
+  'south-west-gin-tasting-set', {
+        name: 'South West Craft Gin Tasting Gift Set',
+        price: 50.00,
+        priceId: ‘price_1SQA7EDLWuae7NssnnHeOJSQ’,
+        image: '/AzuSpirits/images/products/devon-gins.jpg'
+},
+
     'london-gin-christmas-crackers': {
     name: 'London Gin Christmas Crackers',
     price: 52.00,

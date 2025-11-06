@@ -170,6 +170,14 @@ const products = {
     priceId: 'price_1SLSbYDLWuae7NssO2HhSFVk',
     image: '/AzuSpirits/images/products/luxury-single-malt.jpg'
   },
+  // SHARING BOXES
+
+  'six-styles-sharing-box': {
+   name: 'Six Styles of Scotch Whisky Sharing Box',
+   price: 135.00,
+   priceId: 'price_1SP3AjDLWuae7Nssc66stjRA',
+    image: '/AzuSpirits/images/products/six-styles-of-scotch-whisky-sharing.png'
+  },
   
   // CHRISTMAS CRACKERS
   'luxury-whisky-christmas-crackers': {

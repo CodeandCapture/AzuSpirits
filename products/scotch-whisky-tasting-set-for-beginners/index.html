@@ -927,20 +927,7 @@
           <li>Gift-ready premium presentation box</li>
           <li>Free DPD delivery (UK)</li>
         </ul>
-      </div>
-
-
-  <!-- Cart Notification -->
-  <div class="cart-notification" id="cart-notification">
-    <div class="notification-content">
-      <strong>✓ Added to Cart</strong>
-      <span>Regions of Scotland has been added to your cart.</span>
-      <a href="/AzuSpirits/cart.html" class="view-cart-link">View Cart & Checkout →</a>
-    </div>
-  </div>
-    
-
-  
+      </div>  
   
 
     <footer class="site-footer">
@@ -963,73 +950,59 @@
 
     <script src="/AzuSpirits/js/cart.js"></script>
     <script>
-        // Mobile nav toggle
-        function toggleNav() {
-            const nav = document.getElementById('siteNav');
-            nav.classList.toggle('open');
-        }
-        
-        // Mobile dropdown toggle - ONLY on mobile
-        function initMobileDropdowns() {
-            const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
-            
-            if (window.innerWidth <= 768) {
-                dropdownLinks.forEach(function(link) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const parent = this.parentElement;
-                        
-                        // Close other dropdowns
-                        document.querySelectorAll('.has-dropdown').forEach(function(item) {
-                            if (item !== parent) {
-                                item.classList.remove('open');
-                            }
-                        });
-                        
-                        // Toggle current dropdown
-                        parent.classList.toggle('open');
-                    });
-                });
-            }
-        }
-        
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', initMobileDropdowns);
+        // Navigation
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
 
-        // Product data
-        const product = {
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) item.classList.remove('open');
+            });
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+
+    // Quantity
+    function increaseQuantity() {
+      const input = document.getElementById('quantity');
+      const max = parseInt(input.max);
+      const current = parseInt(input.value);
+      if (current < max) {
+        input.value = current + 1;
+      }
+    }
+
+    function decreaseQuantity() {
+      const input = document.getElementById('quantity');
+      const min = parseInt(input.min);
+      const current = parseInt(input.value);
+      if (current > min) {
+        input.value = current - 1;
+      }
+    }
+        // Add to Cart
+        function addProductToCart() {
+        const quantity = parseInt(document.getElementById('quantity').value);
+        const productWithQuantity = {
             id:  'six-styles-scotch-whisky-tasting-set',
             name: 'Six Styles of Scotch Tasting Gift Set',
-          productId: 'prod_TG62eTVmez6gqN', // Add Stripe Product ID
-    priceId: 'price_1SLSeHDLWuae7Nss2SEy0Fmy', // Add Stripe Price ID
+            priceId: 'price_1SLSeHDLWuae7Nss2SEy0Fmy',
             price: 63.00,
             image: '/AzuSpirits/images/products/six-styles-scotch-main.jpg',
-            description: 'Six classic styles of single malt Scotch whisky, perfect for beginners.',
-            features: [
-                '6 Numbered Bottles - Six renowned single malts, each 30ml',
-                'Tasting Guide - Helpful notes and tips',
-                'Information Cards - Insights into flavour characteristics',
-                'Wax-Sealed Envelope - Contains your results'
-            ]
+            quantity: quantity
         };
 
-        function increaseQuantity() {
-            const input = document.getElementById('quantity');
-            input.value = parseInt(input.value) + 1;
-        }
-
-        function decreaseQuantity() {
-            const input = document.getElementById('quantity');
-            if (parseInt(input.value) > 1) {
-                input.value = parseInt(input.value) - 1;
-            }
-        }
-
-        function addProductToCart() {
-            const quantity = parseInt(document.getElementById('quantity').value);
-            for (let i = 0; i < quantity; i++) {
-                addToCart(product.id, product.name, product.price, product.image);
-            }
+     cart.addItem(productWithQuantity)
         }
     </script>
    

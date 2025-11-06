@@ -178,6 +178,14 @@ const products = {
    priceId: 'price_1SP3AjDLWuae7Nssc66stjRA',
     image: '/AzuSpirits/images/products/six-styles-of-scotch-whisky-sharing.png'
   },
+
+  'limited-edition-single-malt-sharing':  {
+name: 'The Founders Selection Whisky Sharing Box',
+price: 115:00,
+priceId: 'price_1SQb16DLWuae7Nss4HRygByM',
+image: '/AzuSpirits/images/products/scotch-whisky-tasting-box.JPG'
+    
+  },
   
   // CHRISTMAS CRACKERS
   'luxury-whisky-christmas-crackers': {

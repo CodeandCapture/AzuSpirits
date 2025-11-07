@@ -1,1 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Azu Spirits</title>
+  <meta name="description" content="Privacy Policy for Azu Spirits Ltd" />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&display=swap" rel="stylesheet">
+
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles - Matching homepage */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    .header-inner img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+      /* Dropdown Menu Styles */
+        .site-nav li {
+            position: relative;
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown > a::after {
+            content: ' ▾';
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        .dropdown-menu {
+            display: none !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            display: flex !important;
+          
+        }
+
+        .dropdown-menu li {
+            margin: 0 !important;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+           
+    }
+        
+
+        .dropdown-menu a:hover {
+            background: #A4343A;
+            color: white;
+        }
+
+        .site-nav li + li {
+            margin-left: 1.5rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .dropdown-menu .site-nav a:hover {
+            color: white;
+        }
+
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+       .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #A4343A;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+    /* Hero Section */
+    .hero-section {
+      background: white;
+      color: black;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 36px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      padding:20px;
+      background: white;
+    }
+
+    .hero-section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: black;
+      font-style: italic;
+    }
+
+    /* Main Content Section */
+    .about-section {
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .about-column h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .about-column h3 {
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      color: #A4343A;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .about-column p {
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+    
+    /* Refund Policy Section */
+.refund-policy {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.refund-policy h3 {
+  color: #A4343A;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.refund-policy p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.refund-policy a {
+  color: #A4343A;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.refund-policy a:hover {
+  text-decoration: underline;
+}
+
+/* Q&A Section */
+.qa-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.qa-section h3 {
+  color: #A4343A;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.qa-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qa-item {
+  background: #f9f9f9;
+  border-left: 4px solid #A4343A;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.qa-item:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.qa-question {
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: block;
+}
+
+.qa-answer {
+  color: #555;
+  line-height: 1.7;
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .refund-policy,
+  .qa-section {
+    padding: 0 1rem;
+  }
+  
+  .qa-item {
+    padding: 1rem;
+  }
+  
+  .qa-question {
+    font-size: 1rem;
+  }
+}
+
+   
+    /* Footer - Matching homepage */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px;
+      margin-top: 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    .footer-nav a:hover {
+      color: #A4343A;
+      padding-left: 5px;
+    }
+
+    .site-info {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 868px) {
+      .hero-section h1 {
+        font-size: 24px;
+      }
+
+      .hero-section p {
+        font-size: 16px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <img src="/AzuSpirits/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/AzuSpirits/'">
+    
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="/AzuSpirits/">Home</a></li>
+          
+          <!-- Dropdown for Tasting Gift Sets -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-gifts/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <!-- Dropdown for Sharing Boxes -->
+          <li class="has-dropdown">
+            <a href="/AzuSpirits/sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu">
+              <li><a href="/AzuSpirits/whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="/AzuSpirits/gin-sharing-boxes/">Premium Gin</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/AzuSpirits/christmas-gifts/">Christmas Gifts</a></li>
+          <li><a href="/AzuSpirits/about-us/">About</a></li>
+          <li><a href="/AzuSpirits/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='/AzuSpirits/cart/'">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      
+    </div>
+  </section>
+  
+
+  <!-- About Section -->
+  <section class="about-section">
+    
+        
+        <!-- Column 1 -->
+        <div class="about-column">
+          
+          <h3>Introduction</h3>
+          <p>
+
+
+In this policy, “we”, “us” and “our” refer to Azu Spirits Ltd. For more information about us, see the “Our Details” section.
+<br>
+We are committed to safeguarding and protecting your personal privacy. We provide this Privacy Policy to help you understand what we may do with any personal information that we obtain from you. This privacy policy covers all sites in the azuspirits.co.uk domains. By providing your personal information to us, you signify your acceptance of our policy and agree that we may collect, use and disclose your personal information as described in this policy. If you do not agree to this policy, please do not provide your personal details to us. This policy is incorporated into, and part of, the Terms and Conditions, which govern the use of the site in general. We will use your information only for the purposes set out below. <br>
+
+We may need to update this policy from time to time and recommend that you regularly check this page to ensure that you have read the most recent version. 
+
+          </p> 
+          
+          <div>
+            <h4>In this section we have set out</h4>
+            <li> The personal data that we may process
+            <li> The purposes for which we may process personal data
+          </div>
+
+          <h3>Legal purchase age</h3>
+<p>  
+
+You must not provide us with your personal information if you are not of legal age to purchase alcohol in the jurisdiction in which you reside and (if different) in the jurisdiction in which you are accessing the site. We do not intend to collect personal information from any individuals under the legal purchase age. If you are convinced we have collected personal data about a minor you should contact us so we can delete such personal information from our files or flag such personal information and retain it for the sole purpose of ensuring that it is not used any further. <br>
+
+          </p>
+          <h3>What is personal information?</h3>
+<p>
+Personal information is information about an identifiable individual, as defined by applicable law. It does not aggregated information that does not allow you to be identified, nor does it include business contact information such as your name, title, business address and business phone number.any payment disputes between them and their bank) 
+
+          </p>
+          <h3>Collection and use of your personal data</h3>
+
+<p>  
+
+When you use this website, you may provide us with personal data, for example by completing a purchase, applying for a membership or completing forms. We will only use your personal data for the purposes of dealing with your enquiry, the administration of any orders, the provision of any goods or services we offer, the administration of any account or membership held by you, answering questions or complaints you may have in relation to our goods and services, for internal marketing analysis, or (if you agree) to provide you with details of any new or improved products or services we may be offering from time to time (and you will be entitled to opt-out of any such communications at any time). We may also contact you at a later date to seek your consent to use your personal data for different purposes. We will only use your personal data for the purpose of which you provided it, or for any other purpose that you expressly consent to. We may also use your data for “cookies”. For more information about cookies visit our cookies page or www.allaboutcookies.org for assistance with adjusting your browser settings. We do not use any other web tracking software, web bugs or similar.
+          </p> 
+       
+  <h3>Analytics & Trackers</h3>
+          <div>
+          <li> Google Analytics
+            <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic</p>
+          </div>
+
+
+       
+          <h3>Sharing your personal data </h3>
+         
+<p>   
+We will not disclose any personal data which is provided by you through our website to any third party without your permission, other than (i) to any sub-contractors or agents engaged by us to provide any support or administration, facilities management or similar services (subject to such sub-contractors and/or agents undertaking to keep such personal data confidential); (ii) to any company or organisation to which we transfer our responsibilities to provide the goods or services to you; or (iii) where required by law or made in connection with legal or regulatory proceedings. We will not transfer your personal data outwith the European Economic Area (“EEA”) without your prior consent. If we  do transfer your personal data outwith the EEA, we will use reasonable endeavours to assess the adequacy or the protections afforded in respect of personal data under the laws of the particular country concerned. 
+ </p>
+          <h3>Security </h3>
+<p>  
+
+We will not hold your personal data for any longer than it is reasonable for the above purposes. We have taken reasonable precautions to keep your personal data secure. However you should be aware that any personal data submitted by you via the internet is at your own risk.
+          </p>
+          <h3>Unsubscribe, access, questions, and further information </h3>  
+
+          <p>
+
+Unsubscribe to our newlsetter at any time via the link provided. At your request, or where the law requires us to do so, we will confirm what personal information we hold about you, update your information, remove your information and/or correct any inaccuracies in such personal information if you contact us using the unsubscribe details provided below. 
+
+If you have any privacy-related questions, concerns or complaints, please get in touch via our contact form. </p>
+          <h3>Links</h3>  
+          
+          <p>This site may contain links or references to other websites outside of our control. Please be aware that we have no control over these sites and our privacy statement does not apply to these sites. We encourage you to read the privacy statements and terms and conditions of linked or referenced sites you enter. </p>
+          <p>
+As required, this policy will be supplemented by additional legal requirements in jurisdictions where we conduct business. Nothing in this policy or otherwise will create, or add to, any right or claim (whether legal, equitable, or otherwise) that any individual or person may have at law or otherwise against the company or any third party or any of their respective directors, officers, employees, agents of representatives, nor will the existence of this policy or its application impose or add to any obligations or liability upon the company that the company does not already otherwise have under law.</p>
+          
+          <h4>
+
+Azu Spirits Ltd started trading spirits in 2020. The company is registered in England trading at:
+          The Granary, Clove Farm, Longdown
+Near Exeter, Devon, England 
+EX67SB
+
+Registered No:  12234341</h4>
+         
+</p>
+
+        </section>
+       
+
+ 
+
+  <!-- Footer - Matching homepage -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Sets</a></li>
+          <li><a href="/AzuSpirits/about-us">About Us</a></li>
+          <li><a href="/AzuSpirits/blog">Blog</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="/AzuSpirits/shipping-returns">Shipping & Returns</a></li>
+          <li><a href="/AzuSpirits/terms">Terms & Conditions</a></li>
+          <li><a href="/AzuSpirits/privacy">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-info">
+        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+        <p style="margin-top: 10px; font-size: 0.85em;">Please drink responsibly. You must be 18 or over to purchase alcohol.</p>
+      </div>
+    </div>
+  </footer>
+
+   
+  <!-- Cart JS -->
+  <script src="/AzuSpirits/js/cart.js"></script>
+
+  <script>
+    // Mobile nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('siteNav');
+      nav.classList.toggle('open');
+    }
+    
+    // Mobile dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      // Only add click handlers on mobile
+      if (window.innerWidth <= 768) {
+        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+        
+        dropdownParents.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+              if (item !== parent) {
+                item.classList.remove('open');
+              }
+            });
+            
+            // Toggle current dropdown
+            parent.classList.toggle('open');
+          });
+        });
+      }
+    });
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelectorAll('.has-dropdown').forEach(function(item) {
+          item.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -675,6 +675,37 @@
       color: #999;
       margin: 0;
     }
+.gift-trust-banner {
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  padding: 0rem 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+.scroll-to-details {
+  display: block;
+  margin: 2rem auto 0;
+  background: #A4343A;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(22, 91, 51, 0.3);
+}
+
+.scroll-to-details:hover {
+  background: #cb5a60;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 91, 51, 0.4);
+}
 
     /* Mobile Styles */
     @media (max-width: 868px) {
@@ -817,6 +848,16 @@
       <h2>A unique at-home tasting experience designed for groups.</h2>
     </div>
   </section>
+
+   <!-- Trust Banner - Right after hero -->
+<section class="gift-trust-banner">
+  <div class="container">
+   
+    <button class="scroll-to-details" onclick="scrollToSection('whats-in-box')">
+      What Makes Our Experience Unique? ↓
+    </button>
+  </div>
+</section>
 
   <!-- Featured Collections -->
   <section class="featured-collections">
@@ -1051,5 +1092,13 @@
       }
     });
   </script>
+  <script>
+function scrollToSection(sectionClass) {
+  const section = document.querySelector('.' + sectionClass);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>
 </body>
 </html>

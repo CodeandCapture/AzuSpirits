@@ -845,42 +845,63 @@ text-transform: uppercase;
             gap: 2rem;
         }
 
-     /* Footer styling - clean and refined */
-.footer-nav-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 30px;
-}
+    /* Footer navigation grid */
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 30px;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
 
-.footer-nav-section h4 {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #A4343A;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
+    .footer-nav-section h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #A4343A;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
 
-.footer-nav a {
-  text-decoration: none;
-  color: #666;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  padding: 5px 0;
-}
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-.footer-nav a:hover {
-  color: #A4343A;
-  padding-left: 5px;
-}
+    .footer-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
 
-     .site-info {
-            font-size: 0.9rem;
-            color: #666;
-        }
+    .footer-nav a:hover {
+      color: #A4343A;
+      padding-left: 5px;
+    }
 
+    .site-info {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      max-width: 1200px;
+      margin: 20px auto 0;
+    }
+
+    .site-info p {
+      font-size: 12px;
+      color: #999;
+      margin: 0;
+    }
    /* Container for the buttons */
 .cta-buttons {
   display: flex;
@@ -1325,33 +1346,34 @@ text-transform: uppercase;
     </div>
   </section>
 
-  <footer class="site-footer" style="padding: 20px;">
-
-    <div class="footer-inner container">
-     <nav class="footer-nav">
-      <ul>
-  <li><a href="/AzuSpirits/whisky-gifts">Whisky Tasting Sets</a></li>
-  <li><a href="/AzuSpirits/gin-gifts">Gin Tasting Sets</a></li>
-  <li><a href="/AzuSpirits/products/luxury-single-malt-whisky-tasting-set">Luxury Single Malt</a></li>
-  <li><a href="/AzuSpirits/christmas-crackers">Christmas Crackers</a></li>
-  <li><a href="/AzuSpirits/about-us">About Us</a></li>
-  <li><a href="/AzuSpirits/blog">Whisky & Gin Blog</a></li>
-</ul>
-      </nav>
-
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="/AzuSpirits/shipping-returns">Shipping & Returns</a></li>
-          <li><a href="/AzuSpirits/terms">Terms & Conditions</a></li>
-          <li><a href="/AzuSpirits/privacy">Privacy Policy</a></li>
-          <li><a href="/AzuSpirits/cookie-policy">Cookie Policy</a></li>
-        </ul>
-      </nav>
+ 
+   <footer class="site-footer">
+    
+    <div class="container">
+      <div class="footer-nav-grid">
+      
+        
+        <!-- Information Links -->
+        <div class="footer-nav-section">
+          <h4>Information</h4>
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="/AzuSpirits/shipping-returns">Shipping & Returns</a></li>
+              <li><a href="/AzuSpirits/terms">Terms & Conditions</a></li>
+              <li><a href="/AzuSpirits/privacy">Privacy Policy</a></li>
+              <li><a href="/AzuSpirits/cookie-policy">Cookie Policy</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+      </div>
+      
       <div class="site-info">
-        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+        <p>© 2025 Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
       </div>
     </div>
-  </footer>
+   </footer>
+   
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

@@ -219,7 +219,7 @@ image: '/AzuSpirits/images/products/south-west-specialist-sharing.png'
 };
 
 // Add to cart function
-function addProductToCart(productId, productName, productPrice, productImage, priceId) {
+function addToCart(productId, productName, productPrice, productImage, priceId) {
   console.log('🛒 addToCart called with:', productId);  // Debug log
   
   // Look up priceId if not provided

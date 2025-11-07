@@ -201,6 +201,22 @@ priceId: 'price_1SQn3qDLWuae7NssJ2V53SfR',
 image: '/AzuSpirits/images/products/south-west-specialist-sharing.png' 
     
   },
+
+  'british-gins-sharing-box': {
+name: 'British Gins Sharing Box',
+price: 95.00,
+priceId: 'price_1SQoDmDLWuae7NssHmWPO8a4',
+image: '/AzuSpirits/images/products/gin-tasting-at-home-experience.jpeg'
+  
+  },
+
+  'cotswolds-gins-sharing-box': {
+    name: 'Cotswolds Gins Sharing Box',
+    price: 100.00,
+    priceId: 'price_1SQoODDLWuae7Nss7y2OGzs1',
+     image: '/AzuSpirits/images/products/cotswolds-gins-tasting-sharing.JPG'
+    
+  },
   
 
   'luxury-whisky-christmas-crackers': {

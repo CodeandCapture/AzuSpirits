@@ -190,7 +190,7 @@ image: '/AzuSpirits/images/products/scotch-whisky-tasting-box.JPG'
   'south-west-gin-sharing-box': {
 name: 'South West Craft Gin Sharing Box',
 price: 100.00,
-priceId: ‘price_1SQn3qDLWuae7NssJ2V53SfR’,
+priceId: 'price_1SQn3qDLWuae7NssJ2V53SfR’,
 image: '/AzuSpirits/images/products/south-west-specialist-sharing.png' 
     
   },

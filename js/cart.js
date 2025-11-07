@@ -119,7 +119,7 @@ const cart = new ShoppingCart();
 
 // Product catalog - MUST MATCH PRODUCT PAGE IDs!
 const products = {
-  // GIN TASTING SETS (£55 each)
+  
   'cotswolds-gins-tasting-gift': {
     name: 'Craft Gins of the Cotswolds Tasting Gift Set',
     price: 52.00,
@@ -145,7 +145,7 @@ const products = {
     image: '/AzuSpirits/images/products/yorkshire-gin-tasting-set.jpg'
   },
   
-  // WHISKY TASTING SETS
+
   'regions-of-scotland-whisky-tasting-set': {
     name: 'Regions of Scotland Whisky Tasting Gift Set',
     price: 58.00,
@@ -170,7 +170,14 @@ const products = {
     priceId: 'price_1SLSbYDLWuae7NssO2HhSFVk',
     image: '/AzuSpirits/images/products/luxury-single-malt.jpg'
   },
-  // SHARING BOXES
+
+    'south-west-gin-tasting-set': {
+        name: 'South West Craft Gin Tasting Gift Set',
+        price: 50.00,
+        priceId: 'price_1SQA7EDLWuae7NssnnHeOJSQ',
+        image: '/AzuSpirits/images/products/devon-gins.jpg'
+    },
+
 
   'six-styles-sharing-box': {
    name: 'Six Styles of Scotch Whisky Sharing Box',
@@ -190,25 +197,18 @@ image: '/AzuSpirits/images/products/scotch-whisky-tasting-box.JPG'
   'south-west-gin-sharing-box': {
 name: 'South West Craft Gin Sharing Box',
 price: 100.00,
-priceId: 'price_1SQn3qDLWuae7NssJ2V53SfR’,
+priceId: 'price_1SQn3qDLWuae7NssJ2V53SfR',
 image: '/AzuSpirits/images/products/south-west-specialist-sharing.png' 
     
   },
   
-  // CHRISTMAS CRACKERS
+
   'luxury-whisky-christmas-crackers': {
     name: 'Luxury Whisky Christmas Crackers',
     price: 58.00,
     priceId: 'price_1SLSiIDLWuae7NssttgxBG5i',
     image: '/AzuSpirits/images/products/christmas-crackers-whisky-alt1.jpg'
   },
-
-  'south-west-gin-tasting-set': {
-        name: 'South West Craft Gin Tasting Gift Set',
-        price: 50.00,
-        priceId: ‘price_1SQA7EDLWuae7NssnnHeOJSQ’,
-        image: '/AzuSpirits/images/products/devon-gins.jpg'
-},
 
     'london-gin-christmas-crackers': {
     name: 'London Gin Christmas Crackers',

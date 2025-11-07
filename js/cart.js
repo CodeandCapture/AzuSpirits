@@ -203,7 +203,7 @@ image: '/AzuSpirits/images/products/south-west-specialist-sharing.png'
     image: '/AzuSpirits/images/products/christmas-crackers-whisky-alt1.jpg'
   },
 
-  'south-west-gin-tasting-set', {
+  'south-west-gin-tasting-set': {
         name: 'South West Craft Gin Tasting Gift Set',
         price: 50.00,
         priceId: ‘price_1SQA7EDLWuae7NssnnHeOJSQ’,

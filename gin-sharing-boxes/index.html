@@ -676,6 +676,39 @@
       margin: 0;
     }
 
+      .gift-trust-banner {
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  padding: 0rem 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+.scroll-to-details {
+  display: block;
+  margin: 2rem auto 0;
+  background: #165B33;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(22, 91, 51, 0.3);
+}
+
+.scroll-to-details:hover {
+  background: #1a7040;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 91, 51, 0.4);
+}
+
+    
     /* Mobile Styles */
     @media (max-width: 868px) {
       .site-nav {
@@ -818,6 +851,16 @@
     </div>
   </section>
 
+    <!-- Trust Banner - Right after hero -->
+<section class="gift-trust-banner">
+  <div class="container">
+   
+    <button class="scroll-to-details" onclick="scrollToSection('whats-in-box')">
+      What Makes Our Experience Unique? ↓
+    </button>
+  </div>
+</section>
+
   <!-- Featured Collections -->
   <section class="featured-collections">
     <div class="container">
@@ -892,7 +935,7 @@
       <h3>Explore their distinct characteristics and find your favourite style.<br>A 10% discount code is included in each tasting box to purchase your favourite bottle at full size.</h3>
     </div>
   </section>
-
+<section class="whats-in-box">
   <div style="background-color: #ffff; color: black; padding: 40px 20px;">
   <h3 style="font-size: 22px;font-family: 'Montserrat', sans-serif; text-transform: uppercase;  margin-bottom: 30px; text-align: center; font-weight: 700;">What's in the Box</h3>
   
@@ -900,35 +943,35 @@
 
     <!-- Item 1: Six Numbered Bottles -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1690135680124-3WTYKKI20UEX75KYRZZZ/_DSC8558.jpeg?format=2500w" alt="Six Numbered Bottles" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="/AzuSpirits/images/products/gin-tasting-at-home-experience.jpeg" alt="Six Numbered Bottles" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; ">6 Numbered Bottles</p>
       <p style="font-size: 16px;">Each containing 100ml, perfect for groups. Carefully selected for their quality and diversity</p>
     </div>
 
     <!-- Item 2: Tasting Guide -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1690135703507-FVWSER19LS5PAVKPOXND/_DSC8553.jpeg?format=2500w" alt="Tasting Guide" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="/AzuSpirits/images/products/south-west-specialist-sharing.png" alt="Tasting Guide" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Tasting Guide</p>
       <p style="font-size: 16px;">Helpful notes and tips for our blind gin tasting</p>
     </div>
 
     <!-- Item 3: Info Cards -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1690135727282-UIDWX33HZYMNELHKG78X/_DSC8548.jpeg?format=2500w" alt="Information Cards" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="/AzuSpirits/images/products/gin-tasting-box.jpeg" alt="Information Cards" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Information Cards</p>
       <p style="font-size: 16px;">Provides insights into the flavour characteristics and production techniques to help you identify the six diverse craft gins. </p>
     </div>
 
     <!-- Item 4: Wax-Sealed Envelope -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="https://images.squarespace-cdn.com/content/v1/5f6210726089cf5861830dcb/1689281200393-ZDYPX41JKTQN69C4ULBK/_DSC8424.jpg?format=2500w" alt="Wax-Sealed Envelope" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="/AzuSpirits/images/products/wax-sealed-envelope-alt1.jpg" alt="Wax-Sealed Envelope" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Wax-Sealed Envelope</p>
       <p style="font-size: 16px;">Contains your blind tasting results & more information about the distilleries and where to buy a bottle.</p>
     </div>
 
   </div>
 </div>
-
+</section>
 
   
 
@@ -1045,5 +1088,14 @@
       }
     });
   </script>
+  
+  <script>
+function scrollToSection(sectionClass) {
+  const section = document.querySelector('.' + sectionClass);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>
 </body>
 </html>

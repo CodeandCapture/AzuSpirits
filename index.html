@@ -568,11 +568,7 @@
     background-image: url('/AzuSpirits/images/products/tasting-gift-sets.jpg');
   }
 
-  /* Slide 2: Christmas Crackers */
-  .hero-slide-2 {
-    background-image: url('/AzuSpirits/images/products/london-gin-christmas-crackers.jpg');
-  }
-
+  
   .overlay {
     background: rgba(0, 0, 0, 0.6);
     padding: 40px 20px;
@@ -1038,7 +1034,7 @@
       margin: 0;
     }
 
- 
+    
     
    /* Container for the buttons */
 .cta-buttons {
@@ -1201,7 +1197,24 @@
   margin-bottom: 6px;
   font-weight: 600;
 }
+    
+    .cracker-highlights {
+       
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 5px;
+  font-weight: 500;
+    
+    }
 
+   .cracker-highlights p {
+ 
+    
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+    
 .featured-content {
   padding: 20px;
 }
@@ -1241,6 +1254,161 @@
     font-size: 18px;
   }
 }
+    
+    /* Christmas Crackers Section */
+.christmas-crackers-section {
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+}
+
+.christmas-crackers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.christmas-crackers-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.christmas-crackers-heading h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #2c2c2c;
+}
+
+.christmas-crackers-heading p {
+  font-size: 20px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.christmas-crackers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.christmas-crackers-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.christmas-crackers-highlights {
+  padding: 30px;
+}
+
+.christmas-highlight-item {
+  margin-bottom: 25px;
+}
+
+.christmas-highlight-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2c2c2c;
+}
+
+.christmas-highlight-item p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.christmas-cta-buttons {
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.christmas-cta {
+  display: inline-block;
+  color: white;
+  padding: 15px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.christmas-cta-whisky {
+  background-color: #A4343A;
+}
+
+.christmas-cta-whisky:hover {
+  background-color: #5d1d21;
+}
+
+.christmas-cta-gin {
+  background-color: #2d5f4f;
+}
+
+.christmas-cta-gin:hover {
+  background-color: #1e4035;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .christmas-crackers-section {
+    padding: 40px 15px;
+  }
+
+  .christmas-crackers-heading h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .christmas-crackers-heading p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .christmas-crackers-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .christmas-crackers-highlights {
+    padding: 20px 10px;
+  }
+
+  .christmas-highlight-item {
+    margin-bottom: 20px;
+  }
+
+  .christmas-highlight-item h4 {
+    font-size: 16px;
+  }
+
+  .christmas-highlight-item p {
+    font-size: 14px;
+  }
+
+  .christmas-cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .christmas-cta {
+    width: 100%;
+    padding: 14px 30px;
+    font-size: 14px;
+  }
+}
   </style>
 </head>
 <body>
@@ -1263,15 +1431,6 @@
       EXCLUSIVE LUXURY COLLECTION
       <span class="gold-accent">✧</span>
       <span class="subtitle">Worth Over £1000 • Free Premium Delivery</span>
-    </div>
-  </div>
-
-  <!-- Banner 3: Discount Code -->
-  <div class="banner-slide banner-discount" onclick="window.location.href='/AzuSpirits/index.html'">
-    <div class="banner-content">
-      USE CODE DISCOVERY FOR 10% OFF
-      <span class="discount-icon">•</span>
-      FREE DPD DELIVERY
     </div>
   </div>
 
@@ -1334,14 +1493,14 @@
   <div class="hero-slide hero-slide-1 active">
     <div class="overlay">
       <h1>Unique Scotch Whisky & Gin Tasting Gift Sets</h1>
-      <h2>Blind tasting experience gifts made for spirit lovers. From curious beginners to seasoned enthusiasts.</h2>
+      <h2>Enthralling and informative blind-tasting challenges. Outstanding gifts for curious beginners or seasoned enthusiasts.</h2>
       <div class="cta-buttons">
         <a href="/AzuSpirits/whisky-gifts" class="primary-cta">Shop Whisky Sets</a>
         <a href="/AzuSpirits/gin-gifts" class="primary-cta">Shop Gin Sets</a>
       </div>
     </div>
   </div>
-
+    
 </section>
  
   
@@ -1459,8 +1618,55 @@
   </div>
 </section>
 
+  <section class="christmas-crackers-section">
+    <div class="christmas-crackers-container">
+        
+        <!-- Heading -->
+        <div class="christmas-crackers-heading">
+            <h2>Scotch Whisky & Gin Christmas Crackers</h2>
+            <p>The Christmas twist... a unique tasting experience featuring four premium single malt Scotch whiskies or craft gins in luxury Christmas crackers.</p>
+        </div>
 
-  
+        <!-- Image and Content Grid -->
+        <div class="christmas-crackers-grid">
+            
+            <!-- Image -->
+            <div class="christmas-crackers-image">
+                <img src="/AzuSpirits/images/products/christmas-crackers-whisky-alt1.jpg" 
+                     alt="Christmas Crackers">
+            </div>
+            
+            <!-- Highlights -->
+            <div class="christmas-crackers-highlights">
+                <div class="christmas-highlight-item">
+                    <h4>✨ Four Exceptional Spirits</h4>
+                    <p>Single malts or craft gins carefully selected for a memorable tasting journey</p>
+                </div>
+                
+                <div class="christmas-highlight-item">
+                    <h4>🎯 Blind Tasting Challenge</h4>
+                    <p>Test your palate and discover new favorites in this interactive experience</p>
+                </div>
+                
+                <div class="christmas-highlight-item">
+                    <h4>🎁 Wax-Sealed Reveal</h4>
+                    <p>Mini envelopes sealed with wax for an extra touch of luxury and surprise</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="christmas-cta-buttons">
+            <a href="/AzuSpirits/products/whisky-christmas-crackers/" class="christmas-cta christmas-cta-whisky">
+                Shop Whisky Crackers
+            </a>
+            <a href="/AzuSpirits/products/london-gin-christmas-crackers/" class="christmas-cta christmas-cta-gin">
+                Shop Gin Crackers
+            </a>
+        </div>
+        
+    </div>
+</section>
 
   
     <!-- Footer -->

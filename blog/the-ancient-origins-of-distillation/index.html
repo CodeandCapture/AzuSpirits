@@ -104,676 +104,384 @@
     ]
   }
   </script>
-
-  
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
-  
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
- 
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Base Styles */
-    body {
+    /* ========================================
+       RESET & BASE STYLES
+       ======================================== */
+    * {
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-        /* Header Styles */
-        .site-header {
-            background: #f8f8f8;
-            border-bottom: 1px solid #ddd;
-            padding: 20px;
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 0;
-        }
-
-        .header-inner img {
-            height: 80px;
-            cursor: pointer;
-        }
-
-        .site-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        /* Dropdown Menu Styles */
-        .site-nav li {
-            position: relative;
-        }
-
-        .has-dropdown {
-            position: relative;
-        }
-
-        .has-dropdown > a::after {
-            content: ' ▾';
-            font-size: 0.8rem;
-            margin-left: 0.3rem;
-        }
-
-        .dropdown-menu {
-            display: none !important;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-width: 220px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            margin-top: 0.5rem;
-        }
-
-        .has-dropdown:hover .dropdown-menu {
-            display: flex !important;
-          
-        }
-
-        .dropdown-menu li {
-            margin: 0 !important;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .dropdown-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #333;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-           
-    }
-        
-
-        .dropdown-menu a:hover {
-            background: #A4343A;
-            color: white;
-        }
-
-        .site-nav li + li {
-            margin-left: 1.5rem;
-        }
-
-        .site-nav a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
-        }
-
-        .dropdown-menu .site-nav a:hover {
-            color: white;
-        }
-
-        /* Mobile Menu Toggle */
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #333;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        /* Cart Icon */
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: #333;
-            transition: transform 0.2s;
-        }
-
-        .cart-icon:hover {
-            transform: scale(1.1);
-        }
-
-       .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #A4343A;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-   /* Banner Carousel Container */
-  .banner-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 80px;
-    z-index: 9999;
-  }
-
-  /* Individual Banner Slides */
-  .banner-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-
-  .banner-slide.active {
-    opacity: 1;
-    z-index: 1;
-  }
-
-  /* Christmas Crackers Banner */
-  .banner-christmas {
-    background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
-    color: white;
-    animation: festiveShimmer 3s ease-in-out infinite;
-  }
-
-  @keyframes festiveShimmer {
-    0%, 100% { 
-      background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
-    }
-    50% { 
-      background: linear-gradient(135deg, #D41E3A 0%, #1A6B3D 50%, #E4BF47 100%);
-    }
-  }
-
-  .banner-christmas .banner-content {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .banner-christmas .festive-icon {
-    font-size: 24px;
-    margin: 0 15px;
-    animation: bounce 2s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-
-  .banner-christmas .subtitle {
-    display: block;
-    font-size: 12px;
-    margin-top: 5px;
-    letter-spacing: 3px;
-    opacity: 0.95;
-    font-weight: 400;
-  }
-
-  /* Luxury Collection Banner */
-  .banner-luxury {
-    background: linear-gradient(135deg, #5C1A1B 0%, #1a1a1a 50%, #5C1A1B 100%);
-    color: #D4AF37;
-    border-bottom: 2px solid #D4AF37;
-    animation: luxuryShine 4s ease-in-out infinite;
-  }
-
-  @keyframes luxuryShine {
-    0%, 100% { 
-      background: linear-gradient(135deg, #5C1A1B 0%, #1a1a1a 50%, #5C1A1B 100%);
-    }
-    50% { 
-      background: linear-gradient(135deg, #6B2122 0%, #252525 50%, #6B2122 100%);
-    }
-  }
-
-  .banner-luxury .banner-content {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .banner-luxury .gold-accent {
-    color: #D4AF37;
-    font-size: 22px;
-    margin: 0 15px;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-  }
-
-  .banner-luxury .subtitle {
-    display: block;
-    font-size: 11px;
-    margin-top: 5px;
-    letter-spacing: 3px;
-    color: #d4af37;
-    opacity: 0.9;
-    font-weight: 400;
-  }
-
-  /* Discount Banner */
-  .banner-discount {
-    background: linear-gradient(135deg, #C41E3A 0%, #8B1538 100%);
-    color: white;
-    animation: shimmer 3s infinite;
-  }
-
-  @keyframes shimmer {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.95; }
-  }
-
-  .banner-discount .banner-content {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  .banner-discount .discount-icon {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 20px;
-  }
-    
-    .blog-image {
-  margin: 2em 0;
-  text-align: center;
-}
-
-.blog-image img {
-  border-radius: 6px;
-  max-width: 80%;
-  height: auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.blog-image figcaption {
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 0.5em;
-
-}
-
-     /* Hero Carousel Container */
-  .hero-carousel {
-    position: relative;
-    height: auto;
-    overflow: hidden;
-  }
-
-  .hero-slide {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto;
-    padding: 60px 20px;
-    color: white;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    position: absolute;
-        box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-  }
-
-  .hero-slide.active {
-    opacity: 1;
-    position: relative;
-    pointer-events: auto;
-    
-  }
-
-  /* Slide 1: Original Tasting Sets */
-  .hero-slide-1 {
-    background-image: url('https://codeandcapture.github.io/AzuSpirits/images/distilleries/distillation-scotch-whisky.jpg');
-  }
-
-  
-  .overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
-
-  .hero-slide h1 {
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .hero-slide h2 {
-    font-size: 20px;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  
-
-
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .hero-slide h1 {
-      font-size: 24px;
-    }
-
-    .hero-slide h2 {
-      font-size: 16px;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .primary-cta {
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-    }
-
-    .carousel-dots {
-      bottom: 15px;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-    }
-  }
- 
-
-    /* Main Section */
-    section.main {
-      background-color: white;
-      padding: 20px;
-      position: relative;
-      color: black;
-    }
-
-    section.main .container {
-      border: 2px solid #ccc;
-      padding: 20px;
-      margin: 0 auto;
-      max-width: 1200px;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    .columns {
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    /* ========================================
+       HEADER STYLES
+       ======================================== */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-inner img {
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .site-nav a:hover {
+      color: #A4343A;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* ========================================
+       HERO SECTION
+       ======================================== */
+    .hero-section {
+      position: relative;
+      background-image: url('https://codeandcapture.github.io/AzuSpirits/images/distilleries/distillation-scotch-whisky.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .hero-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: white;
+      text-transform: none;
+      line-height: 1.2;
+    }
+
+    /* ========================================
+       BREADCRUMB NAVIGATION
+       ======================================== */
+    .breadcrumb {
+      background: #f8f8f8;
+      padding: 15px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .breadcrumb-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb ul {
+      list-style: none;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 0px;
-      text-transform: uppercase;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      background-color: white;
-      color: white;
-    }
-
-
-    .more-info {
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 0.3s ease, max-height 0.3s ease;
+      gap: 8px;
       font-size: 14px;
-      margin-top: 10px;
-      text-align: center;
     }
 
-    .gin-box:hover .more-info {
-      opacity: 1;
-      max-height: 200px;
-    }
-
-    /* Logo Carousel */
-    .logo-carousel {
-      padding: 40px 20px;
-      background-color: white;
-    }
-
-    .slick-carousel {
+    .breadcrumb li {
       display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .slick-carousel img {
-      max-height: 80px;
-      max-width: 100%;
-      object-fit: contain;
-      margin: 0 auto;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .slick-carousel .slick-slide {
-      display: flex;
-      justify-content: center;
       align-items: center;
     }
 
-    .slick-carousel .slick-slide:hover img {
-      transform: scale(1.1);
+    .breadcrumb li:not(:last-child)::after {
+      content: '›';
+      margin-left: 8px;
+      color: #999;
     }
-    
-    /* Featured Collections Section */
-.featured-collections {
-  background-color: #f8f8f8;
-  padding: 60px 20px;
-}
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .breadcrumb a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-.featured-box {
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .breadcrumb a:hover {
+      color: #A4343A;
+    }
 
-.featured-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
+    .breadcrumb .current {
+      color: #333;
+      font-weight: 500;
+    }
 
-.featured-image {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-}
+    /* ========================================
+       ARTICLE CONTENT
+       ======================================== */
+    .article-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
 
-.featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+    .article-meta {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e0e0e0;
+    }
 
-.featured-box:hover .featured-image img {
-  transform: scale(1.05);
-}
+    .article-category {
+      display: inline-block;
+      background: #A4343A;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
 
-.featured-content {
-  padding: 25px;
-  text-align: center;
-}
+    .article-date {
+      color: #999;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-.featured-content h3 {
-  font-size: 20px;
-  text-transform: uppercase;
-  margin: 0 0 15px 0;
-  color: #333;
-  font-weight: 600;
-}
+    .article-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 40px 0 20px 0;
+      line-height: 1.3;
+    }
 
-.featured-content p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #666;
-  margin-bottom: 20px;
-  min-height: 60px; /* Keeps alignment consistent */
-}
+    .article-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      margin: 30px 0 15px 0;
+      line-height: 1.3;
+    }
 
-.featured-cta {
-  display: inline-block;
-  background-color: #A4343A;
-  color: white;
-  padding: 12px 30px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    .article-content p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #444;
+    }
 
-.featured-cta:hover {
-  background-color: #8a2c31;
-  transform: translateY(-2px);
-}
+    .article-content em {
+      font-style: italic;
+      color: #666;
+    }
 
-/* Mobile responsiveness */
-@media (max-width: 868px) {
-  .featured-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .featured-image {
-    height: 200px;
-  }
-}
-    
-    /* Price Badge Circle */
-.price-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: #A4343A;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 10;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
+    .article-content ul {
+      margin: 20px 0 20px 30px;
+      line-height: 1.8;
+    }
 
-.featured-box:hover .price-badge {
-  transform: scale(1.1);
-  background-color: #8a2c31;
-}
+    .article-content ul li {
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: #444;
+    }
 
-/* Make sure the image container supports absolute positioning */
-.featured-image {
-  position: relative; /* This is crucial! */
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-}
+    .article-content strong {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
 
+    /* ========================================
+       BLOG IMAGES
+       ======================================== */
+    .blog-image {
+      margin: 40px 0;
+      text-align: center;
+    }
 
-    /* Footer Styles */
+    .blog-image img {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-image figcaption {
+      font-size: 15px;
+      color: #777;
+      margin-top: 12px;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ========================================
+       NEWSLETTER CTA
+       ======================================== */
+    .newsletter-cta {
+      background: linear-gradient(135deg, #A4343A 0%, #8B1538 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .newsletter-cta p {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0;
+      color: white;
+    }
+
+    .newsletter-cta a {
+      display: inline-block;
+      background: white;
+      color: #A4343A;
+      padding: 12px 30px;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-cta a:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    /* ========================================
+       RELATED POSTS SECTION
+       ======================================== */
+    .related-posts {
+      background: #f8f8f8;
+      padding: 60px 20px;
+      margin-top: 60px;
+    }
+
+    .related-posts-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .related-posts h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1a1a1a;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .related-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .related-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .related-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .related-card-content {
+      padding: 25px;
+    }
+
+    .related-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+
+    .related-card p {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       FOOTER STYLES
+       ======================================== */
     .site-footer {
       background: #f8f8f8;
       border-top: 1px solid #ddd;
       padding: 40px 20px 20px;
     }
 
-    .footer-badges {
-      background: #fff;
-      padding: 30px 20px;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .footer-badges div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .footer-badges img {
-      max-width: 150px;
-      height: auto;
-    }
-
-    .footer-badges p {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #555;
-      font-style: italic;
-    }
-
-    /* Footer navigation grid */
     .footer-nav-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
-      margin-bottom: 30px;
       max-width: 1200px;
       margin: 0 auto 30px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
     }
 
     .footer-nav-section h4 {
@@ -787,8 +495,6 @@
 
     .footer-nav ul {
       list-style: none;
-      margin: 0;
-      padding: 0;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -800,7 +506,6 @@
       font-size: 14px;
       transition: all 0.3s ease;
       display: inline-block;
-      padding: 5px 0;
     }
 
     .footer-nav a:hover {
@@ -819,84 +524,12 @@
     .site-info p {
       font-size: 12px;
       color: #999;
-      margin: 0;
     }
 
-    
-    
-   /* Container for the buttons */
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Space between buttons */
-  margin-top: 20px;
-  flex-wrap: wrap; /* Stack on mobile if needed */
-}
-
-/* Individual button styles */
-.primary-cta {
-  background-color: white;
-  padding: 15px 30px; /* Top/bottom and left/right padding */
-  text-decoration: none;
-  color: black;
-  text-align: center;
-  display: inline-block; /* Important! Makes padding work properly */
-  border-radius: 4px; /* Optional: rounded corners */
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all 0.3s ease; 
-  box-sizing: border-box;
-  
-}
-
-.primary-cta:hover {
-  background-color: #A4343A;
-  color: white;
-  transform: translateY(-2px); /* Optional: subtle lift effect */
- 
-}
-    
-    
-     .gift-trust-banner {
-  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
-  padding: 0rem 0;
- 
-}
-
-
-.scroll-to-details {
-  display: block;
-  margin: 2rem auto 0;
-  background: #165B33;
-  color: white;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(22, 91, 51, 0.3);
-}
-
-.scroll-to-details:hover {
-  background: #1a7040;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 91, 51, 0.4);
-}
-    
-    
-
-
-    /* Mobile Styles */
+    /* ========================================
+       MOBILE RESPONSIVE
+       ======================================== */
     @media (max-width: 868px) {
-
-   
-      
       .site-nav {
         display: none;
         position: absolute;
@@ -908,209 +541,155 @@
         padding: 1rem;
         z-index: 100;
       }
-      
+
       .site-nav.open {
         display: block;
       }
-      
+
       .site-nav ul {
         flex-direction: column;
       }
-      
-      .site-nav li + li {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-      
+
       .nav-toggle {
         display: block;
       }
-      
+
       .header-inner {
         position: relative;
       }
 
       .header-inner img {
         height: 60px;
-        margin-left: 10px;
       }
 
-      /* Mobile Dropdown */
-      .dropdown-menu {
-        position: static;
-        display: none;
-        border: none;
-        box-shadow: none;
-        background: #f0f0f0;
-        margin-top: 0.5rem;
-        border-radius: 4px;
-      }
-      
-      .has-dropdown.open .dropdown-menu {
-        display: block;
-      }
-      
-      .has-dropdown > a::after {
-        float: right;
-      }
-      
-      .dropdown-menu a {
-        padding-left: 2rem;
-        font-size: 0.95rem;
+      .hero-section {
+        height: 300px;
       }
 
-      .columns {
-        flex-direction: column;
-        align-items: center;
+      .hero-section h1 {
+        font-size: 28px;
+        padding: 0 20px;
+      }
+
+      .article-container {
+        margin: 40px auto;
+      }
+
+      .article-content h2 {
+        font-size: 26px;
+      }
+
+      .article-content h3 {
+        font-size: 20px;
+      }
+
+      .article-content p,
+      .article-content ul li {
+        font-size: 16px;
+      }
+
+      .footer-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
     }
-    
-    .bottle-highlights {
-  background: #f8f8f8;
-  padding: 12px;
-  margin: 12px 0;
-  border-left: 3px solid #A4343A;
-  border-radius: 2px;
-}
-
-.bottle-highlights p:first-child {
-  color: #A4343A;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-    
-    .cracker-highlights {
-       
-  padding: 12px;
-  margin: 12px 0;
-  border-radius: 5px;
-  font-weight: 500;
-    
-    }
-
-   .cracker-highlights p {
- 
-    
-  font-size: 18px;
-  text-transform: uppercase;
-}
-
-    
-.featured-content {
-  padding: 20px;
-}
-
-.featured-content h3 {
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-.featured-cta {
-  display: inline-block;
-  background: #A4343A;
-  color: white;
-  padding: 10px 24px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 15px;
-  letter-spacing: 1px;
-  margin-top: 15px;
-  transition: background 0.3s ease;
-}
-
-.featured-cta:hover {
-  background: #8B1538;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .bottle-highlights p {
-    font-size: 12px !important;
-  }
-  
-  .featured-content h3 {
-    font-size: 18px;
-  }
-}
-    
-  
   </style>
 </head>
 <body>
-  
 
-  
-
-<header class="site-header">
-  <div class="header-inner container">
-    <img src="/AzuSpirits/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='./'">
-    <div class="header-right">
-      <nav class="site-nav" id="siteNav">
-        <ul><li><a href="/AzuSpirits/">BACK TO MAIN WEBSITE</a></li></ul>
-      </nav>
-      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="/AzuSpirits/images/brand/logo.jpg" alt="Azu Spirits Logo" onclick="window.location.href='/AzuSpirits/'">
+      <div class="header-right">
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="/AzuSpirits/">Back to Main Website</a></li>
+          </ul>
+        </nav>
+        <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="hero-carousel">
-  <div class="hero-slide hero-slide-1 active">
-    <div class="overlay">
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-overlay">
       <h1>The Ancient Origins of Distillation</h1>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="main">
-  <div class="container">
-    <article class="blog-post">
+  <!-- BREADCRUMB NAVIGATION -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="breadcrumb-inner">
+      <ul>
+        <li><a href="/AzuSpirits/">Home</a></li>
+        <li><a href="/AzuSpirits/blog">Blog</a></li>
+        <li class="current">The Ancient Origins of Distillation</li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ARTICLE CONTENT -->
+  <article class="article-container">
+    <div class="article-meta">
+      <span class="article-category">Whisky History</span>
+      <p class="article-date">Published: 11 November 2025</p>
+    </div>
+
+    <div class="article-content">
       <h2>What is Distillation?</h2>
       <p>Distillation is essentially the separation and purification of substances. Alcohol is naturally produced by the fermentation of sugars by yeasts, a fact long exploited by people in many parts of the world as they prepared numerous types of fermented beverages from grapes, other fruits, grains, and vegetables.</p>
       
       <figure class="blog-image">
-  <img src="https://codeandcapture.github.io/AzuSpirits/images/distilleries/scotch-whisky-production.jpg" 
-       alt="Copper stills used in Scotch whisky distillation process" 
-       loading="lazy" width="100%">
-  <figcaption>Copper stills used in Scotch whisky distillation — separating alcohol vapours during the process.</figcaption>
-</figure>
+        <img src="https://codeandcapture.github.io/AzuSpirits/images/distilleries/scotch-whisky-production.jpg" 
+             alt="Copper stills used in Scotch whisky distillation process" 
+             loading="lazy" 
+             width="800" 
+             height="600">
+        <figcaption>Copper stills used in Scotch whisky distillation — separating alcohol vapours during the process.</figcaption>
+      </figure>
 
-      
       <p>But alcohol is toxic to yeast—limiting how much alcohol can be produced before the process grinds to a halt. Today, even the most alcohol-tolerant yeasts cannot survive once the alcohol content reaches about 20% in volume. Alcohol tolerance was probably much lower in the past.</p>
+      
       <p>As alcohol evaporates at 78.4°C, which is significantly lower than the 100°C at which water boils, careful heating of a water and alcohol mixture, such as wine, in a still able to recapture and condense the alcohol vapours, can produce a drink with a higher alcohol content.</p>
 
       <h2>Where Did It Come From?</h2>
-      <p>Although the origins of Scotch whisky itself can be traced back to travelling monks in the 11th and 12th centuries, whisky’s lineage as a distilled spirit goes back many millennia.</p>
-      <p>‘The essence of cedar’, as it was described on a 5,000-year-old Sumerian tablet, was almost certainly produced using some form of distillation, and there is archaeological evidence of early stills from ancient Mesopotamia, China, India, and Egypt.</p>
+      <p>Although the origins of Scotch whisky itself can be traced back to travelling monks in the 11th and 12th centuries, whisky's lineage as a distilled spirit goes back many millennia.</p>
+      
+      <p>'The essence of cedar', as it was described on a 5,000-year-old Sumerian tablet, was almost certainly produced using some form of distillation, and there is archaeological evidence of early stills from ancient Mesopotamia, China, India, and Egypt.</p>
 
       <h2>Whisky Distilling</h2>
       <p>Aristotle provided a detailed description of the process in 340 BCE, whilst Zosimos of Panopolis, a third-century Alexandrian alchemist, provides us with the earliest known illustration of a still.</p>
       
       <figure class="blog-image">
-  <img src="https://codeandcapture.github.io/AzuSpirits/images/distilleries/spirit-safe-distillation.jpg" 
-       alt="Spirit safe used in whisky distillation to monitor purity" 
-       loading="lazy" width="100%">
-  <figcaption>A modern spirit safe — echoing ancient distillation principles of observation and separation.</figcaption>
-</figure>
+        <img src="https://codeandcapture.github.io/AzuSpirits/images/distilleries/spirit-safe-distillation.jpg" 
+             alt="Spirit safe used in whisky distillation to monitor purity" 
+             loading="lazy"
+             width="800" 
+             height="600">
+        <figcaption>A modern spirit safe — echoing ancient distillation principles of observation and separation.</figcaption>
+      </figure>
 
       <p><em>Distillation equipment detailed by Zosimos of Panopolis, from the 15th century Byzantine Greek manuscript Codex Parisinus 2327. Thought to be the work of Maria the Jewess, the first known living alchemist.</em></p>
+      
       <p>Fast forward to around 800 AD, and we see Islamic Alchemists developing the early stills into what they called the al-anbîq. Most likely used to make medicines, there is no explicit evidence that distillation was yet used to create spirits, but the technology existed long before and, well, it is likely!</p>
+      
       <p>The al-anbîq is now known as the Alembic Still. It is widely used today in craft gin production and was the basis for the traditional Pot Still.</p>
 
       <h2>Alembic Still Whisky History</h2>
-      <p>Credit for the development of the Alembic Still is often given to the eighth-century Arab chemist Abū Mūsā Jābir ibn Hayyān, known as the ‘father of chemistry’. Credited with the creation of many types of laboratory equipment, his work contributed to the knowledge of distillation, sublimation, crystallisation, calcination, and evaporation.</p>
+      <p>Credit for the development of the Alembic Still is often given to the eighth-century Arab chemist Abū Mūsā Jābir ibn Hayyān, known as the 'father of chemistry'. Credited with the creation of many types of laboratory equipment, his work contributed to the knowledge of distillation, sublimation, crystallisation, calcination, and evaporation.</p>
+      
       <p>In time, the ancient scientific knowledge and methods developed in the Islamic world made its way into Europe. From this point, it becomes indisputable that the process of distillation was being used to distil alcohol.</p>
-      <p>The first documented evidence comes from Salerno, Italy, around 1150, whilst the earliest recipe—for distilling ‘thick, strong and old black wine’ into <em>aqua ardens</em>—was written by Albert Magnus of Cologne in the late 13th century.</p>
+      
+      <p>The first documented evidence comes from Salerno, Italy, around 1150, whilst the earliest recipe—for distilling 'thick, strong and old black wine' into <em>aqua ardens</em>—was written by Albert Magnus of Cologne in the late 13th century.</p>
+      
       <p>From the 12th century onwards, the Latin terms for distilled alcohol, <em>aqua ardens</em> (flaming water) and <em>aqua vitae</em> (water of life), appear increasingly frequently.</p>
 
       <h2>Distillation and the British Isles</h2>
-      <p>It’s most likely that the Alembic Still was brought to the British Isles by travelling monks. The shift from distilling a grape-based alcohol to one which used malted barley reflects an adaptation to the local climate. To this day, malt whiskies are distilled from a mash of malted barley, but the spirit known as <em>aqua vitae</em> would have been very different.</p>
-      <p>Maturation, now a vital part of making Scotch whisky, isn’t thought to have become common practice until the end of the 1800s, and <em>aqua vitae</em> was habitually mixed with berries, nuts, or spices to mask the harshness of what was probably quite an unpleasant drink!</p>
+      <p>It's most likely that the Alembic Still was brought to the British Isles by travelling monks. The shift from distilling a grape-based alcohol to one which used malted barley reflects an adaptation to the local climate. To this day, malt whiskies are distilled from a mash of malted barley, but the spirit known as <em>aqua vitae</em> would have been very different.</p>
+      
+      <p>Maturation, now a vital part of making Scotch whisky, isn't thought to have become common practice until the end of the 1800s, and <em>aqua vitae</em> was habitually mixed with berries, nuts, or spices to mask the harshness of what was probably quite an unpleasant drink!</p>
 
       <h3>Further Reading</h3>
       <ul>
@@ -1119,30 +698,42 @@
         <li><strong>Blog</strong> - The Secrets of Alchemy - Science History Org</li>
         <li><strong>Blog</strong> - What is an Alembic? - Alembic Rare Books</li>
       </ul>
+    </div>
 
-      <p><em>Sign up to our newsletter for insightful stories like this one delivered to your inbox every month.</em></p>
-    </article>
-  </div>
-</section>
-    
-    
+    <!-- NEWSLETTER CTA -->
+    <div class="newsletter-cta">
+      <p>Sign up to our newsletter for insightful stories like this one delivered to your inbox every month.</p>
+      <a href="/AzuSpirits/newsletter">Subscribe Now</a>
+    </div>
+  </article>
 
+  <!-- RELATED POSTS (Optional - you can populate this later) -->
+  <section class="related-posts">
+    <div class="related-posts-inner">
+      <h2>More from Our Blog</h2>
+      <div class="related-grid">
+        <!-- Related post cards would go here -->
+        <!-- Example structure:
+        <a href="#" class="related-card">
+          <img src="..." alt="...">
+          <div class="related-card-content">
+            <h3>Article Title</h3>
+            <p>Brief excerpt...</p>
+          </div>
+        </a>
+        -->
+      </div>
+    </div>
+  </section>
 
-  
-    <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="site-footer">
- 
-    
     <div class="container">
       <div class="footer-nav-grid">
-       
-        
-        <!-- Information Links -->
         <div class="footer-nav-section">
           <h4>Information</h4>
           <nav class="footer-nav">
             <ul>
-              
               <li><a href="/AzuSpirits/shipping-returns/">Shipping & Returns</a></li>
               <li><a href="/AzuSpirits/terms">Terms & Conditions</a></li>
               <li><a href="/AzuSpirits/privacy">Privacy Policy</a></li>
@@ -1150,7 +741,6 @@
             </ul>
           </nav>
         </div>
-        
       </div>
       
       <div class="site-info">
@@ -1159,184 +749,13 @@
     </div>
   </footer>
 
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-  <script>
-    document.querySelectorAll('.gin-box').forEach(box => {
-      box.addEventListener('click', () => {
-        const info = box.querySelector('.more-info');
-        info.style.maxHeight = info.style.maxHeight ? null : '200px';
-        info.style.opacity = info.style.opacity === '1' ? '0' : '1';
-      });
-    });
-  </script>
-
-  <!-- Slick Carousel CSS & JS -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  
-  <!-- Cart JS -->
-  <script src="js/cart.js"></script>
-
   <script>
     // Mobile nav toggle
     function toggleNav() {
       const nav = document.getElementById('siteNav');
       nav.classList.toggle('open');
     }
-    
-    // Mobile dropdown toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      // Only add click handlers on mobile
-      if (window.innerWidth <= 768) {
-        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
-        
-        dropdownParents.forEach(function(link) {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const parent = this.parentElement;
-            
-            // Close other dropdowns
-            document.querySelectorAll('.has-dropdown').forEach(function(item) {
-              if (item !== parent) {
-                item.classList.remove('open');
-              }
-            });
-            
-            // Toggle current dropdown
-            parent.classList.toggle('open');
-          });
-        });
-      }
-    });
-    
-    // Re-initialize on window resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 768) {
-        document.querySelectorAll('.has-dropdown').forEach(function(item) {
-          item.classList.remove('open');
-        });
-      }
-    });
   </script>
-  
-  
-<!-- FIXED JAVASCRIPT - REPLACE YOUR EXISTING CAROUSEL SCRIPTS -->
-<!-- Place this at the bottom of your page, BEFORE </body> -->
 
-<script>
-// ========================================
-// BANNER CAROUSEL (Top rotating banner)
-// ========================================
-let currentBannerSlide = 0;
-const bannerSlides = document.querySelectorAll('.banner-slide');
-const bannerDots = document.querySelectorAll('.carousel-dot');
-const totalBannerSlides = bannerSlides.length;
-let bannerAutoPlayInterval;
-
-function showBannerSlide(index) {
-  bannerSlides.forEach(slide => slide.classList.remove('active'));
-  bannerDots.forEach(dot => dot.classList.remove('active'));
-  
-  bannerSlides[index].classList.add('active');
-  bannerDots[index].classList.add('active');
-  
-  currentBannerSlide = index;
-}
-
-function nextBannerSlide() {
-  let next = (currentBannerSlide + 1) % totalBannerSlides;
-  showBannerSlide(next);
-}
-
-function goToBannerSlide(index) {
-  showBannerSlide(index);
-  clearInterval(bannerAutoPlayInterval);
-  startBannerAutoPlay();
-}
-
-function startBannerAutoPlay() {
-  bannerAutoPlayInterval = setInterval(nextBannerSlide, 8000);
-}
-
-// Pause banner on hover
-const bannerCarousel = document.querySelector('.banner-carousel');
-if (bannerCarousel) {
-  bannerCarousel.addEventListener('mouseenter', () => {
-    clearInterval(bannerAutoPlayInterval);
-  });
-
-  bannerCarousel.addEventListener('mouseleave', () => {
-    startBannerAutoPlay();
-  });
-}
-
-// Start banner autoplay
-startBannerAutoPlay();
-
-// ========================================
-// HERO CAROUSEL (Main hero section)
-// ========================================
-let currentHeroSlide = 0;
-const heroSlides = document.querySelectorAll('.hero-slide');
-const heroDots = document.querySelectorAll('.carousel-dots .dot');
-let heroAutoPlayInterval;
-
-function showHeroSlide(index) {
-  heroSlides.forEach(slide => slide.classList.remove('active'));
-  heroDots.forEach(dot => dot.classList.remove('active'));
-  
-  heroSlides[index].classList.add('active');
-  heroDots[index].classList.add('active');
-  
-  currentHeroSlide = index;
-}
-
-function nextHeroSlide() {
-  let next = (currentHeroSlide + 1) % heroSlides.length;
-  showHeroSlide(next);
-}
-
-function goToSlide(index) {
-  showHeroSlide(index);
-  clearInterval(heroAutoPlayInterval);
-  startHeroAutoPlay();
-}
-
-function startHeroAutoPlay() {
-  heroAutoPlayInterval = setInterval(nextHeroSlide, 8000);
-}
-
-// Pause hero on hover (optional)
-const heroCarousel = document.querySelector('.hero-carousel');
-if (heroCarousel) {
-  heroCarousel.addEventListener('mouseenter', () => {
-    clearInterval(heroAutoPlayInterval);
-  });
-
-  heroCarousel.addEventListener('mouseleave', () => {
-    startHeroAutoPlay();
-  });
-}
-
-// Start hero autoplay
-startHeroAutoPlay();
-</script>
-  
-    <script>
-function scrollToSection(sectionClass) {
-  const section = document.querySelector('.' + sectionClass);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
-</script>
-  
 </body>
 </html>

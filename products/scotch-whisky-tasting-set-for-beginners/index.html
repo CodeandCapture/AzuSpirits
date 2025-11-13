@@ -950,52 +950,71 @@
     </footer>
 
     <script src="/AzuSpirits/js/cart.js"></script>
-    <script>
-        // Navigation
+   <script>
+    // Mobile nav toggle
     function toggleNav() {
-      const nav = document.getElementById('siteNav');
-      nav.classList.toggle('open');
+        const nav = document.getElementById('siteNav');
+        nav.classList.toggle('open');
     }
 
+    // Mobile dropdown toggle
     document.addEventListener('DOMContentLoaded', function() {
-      if (window.innerWidth <= 768) {
-        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
-        dropdownParents.forEach(function(link) {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const parent = this.parentElement;
-            document.querySelectorAll('.has-dropdown').forEach(function(item) {
-              if (item !== parent) item.classList.remove('open');
+        // Only add click handlers on mobile
+        if (window.innerWidth <= 868) {  // Changed from 768 to match CSS
+            const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+            
+            dropdownParents.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.has-dropdown').forEach(function(item) {
+                        if (item !== parent) {
+                            item.classList.remove('open');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    parent.classList.toggle('open');
+                });
             });
-            parent.classList.toggle('open');
-          });
-        });
-      }
+        }
     });
 
-    // Quantity
+    // Re-initialize on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 868) {
+            document.querySelectorAll('.has-dropdown').forEach(function(item) {
+                item.classList.remove('open');
+            });
+        }
+    });
+
+    // Quantity controls
     function increaseQuantity() {
-      const input = document.getElementById('quantity');
-      const max = parseInt(input.max);
-      const current = parseInt(input.value);
-      if (current < max) {
-        input.value = current + 1;
-      }
+        const input = document.getElementById('quantity');
+        const max = parseInt(input.max);
+        const current = parseInt(input.value);
+        if (current < max) {
+            input.value = current + 1;
+        }
     }
 
     function decreaseQuantity() {
-      const input = document.getElementById('quantity');
-      const min = parseInt(input.min);
-      const current = parseInt(input.value);
-      if (current > min) {
-        input.value = current - 1;
-      }
+        const input = document.getElementById('quantity');
+        const min = parseInt(input.min);
+        const current = parseInt(input.value);
+        if (current > min) {
+            input.value = current - 1;
+        }
     }
-        // Add to Cart
-        function addProductToCart() {
+
+    // Add to Cart
+    function addProductToCart() {
         const quantity = parseInt(document.getElementById('quantity').value);
         const productWithQuantity = {
-            id:  'six-styles-scotch-whisky-tasting-set',
+            id: 'six-styles-scotch-whisky-tasting-set',
             name: 'Six Styles of Scotch Tasting Gift Set',
             priceId: 'price_1SLSeHDLWuae7Nss2SEy0Fmy',
             price: 63.00,
@@ -1003,9 +1022,9 @@
             quantity: quantity
         };
 
-     cart.addItem(productWithQuantity)
-        }
-    </script>
+        cart.addItem(productWithQuantity);
+    }
+</script>
 
 </body>
 </html>

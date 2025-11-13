@@ -638,6 +638,48 @@
   padding: 60px 20px;
 }
 
+    .gin-collections {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+}
+    
+     .faq-info {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+}
+    
+    .faq-featured-box {
+    background-color: white;
+      border: solid 1px;
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    
+
+.faq-featured-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.faq-featured-content h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.faq-featured-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 10px;
+  min-height: 30px; /* Keeps alignment consistent */
+}
+
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1346,15 +1388,15 @@
     <div class="overlay">
       <h1>Azu spirits</h1>
       <h2>BLOG</h2>
-       <a class="featured-cta" href="">Whisky Production</a>
-       <a class="featured-cta" href="">Gin Exploration</a>
-       <a class="featured-cta" href="">FAQS</a>
+       <a class="featured-cta" onclick="scrollToSection('featured-collections')">Whisky Production</a>
+       <a class="featured-cta" onclick="scrollToSection('gin-collections')">Gin Exploration</a>
+       <a class="featured-cta" onclick="scrollToSection('faq-info')">FAQS</a>
     </div>
   </div>
     
 </section>
  
-   
+    
  
   
   <section class="featured-collections">
@@ -1476,7 +1518,7 @@
   </div>
 </section>
     
-    <section class="featured-collections">
+    <section class="gin-collections">
   <div class="container">
     <h2 style="text-align: center; font-size: 28px; margin-bottom: 40px; text-transform: uppercase;">Gin Exploration</h2>
     
@@ -1545,7 +1587,90 @@
 </section>
     
     
+     <section class="faq-info">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 28px; margin-bottom: 40px; text-transform: uppercase;">Frequently Asked Questions</h2>
     
+    <div class="featured-grid">
+      <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>What's the difference between a tasting set and a sharing box?</h3>
+          <p>Tasting sets: 6 x 30ml bottles, perfect for 1-2 people exploring different whiskies/gins<br>
+Sharing boxes: 6 x 100ml bottles, ideal for groups of 6+ people for a shared tasting experience</p>
+        </div>
+      </div>
+
+      
+     <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>How do the blind tasting challenges work?</h3>
+          <p>We include a tasting guide, and information cards providing insights into the six spirits included. You can use these to help you identify which is which, and then open the wax-sealed envelope when you're ready to reveal their identities!</p>
+        </div>
+      </div>
+ 
+      <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>Can I choose which whiskies/gins are in my set?</h3>
+          <p>Our collections are curated by specialists to showcase specific style and regions to ensure the best experience. If you want a bespoke box made up or particular spirits included, email enquiries@azuspirits.co.uk.</p>
+        </div>
+      </div>
+      
+        <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>How long does delivery take?</h3>
+          <p>It takes 1 - 2 days to dispatch your order and we ship via DPD next day delivery. Please expect 3 - 5 days for your order to arrive. </p>
+        </div>
+      </div>
+      
+         <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>What if I need my order by a specific date?</h3>
+          <p>Select a date of delivery at checkout or email us for any enquiries. We will try to get your order to you by the desired delivery date.</p>
+        </div>
+      </div>
+      
+         <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>Can I track my order?</h3>
+          <p>Yes, DPD tracking is provided once dispatched.</p>
+        </div>
+      </div>
+      
+          <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>Are your sets gift-ready?</h3>
+          <p>Yes, all sets come in premium presentation boxes, no additional wrapping needed, and gift messages are available at checkout</p>
+        </div>
+      </div>
+      
+         <!-- Blog 1 -->
+      <div class="faq-featured-box">
+        
+        <div class="faq-featured-content">
+          <h3>Which set is best for a beginner?</h3>
+          <p>Six Styles of Scotch whisky is great for whisky beginners, and Devon Gins or Craft Gins of the Cotswolds showcase a diverse range of premium craft gins perfect for anybody looking to start exploring.</p>
+        </div>
+      </div>
+      
+      <a class="featured-cta" href="/AzuSpirits/tasting-gift-sets/"> Visit our Shop</a>
+      
+    </div>
+  </div>
+</section>
     
     
     
@@ -1762,4 +1887,4 @@ function scrollToSection(sectionClass) {
 </script>
   
 </body>
-</html
+</html>

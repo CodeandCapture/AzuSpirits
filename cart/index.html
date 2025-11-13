@@ -15,7 +15,7 @@
 
     
     <style>
-        * {
+           * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -27,7 +27,7 @@
             background: #f9f9f9;
         }
 
-         /* Header Styles */
+        /* Header Styles */
         .site-header {
             background: #f8f8f8;
             border-bottom: 1px solid #ddd;
@@ -53,10 +53,8 @@
             margin: 0;
             padding: 0;
             display: flex;
-       
         }
 
-        /* Dropdown Menu Styles */
         .site-nav li {
             position: relative;
         }
@@ -87,7 +85,6 @@
 
         .has-dropdown:hover .dropdown-menu {
             display: flex !important;
-          
         }
 
         .dropdown-menu li {
@@ -122,11 +119,6 @@
             transition: color 0.3s;
         }
 
-        .dropdown-menu .site-nav a:hover {
-            color: white;
-        }
-
-        /* Mobile Menu Toggle */
         .nav-toggle {
             display: none;
             background: none;
@@ -142,7 +134,6 @@
             gap: 1.5rem;
         }
 
-        /* Cart Icon */
         .cart-icon {
             position: relative;
             cursor: pointer;
@@ -155,7 +146,7 @@
             transform: scale(1.1);
         }
 
-       .cart-count {
+        .cart-count {
             position: absolute;
             top: -8px;
             right: -8px;
@@ -180,10 +171,38 @@
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: #1a1a1a;
             text-transform: uppercase;
             font-weight: 400;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .trust-item svg {
+            width: 20px;
+            height: 20px;
+            fill: #165B33;
         }
 
         .cart-content {
@@ -302,6 +321,8 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border: 1px solid #ddd;
             height: fit-content;
+            position: sticky;
+            top: 2rem;
         }
 
         .cart-summary h2 {
@@ -309,6 +330,7 @@
             color: #1a1a1a;
             text-transform: uppercase;
             font-weight: 400;
+            font-size: 1.2rem;
         }
 
         .summary-row {
@@ -316,6 +338,11 @@
             justify-content: space-between;
             padding: 0.75rem 0;
             border-bottom: 1px solid #eee;
+        }
+
+        .summary-row.free-shipping {
+            color: #165B33;
+            font-weight: 600;
         }
 
         .summary-row.total {
@@ -329,7 +356,7 @@
 
         .checkout-btn {
             width: 100%;
-            background: black;
+            background: #a4343a;
             color: white;
             border: none;
             padding: 1rem;
@@ -344,7 +371,7 @@
         }
 
         .checkout-btn:hover {
-            background: #333;
+            background: #8a2b30;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
@@ -355,27 +382,66 @@
             transform: none;
         }
 
-        .payment-methods {
+        /* Security Info */
+        .security-info {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid #eee;
+            text-align: center;
         }
 
-        .payment-methods h3 {
-            font-size: 0.9rem;
+        .security-info p {
+            font-size: 0.85rem;
+            color: #666;
             margin-bottom: 1rem;
-            color: #777;
-            text-align: center;
+        }
+
+        .payment-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-badges img {
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        /* Delivery Info */
+        .delivery-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .delivery-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .delivery-header img {
+            height: 25px;
+        }
+
+        .delivery-header h3 {
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            font-weight: 600;
             text-transform: uppercase;
         }
 
-        .payment-logos {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            align-items: center;
-            font-size: 0.9rem;
+        .delivery-details {
+            font-size: 0.85rem;
             color: #666;
+            line-height: 1.8;
+            text-align: center;
         }
 
         .continue-shopping {
@@ -396,34 +462,6 @@
             border-top: 1px solid #ddd;
             padding: 40px 20px;
             margin-top: 3rem;
-        }
-
-        .footer-badges {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .footer-badges div {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-badges img {
-            max-width: 150px;
-            height: auto;
-        }
-
-        .footer-badges p {
-            margin-top: 15px;
-            font-size: 20px;
-            color: #555;
-            font-style: italic;
         }
 
         .footer-inner {
@@ -495,37 +533,45 @@
                 margin-left: 10px;
             }
 
-             /* Mobile Dropdown */
-      .dropdown-menu {
-        position: static;
-        display: none;
-        border: none;
-        box-shadow: none;
-        background: #f0f0f0;
-        margin-top: 0.5rem;
-        border-radius: 4px;
-      }
-      
-      .has-dropdown.open .dropdown-menu {
-        display: block;
-      }
-      
-      .has-dropdown > a::after {
-        float: right;
-      }
-      
-      .dropdown-menu a {
-        padding-left: 2rem;
-        font-size: 0.95rem;
-      }
+            .dropdown-menu {
+                position: static;
+                display: none;
+                border: none;
+                box-shadow: none;
+                background: #f0f0f0;
+                margin-top: 0.5rem;
+                border-radius: 4px;
+            }
 
-      .columns {
-        flex-direction: column;
-        align-items: center;
-      }
+            .has-dropdown.open .dropdown-menu {
+                display: block;
+            }
+
+            .has-dropdown > a::after {
+                float: right;
+            }
+
+            .dropdown-menu a {
+                padding-left: 2rem;
+                font-size: 0.95rem;
+            }
+
+            .trust-bar {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1rem 0.5rem;
+            }
+
+            .trust-item {
+                font-size: 0.85rem;
+            }
 
             .cart-content {
                 grid-template-columns: 1fr;
+            }
+
+            .cart-summary {
+                position: static;
             }
 
             .cart-item {
@@ -552,8 +598,7 @@
             .footer-nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
-            }
-        }
+           
     </style>
 </head>
 <body>
@@ -605,6 +650,22 @@
     <div class="container">
         <h1>Shopping Cart</h1>
 
+        <!-- Simple Trust Bar -->
+        <div class="trust-bar">
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                <span>Secure SSL Checkout</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+                <span>Free UK Shipping</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24"><path d="M19 8L5 8v10h14V8zm-3 6H8v-2h8v2z"/></svg>
+                <span>1-2 Day Dispatch</span>
+            </div>
+        </div>
+
         <div class="cart-content">
             <div class="cart-items" id="cartItems">
                 <!-- Cart items will be inserted here -->
@@ -616,9 +677,9 @@
                     <span>Subtotal</span>
                     <span id="subtotal">£0.00</span>
                 </div>
-                <div class="summary-row">
+                <div class="summary-row free-shipping">
                     <span>Shipping</span>
-                    <span id="shipping">£0.00</span>
+                    <span id="shipping">FREE</span>
                 </div>
                 <div class="summary-row total">
                     <span>Total</span>
@@ -626,33 +687,40 @@
                 </div>
 
                 <button class="checkout-btn" id="stripeCheckoutBtn" onclick="checkoutWithStripe()">
-                    Proceed to Checkout
+                    Secure Checkout
                 </button>
 
-            <div class="payment-methods">
-    <h3>Secure Payment</h3>
-    <p style="text-align: center; margin-bottom: 0.5rem;">All payments are processed securely through Stripe. We accept all major credit and debit cards.</p>
-    <div class="payment-logos">
-        <span>💳 Visa</span>
-        <span>💳 Mastercard</span>
-        <span>💳 Amex</span>
-    </div>
-</div>
+                <!-- Security Info -->
+                <div class="security-info">
+                    <p><strong>Secure Payment</strong><br>
+                    All transactions encrypted via Stripe</p>
+                    
+                    <div class="payment-badges">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" style="height: 30px;">
+                    </div>
+                </div>
 
-<div class="shipping-info" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #eee; text-align: center;">
-    <h3 style="font-size: 0.9rem; margin-bottom: 0.75rem; color: #777; text-transform: uppercase;">Shipping & Delivery</h3>
-    <p style="font-size: 0.9rem; color: #666; line-height: 1.6;">
-        📦 Free UK shipping on all orders<br>
-        🚚 Delivered via DPD for reliable tracking<br>
-        ⏱️ Dispatched within 1-2 business days
-    </p>
-</div>
+                <!-- Delivery Info with DPD Logo -->
+                <div class="delivery-info">
+                    <div class="delivery-header">
+                        <img src="/AzuSpirits/images/dpd-logo.png" alt="DPD">
+                        <h3>Tracked Delivery</h3>
+                    </div>
+                    <div class="delivery-details">
+                        Free UK tracked shipping<br>
+                        SMS & email tracking updates<br>
+                        Dispatched within 1-2 business days
+                    </div>
                 </div>
             </div>
         </div>
 
         <a href="/AzuSpirits/whisky-gifts" class="continue-shopping">← Continue Shopping</a>
     </div>
+
+<section>
+
+</section>
 
     <footer class="site-footer">
         

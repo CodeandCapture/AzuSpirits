@@ -133,6 +133,7 @@
             background: #f8f8f8;
             border-bottom: 1px solid #ddd;
             padding: 20px;
+            position: relative;
         }
 
         .header-inner {
@@ -239,6 +240,8 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #333;
+            position: relative; 
+            z-index: 1001; 
         }
 
         .header-right {
@@ -965,7 +968,7 @@
     // Mobile dropdown toggle
     document.addEventListener('DOMContentLoaded', function() {
         // Only add click handlers on mobile
-        if (window.innerWidth <= 868) {  // Changed from 768 to match CSS
+        if (window.innerWidth <= 868) {  
             const dropdownParents = document.querySelectorAll('.has-dropdown > a');
             
             dropdownParents.forEach(function(link) {

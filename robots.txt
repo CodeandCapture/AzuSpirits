@@ -1,1 +1,20 @@
+# robots.txt for Azu Spirits
+# https://www.azuspirits.co.uk
 
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block utility and non-public pages from being indexed
+Disallow: /cart/
+Disallow: /success.html
+
+# Block any admin or system files (if they exist)
+Disallow: /*.json$
+Disallow: /*.xml$ 
+
+# Allow sitemap itself to be accessed
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://www.azuspirits.co.uk/sitemap.xml

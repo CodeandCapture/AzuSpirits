@@ -852,7 +852,8 @@ gtag('config', 'AW-366761144');
                 body: JSON.stringify({
                     items: cart.items.map(item => ({
                         id: item.id,
-                        quantity: item.quantity
+                        quantity: item.quantity,
+                        price: item.price  
                     }))
                 })
             });

@@ -826,7 +826,18 @@ gtag('config', 'AW-366761144');
             alert('Your cart is empty!');
             return;
         }
-        
+            // 🎯 Fire Begin Checkout conversion
+    const cartTotal = cart.getTotal();
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-366761144/8GCmCOjg88EbELip8a4B',
+            'value': cartTotal,
+            'currency': 'GBP',
+            'transaction_id': ''
+        });
+        console.log('✅ Begin Checkout conversion tracked: £' + cartTotal);
+    }        
         const checkoutBtn = document.getElementById('stripeCheckoutBtn');
         checkoutBtn.disabled = true;
         checkoutBtn.textContent = 'Loading...';

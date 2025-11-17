@@ -34,6 +34,17 @@ class ShoppingCart {
         quantity: product.quantity || 1
       });
     }
+      // Fire Google Ads Add to Cart conversion
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-366761144/TxG3COXg88EbELip8a4B',
+      'value': product.price,
+      'currency': 'GBP',
+      'transaction_id': ''
+    });
+    console.log('✅ Add to Cart conversion tracked: £' + product.price);
+  }
+  
     
     this.saveCart();
     this.showAddedNotification(product.name);

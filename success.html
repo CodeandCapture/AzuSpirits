@@ -182,33 +182,44 @@ gtag('config', 'AW-366761144');
     
     <script src="/js/cart.js"></script>
     <script>
-        // Get session ID from URL and display
-        const urlParams = new URLSearchParams(window.location.search);
-        const sessionId = urlParams.get('session_id');
+    // Get session ID and amount from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+    const orderAmount = urlParams.get('amount');
+    
+    if (sessionId) {
+        // Display shortened order ID for customer reference
+        const shortId = sessionId.substring(sessionId.indexOf('_') + 1, sessionId.indexOf('_') + 21);
+        document.getElementById('orderId').innerHTML = `
+            <strong>Order Reference:</strong><br>${shortId}
+        `;
         
-        if (sessionId) {
-            // Display shortened order ID for customer reference
-            const shortId = sessionId.substring(sessionId.indexOf('_') + 1, sessionId.indexOf('_') + 21);
-            document.getElementById('orderId').innerHTML = `
-                <strong>Order Reference:</strong><br>${shortId}
-            `;
-            
-            // Clear the cart after successful purchase
-            if (typeof cart !== 'undefined') {
-                cart.clearCart();
-            } else {
-                // If cart.js isn't loaded properly, clear localStorage directly
-                localStorage.removeItem('cart');
-            }
-            
-            // Update cart count in case user navigates back
-            setTimeout(() => {
-                const cartCountElements = document.querySelectorAll('.cart-count');
-                cartCountElements.forEach(el => el.textContent = '0');
-            }, 100);
-        } else {
-            document.getElementById('orderId').textContent = 'Order ID not found';
+        // FIRE GOOGLE ADS PURCHASE CONVERSION
+        if (orderAmount && orderAmount > 0) {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-366761144/Z7qOCOLg88EbELip8a4B',
+                'value': parseFloat(orderAmount),
+                'currency': 'GBP',
+                'transaction_id': sessionId
+            });
+            console.log('✅ Purchase conversion tracked: £' + orderAmount);
         }
-    </script>
+        
+        // Clear the cart after successful purchase
+        if (typeof cart !== 'undefined') {
+            cart.clearCart();
+        } else {
+            localStorage.removeItem('azuSpiritsCart');
+        }
+        
+        // Update cart count
+        setTimeout(() => {
+            const cartCountElements = document.querySelectorAll('.cart-count');
+            cartCountElements.forEach(el => el.textContent = '0');
+        }, 100);
+    } else {
+        document.getElementById('orderId').textContent = 'Order ID not found';
+    }
+</script>
 </body>
 </html>

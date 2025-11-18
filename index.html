@@ -866,37 +866,40 @@
   }
 }
     
-    /* Price Badge Circle */
+   /* Price Badge Circle */
 .price-badge {
   position: absolute;
   top: 15px;
   right: 15px;
   background-color: #A4343A;
   color: white;
-  width: 60px;
-  height: 60px;
+  min-width: 70px;  /* Changed from fixed width */
+  height: auto;      /* Changed from fixed height */
+  min-height: 70px;  /* Minimum height */
+  padding: 10px;     /* Added padding */
   border-radius: 50%;
   display: flex;
+  flex-direction: column;  /* Stack vertically */
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;   /* Slightly smaller base font */
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   z-index: 10;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  line-height: 1.2;  /* Tighter line spacing */
+}
+
+.price-badge s {
+  font-size: 12px;   /* Smaller strikethrough */
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 2px;
 }
 
 .featured-box:hover .price-badge {
   transform: scale(1.1);
   background-color: #8a2c31;
-}
-
-/* Make sure the image container supports absolute positioning */
-.featured-image {
-  position: relative; /* This is crucial! */
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
 }
 
 
@@ -1109,6 +1112,78 @@
   background: #1a7040;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(22, 91, 51, 0.4);
+}
+    
+    /* Special Offer Badge */
+.special-offer-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #1a1a1a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.5);
+  z-index: 11;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.7);
+  }
+}
+
+/* Optional: Add border to special offer box */
+.featured-box-special {
+  border: 2px solid #FFD700;
+  position: relative;
+}
+
+.featured-box-special::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+ 
+  border-radius: 8px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.featured-box-special:hover::before {
+  opacity: 0.2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 868px) {
+  .special-offer-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+  
+  .price-badge {
+    min-width: 65px;
+    min-height: 65px;
+    font-size: 13px;
+    padding: 8px;
+  }
+  
+  .price-badge s {
+    font-size: 11px;
+  }
 }
 
 
@@ -1573,6 +1648,60 @@ gtag('config', 'AW-366761144');
     <h2 style="text-align: center; font-size: 28px; margin-bottom: 40px; text-transform: uppercase;">Featured Collections</h2>
     
     <div class="featured-grid">
+      
+       <!-- Whisky Set 2 - Six Styles of Scotch -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="/images/products/six-styles-scotch-alt2.jpg" alt="Six styles of Scotch whisky tasting set for beginners">
+          <span class="price-badge">£63</span>
+        </div>
+        <div class="featured-content">
+          <h3>Six Styles of Single Malt Scotch</h3>
+          <div class="bottle-highlights">
+            <p><strong>Includes Rare 18-Year Expression:</strong></p>
+            <p style="font-size: 15px; line-height: 1.6; color: #666; margin: 8px 0;">
+              Ledaig 18 • Oban 14 • Talisker 10<br>
+              Plus: Glenkinchie 12, Auchentoshan American Oak & Glen Moray Peated
+            </p>
+          </div>
+          <p style="font-size: 14px; margin-top: 12px;">From smooth & sweet to bold & peaty. Discover your perfect style before investing in full bottles.</p>
+          <a href="/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">Find Your Style</a>
+        </div>
+      </div>
+      
+       <!-- Gin Set 2 - London -->
+<div class="featured-box featured-box-special">
+  <div class="featured-image">
+    <!-- Special Offer Badge -->
+    <span class="special-offer-badge">20% OFF!</span>
+    
+    <img src="https://www.azuspirits.co.uk/images/products/london-gin-gift-set.jpg" alt="London craft gin tasting set">
+    <span class="price-badge"><s>£52</s> £41.60</span>
+  </div>
+  <div class="featured-content">
+    <h3>London Gins <span style="color: black; font-size: 0.8em; font-weight: 600;">• Limited Time Offer</span></h3>
+  
+    <div class="bottle-highlights">
+      <p><strong>Six Iconic Distilleries from the Capital:</strong></p>
+      <p style="font-size: 13px; line-height: 1.6; color: #666; margin: 8px 0;">
+        Sacred Old Tom • Portobello Road No. 171 • Little Bird<br>
+        Half Hitch • Doghouse Renegade • Jensen's Bermondsey
+      </p>
+    </div>
+    
+    <p style="font-size: 14px; margin-top: 12px;">From citrus-forward classics to bold botanicals and sweeter old Toms, challenge yourself to detect the subtle differences in style before revealing your favourites.</p>
+    
+    <!-- Add discount code reminder -->
+    <p style="font-size: 12px; color: #165B33; font-weight: 600; margin-top: 10px;">
+      💡 Use code <strong>EXPLORELONDON</strong> at checkout
+    </p>
+    
+    <a href="/products/london-gin-tasting-gift-set" class="featured-cta">Shop 20% Off Sale</a>
+  </div>
+</div>
+      
+
+     
       <!-- Whisky Set 1 - Regions of Scotland -->
       <div class="featured-box">
         <div class="featured-image">
@@ -1590,26 +1719,6 @@ gtag('config', 'AW-366761144');
           </div>
           <p style="font-size: 14px; margin-top: 12px;">Tour Scotland's legendary regions. Can you identify each distillery's signature character?</p>
           <a href="/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Explore Scotland</a>
-        </div>
-      </div>
-
-      <!-- Whisky Set 2 - Six Styles of Scotch -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <img src="/images/products/six-styles-scotch-alt2.jpg" alt="Six styles of Scotch whisky tasting set for beginners">
-          <span class="price-badge">£63</span>
-        </div>
-        <div class="featured-content">
-          <h3>Six Styles of Single Malt Scotch</h3>
-          <div class="bottle-highlights">
-            <p><strong>Includes Rare 18-Year Expression:</strong></p>
-            <p style="font-size: 15px; line-height: 1.6; color: #666; margin: 8px 0;">
-              Ledaig 18 • Oban 14 • Talisker 10<br>
-              Plus: Glenkinchie 12, Auchentoshan American Oak & Glen Moray Peated
-            </p>
-          </div>
-          <p style="font-size: 14px; margin-top: 12px;">From smooth & sweet to bold & peaty. Discover your perfect style before investing in full bottles.</p>
-          <a href="/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">Find Your Style</a>
         </div>
       </div>
 
@@ -1653,28 +1762,6 @@ gtag('config', 'AW-366761144');
         </div>
       </div>
       
-         <!-- Gin Set 2 - London -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <img src="/images/products/london-gin-gift-set.jpg" alt="London craft gin tasting set">
-          <span class="price-badge"><s>£52</s> £41.60</span>
-        </div>
-        <div class="featured-content">
-          <h3>London Gins</h3>
-        
-           <div class="bottle-highlights">
-      <p><strong>Six Iconic Distilleries from the Capital:</strong></p>
-      <p style="font-size: 13px; line-height: 1.6; color: #666; margin: 8px 0;">
-        Sacred Old Tom • Portobello Road No. 171 • Little Bird<br>
-        Half Hitch • Doghouse Renegade • Jensen's Bermondsey
-      </p>
-    </div>
-          <p style="font-size: 14px; margin-top: 12px;">From citrus-forward classics to bold botanicals and sweeter old Toms, challenge yourself to detect the subtle differences in style before revealing your favourites.
-
-</p>
-          <a href="/products/london-gin-tasting-gift-set" class="featured-cta">Explore London</a>
-        </div>
-      </div>
       
     </div>
   </div>

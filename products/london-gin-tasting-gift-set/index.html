@@ -614,120 +614,117 @@
     }
 
     /* Mobile Styles */
-    @media (max-width: 868px) {
-      .christmas-banner {
-        font-size: 12px;
-        padding: 10px;
-      }
+@media (max-width: 868px) {
+  .christmas-banner {
+    font-size: 12px;
+    padding: 10px;
+  }
 
-      .christmas-banner span {
-        font-size: 16px;
-      }
+  .christmas-banner span {
+    font-size: 16px;
+  }
 
-      .site-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #f8f8f8;
-        border-top: 1px solid #ddd;
-        padding: 1rem;
-        z-index: 100;
-      }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f8f8f8;
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+    z-index: 100;
+  }
 
-      .site-nav.open {
-        display: block;
-      }
+  .site-nav.open {
+    display: block;
+  }
 
-      .site-nav ul {
-        flex-direction: column;
-      }
+  .site-nav ul {
+    flex-direction: column;
+  }
 
-      .site-nav li + li {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
+  .site-nav li + li {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
 
-      .nav-toggle {
-        display: block;
-      }
+  .nav-toggle {
+    display: block;
+  }
 
-      .header-inner img {
-        height: 60px;
-        margin-left: 10px;
-      }
+  .header-inner img {
+    height: 60px;
+    margin-left: 10px;
+  }
 
-      .dropdown-menu {
-        position: static;
-        display: none;
-        border: none;
-        box-shadow: none;
-        background: #f0f0f0;
-        margin-top: 0.5rem;
-        border-radius: 4px;
-      }
+  .dropdown-menu {
+    position: static;
+    display: none;
+    border: none;
+    box-shadow: none;
+    background: #f0f0f0;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .has-dropdown.open .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    padding-left: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* FIX: Product container flex order */
+  .product-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Show mobile hero image FIRST */
+  .mobile-hero-image {
+    display: block;
+    order: 0;
+    margin-bottom: 2rem;
+  }
+
+  .mobile-hero-image .product-image {
+    margin-bottom: 0;
+  }
+
+  /* Product details SECOND */
+  .product-details {
+    order: 1;
+  }
+
+  /* Premium spirits box THIRD */
+  .premium-spirits-box {
+    order: 2;
+  }
+
+  /* Hide desktop image gallery on mobile */
+  .product-image-container {
+    display: none;
+  }
+
+  .product-details h1 {
+    font-size: 1.6rem;
+  }
+
+  .product-price {
+    font-size: 1.8rem;
+  }
+
+  .footer-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
       
-      .has-dropdown.open .dropdown-menu {
-        display: block;
-      }
-      
-      .dropdown-menu a {
-        padding-left: 2rem;
-        font-size: 0.95rem;
-      }
-
-      .product-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .product-details {
-        order: 1;
-      }
-
-      .product-image-container {
-        order: 2;
-        position: relative;
-        top: 0;
-        margin-top: 2rem;
-      }
-
-      .product-details h1 {
-        font-size: 1.6rem;
-      }
-
-      .product-price {
-        font-size: 1.8rem;
-      }
-
-      .footer-nav-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-    
-      
-      /* Show mobile hero image */
-      .mobile-hero-image {
-        display: block;
-        order: 0;  /* Shows first */
-        margin-bottom: 2rem;
-      }
-
-      .mobile-hero-image .product-image {
-        margin-bottom: 0;
-      }
-
-      /* Hide the full image gallery on mobile */
-      .product-image-container {
-        display: none;
-      }
-
-      .product-details {
-        order: 1;
-      }
-    }
   </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
@@ -742,7 +739,7 @@ gtag('config', 'AW-366761144');
   <body>
 
   <div class="christmas-banner">
-    USE CODE DISCOVERY FOR 10% OFF <span>•</span> FREE DPD DELIVERY
+    LIMITED TIME: 20% OFF LONDON GIN SET - USE CODE EXPLORELONDON
   </div>
   
 <header class="site-header">
@@ -816,8 +813,8 @@ gtag('config', 'AW-366761144');
 
      <div class="product-details">
     <h1>London Gins: Blind Tasting Gift Set</h1>
-    <div class="product-price">£52.00
-        <span class="savings-badge">Save 10% with code DISCOVERY</span> </div>
+       <div class="product-price"><s>£52.00</s> £41.60
+        <span class="savings-badge">Limited time offer! Save 20% with code EXPLORELONDON. Discount codes can be added at checkout.</span> </div>
        
         <div class="quantity-selector">
                 <label for="quantity">Quantity:</label>
@@ -855,8 +852,8 @@ gtag('config', 'AW-366761144');
             <span class="spirit-detail">Bold and punchy</span>
           </li>
           <li>
-            <span class="spirit-name">Whitley Neill Blood Orange</span>
-            <span class="spirit-detail">Bright and sweet</span>
+            <span class="spirit-name">Jensen's – Bermondsey Dry Gin</span>
+            <span class="spirit-detail">Traditional tastes</span>
           </li>
         </ul>
       </div>
@@ -882,7 +879,7 @@ gtag('config', 'AW-366761144');
       </div>
 
     </div>
-  </div>
+    </div>
 
 
 
@@ -972,7 +969,6 @@ gtag('config', 'AW-366761144');
   </script>
 </body>
 </html>
-
 
 
 

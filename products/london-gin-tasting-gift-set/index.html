@@ -345,6 +345,107 @@
       font-weight: bold;
       margin-left: 15px;
     }
+      
+      /* Mobile Image Carousel */
+@media (max-width: 868px) {
+  /* ... your existing mobile styles ... */
+
+  /* Mobile Hero Image Carousel */
+  .mobile-hero-image {
+    display: block;
+    order: 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mobile-carousel {
+    display: flex;
+    transition: transform 0.3s ease;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .mobile-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .mobile-carousel .product-image {
+    min-width: 100%;
+    scroll-snap-align: start;
+    margin-bottom: 0;
+  }
+
+  /* Carousel Dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .carousel-dot.active {
+    background: var(--gin-green);
+    width: 24px;
+    border-radius: 5px;
+  }
+
+  /* Navigation Arrows */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+  }
+
+  .carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  .carousel-arrow-left {
+    left: 10px;
+  }
+
+  .carousel-arrow-right {
+    right: 10px;
+  }
+
+  /* Image counter */
+  .image-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+  }
+}
 
     /* Premium Spirits Highlight Box */
     .premium-spirits-box {
@@ -799,20 +900,42 @@ gtag('config', 'AW-366761144');
 
    <!-- Product Section -->
   <div class="product-container">
-      <!-- MOBILE HERO IMAGE - Shows first on mobile only -->
-    <div class="mobile-hero-image">
-      <img src="/images/products/london-gin-gift-set.jpg" 
-           alt="London Gins Tasting Set"
-           class="product-image">
-    </div>
-        <div class="product-image-container">
-            <img src="/images/products/london-gin-gift-set.jpg" alt="London gin tasting gift set with six premium London dry gins" class="product-image">
-           <img src="/images/products/london-gin-tasting.jpg" alt="Blind tasting guide and numbered bottles in London gin gift box" class="product-image">
-            <img src="/images/products/gin-gift-london.jpg" alt="Six 30ml London dry gin samples from iconic distilleries" class="product-image">
-            
-          
-        </div>
+      <!-- MOBILE HERO IMAGE CAROUSEL - Shows first on mobile only -->
+<div class="mobile-hero-image">
+  <!-- Image Counter -->
+  <div class="image-counter">
+    <span class="current-image">1</span> / <span class="total-images">4</span>
+  </div>
 
+  <!-- Navigation Arrows -->
+  <button class="carousel-arrow carousel-arrow-left" onclick="previousImage()">‹</button>
+  <button class="carousel-arrow carousel-arrow-right" onclick="nextImage()">›</button>
+
+  <!-- Carousel Images -->
+  <div class="mobile-carousel" id="mobileCarousel">
+    <img src="https://www.azuspirits.co.uk/images/products/london-gin-gift-set.jpg" 
+         alt="London Gins Tasting Set" 
+         class="product-image">
+    <img src="https://www.azuspirits.co.uk/images/products/london-gin-tasting.jpg" 
+         alt="Blind tasting guide and bottles" 
+         class="product-image">
+    <img src="https://www.azuspirits.co.uk/images/products/gin-gift-london.jpg" 
+         alt="Luxury at home gin tasting" 
+         class="product-image">
+    <img src="https://www.azuspirits.co.uk/images/products/london-gins.jpg" 
+         alt="Six London gin samples" 
+         class="product-image">
+    
+  </div>
+
+  <!-- Carousel Dots -->
+  <div class="carousel-dots">
+    <button class="carousel-dot active" onclick="goToImage(0)"></button>
+    <button class="carousel-dot" onclick="goToImage(1)"></button>
+    <button class="carousel-dot" onclick="goToImage(2)"></button>
+     <button class="carousel-dot" onclick="goToImage(3)"></button>
+  </div>
+</div>
      <div class="product-details">
     <h1>London Gins: Blind Tasting Gift Set</h1>
       <div class="product-price">
@@ -860,8 +983,8 @@ gtag('config', 'AW-366761144');
             <span class="spirit-detail">Bold and punchy</span>
           </li>
           <li>
-            <span class="spirit-name">Jensen's – Bermondsey Dry Gin</span>
-            <span class="spirit-detail">Traditional tastes</span>
+            <span class="spirit-name">Whitley Neill Blood Orange</span>
+            <span class="spirit-detail">Bright and fruity</span>
           </li>
         </ul>
       </div>
@@ -880,7 +1003,6 @@ gtag('config', 'AW-366761144');
           <li>Expert blind tasting guide with tasting notes</li>
           <li>Information cards on botanicals and production</li>
           <li>Wax-sealed reveal envelope with distillery details</li>
-          <li>10% discount code for your favourite full bottle</li>
           <li>Gift-ready premium presentation box</li>
           <li>Free DPD delivery (UK)</li>
         </ul>
@@ -974,6 +1096,100 @@ gtag('config', 'AW-366761144');
     "name": "London Gin Tasting Gift Set",
     ...
   }
-  </script>
+
+    </script>
+    
+    <script>
+      // Mobile Image Carousel
+let currentImageIndex = 0;
+const carousel = document.getElementById('mobileCarousel');
+const dots = document.querySelectorAll('.carousel-dot');
+const totalImages = dots.length;
+
+function updateCarousel() {
+  if (!carousel) return; // Only run on mobile
+  
+  const imageWidth = carousel.offsetWidth;
+  carousel.scrollTo({
+    left: imageWidth * currentImageIndex,
+    behavior: 'smooth'
+  });
+  
+  // Update dots
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentImageIndex);
+  });
+  
+  // Update counter
+  const currentImageSpan = document.querySelector('.current-image');
+  if (currentImageSpan) {
+    currentImageSpan.textContent = currentImageIndex + 1;
+  }
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % totalImages;
+  updateCarousel();
+}
+
+function previousImage() {
+  currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+  updateCarousel();
+}
+
+function goToImage(index) {
+  currentImageIndex = index;
+  updateCarousel();
+}
+
+// Swipe support
+if (carousel) {
+  let startX = 0;
+  let isDragging = false;
+
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  carousel.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+  });
+
+  carousel.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    
+    
+    
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > 50) { // Minimum swipe distance
+      if (diff > 0) {
+        nextImage(); // Swipe left
+      } else {
+        previousImage(); // Swipe right
+      }
+    }
+  });
+
+  // Update on scroll (for manual scrolling)
+  carousel.addEventListener('scroll', () => {
+    const imageWidth = carousel.offsetWidth;
+    const newIndex = Math.round(carousel.scrollLeft / imageWidth);
+    if (newIndex !== currentImageIndex) {
+      currentImageIndex = newIndex;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentImageIndex);
+      });
+      const currentImageSpan = document.querySelector('.current-image');
+      if (currentImageSpan) {
+        currentImageSpan.textContent = currentImageIndex + 1;
+      }
+    }
+  });
+}
+    </script>
 </body>
 </html>

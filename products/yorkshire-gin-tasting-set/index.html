@@ -522,6 +522,7 @@
 
   
 
+     /* Footer Styles */
     .site-footer {
       background: #f8f8f8;
       border-top: 1px solid #ddd;
@@ -613,108 +614,219 @@
       color: #999;
       margin: 0;
     }
-
-    @media (max-width: 868px) {
-      .christmas-banner {
-        font-size: 12px;
-        padding: 10px;
-      }
-
-      .christmas-banner span {
-        font-size: 16px;
-      }
-
-      .mobile-hero-image {
-        display: block;
-        order: 0;
-        margin-bottom: 2rem;
-      }
-
-      .mobile-hero-image .product-image {
-        margin-bottom: 0;
-      }
-
-      .product-image-container {
-        display: none;
-      }
-
-      .site-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #f8f8f8;
-        border-top: 1px solid #ddd;
-        padding: 1rem;
-        z-index: 100;
-      }
-
-      .site-nav.open {
-        display: block;
-      }
-
-      .site-nav ul {
-        flex-direction: column;
-      }
-
-      .site-nav li + li {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .header-inner img {
-        height: 60px;
-        margin-left: 10px;
-      }
-
-      .dropdown-menu {
-        position: static;
-        display: none;
-        border: none;
-        box-shadow: none;
-        background: #f0f0f0;
-        margin-top: 0.5rem;
-        border-radius: 4px;
-      }
-      
-      .has-dropdown.open .dropdown-menu {
-        display: block;
-      }
-      
-      .dropdown-menu a {
-        padding-left: 2rem;
-        font-size: 0.95rem;
-      }
-
-      .product-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .product-details {
-        order: 1;
-      }
-
-      .product-details h1 {
-        font-size: 1.6rem;
-      }
-
-      .product-price {
-        font-size: 1.8rem;
-      }
-
-      .footer-nav-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-     
+    
+    /* Mobile Hero Image - hidden on desktop */
+    .mobile-hero-image {
+      display: none;
     }
+    
+     /* Mobile Image Carousel */
+@media (max-width: 868px) {
+  /* ... your existing mobile styles ... */
+
+  /* Mobile Hero Image Carousel */
+  .mobile-hero-image {
+    display: block;
+    order: 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mobile-carousel {
+    display: flex;
+    transition: transform 0.3s ease;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .mobile-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .mobile-carousel .product-image {
+    min-width: 100%;
+    scroll-snap-align: start;
+    margin-bottom: 0;
+  }
+
+  /* Carousel Dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .carousel-dot.active {
+    background: var(--gin-green);
+    width: 24px;
+    border-radius: 5px;
+  }
+
+  /* Navigation Arrows */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+  }
+
+  .carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  .carousel-arrow-left {
+    left: 10px;
+  }
+
+  .carousel-arrow-right {
+    right: 10px;
+  }
+
+  /* Image counter */
+  .image-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+  }
+}
+
+  /* Mobile Styles */
+@media (max-width: 868px) {
+  .christmas-banner {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .christmas-banner span {
+    font-size: 16px;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f8f8f8;
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+    z-index: 100;
+  }
+
+  .site-nav.open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+  }
+
+  .site-nav li + li {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .header-inner img {
+    height: 60px;
+    margin-left: 10px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    border: none;
+    box-shadow: none;
+    background: #f0f0f0;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .has-dropdown.open .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu a {
+    padding-left: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* FIX: Product container flex order */
+  .product-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Product details SECOND */
+  .product-details {
+    order: 1;
+  }
+
+  /* Hide desktop image gallery on mobile */
+  .product-image-container {
+    display: none;
+  }
+
+  .product-details h1 {
+    font-size: 1.6rem;
+  }
+
+  .product-price {
+    font-size: 1.8rem;
+  }
+
+  .footer-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .trust-badges {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cart-notification {
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+  }
+}
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
@@ -726,9 +838,11 @@ gtag('config', 'AW-366761144');
 </script>
 </head>
 <body>
-  <div class="christmas-banner">
-    USE CODE DISCOVERY FOR 10% OFF <span>•</span> FREE DPD DELIVERY
-  </div>
+ <a href="/products/london-gin-tasting-gift-set/" style="color: white; text-decoration: none; display: block; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+    <div class= "christmas-banner" style="background: linear-gradient(135deg, #165B33 0%, #0f4123 100%); color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 14px; cursor: pointer;">
+        LIMITED TIME: 20% OFF London Gin Tasting Sets - Use Code EXPLORELONDON 
+    </div>
+</a>
   
 <header class="site-header">
   <div class="header-inner container">
@@ -785,11 +899,40 @@ gtag('config', 'AW-366761144');
 
   <div class="product-container">
     
-    <div class="mobile-hero-image">
-      <img src="/images/products/yorkshire-gin-tasting-set.jpg" 
+   <!-- MOBILE HERO IMAGE CAROUSEL - Shows first on mobile only -->
+<div class="mobile-hero-image">
+  <!-- Image Counter -->
+  <div class="image-counter">
+    <span class="current-image">1</span> / <span class="total-images">3</span>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button class="carousel-arrow carousel-arrow-left" onclick="previousImage()">‹</button>
+  <button class="carousel-arrow carousel-arrow-right" onclick="nextImage()">›</button>
+
+  <!-- Carousel Images -->
+  <div class="mobile-carousel" id="mobileCarousel">
+    <img src="/images/products/yorkshire-gin-tasting-set.jpg" 
            alt="Yorkshire Gins Tasting Gift Set"
-           class="product-image">
-    </div>
+         class="product-image">
+    <img src="/images/products/yorkshire-gin-alt.jpg" 
+           alt="Yorkshire Craft Gins"
+         class="product-image">
+    <img src="/images/products/six-30ml-bottles.jpg" 
+           alt="Six Premium 30ml Bottles"
+         class="product-image">
+
+    
+  </div>
+
+  <!-- Carousel Dots -->
+  <div class="carousel-dots">
+    <button class="carousel-dot active" onclick="goToImage(0)"></button>
+    <button class="carousel-dot" onclick="goToImage(1)"></button>
+    <button class="carousel-dot" onclick="goToImage(2)"></button>
+  </div>
+  
+</div>
 
     <div class="product-image-container">
       <img src="/images/products/yorkshire-gin-tasting-set.jpg" 
@@ -811,7 +954,7 @@ gtag('config', 'AW-366761144');
       
       <div class="product-price">
         £52.00
-        <span class="savings-badge">Save 10% with code DISCOVERY</span>
+       
       </div>
 
       <div class="quantity-selector">
@@ -828,7 +971,7 @@ gtag('config', 'AW-366761144');
       </button>
 
       <div class="premium-spirits-box">
-        <h3>✨ Six Yorkshire Distilleries</h3>
+        <h3>Six Yorkshire Distilleries</h3>
         <ul class="spirit-list">
           <li>
             <span class="spirit-name">Hooting Owl Signature Dry</span>
@@ -870,7 +1013,6 @@ gtag('config', 'AW-366761144');
           <li>Expert blind tasting guide with tasting notes</li>
           <li>Information cards on Yorkshire gin heritage</li>
           <li>Wax-sealed reveal envelope with distillery details</li>
-          <li>10% discount code for your favourite full bottle</li>
           <li>Gift-ready premium presentation box</li>
           <li>Free DPD delivery (UK)</li>
         </ul>
@@ -884,16 +1026,7 @@ gtag('config', 'AW-366761144');
     
     <div class="container">
       <div class="footer-nav-grid">
-        <div class="footer-nav-section">
-          <h4>Shop</h4>
-          <nav class="footer-nav">
-            <ul>
-              <li><a href="/whisky-gifts">Whisky Tasting Sets</a></li>
-              <li><a href="/gin-gifts">Gin Tasting Sets</a></li>
-              <li><a href="/bottleshop">Bottle Shop</a></li>
-            </ul>
-          </nav>
-        </div>
+       
         
         <div class="footer-nav-section">
           <h4>Information</h4>
@@ -973,9 +1106,99 @@ gtag('config', 'AW-366761144');
       cart.addItem(productWithQuantity);
     }
   </script>
+   <script>
+      // Mobile Image Carousel
+let currentImageIndex = 0;
+const carousel = document.getElementById('mobileCarousel');
+const dots = document.querySelectorAll('.carousel-dot');
+const totalImages = dots.length;
+
+function updateCarousel() {
+  if (!carousel) return; // Only run on mobile
+  
+  const imageWidth = carousel.offsetWidth;
+  carousel.scrollTo({
+    left: imageWidth * currentImageIndex,
+    behavior: 'smooth'
+  });
+  
+  // Update dots
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentImageIndex);
+  });
+  
+  // Update counter
+  const currentImageSpan = document.querySelector('.current-image');
+  if (currentImageSpan) {
+    currentImageSpan.textContent = currentImageIndex + 1;
+  }
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % totalImages;
+  updateCarousel();
+}
+
+function previousImage() {
+  currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+  updateCarousel();
+}
+
+function goToImage(index) {
+  currentImageIndex = index;
+  updateCarousel();
+}
+
+// Swipe support
+if (carousel) {
+  let startX = 0;
+  let isDragging = false;
+
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  carousel.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+  });
+
+  carousel.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    
+    
+    
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > 50) { // Minimum swipe distance
+      if (diff > 0) {
+        nextImage(); // Swipe left
+      } else {
+        previousImage(); // Swipe right
+      }
+    }
+  });
+
+  // Update on scroll (for manual scrolling)
+  carousel.addEventListener('scroll', () => {
+    const imageWidth = carousel.offsetWidth;
+    const newIndex = Math.round(carousel.scrollLeft / imageWidth);
+    if (newIndex !== currentImageIndex) {
+      currentImageIndex = newIndex;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentImageIndex);
+      });
+      const currentImageSpan = document.querySelector('.current-image');
+      if (currentImageSpan) {
+        currentImageSpan.textContent = currentImageIndex + 1;
+      }
+    }
+  });
+}
+    </script>
+  
 </body>
 </html>
-
-
-
 

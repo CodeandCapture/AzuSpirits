@@ -173,7 +173,7 @@ const products = {
     name: 'Founders Selection Whisky Gift Set',
     price: 55.00,
     priceId: 'price_1SLSZ8DLWuae7NssGHl64wqJ',
-    image: '/images/products/founders-selection.jpg'
+    image: '/images/products/whisky-tasting-gift-set.jpg'
   },
   'luxury-single-malt-whisky': {
     name: 'Luxury Single Malt Whisky Tasting Gift Set',

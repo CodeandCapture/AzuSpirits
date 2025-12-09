@@ -237,8 +237,8 @@ image: '/images/products/gin-tasting-at-home-experience.jpeg'
     image: '/images/products/christmas-crackers-whisky-alt1.jpg'
   },
 
-    'london-gin-christmas-crackers': {
-    name: 'London Gin Christmas Crackers',
+    'craft-gin-christmas-crackers': {
+    name: 'Craft Gin Christmas Crackers',
     price: 52.00,
     priceId: 'price_1SMYUCDLWuae7Nss0MtD8DfQ',
     image: '/images/products/london-gins-christmas-crackers-alt1.jpg'

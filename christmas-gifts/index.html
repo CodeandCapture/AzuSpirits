@@ -52,7 +52,7 @@
 }
 </script>
 
-  <!-- 3. BREADCRUMB SCHEMA -->
+  <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,775 +77,559 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,600&display=swap" rel="stylesheet">
 
   <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
     /* Base Styles */
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .hero-section h1 {
-font-size: 30px;
-text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 2px;
-    }
-
-    .hero-section h2 {
-font-size: 20px;
-text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 2px;
-    }
-        /* Header Styles */
-        .site-header {
-            background: #f8f8f8;
-            border-bottom: 1px solid #ddd;
-            padding: 20px;
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 0;
-        }
-
-        .header-inner img {
-            height: 80px;
-            cursor: pointer;
-        }
-
-        .site-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        /* Dropdown Menu Styles */
-        .site-nav li {
-            position: relative;
-        }
-
-        .has-dropdown {
-            position: relative;
-        }
-
-        .has-dropdown > a::after {
-            content: ' ▾';
-            font-size: 0.8rem;
-            margin-left: 0.3rem;
-        }
-
-        .dropdown-menu {
-            display: none !important;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-width: 220px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            margin-top: 0.5rem;
-        }
-
-        .has-dropdown:hover .dropdown-menu {
-            display: flex !important;
-        }
-
-        .dropdown-menu li {
-            margin: 0 !important;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .dropdown-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #333;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-    }
-
-        .dropdown-menu a:hover {
-            background: #A4343A;
-            color: white;
-        }
-
-        .site-nav li + li {
-            margin-left: 1.5rem;
-        }
-
-        .site-nav a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
-        }
-
-        .dropdown-menu .site-nav a:hover {
-            color: white;
-        }
-
-        /* Mobile Menu Toggle */
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #333;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        /* Cart Icon */
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: #333;
-            transition: transform 0.2s;
-        }
-
-        .cart-icon:hover {
-            transform: scale(1.1);
-        }
-
-       .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #A4343A;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-
-    .section-main {
-      padding: 20px;
-      color: #A4343A;
-    }
-
-    .section-main h3 {
-  
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    
-    }
-
-        .section-main h4{
-   font-size: 15px;
-   font-weight: 500; 
-   text-align: center;
-   letter-spacing: 0.2px;  
-           color: black;
-    }
-
-    .section-product li {
-     background: white;
-    color: white;
-    padding: 4px 20px;
-    border-radius: 3px;
-    font-size: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-      line-height: 25px;
-    min-width: 90px;
-    text-align: center;
-    list-style: none;  
-    padding-top: 10px;
-      font-size: 12px;    
-                }
-
-    .section-product {
-      text-align: center;
-      padding: 20px;
-      display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 30px;
-    }
-
-   /* Banner Carousel Container */
-  .banner-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 80px;
-    z-index: 9999;
-  }
-
-  /* Individual Banner Slides */
-  .banner-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-
-  .banner-slide.active {
-    opacity: 1;
-    z-index: 1;
-  }
-
-  /* Christmas Crackers Banner */
-  .banner-christmas {
-    background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
-    color: white;
-    animation: festiveShimmer 3s ease-in-out infinite;
-  }
-
-  @keyframes festiveShimmer {
-    0%, 100% { 
-      background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
-    }
-    50% { 
-      background: linear-gradient(135deg, #D41E3A 0%, #1A6B3D 50%, #E4BF47 100%);
-    }
-  }
-
-  .banner-christmas .banner-content {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .banner-christmas .festive-icon {
-    font-size: 24px;
-    margin: 0 15px;
-    animation: bounce 2s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-
-  .banner-christmas .subtitle {
-    display: block;
-    font-size: 12px;
-    margin-top: 5px;
-    letter-spacing: 3px;
-    opacity: 0.95;
-    font-weight: 400;
-  }
-
-  /* Luxury Collection Banner */
-  .banner-luxury {
-    background: linear-gradient(135deg, #5C1A1B 0%, #1a1a1a 50%, #5C1A1B 100%);
-    color: #D4AF37;
-    border-bottom: 2px solid #D4AF37;
-    animation: luxuryShine 4s ease-in-out infinite;
-  }
-
-  @keyframes luxuryShine {
-    0%, 100% { 
-      background: linear-gradient(135deg, #5C1A1B 0%, #1a1a1a 50%, #5C1A1B 100%);
-    }
-    50% { 
-      background: linear-gradient(135deg, #6B2122 0%, #252525 50%, #6B2122 100%);
-    }
-  }
-
-  .banner-luxury .banner-content {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .banner-luxury .gold-accent {
-    color: #D4AF37;
-    font-size: 22px;
-    margin: 0 15px;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-  }
-
-  .banner-luxury .subtitle {
-    display: block;
-    font-size: 11px;
-    margin-top: 5px;
-    letter-spacing: 3px;
-    color: #d4af37;
-    opacity: 0.9;
-    font-weight: 400;
-  }
-
-  /* Discount Banner */
-  .banner-discount {
-    background: linear-gradient(135deg, #C41E3A 0%, #8B1538 100%);
-    color: white;
-    animation: shimmer 3s infinite;
-  }
-
-  @keyframes shimmer {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.95; }
-  }
-
-  .banner-discount .banner-content {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  .banner-discount .discount-icon {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 20px;
-  }
-
-     /* Hero Carousel Container */
-  .hero-carousel {
-    position: relative;
-    height: auto;
-    overflow: hidden;
-  }
-
-  .hero-slide {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto;
-    padding: 60px 20px;
-    color: white;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    position: absolute;
-        box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-  }
-
-  .hero-slide.active {
-    opacity: 1;
-    position: relative;
-    pointer-events: auto;
-  }
-
-  /* Slide 1: Original Tasting Sets */
-  .hero-slide-1 {
-    background-image: url('/images/products/gin-christmas-crackers.jpg');
-  }
-
-  /* Slide 2: Christmas Crackers */
-  .hero-slide-2 {
-    background-image: url('/images/products/scotch-whisky-christmas-crackers.jpg');
-  }
-
-  .overlay {
-    background: rgba(0, 0, 0, 0.);
-    padding: 40px 20px;
-    border-radius: 8px;
-  }
-
-  .hero-slide h1 {
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: 200;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .hero-slide h2 {
-    font-size: 20px;
-    font-weight: 200;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  /* Christmas badge */
-  .christmas-badge {
-    display: inline-block;
-    background: rgba(212, 175, 55, 0.25);
-    color: #D4AF37;
-    border: 1px solid rgba(212, 175, 55, 0.5);
-    padding: 6px 18px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-  }
-
-  /* Carousel Navigation Dots */
-  .carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #A4343A;
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
-  }
-
-  .dot.active {
-    background: #A4343A;
-    border-color: white;
-    transform: scale(1.2);
-  }
-
-  .dot:hover {
-    background: rgba(255, 255, 255, 0.8);
-  }
-
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .hero-slide h1 {
-      font-size: 24px;
-    }
-
-    .hero-slide h2 {
-      font-size: 16px;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .primary-cta {
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-    }
-
-    .carousel-dots {
-      bottom: 15px;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-    }
-  }
-
-    /* Main Section */
-    section.main {
-      background-color: white;
-      padding: 20px;
-      position: relative;
-      color: black;
-    }
-
-    section.main .container {
-      border: 2px solid #ccc;
-      padding: 20px;
-      margin: 0 auto;
-      max-width: 1200px;
+    * {
       box-sizing: border-box;
     }
 
-    .columns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 0px;
-      text-transform: uppercase;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      background-color: white;
-      color: white;
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: white;
+      color: #333;
     }
 
-    .gin-box {
-      background-color: black;
-      color: white;
+    /* Header Styles */
+    .site-header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
       padding: 20px;
-      position: relative;
-      width: 250px;
-      border-radius: 0px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    .header-inner img {
+      height: 80px;
       cursor: pointer;
     }
 
-    .gin-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .gin-box h3 {
-      margin-top: 0;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    .more-info {
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 0.3s ease, max-height 0.3s ease;
-      font-size: 14px;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    .gin-box:hover .more-info {
-      opacity: 1;
-      max-height: 200px;
-    }
-
-    /* Logo Carousel */
-    .logo-carousel {
-      padding: 40px 20px;
-      background-color: white;
-    }
-
-    .slick-carousel {
+    .site-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
-      justify-content: center;
-      gap: 30px;
     }
 
-    .slick-carousel img {
-      max-height: 80px;
-      max-width: 100%;
-      object-fit: contain;
-      margin: 0 auto;
-      transition: transform 0.3s ease-in-out;
+    .site-nav li {
+      position: relative;
     }
 
-    .slick-carousel .slick-slide {
+    .has-dropdown {
+      position: relative;
+    }
+
+    .has-dropdown > a::after {
+      content: ' ▾';
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+
+    .dropdown-menu {
+      display: none !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 220px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      margin-top: 0.5rem;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+      display: flex !important;
+    }
+
+    .dropdown-menu li {
+      margin: 0 !important;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background: #A4343A;
+      color: white;
+    }
+
+    .site-nav li + li {
+      margin-left: 1.5rem;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .header-right {
       display: flex;
-      justify-content: center;
       align-items: center;
+      gap: 1.5rem;
     }
 
-    .slick-carousel .slick-slide:hover img {
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+      transition: transform 0.2s;
+    }
+
+    .cart-icon:hover {
       transform: scale(1.1);
     }
 
-    /* Featured Collections Section */
-.featured-collections {
-  background-color: #f8f8f8;
-  padding: 60px 20px;
-}
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #A4343A;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    /* Banner Carousel */
+    .banner-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 80px;
+      z-index: 9999;
+    }
 
-.featured-box {
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .banner-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
 
-.featured-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
+    .banner-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
 
-.featured-image {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-}
+    .banner-christmas {
+      background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
+      color: white;
+      animation: festiveShimmer 3s ease-in-out infinite;
+    }
 
-.featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+    @keyframes festiveShimmer {
+      0%, 100% { 
+        background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
+      }
+      50% { 
+        background: linear-gradient(135deg, #D41E3A 0%, #1A6B3D 50%, #E4BF47 100%);
+      }
+    }
 
-.featured-box:hover .featured-image img {
-  transform: scale(1.05);
-}
+    .banner-christmas .banner-content {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-.featured-content {
-  padding: 25px;
-  text-align: center;
-}
+    .banner-luxury {
+      background: linear-gradient(135deg, #5C1A1B 0%, #1a1a1a 50%, #5C1A1B 100%);
+      color: #D4AF37;
+      border-bottom: 2px solid #D4AF37;
+      animation: luxuryShine 4s ease-in-out infinite;
+    }
 
-.featured-content h3 {
-  font-size: 20px;
-  text-transform: uppercase;
-  margin: 0 0 15px 0;
-  color: #333;
-  font-weight: 600;
-}
+    @keyframes luxuryShine {
+      0%, 100% { 
+        background: linear-gradient(135deg, #5C1A1B 0%, #1a1a1a 50%, #5C1A1B 100%);
+      }
+      50% { 
+        background: linear-gradient(135deg, #6B2122 0%, #252525 50%, #6B2122 100%);
+      }
+    }
 
-.featured-content p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #666;
-  margin-bottom: 20px;
-  min-height: 60px; /* Keeps alignment consistent */
-}
+    .banner-luxury .banner-content {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-.featured-cta {
-  display: inline-block;
-  background-color: #A4343A;
-  color: white;
-  padding: 12px 30px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    /* Hero Section - Minimal luxury approach */
+    .hero-section {
+      background: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+      border-bottom: 1px solid #e5e5e5;
+    }
 
-.featured-cta:hover {
-  background-color: #8a2c31;
-  transform: translateY(-2px);
-}
+    .seasonal-label {
+      display: inline-block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #A4343A;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
 
-/* Mobile responsiveness */
-@media (max-width: 868px) {
-  .featured-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+    .hero-section h1 {
+      font-size: 48px;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      margin: 0 0 25px 0;
+      color: #1a1a1a;
+    }
 
-  .featured-image {
-    height: 200px;
-  }
-}
+    .hero-section h2 {
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      line-height: 1.9;
+      color: #666;
+    }
 
-    /* Price Badge Circle */
-.price-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: #A4343A;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 10;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
+    .shipping-note {
+      display: inline-block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #999;
+      padding: 8px 20px;
+      border: 1px solid #e5e5e5;
+      border-radius: 20px;
+    }
 
-.featured-box:hover .price-badge {
-  transform: scale(1.1);
-  background-color: #8a2c31;
-}
+    /* Product Section */
+    .product-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 40px;
+    }
 
-/* Make sure the image container supports absolute positioning */
-.featured-image {
-  position: relative; /* This is crucial! */
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-}
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-   /* Footer Styles */
-        .site-footer {
-            background: #f8f8f8;
-            border-top: 1px solid #ddd;
-            padding: 40px 20px;
-            margin-top: 3rem;
-        }
+    .section-title h3 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #A4343A;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
 
-        .footer-badges {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+    .section-title p {
+      font-size: 15px;
+      color: #666;
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-        .footer-badges div {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
+    /* Product Grid - Two Column Layout */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 100px;
+    }
 
-        .footer-badges img {
-            max-width: 150px;
-            height: auto;
-        }
+    .product-card {
+      background: white;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        .footer-badges p {
-            margin-top: 15px;
-            font-size: 20px;
-            color: #555;
-            font-style: italic;
-        }
+    .product-card:hover {
+      transform: translateY(-3px);
+    }
 
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
+    .product-image {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
 
-    /* Footer navigation grid */
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.03);
+    }
+
+    .price-tag {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background: white;
+      color: #1a1a1a;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    .product-content {
+      padding: 0 10px;
+    }
+
+    .product-content h4 {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 20px 0;
+      color: #1a1a1a;
+      font-weight: 400;
+    }
+
+    .product-detail {
+      background: #fafafa;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 2px solid #A4343A;
+    }
+
+    .product-detail .label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #A4343A;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .product-detail .content {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #666;
+      font-weight: 300;
+    }
+
+    .product-description {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #666;
+      margin: 20px 0;
+      font-weight: 300;
+    }
+
+    .product-list {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+    }
+
+    .product-list li {
+      font-size: 13px;
+      color: #666;
+      padding: 10px 0;
+      border-bottom: 1px solid #f5f5f5;
+      font-weight: 300;
+    }
+
+    .product-list li:last-child {
+      border-bottom: none;
+    }
+
+    .product-cta {
+      display: inline-block;
+      background: #1a1a1a;
+      color: white;
+      padding: 14px 40px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-top: 25px;
+      transition: all 0.3s ease;
+      border: 1px solid #1a1a1a;
+    }
+
+    .product-cta:hover {
+      background: white;
+      color: #1a1a1a;
+    }
+
+    /* Additional Gifts Section */
+    .additional-gifts {
+      background: #fafafa;
+      padding: 100px 40px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .additional-gifts h2 {
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      text-align: center;
+      color: #1a1a1a;
+      margin-bottom: 70px;
+      font-weight: 200;
+    }
+
+    .additional-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .gift-card {
+      background: white;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gift-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .gift-image {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .gift-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gift-card:hover .gift-image img {
+      transform: scale(1.03);
+    }
+
+    .gift-price {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background: white;
+      color: #1a1a1a;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    .gift-content {
+      padding: 0 10px 30px;
+    }
+
+    .gift-content h4 {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 15px 0;
+      color: #1a1a1a;
+      font-weight: 400;
+    }
+
+    .gift-highlight {
+      background: #f5f5f5;
+      padding: 18px;
+      margin: 15px 0;
+      border-left: 2px solid #A4343A;
+    }
+
+    .gift-highlight .label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #A4343A;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .gift-highlight .text {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #666;
+      font-weight: 300;
+    }
+
+    /* Footer Styles */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px;
+      margin-top: 0;
+    }
+
     .footer-nav-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -902,79 +686,50 @@ text-transform: uppercase;
       color: #999;
       margin: 0;
     }
-   /* Container for the buttons */
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Space between buttons */
-  margin-top: 20px;
-  flex-wrap: wrap; /* Stack on mobile if needed */
-}
-
-/* Individual button styles */
-.primary-cta {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 15px 30px; /* Top/bottom and left/right padding */
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  display: inline-block; /* Important! Makes padding work properly */
-  border-radius: 4px; /* Optional: rounded corners */
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all 0.3s ease; 
-  box-sizing: border-box;
-}
-
-.primary-cta:hover {
-  background-color: white;
-  color: black;
-  transform: translateY(-2px); /* Optional: subtle lift effect */
-}
 
     /* Mobile Styles */
     @media (max-width: 868px) {
       .banner-carousel {
-      height: 100px;
-    }
+        height: 100px;
+      }
 
-    .banner-christmas .banner-content {
-      font-size: 12px;
-    }
+      .hero-section {
+        padding: 50px 20px 40px;
+      }
 
-    .banner-christmas .festive-icon {
-      font-size: 20px;
-      margin: 0 10px;
-    }
+      .hero-section h1 {
+        font-size: 28px;
+        letter-spacing: 4px;
+      }
 
-    .banner-christmas .subtitle {
-      font-size: 10px;
-      letter-spacing: 2px;
-    }
+      .hero-section h2 {
+        font-size: 14px;
+      }
 
-    .banner-luxury .banner-content {
-      font-size: 14px;
-    }
+      .product-section {
+        padding: 50px 20px;
+      }
 
-    .banner-luxury .gold-accent {
-      font-size: 18px;
-      margin: 0 10px;
-    }
+      .product-grid,
+      .additional-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
 
-    .banner-luxury .subtitle {
-      font-size: 10px;
-      letter-spacing: 2px;
-    }
+      .product-image,
+      .gift-image {
+        height: 350px;
+      }
 
-    .banner-discount .banner-content {
-      font-size: 13px;
-    }
+      .additional-gifts {
+        padding: 60px 20px;
+      }
 
-    .banner-discount .discount-icon {
-      font-size: 18px;
-      margin: 0 8px;
-    }
+      .additional-gifts h2 {
+        font-size: 24px;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+      }
 
       .site-nav {
         display: none;
@@ -1014,7 +769,6 @@ text-transform: uppercase;
         margin-left: 10px;
       }
 
-      /* Mobile Dropdown */
       .dropdown-menu {
         position: static;
         display: none;
@@ -1028,127 +782,9 @@ text-transform: uppercase;
       .has-dropdown.open .dropdown-menu {
         display: block;
       }
-
-      .has-dropdown > a::after {
-        float: right;
-      }
-
-      .dropdown-menu a {
-        padding-left: 2rem;
-        font-size: 0.95rem;
-      }
-
-      .columns {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .section-product {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
     }
-
-    .bottle-highlights {
-  background: #f8f8f8;
-  padding: 12px;
-  margin: 12px 0;
-  border-left: 3px solid #A4343A;
-  border-radius: 2px;
-}
-
-.bottle-highlights p:first-child {
-  color: #A4343A;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.featured-content {
-  padding: 20px;
-}
-
-.featured-content h3 {
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-.featured-cta {
-  display: inline-block;
-  background: #A4343A;
-  color: white;
-  padding: 10px 24px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 15px;
-  letter-spacing: 1px;
-  margin-top: 15px;
-  transition: background 0.3s ease;
-}
-
-.featured-cta:hover {
-  background: #8B1538;
-}
-
-/* Cracker card styles */
-.cracker-card {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.cracker-card h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.cracker-card p {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-.cracker-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.cracker-card ul li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
-  color: #666;
-}
-
-.cracker-card ul li:before {
-  content: "✓ ";
-  color: #A4343A;
-  font-weight: bold;
-  margin-right: 8px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .bottle-highlights p {
-    font-size: 12px !important;
-  }
-
-  .featured-content h3 {
-    font-size: 18px;
-  }
-}
   </style>
+
  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
 <script>
@@ -1160,16 +796,6 @@ gtag('config', 'AW-366761144');
 </head>
 <body>
 
-
-
-  <!-- Carousel Dots (optional) -->
-  <div class="carousel-dots">
-    <span class="carousel-dot active" onclick="goToSlide(0)"></span>
-    <span class="carousel-dot" onclick="goToSlide(1)"></span>
-    <span class="carousel-dot" onclick="goToSlide(2)"></span>
-  </div>
-</div>
-
 <header class="site-header">
   <div class="header-inner container">
     <img src="/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/'">
@@ -1179,7 +805,6 @@ gtag('config', 'AW-366761144');
         <ul>
           <li><a href="/">Home</a></li>
           
-          <!-- Dropdown for Tasting Gift Sets -->
           <li class="has-dropdown">
             <a href="/tasting-gift-sets/">Tasting Gift Sets</a>
             <ul class="dropdown-menu">
@@ -1188,7 +813,6 @@ gtag('config', 'AW-366761144');
             </ul>
           </li>
           
-          <!-- Dropdown for Sharing Boxes -->
           <li class="has-dropdown">
             <a href="/sharing-boxes/">Sharing Boxes</a>
             <ul class="dropdown-menu">
@@ -1203,343 +827,229 @@ gtag('config', 'AW-366761144');
         </ul>
       </nav>
       
-      <!-- Cart Icon -->
       <div class="cart-icon" onclick="window.location.href='/cart/'">
         🛒
         <span class="cart-count">0</span>
       </div>
       
-      <!-- Mobile Menu Toggle -->
       <button class="nav-toggle" onclick="toggleNav()">☰</button>
     </div>
   </div>
 </header>
-  <section class="section-main">
-    <h3>A Christmas Twist on the Blind Tasting Experience...</h3>
-    <h4>Four luxurious Christmas crackers, each containing a 30ml mystery bottle of exceptional single malt whisky or craft gin. Test your palate, take your guess, and crack open the mini wax-sealed envelope to reveal the answer!</h4>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <span class="seasonal-label">Limited Edition • Christmas 2025</span>
+  <h1>Christmas Collection</h1>
+  <h2>A refined twist on the blind tasting experience. Four luxurious Christmas crackers, each containing a 30ml mystery bottle of exceptional single malt whisky or craft gin. Test your palate, take your guess, and reveal the answer within the mini wax-sealed envelope.</h2>
+  <span class="shipping-note">Free DPD Shipping Included</span>
 </section>
 
-  <section class="hero-carousel">
+<!-- Christmas Crackers Section -->
+<section class="product-section">
+  <div class="section-title">
+    <h3>Luxury Christmas Crackers</h3>
+    <p>An elegant tasting experience in festive packaging. Each cracker contains premium spirits, blind tasting cards, and wax-sealed reveals.</p>
+  </div>
 
-  <!-- Slide 1: Original Tasting Sets -->
-  <div class="hero-slide hero-slide-1 active">
-    <div class="overlay">
+  <div class="product-grid">
+    <!-- Whisky Crackers -->
+    <div class="product-card">
+      <div class="product-image">
+        <div class="price-tag">£58</div>
+        <img src="/images/products/scotch-whisky-christmas-crackers.jpg" alt="Luxury Whisky Christmas Crackers">
+      </div>
+      <div class="product-content">
+        <h4>Luxury Whisky Crackers</h4>
+        
+        <div class="product-detail">
+          <span class="label">Featured Single Malts</span>
+          <p class="content">Lagavulin 16 • Auchentoshan American Oak<br>Aberfeldy 16 • Kilchoman Machir Bay</p>
+        </div>
+
+        <p class="product-description">Four premium Christmas crackers featuring exceptional single malts that showcase the finest of Scottish whisky craftsmanship.</p>
+
+        <ul class="product-list">
+          <li>30ml numbered mystery bottles</li>
+          <li>"Which One Am I?" tasting cards</li>
+          <li>Mini wax-sealed reveal envelopes</li>
+          <li>Fun whisky facts & festive jokes</li>
+        </ul>
+
+        <a href="/products/whisky-christmas-crackers" class="product-cta">SHOP</a>
+      </div>
+    </div>
+
+    <!-- Gin Crackers -->
+    <div class="product-card">
+      <div class="product-image">
+        <div class="price-tag">£52</div>
+        <img src="/images/products/gin-christmas-crackers.jpg" alt="London Gin Christmas Crackers">
+      </div>
+      <div class="product-content">
+        <h4>Craft Gin Crackers</h4>
+        
+        <div class="product-detail">
+          <span class="label">Featured Gins</span>
+           <p class="content">Spirit of Ilmington Dry Gin • Malvern Bumbleberry Gin <br>Capreolus Garden Swift Gin • Bath Botanical No1 Gin</p>
+          <p class="content">A curated selection of exceptional craft gins from the Cotswolds, from the apple sweet Spirit of Ilmington to the berried Malvern Bumbleberry.</p>
+        </div>
+
+        <p class="product-description">Four beautifully crafted Christmas crackers featuring premium craft gins for the botanical enthusiast.</p>
+
+        <ul class="product-list">
+          <li>30ml numbered mystery bottles</li>
+          <li>"Which One Am I?" tasting cards</li>
+          <li>Mini wax-sealed reveal envelopes</li>
+          <li>Fun gin facts & festive jokes</li>
+        </ul>
+
+        <a href="/products/london-gin-christmas-crackers" class="product-cta">SHOP</a>
+      </div>
     </div>
   </div>
-
-  <!-- Slide 2: Christmas Crackers -->
-  <div class="hero-slide hero-slide-2">
-    <div class="overlay">
-    </div>
-  </div>
-
-  <!-- Navigation Dots -->
-  <div class="carousel-dots">
-    <span class="dot active" onclick="goToSlide(0)"></span>
-    <span class="dot" onclick="goToSlide(1)"></span>
-  </div>
-
 </section>
 
-  <section class="section-product">
-    <div class="cracker-card">
-      <h3>🥃 Luxury Whisky Christmas Crackers</h3>
-      <p>Four premium Christmas crackers featuring exceptional single malts that showcase the finest of Scottish whisky craftsmanship.</p>
-      
-      <div class="bottle-highlights">
-        <p>FEATURED SINGLE MALTS:</p>
-        <p style="font-size: 13px; color: #555; line-height: 1.8;">
-          • <strong>Lagavulin 16</strong> - Legendary Islay peat and maritime complexity<br>
-          • <strong>Auchentoshan American Oak</strong> - Smooth triple-distilled Lowland elegance<br>
-          • <strong>Aberfeldy 16</strong> - Rich Highland honey and heather notes<br>
-          • <strong>Kilchoman Machir Bay</strong> - Bold Islay coastal character
-        </p>
+<!-- Additional Gifts Section -->
+<section class="additional-gifts">
+  <h2>Additional Gift Ideas</h2>
+  
+  <div class="additional-grid">
+    <!-- Luxury Single Malt -->
+    <div class="gift-card">
+      <div class="gift-image">
+        <div class="gift-price">£110</div>
+        <img src="/images/products/luxury-whisky-gift-set.jpg" alt="Luxury Single Malt Collection">
       </div>
-
-      <p style="margin-top: 20px;"><strong>Each cracker contains:</strong></p>
-      <ul>
-        <li>30ml numbered mystery bottle</li>
-        <li>"Which One Am I?" tasting card</li>
-        <li>Fun whisky fact card</li>
-        <li>Classic terrible cracker joke</li>
-        <li>Mini wax-sealed reveal envelope</li>
-      </ul>
-
-      <div style="text-align: center; margin-top: 25px;">
-        <a href="/products/whisky-christmas-crackers" class="featured-cta">Shop Whisky Crackers</a>
+      <div class="gift-content">
+        <h4>Luxury Single Malt Collection</h4>
+        <div class="gift-highlight">
+          <span class="label">Ultimate Christmas Gift</span>
+          <p class="text">Six bottles worth over £1,000. A curated selection of the world's finest single malts, each chosen to represent exceptional craftsmanship and unforgettable flavour profiles.</p>
+        </div>
+        <a href="/products/luxury-single-malt-whisky-tasting-set" class="product-cta">View Collection</a>
       </div>
     </div>
 
-    <div class="cracker-card">
-      <h3>🍸 London Gin Christmas Crackers</h3>
-      <p>Four beautifully crafted Christmas crackers featuring premium London Dry and contemporary craft gins for the botanical enthusiast.</p>
-      
-      <div class="bottle-highlights">
-        <p>FEATURED GINS:</p>
-        <p style="font-size: 13px; color: #555; line-height: 1.8;">
-          A curated selection of exceptional London gins, from classic juniper-forward profiles to innovative contemporary expressions, each chosen to showcase the diversity and craftsmanship of British gin distilling.
-        </p>
+    <!-- Six Styles -->
+    <div class="gift-card">
+      <div class="gift-image">
+        <div class="gift-price">£63</div>
+        <img src="/images/products/regions-of-scotland-alt3.jpg" alt="Regions of Scotland">
       </div>
-
-      <p style="margin-top: 20px;"><strong>Each cracker contains:</strong></p>
-      <ul>
-        <li>30ml numbered mystery bottle</li>
-        <li>"Which One Am I?" tasting card</li>
-        <li>Fun gin fact card</li>
-        <li>Classic terrible cracker joke</li>
-        <li>Mini wax-sealed reveal envelope</li>
-      </ul>
-
-      <div style="text-align: center; margin-top: 25px;">
-        <a href="/products/london-gin-christmas-crackers" class="featured-cta">Shop Gin Crackers</a>
+      <div class="gift-content">
+        <h4>Regions of Scotland</h4>
+        <div class="gift-highlight">
+          <span class="label">A Whisky Lovers Gift</span>
+          <p class="text">Journey through all six whisky-making regions of Scotland. From the gentle Lowlands to the peaty powerhouses of Islay, each dram tells the story of its terroir and craftsmanship.</p>
+        </div>
+        <a href="/products/regions-of-scotland-whisky-tasting-set/" class="product-cta">View Collection</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Featured Christmas Spirits Section -->
-  <section class="featured-collections">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 style="font-size: 28px; text-transform: uppercase; letter-spacing: 2px; color: #333;">More Christmas Gift Ideas</h2>
-      <p style="font-size: 16px; color: #666; margin-top: 10px;">Exceptional spirits to make this Christmas unforgettable</p>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-nav-grid">
+      <div class="footer-nav-section">
+        <h4>Information</h4>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="/shipping-returns">Shipping & Returns</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-
-    <div class="featured-grid">
-      
-        <!-- Luxury Single Malt Collection -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <div class="price-badge">£110</div>
-          <img src="/images/products/luxury-whisky-gift-set.jpg" alt="Luxury Single Malt Whisky Collection">
-        </div>
-        <div class="featured-content">
-          <h3>Luxury Single Malt Collection</h3>
-          <div class="bottle-highlights">
-            <p>ULTIMATE CHRISTMAS GIFT</p>
-            <p style="font-size: 13px; color: #555;">A curated selection of the world's finest single malts. Worth over £1,000 if purchased separately. Each bottle has been carefully chosen to represent exceptional craftsmanship and unforgettable flavour profiles.</p>
-          </div>
-          <a href="/products/luxury-single-malt-whisky-tasting-set" class="featured-cta">View Collection</a>
-        </div>
-      </div>
-      
-        <!-- Luxury Single Malt Collection -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <div class="price-badge">£63</div>
-          <img src="/images/products/six-styles-scotch-main.jpg" alt="Luxury Single Malt Whisky Collection">
-        </div>
-        <div class="featured-content">
-          <h3>Six Styles of Single Malt Scotch Whisky</h3>
-          <div class="bottle-highlights">
-            <p>EXPLORE DIVERSE STYLES</p>
-            <p style="font-size: 13px; color: #555;">From smooth and sweet to bold and peaty. Perfect for beginners discovering their preferred style before investing in full bottles.</p>
-          </div>
-          <a href="/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">View Collection</a>
-        </div>
-      </div>
-
-
     
-
-    
+    <div class="site-info">
+      <p>© 2025 Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
     </div>
-  </section>
+  </div>
+</footer>
 
- 
-   <footer class="site-footer">
-    
-    <div class="container">
-      <div class="footer-nav-grid">
-      
-        
-        <!-- Information Links -->
-        <div class="footer-nav-section">
-          <h4>Information</h4>
-          <nav class="footer-nav">
-            <ul>
-              <li><a href="/shipping-returns">Shipping & Returns</a></li>
-              <li><a href="/terms">Terms & Conditions</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/cookie-policy">Cookie Policy</a></li>
-            </ul>
-          </nav>
-        </div>
-        
-      </div>
-      
-      <div class="site-info">
-        <p>© 2025 Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
-      </div>
-    </div>
-   </footer>
-   
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-  <script>
-    document.querySelectorAll('.gin-box').forEach(box => {
-      box.addEventListener('click', () => {
-        const info = box.querySelector('.more-info');
-        info.style.maxHeight = info.style.maxHeight ? null : '200px';
-        info.style.opacity = info.style.opacity === '1' ? '0' : '1';
-      });
-    });
-  </script>
-
-  <!-- Slick Carousel CSS & JS -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-  <!-- Cart JS -->
-  <script src="/js/cart.js"></script>
-
-  <script>
-    // Mobile nav toggle
-    function toggleNav() {
-      const nav = document.getElementById('siteNav');
-      nav.classList.toggle('open');
-    }
-
-    // Mobile dropdown toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      // Only add click handlers on mobile
-      if (window.innerWidth <= 768) {
-        const dropdownParents = document.querySelectorAll('.has-dropdown > a');
-
-        dropdownParents.forEach(function(link) {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const parent = this.parentElement;
-
-            // Close other dropdowns
-            document.querySelectorAll('.has-dropdown').forEach(function(item) {
-              if (item !== parent) {
-                item.classList.remove('open');
-              }
-            });
-
-            // Toggle current dropdown
-            parent.classList.toggle('open');
-          });
-        });
-      }
-    });
-
-    // Re-initialize on window resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 768) {
-        document.querySelectorAll('.has-dropdown').forEach(function(item) {
-          item.classList.remove('open');
-        });
-      }
-    });
-  </script>
-
-<!-- FIXED JAVASCRIPT - REPLACE YOUR EXISTING CAROUSEL SCRIPTS -->
-<!-- Place this at the bottom of your page, BEFORE </body> -->
+<!-- Cart JS -->
+<script src="/js/cart.js"></script>
 
 <script>
-// ========================================
-// BANNER CAROUSEL (Top rotating banner)
-// ========================================
-let currentBannerSlide = 0;
-const bannerSlides = document.querySelectorAll('.banner-slide');
-const bannerDots = document.querySelectorAll('.carousel-dot');
-const totalBannerSlides = bannerSlides.length;
-let bannerAutoPlayInterval;
+  // Mobile nav toggle
+  function toggleNav() {
+    const nav = document.getElementById('siteNav');
+    nav.classList.toggle('open');
+  }
 
-function showBannerSlide(index) {
-  bannerSlides.forEach(slide => slide.classList.remove('active'));
-  bannerDots.forEach(dot => dot.classList.remove('active'));
+  // Mobile dropdown toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+      const dropdownParents = document.querySelectorAll('.has-dropdown > a');
 
-  bannerSlides[index].classList.add('active');
-  bannerDots[index].classList.add('active');
+      dropdownParents.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const parent = this.parentElement;
 
-  currentBannerSlide = index;
-}
+          document.querySelectorAll('.has-dropdown').forEach(function(item) {
+            if (item !== parent) {
+              item.classList.remove('open');
+            }
+          });
 
-function nextBannerSlide() {
-  let next = (currentBannerSlide + 1) % totalBannerSlides;
-  showBannerSlide(next);
-}
+          parent.classList.toggle('open');
+        });
+      });
+    }
+  });
 
-function goToBannerSlide(index) {
-  showBannerSlide(index);
-  clearInterval(bannerAutoPlayInterval);
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.has-dropdown').forEach(function(item) {
+        item.classList.remove('open');
+      });
+    }
+  });
+
+  // Banner Carousel
+  let currentBannerSlide = 0;
+  const bannerSlides = document.querySelectorAll('.banner-slide');
+  const totalBannerSlides = bannerSlides.length;
+  let bannerAutoPlayInterval;
+
+  function showBannerSlide(index) {
+    bannerSlides.forEach(slide => slide.classList.remove('active'));
+    bannerSlides[index].classList.add('active');
+    currentBannerSlide = index;
+  }
+
+  function nextBannerSlide() {
+    let next = (currentBannerSlide + 1) % totalBannerSlides;
+    showBannerSlide(next);
+  }
+
+  function startBannerAutoPlay() {
+    bannerAutoPlayInterval = setInterval(nextBannerSlide, 8000);
+  }
+
+  const bannerCarousel = document.querySelector('.banner-carousel');
+  if (bannerCarousel) {
+    bannerCarousel.addEventListener('mouseenter', () => {
+      clearInterval(bannerAutoPlayInterval);
+    });
+
+    bannerCarousel.addEventListener('mouseleave', () => {
+      startBannerAutoPlay();
+    });
+  }
+
   startBannerAutoPlay();
-}
-
-function startBannerAutoPlay() {
-  bannerAutoPlayInterval = setInterval(nextBannerSlide, 8000);
-}
-
-// Pause banner on hover
-const bannerCarousel = document.querySelector('.banner-carousel');
-if (bannerCarousel) {
-  bannerCarousel.addEventListener('mouseenter', () => {
-    clearInterval(bannerAutoPlayInterval);
-  });
-
-  bannerCarousel.addEventListener('mouseleave', () => {
-    startBannerAutoPlay();
-  });
-}
-
-// Start banner autoplay
-startBannerAutoPlay();
-
-// ========================================
-// HERO CAROUSEL (Main hero section)
-// ========================================
-let currentHeroSlide = 0;
-const heroSlides = document.querySelectorAll('.hero-slide');
-const heroDots = document.querySelectorAll('.carousel-dots .dot');
-let heroAutoPlayInterval;
-
-function showHeroSlide(index) {
-  heroSlides.forEach(slide => slide.classList.remove('active'));
-  heroDots.forEach(dot => dot.classList.remove('active'));
-
-  heroSlides[index].classList.add('active');
-  heroDots[index].classList.add('active');
-
-  currentHeroSlide = index;
-}
-
-function nextHeroSlide() {
-  let next = (currentHeroSlide + 1) % heroSlides.length;
-  showHeroSlide(next);
-}
-
-function goToSlide(index) {
-  showHeroSlide(index);
-  clearInterval(heroAutoPlayInterval);
-  startHeroAutoPlay();
-}
-
-function startHeroAutoPlay() {
-  heroAutoPlayInterval = setInterval(nextHeroSlide, 8000);
-}
-
-// Pause hero on hover (optional)
-const heroCarousel = document.querySelector('.hero-carousel');
-if (heroCarousel) {
-  heroCarousel.addEventListener('mouseenter', () => {
-    clearInterval(heroAutoPlayInterval);
-  });
-
-  heroCarousel.addEventListener('mouseleave', () => {
-    startHeroAutoPlay();
-  });
-}
-
-// Start hero autoplay
-startHeroAutoPlay();
 </script>
 
 </body>

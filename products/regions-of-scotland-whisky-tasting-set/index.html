@@ -101,33 +101,52 @@
       --whisky-gold: #D4AF37;
     }
 
-    /* Sticky Christmas Banner */
-    .christmas-banner {
-      background: linear-gradient(135deg, var(--christmas-red) 0%, var(--deep-red) 100%);
-      color: white;
-      text-align: center;
-      padding: 12px 15px;
-      font-weight: bold;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      animation: shimmer 3s infinite;
-    }
+      /* Christmas Crackers Banner */
+  .banner-christmas {
+    background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
+    color: white;
+    animation: festiveShimmer 3s ease-in-out infinite;
+  }
 
-    @keyframes shimmer {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.95; }
+  @keyframes festiveShimmer {
+    0%, 100% { 
+      background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
     }
-
-    .christmas-banner span {
-      display: inline-block;
-      margin: 0 10px;
-      font-size: 18px;
+    50% { 
+      background: linear-gradient(135deg, #D41E3A 0%, #1A6B3D 50%, #E4BF47 100%);
     }
+  }
 
+  .banner-christmas .banner-content {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .banner-christmas .festive-icon {
+    font-size: 24px;
+    margin: 0 15px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .banner-christmas .subtitle {
+    display: block;
+    font-size: 13px;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    opacity: 0.95;
+    font-weight: 400;
+  }
+ 
     /* Header Styles */
     .site-header {
       background: #f8f8f8;
@@ -659,6 +678,33 @@
     font-weight: bold;
     z-index: 10;
   }
+  .christmas-banner {
+        font-size: 12px;
+        padding: 10px;
+      }
+
+      .christmas-banner span {
+        font-size: 16px;
+      }
+           
+      .banner-carousel {
+      height: 100px;
+    }
+
+    .banner-christmas .banner-content {
+      font-size: 12px;
+    }
+
+    .banner-christmas .festive-icon {
+      font-size: 20px;
+      margin: 0 10px;
+    }
+
+    .banner-christmas .subtitle {
+      font-size: 10px;
+      letter-spacing: 2px;
+   
+    }
 }
 
     /* Footer Styles */
@@ -894,11 +940,15 @@ gtag('config', 'AW-366761144');
 </script>
 </head>
 <body>
-<a href="/products/london-gin-tasting-gift-set/" style="color: white; text-decoration: none; display: block; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-    <div class= "christmas-banner" style="background: linear-gradient(135deg, #165B33 0%, #0f4123 100%); color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 14px; cursor: pointer;">
-        LIMITED TIME: 20% OFF London Gin Tasting Sets - Use Code EXPLORELONDON 
+ <a href="/products/whisky-christmas-crackers/" style="color: white; text-decoration: none; display: block; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'"> <div class="banner-slide banner-christmas active" >
+    <div class="banner-content">
+      <span class="festive-icon">🎄</span>
+      LIMITED EDITION CHRISTMAS CRACKERS
+      <span class="festive-icon">🎁</span>
+      <span class="subtitle">Luxury Whisky Crackers • Order Now </span>
     </div>
-</a>
+  </div>
+   </a>
   
   
 <header class="site-header">

@@ -14,13 +14,13 @@
   <meta name="googlebot" content="index, follow" />
   
   <!-- CANONICAL URL -->
-  <link rel="canonical" href="https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set/" />
+  <link rel="canonical" href="https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set" />
   
   <!-- Open Graph -->
   <meta property="og:title" content="The Founders Selection Whisky Gift Set | Azu Spirits" />
   <meta property="og:description" content="The perfect gift for Scotch whisky lovers. Six diverse single malt whiskies recommended by specialists in a unique blind tasting gift set." />
   <meta property="og:image" content="https://www.azuspirits.co.uk/images/products/whisky-tasting-gift-set.jpg" />
-  <meta property="og:url" content="https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set/" />
+  <meta property="og:url" content="https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set" />
   
   <!-- Product Meta Tags -->
   <meta property="product:price:amount" content="55.00" />
@@ -69,9 +69,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "The Founders Selection Whisky Gift Set ",
+    "name": "The Founders Selection Whisky Gift Set",
     "description": "The perfect gift for Scotch whisky lovers. Six diverse single malt whiskies recommended by specialists in a unique blind tasting gift set.",
-    "url": "https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set/",
+    "url": "https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Azu Spirits",
@@ -109,7 +109,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "63"
+      "reviewCount": "78"
     },
     "category": "Whisky Tasting Gift Sets",
     "alcoholWarning": "Must be 18 or over to purchase",
@@ -151,7 +151,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -170,9 +170,8 @@
 :root {
   --christmas-red: #C41E3A;
   --deep-red: #8B1538;
-  --gin-green: #165B33;  /* For gin products */
-  /* OR */
-  --whisky-red: #A4343A;  /* For whisky products */
+  --gin-green: #165B33;
+  --whisky-red: #A4343A;
 }
       
     
@@ -226,21 +225,22 @@
       /* Premium Spirits Highlight Box */
 .premium-spirits-box {
   background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
-  padding: 20px;
+  padding: 25px;
   border-radius: 8px;
   margin: 25px 0;
-  border-left: 4px solid #A4343A; /* or var(--whisky-red) */
+  border-left: 4px solid #A4343A;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .premium-spirits-box h3 {
-   color: #A4343A;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      font-weight: 600;
-      font-family: 'Playfair Display', serif;
+  color: #A4343A;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
 }
       
   
@@ -251,12 +251,11 @@
 }
 
 .spirit-list li {
-  padding: 10px 0;
+  padding: 15px 0;
   border-bottom: 1px solid #e0e0e0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 15px;
+  line-height: 1.6;
+  color: #555;
 }
 
 .spirit-list li:last-child {
@@ -264,25 +263,41 @@
 }
 
 .spirit-name {
-  font-weight: 500;
+  font-weight: 600;
   color: #333;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .spirit-detail {
   color: #666;
-  font-size: 13px;
+  font-size: 14px;
   font-style: italic;
 }
-  .savings-badge {
-      display: inline-block;
-      background: #f0f0f0;
-      color: #A4343A;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: bold;
-      margin-left: 15px;
-    }
+
+.premium-badge {
+  background: #A4343A;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.savings-badge {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #A4343A;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 15px;
+}
 
       
 /* FOR WHISKY PRODUCTS WITH REGION BADGES: */
@@ -304,7 +319,7 @@
   display: none;
 }
       
-      .breadcrumb {
+.breadcrumb {
   max-width: 1200px;
   margin: 2rem auto 0;
   padding: 0 2rem;
@@ -319,7 +334,7 @@
 }
 
 .breadcrumb a:hover {
-  color: var(--gin-green); /* or var(--whisky-red) */
+  color: #A4343A;
 }
      
 
@@ -332,6 +347,8 @@
             background: #f8f8f8;
             border-bottom: 1px solid #ddd;
             padding: 20px;
+            position: relative;
+            z-index: 100;
         }
 
         .header-inner {
@@ -473,8 +490,8 @@
         /* Product Section */
         .product-container {
             max-width: 1200px;
-            margin: 4rem auto;
-            padding: 2rem;
+            margin: 3rem auto;
+            padding: 0 2rem 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
@@ -482,8 +499,10 @@
 
         .product-image-container {
             position: sticky;
-            top: 2rem;
+            top: 120px;
             height: fit-content;
+            max-width: 85%;
+            margin: 0 auto;
         }
 
         .product-image {
@@ -491,50 +510,70 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-image:last-child {
+            margin-bottom: 0;
         }
 
         .product-details h1 {
-              font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #1a1a1a;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-family: 'Playfair Display', serif;
-      line-height: 1.4;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.4;
+        }
+
+        .product-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
         }
 
         .product-price {
             font-size: 2.2rem;
-      color: #A4343A;
-      margin-bottom: 1.5rem;
-      font-weight: bold;
-      font-family: 'Playfair Display', serif;
+            color: #A4343A;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
         }
 
         .product-description {
-            margin-bottom: 2rem;
+            margin: 25px 0;
             line-height: 1.8;
             color: #555;
+            font-size: 15px;
+        }
+
+        .product-description p {
+            margin-bottom: 1rem;
+        }
+
+        .product-description strong {
+            color: #333;
         }
 
         .product-features {
-            background: #f9f9f9;
-            padding: 1.5rem;
+            background: #fff;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 2rem;
-            border: 1px solid #ddd;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
 
         .product-features h3 {
             margin-bottom: 15px;
-      color: #1a1a1a;
-      text-transform: uppercase;
-      font-size: 16px;
-      letter-spacing: 1px;
-      font-weight: 600;
-      font-family: 'Playfair Display', serif;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
         }
 
         .product-features ul {
@@ -543,9 +582,11 @@
         }
 
         .product-features li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            padding: 10px 0;
+            padding-left: 30px;
             position: relative;
+            color: #555;
+            font-size: 14px;
         }
 
         .product-features li:before {
@@ -554,18 +595,21 @@
             left: 0;
             color: #A4343A;
             font-weight: bold;
+            font-size: 18px;
         }
 
         .quantity-selector {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin: 30px 0 20px;
         }
 
         .quantity-selector label {
-            font-weight: bold;
+            font-weight: 600;
             text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
         }
 
         .quantity-input {
@@ -579,10 +623,12 @@
         .quantity-input button {
             background: #f5f5f5;
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 10px 18px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 18px;
             transition: background 0.3s;
+            font-weight: bold;
+            color: #333;
         }
 
         .quantity-input button:hover {
@@ -593,29 +639,31 @@
             border: none;
             width: 60px;
             text-align: center;
-            font-size: 1rem;
-            padding: 0.5rem;
+            font-size: 16px;
+            padding: 10px;
+            font-weight: 600;
         }
 
         .add-to-cart-btn {
-            background: black;
+            background: #A4343A;
             color: white;
             border: none;
-            padding: 1rem 3rem;
-            font-size: 1.1rem;
+            padding: 18px 0;
+            font-size: 16px;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
             text-transform: uppercase;
+            letter-spacing: 1px;
             font-family: 'Montserrat', sans-serif;
         }
 
         .add-to-cart-btn:hover {
-            background: #A4343A;
+            background: #8B1538;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(164, 52, 58, 0.3);
         }
     
   /* Mobile Image Carousel */
@@ -670,7 +718,7 @@
   }
 
   .carousel-dot.active {
-    background: var(--gin-green);
+    background: var(--whisky-red);
     width: 24px;
     border-radius: 5px;
   }
@@ -813,154 +861,6 @@
       margin: 0;
     }
 
-    /* Mobile Styles */
-    @media (max-width: 868px) {
-     .christmas-banner {
-        font-size: 12px;
-        padding: 10px;
-      }
-
-      .christmas-banner span {
-        font-size: 16px;
-      }
-           
-      .banner-carousel {
-      height: 100px;
-    }
-
-    .banner-christmas .banner-content {
-      font-size: 12px;
-    }
-
-    .banner-christmas .festive-icon {
-      font-size: 20px;
-      margin: 0 10px;
-    }
-
-    .banner-christmas .subtitle {
-      font-size: 10px;
-      letter-spacing: 2px;
-   
-    }
-      .site-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #f8f8f8;
-        border-top: 1px solid #ddd;
-        padding: 1rem;
-        z-index: 100;
-      }
-
-      .site-nav.open {
-        display: block;
-      }
-
-      .site-nav ul {
-        flex-direction: column;
-      }
-
-      .site-nav li + li {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .header-inner img {
-        height: 60px;
-        margin-left: 10px;
-      }
-
-      .dropdown-menu {
-        position: static;
-        display: none;
-        border: none;
-        box-shadow: none;
-        background: #f0f0f0;
-        margin-top: 0.5rem;
-        border-radius: 4px;
-      }
-      
-      .has-dropdown.open .dropdown-menu {
-        display: block;
-      }
-      
-      .dropdown-menu a {
-        padding-left: 2rem;
-        font-size: 0.95rem;
-      }
-
-      .product-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .product-details {
-        order: 1;
-      }
-
-      .product-image-container {
-        order: 2;
-        position: relative;
-        top: 0;
-        margin-top: 2rem;
-      }
-
-      .product-details h1 {
-        font-size: 1.6rem;
-      }
-
-      .product-price {
-        font-size: 1.8rem;
-      }
-
-      .spirit-list li {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
-
-      .footer-nav-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .trust-badges {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .cart-notification {
-        right: 10px;
-        left: 10px;
-        min-width: auto;
-      }
-      
-         /* Show mobile hero image */
-      .mobile-hero-image {
-        display: block;
-        order: 0;  /* Shows first */
-        margin-bottom: 2rem;
-      }
-
-      .mobile-hero-image .product-image {
-        margin-bottom: 0;
-      }
-
-      /* Hide the full image gallery on mobile */
-      .product-image-container {
-        display: none;
-      }
-
-      .product-details {
-        order: 1;
-      }
-    }
-      
          /* YOU MIGHT ALSO LIKE SECTION */
 .you-might-like {
   background: #f8f8f8;
@@ -1104,7 +1004,7 @@
 
     /* Mobile Styles */
     @media (max-width: 868px) {
-      .christmas-banner {
+     .christmas-banner {
         font-size: 12px;
         padding: 10px;
       }
@@ -1112,7 +1012,25 @@
       .christmas-banner span {
         font-size: 16px;
       }
+           
+      .banner-carousel {
+      height: 100px;
+    }
 
+    .banner-christmas .banner-content {
+      font-size: 12px;
+    }
+
+    .banner-christmas .festive-icon {
+      font-size: 20px;
+      margin: 0 10px;
+    }
+
+    .banner-christmas .subtitle {
+      font-size: 10px;
+      letter-spacing: 2px;
+   
+    }
       .site-nav {
         display: none;
         position: absolute;
@@ -1267,7 +1185,6 @@ gtag('config', 'AW-366761144');
 </script>
 </head>
 <body>
-  <body>
      
  <header class="site-header">
   <div class="header-inner container">
@@ -1319,7 +1236,7 @@ gtag('config', 'AW-366761144');
     <span>›</span>
     <a href="/whisky-gifts">Whisky Tasting Gift Sets</a>
     <span>›</span>
-    <span>The Founders Selection Whisky Gift Set</span>
+    <span>The Founders Selection</span>
   </div>
 
     <div class="product-container">
@@ -1369,14 +1286,14 @@ gtag('config', 'AW-366761144');
 
      <div class="product-details">
     <h1>The Founders Selection</h1>
- <div class="product-price">
-  £55.00
-
-</div>
+    <p class="product-subtitle">Blind Tasting Gift Set • 6 x 30ml Single Malts</p>
+    
+    <div class="product-price">£55.00</div>
+    
        <div class="quantity-selector">
                 <label for="quantity">Quantity:</label>
                 <div class="quantity-input">
-                    <button onclick="decreaseQuantity()">-</button>
+                    <button onclick="decreaseQuantity()">−</button>
                     <input type="number" id="quantity" value="1" min="1" max="10">
                     <button onclick="increaseQuantity()">+</button>
                 </div>
@@ -1386,24 +1303,27 @@ gtag('config', 'AW-366761144');
        
   
        <div class="premium-spirits-box">
-  <h3>✨ Six Legendary Distilleries</h3>
+  <h3>✨ Handpicked by Our Founder</h3>
   <ul class="spirit-list">
     <li>
-      <span class="region-badge">Exclusively single malt scotch</span>
-      <div>
-        
-        <div class="spirit-detail">Award-winning expressions</div>
-      </div>
+      <span class="premium-badge">Exclusively Single Malt Scotch</span>
+      
     </li>
-    <!-- Repeat for all 6 regions -->
+    <li>
+      <div class="spirit-detail">Carefully curated selection showcasing diversity across Scotland's finest distilleries</div>
+    </li>
+    <li>
+      <div class="spirit-detail">Occasionally includes an extra special surprise dram</div>
+    </li>
   </ul>
 </div>
        
     <div class="product-description">
-        <p>Handpicked by our founder, this limited edition whisky tasting set features six premium single malts from our range — and occasionally an extra special surprise dram — it's a showcase of quality, variety, and thoughtful curation.</p><br>
-        <p>Designed for sharing and discovery, this blind tasting experience challenges you to identify each whisky by taste alone, making it perfect for a fun night in or a unique whisky gift for two.</p>
-       <br> <p>
-     Including six single malt whiskies such as Dalmore 12, Lagavulin 16, Oban 14, Glenfiddich Fire & Cane, Old Pulteney 18, Glenlivet Founders Reserve, Bruichladdich Classic Laddie, Balblair 15, Laphroaig 10, Edradour 10 and Glenmorangie Lasanta 12</p>
+        <p><strong>Handpicked by our founder</strong>, this limited edition whisky tasting set features six premium single malts from our range—and occasionally an extra special surprise dram. It's a showcase of quality, variety, and thoughtful curation.</p>
+        
+        <p>Designed for <strong>sharing and discovery</strong>, this blind tasting experience challenges you to identify each whisky by taste alone, making it perfect for a fun night in or a unique whisky gift.</p>
+        
+        <p>The selection includes outstanding expressions such as Dalmore 12, Lagavulin 16, Oban 14, Glenfiddich Fire & Cane, Old Pulteney 18, Glenlivet Founders Reserve, Bruichladdich Classic Laddie, Balblair 15, Laphroaig 10, Edradour 10, and Glenmorangie Lasanta 12.</p>
     </div>
     
   <div class="product-features">
@@ -1411,7 +1331,7 @@ gtag('config', 'AW-366761144');
   <ul>
     <li>Six 30ml bottles of premium single malt whisky</li>
     <li>Expert blind tasting guide with tasting notes</li>
-    <li>Detailed information cards</li>
+    <li>Detailed information cards on each distillery</li>
     <li>Wax-sealed reveal envelope with distillery details</li>
     <li>Gift-ready premium presentation box</li>
     <li>Free DPD delivery (UK)</li> 
@@ -1425,7 +1345,7 @@ gtag('config', 'AW-366761144');
 <section class="you-might-like">
   <div class="container">
     <h2>You Might Also Like</h2>
-    <p class="section-subtitle">Expand your whisky journey with these premium collections</p>
+    <p class="section-subtitle">Explore more exceptional whisky tasting experiences</p>
     
     <div class="product-grid">
       
@@ -1444,6 +1364,21 @@ gtag('config', 'AW-366761144');
         </a>
       </div>
 
+      <!-- Regions of Scotland -->
+      <div class="product-card">
+        <a href="/products/regions-of-scotland-whisky-tasting-set">
+          <div class="product-image-wrapper">
+            <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland Whisky Tasting Set">
+          </div>
+          <div class="product-card-content">
+            <h3>Regions of Scotland</h3>
+            <p class="product-card-description">Tour Scotland's legendary regions with 15-year expressions including Glen Scotia 15 and Glenfiddich 15 Solera</p>
+            <div class="product-card-price">£58.00</div>
+            <span class="shop-now-link">Explore Scotland →</span>
+          </div>
+        </a>
+      </div>
+
       <!-- Luxury Set -->
       <div class="product-card">
         <a href="/products/luxury-single-malt-whisky-tasting-set">
@@ -1458,21 +1393,6 @@ gtag('config', 'AW-366761144');
           </div>
         </a>
       </div>
-       <!-- Regions of Scotland -->
-      <div class="product-card">
-        <a href="/products/regions-of-scotland-whisky-tasting-set">
-          <div class="product-image-wrapper">
-            <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland Whisky Tasting Set">
-          </div>
-          <div class="product-card-content">
-            <h3>Regions of Scotland</h3>
-            <p class="product-card-description">Tour Scotland's legendary regions with 15-year expressions including Glen Scotia 15 and Glenfiddich 15 Solera Cask</p>
-            <div class="product-card-price">£58.00</div>
-            <span class="shop-now-link">Explore Scotland →</span>
-          </div>
-        </a>
-      </div>
-
 
     </div>
   </div>
@@ -1480,23 +1400,27 @@ gtag('config', 'AW-366761144');
 
 
 
-    <footer class="site-footer">
-       
-        
-        <div class="footer-inner">
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="/shipping-returns">Shipping & Returns</a></li>
-                    <li><a href="/terms">Terms & Conditions</a></li>
-                    <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/cookie-policy">Cookie Policy</a></li>
-                </ul>
-            </nav>
-            <div class="site-info">
-                <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
-            </div>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-nav-grid">
+        <div class="footer-nav-section">
+          <h4>Information</h4>
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="/about-us">About Us</a></li>
+              <li><a href="/shipping-returns">Shipping & Returns</a></li>
+              <li><a href="/terms">Terms & Conditions</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+            </ul>
+          </nav>
         </div>
-    </footer>
+      </div>
+      
+      <div class="site-info">
+        <p>© 2025 Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+      </div>
+    </div>
+  </footer>
 
     <script src="/js/cart.js"></script>
     <script>
@@ -1558,16 +1482,6 @@ gtag('config', 'AW-366761144');
         }
     </script>
    
-  <!-- Your page content -->
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": "The Founders Selection Whisky Tasting Gift Set",
-    ...
-  }
-  </script>
     <script>
       // Mobile Image Carousel
 let currentImageIndex = 0;

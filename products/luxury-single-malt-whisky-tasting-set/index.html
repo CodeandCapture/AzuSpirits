@@ -429,6 +429,14 @@
       font-style: italic;
       font-weight: 800;
     }
+    
+      .product-description-main {
+      font-size: 16px;
+      color: black;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+      
 
     /* WORTH BADGE */
     .worth-badge {
@@ -546,6 +554,7 @@
       font-size: 13px;
       font-style: italic;
       font-weight: 500;
+      margin: 25px;
     }
 
     .product-description {
@@ -1227,6 +1236,174 @@
   }
 }
     
+    /* YOU MIGHT ALSO LIKE SECTION */
+.you-might-like {
+  background: #f8f8f8;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.you-might-like .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.you-might-like h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--luxury-black);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.product-card-content {
+  padding: 1.5rem;
+}
+
+.product-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--luxury-black);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.product-card-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1rem;
+  min-height: 4.8rem;
+}
+
+.product-card-price {
+  font-size: 1.5rem;
+  color: var(--deep-burgundy);
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.shop-now-link {
+  color: var(--deep-burgundy);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.product-card:hover .shop-now-link {
+  transform: translateX(5px);
+}
+
+/* Sale Badge */
+.sale-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--rich-red);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+.sale-price {
+  color: var(--rich-red);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .you-might-like {
+    padding: 3rem 1rem;
+  }
+  
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .you-might-like h2 {
+    font-size: 1.6rem;
+  }
+  
+  .product-card-description {
+    min-height: auto;
+  }
+}
+    
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
@@ -1348,8 +1525,8 @@ gtag('config', 'AW-366761144');
         <span class="gift-icon">🎁</span>
         <strong>The Ultimate Gift for Whisky Lovers</strong> · Luxury Gift Box · Free DPD Delivery
       </div>
-      <p class="product-subtitle">Exclusive Gift Set For The Whisky Connoisseur <br> 6 x 30ml Exceptional Expressions</p>
-      <p class= "product-description">Taste the Limited Edition Bunnahabhain 1997 Pedro Ximenez 22, Tobermory 24, Edradour 21 Sherry Cask, the super-heavily peated Octomore from Bruichladdich, Dalmore Port Wood Reserve and Ledaig 18. </p>
+      <h3 class="product-subtitle">Exclusive Gift Set For The Whisky Connoisseur <br> 6 x 30ml Exceptional Expressions</h3>
+      <p class="product-description-main">Taste the Limited Edition Bunnahabhain 1997 Pedro Ximenez 22, Tobermory 24, Edradour 21 Sherry Cask, the super-heavily peated Octomore from Bruichladdich, Dalmore Port Wood Reserve and Ledaig 18. </p>
       
       <div class="worth-badge">
         Bottles Worth Over <span class="amount">£1,000</span>
@@ -1514,6 +1691,67 @@ gtag('config', 'AW-366761144');
     </div>
   </div>
   </section>
+  
+  <!-- YOU MIGHT ALSO LIKE SECTION -->
+<section class="you-might-like">
+  <div class="container">
+    <h2>You Might Also Like</h2>
+    <p class="section-subtitle">Continue your tasting journey with these exceptional collections</p>
+    
+    <div class="product-grid">
+      
+      <!-- Regions of Scotland -->
+      <div class="product-card">
+        <a href="/products/regions-of-scotland-whisky-tasting-set">
+          <div class="product-image-wrapper">
+            <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland Whisky Tasting Set">
+          </div>
+          <div class="product-card-content">
+            <h3>Regions of Scotland</h3>
+            <p class="product-card-description">Tour Scotland's legendary regions with 15-year expressions including Glen Scotia 15 and Ardbeg Uigeadail</p>
+            <div class="product-card-price">£58.00</div>
+            <span class="shop-now-link">Explore Scotland →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Six Styles -->
+      <div class="product-card">
+        <a href="/products/scotch-whisky-tasting-set-for-beginners">
+          <div class="product-image-wrapper">
+            <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt3.jpg" alt="Six Styles of Single Malt Scotch">
+          </div>
+          <div class="product-card-content">
+            <h3>Six Styles of Single Malt</h3>
+            <p class="product-card-description">Perfect gift for fellow enthusiasts. Features rare Ledaig 18 and explores every whisky style from smooth to peated</p>
+            <div class="product-card-price">£63.00</div>
+            <span class="shop-now-link">Find Your Style →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- London Gin (sale item) -->
+      <div class="product-card sale-item">
+        <div class="sale-badge">20% OFF</div>
+        <a href="/products/london-gin-tasting-gift-set">
+          <div class="product-image-wrapper">
+            <img src="https://www.azuspirits.co.uk/images/products/london-gin-tasting.jpg" alt="London Gin Tasting Gift Set">
+          </div>
+          <div class="product-card-content">
+            <h3>London Gins Collection</h3>
+            <p class="product-card-description">Limited time offer! Six iconic London distilleries including Sacred Old Tom and Portobello Road No. 171</p>
+            <div class="product-card-price">
+              <span class="original-price">£52.00</span>
+              <span class="sale-price">£41.60</span>
+            </div>
+            <span class="shop-now-link">Shop Sale →</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
   
 
   <footer class="site-footer">

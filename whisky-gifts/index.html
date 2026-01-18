@@ -174,7 +174,7 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* Base Styles */
+     /* Base Styles */
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -186,14 +186,14 @@
     /* Main Section Headings - Playfair Display for elegance */
     h1, h2 {
       font-family: 'Playfair Display', serif;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.5px;
     }
 
     /* Sub-headings and Product Titles - Montserrat for clean modern feel */
     h3, h4 {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -213,142 +213,201 @@
       letter-spacing: 0.5px;
     }
 
-    /* ============================================
-       HEADER STYLES
-       ============================================ */
+
+    /* Christmas Theme Colors */
+    :root {
+      --christmas-red: #C41E3A;
+      --christmas-green: #165B33;
+      --christmas-gold: #D4AF37;
+      --christmas-silver: #C0C0C0;
+      --deep-red: #8B1538;
+    }
+
+    
+     /* Christmas Crackers Banner */
+  .banner-christmas {
+    background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
+    color: white;
+    animation: festiveShimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes festiveShimmer {
+    0%, 100% { 
+      background: linear-gradient(135deg, #C41E3A 0%, #165B33 50%, #D4AF37 100%);
+    }
+    50% { 
+      background: linear-gradient(135deg, #D41E3A 0%, #1A6B3D 50%, #E4BF47 100%);
+    }
+  }
+
+  .banner-christmas .banner-content {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .banner-christmas .festive-icon {
+    font-size: 24px;
+    margin: 0 15px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .banner-christmas .subtitle {
+    display: block;
+    font-size: 13px;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    opacity: 0.95;
+    font-weight: 400;
+  }
+ 
+    
+    /* Header Styles */
     .site-header {
-        background: #f8f8f8;
-        border-bottom: 1px solid #ddd;
-        padding: 20px;
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+      position: relative;
+      z-index: 100;
     }
 
     .header-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
     }
 
     .header-inner img {
-        height: 80px;
-        cursor: pointer;
+      height: 80px;
+      cursor: pointer;
     }
 
     .site-nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
     }
 
+    /* Dropdown Menu Styles */
     .site-nav li {
-        position: relative;
+      position: relative;
     }
 
     .has-dropdown {
-        position: relative;
+      position: relative;
     }
 
     .has-dropdown > a::after {
-        content: ' ▾';
-        font-size: 0.8rem;
-        margin-left: 0.3rem;
+      content: ' ▾';
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
     }
 
     .dropdown-menu {
-        display: none !important;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        min-width: 220px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 1000;
-        margin-top: 0.5rem;
+      display: none !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      min-width: 220px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      margin-top: 0.5rem;
     }
 
     .has-dropdown:hover .dropdown-menu {
-        display: flex !important;
+      display: flex !important;
     }
 
     .dropdown-menu li {
-        margin: 0 !important;
-        border-bottom: 1px solid #f0f0f0;
+      margin: 0 !important;
+      border-bottom: 1px solid #f0f0f0;
     }
 
     .dropdown-menu li:last-child {
-        border-bottom: none;
+      border-bottom: none;
     }
 
     .dropdown-menu a {
-        display: block;
-        padding: 0.75rem 1rem;
-        color: #333;
-        text-decoration: none;
-        transition: background 0.2s, color 0.2s;
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
     }
 
     .dropdown-menu a:hover {
-        background: #A4343A;
-        color: white;
+      background: #A4343A;
+      color: white;
     }
 
     .site-nav li + li {
-        margin-left: 1.5rem;
+      margin-left: 1.5rem;
     }
 
     .site-nav a {
-        text-decoration: none;
-        color: #333;
-        transition: color 0.3s;
-        font-weight: 500;
-    }
-
-    .nav-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: #333;
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
     }
 
     .header-right {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
     }
 
+    /* Cart Icon */
     .cart-icon {
-        position: relative;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: #333;
-        transition: transform 0.2s;
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #333;
+      transition: transform 0.2s;
     }
 
     .cart-icon:hover {
-        transform: scale(1.1);
+      transform: scale(1.1);
     }
 
-   .cart-count {
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        background: #A4343A;
-        color: white;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.75rem;
-        font-weight: bold;
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #A4343A;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
     }
 
     /* Hero Section */
@@ -1043,7 +1102,7 @@ gtag('config', 'AW-366761144');
         
         <div><img src="https://www.tulleeho.com/wp-content/uploads/2022/04/Talisker-Logo-e1651037840179.png" alt="Talisker Distillery" loading="lazy"></div>
       </div>
-      <h3>Explore their diversity and find your favourite style.<br>A 10% discount code is included in each tasting box to purchase your favourite bottle at full size.</h3>
+      
     </div>
   </section>
 

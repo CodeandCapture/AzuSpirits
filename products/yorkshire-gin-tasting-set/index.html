@@ -76,10 +76,62 @@
   }
   </script>
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+    <!-- ORGANIZATION SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Azu Spirits",
+    "legalName": "Azu Spirits Ltd",
+    "url": "https://www.azuspirits.co.uk",
+    "logo": "https://www.azuspirits.co.uk/images/brand/logo.jpg",
+    "description": "Premium whisky and gin tasting gift sets featuring craft spirits and single malt whisky. Family-run, UK-based specialist.",
+    "foundingDate": "2020",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Ellie Gibson"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB",
+      "addressRegion": "England"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "enquiries@azuspirits.com",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.instagram.com/azuspirits",
+      "https://www.facebook.com/azuspirits"
+    ],
+    "vatID": "GB341514236"
+  }
+  </script>
+  
+  <!-- WEBPAGE SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Yorkshire Craft Gins Tasting Gift Set",
+    "description": "JExplore Yorkshire's craft gin revolution. From traditional dry gins to innovative coffee-infused expressions. Perfect gift for a gin lover.",
+    "url": "https://www.azuspirits.co.uk/products/british-gins-tasting-set",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Azu Spirits",
+      "url": "https://www.azuspirits.co.uk"
+    }
+  }
+  </script>
+  
+ <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
     * {
@@ -312,13 +364,16 @@
       margin-bottom: 0;
     }
 
+    /* Product Details */
     .product-details h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 0.5rem;
       color: #1a1a1a;
-      font-weight: 400;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.4;
     }
 
     .product-subtitle {
@@ -333,6 +388,7 @@
       color: var(--gin-green);
       margin-bottom: 1.5rem;
       font-weight: bold;
+      font-family: 'Playfair Display', serif;
     }
 
     .savings-badge {
@@ -346,6 +402,7 @@
       margin-left: 15px;
     }
 
+       /* Premium Spirits Highlight Box */
     .premium-spirits-box {
       background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
       padding: 20px;
@@ -362,7 +419,9 @@
       letter-spacing: 1px;
       margin-bottom: 15px;
       font-weight: 600;
+      font-family: 'Playfair Display', serif;
     }
+
 
     .spirit-list {
       list-style: none;
@@ -615,6 +674,148 @@
       margin: 0;
     }
     
+     /* YOU MIGHT ALSO LIKE SECTION */
+.you-might-like {
+  background: #f8f8f8;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.you-might-like .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.you-might-like h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.product-card-content {
+  padding: 1.5rem;
+}
+
+.product-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #1a1a1a;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.product-card-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1rem;
+  min-height: 4.8rem;
+}
+
+.product-card-price {
+  font-size: 1.5rem;
+  color: #A4343A;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.shop-now-link {
+  color: #A4343A;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.product-card:hover .shop-now-link {
+  transform: translateX(5px);
+}
+
+/* Sale Badge */
+.sale-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #A4343A;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+.sale-price {
+  color: #A4343A;
+}
+
+    
     /* Mobile Hero Image - hidden on desktop */
     .mobile-hero-image {
       display: none;
@@ -826,7 +1027,31 @@
     left: 10px;
     min-width: auto;
   }
-}
+     /* You Might Also Like - Mobile */
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .you-might-like {
+        padding: 3rem 1rem;
+      }
+      
+      .you-might-like h2 {
+        font-size: 1.6rem;
+      }
+      
+      .product-card-description {
+        min-height: auto;
+      }
+    }
+    
+    @media (max-width: 968px) and (min-width: 641px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
@@ -838,41 +1063,37 @@ gtag('config', 'AW-366761144');
 </script>
 </head>
 <body>
- <a href="/products/london-gin-tasting-gift-set/" style="color: white; text-decoration: none; display: block; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-    <div class= "christmas-banner" style="background: linear-gradient(135deg, #165B33 0%, #0f4123 100%); color: white; text-align: center; padding: 12px; font-weight: bold; font-size: 14px; cursor: pointer;">
-        LIMITED TIME: 20% OFF London Gin Tasting Sets - Use Code EXPLORELONDON 
-    </div>
-</a>
+
   
 <header class="site-header">
   <div class="header-inner container">
-    <img src="/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/'">
+    <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Gin and Whisky Gift Sets" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='https://www.azuspirits.co.uk/'">
     
     <div class="header-right">
       <nav class="site-nav" id="siteNav">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="https://www.azuspirits.co.uk/">Home</a></li>
           
           <!-- Dropdown for Tasting Gift Sets -->
           <li class="has-dropdown">
-            <a href="/tasting-gift-sets/">Tasting Gift Sets</a>
+            <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
             <ul class="dropdown-menu">
-              <li><a href="/whisky-gifts/">Scotch Whisky</a></li>
-              <li><a href="/gin-gifts/">Premium Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-gifts/">Premium Gin</a></li>
             </ul>
           </li>
           
           <!-- Dropdown for Sharing Boxes -->
           <li class="has-dropdown">
-            <a href="/sharing-boxes/">Sharing Boxes</a>
+            <a href="https://www.azuspirits.co.uk/sharing-boxes/">Sharing Boxes</a>
             <ul class="dropdown-menu">
-              <li><a href="/whisky-sharing-boxes/">Scotch Whisky</a></li>
-              <li><a href="/gin-sharing-boxes/">Premium Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/">Premium Gin</a></li>
             </ul>
           </li>
          
-          <li><a href="/about-us/">About</a></li>
-          <li><a href="/blog/">Blog</a></li>
+          <li><a href="https://www.azuspirits.co.uk/about-us/">About</a></li>
+          <li><a href="https://www.azuspirits.co.uk/blog/">Blog</a></li>
         </ul>
       </nav>
       
@@ -889,9 +1110,9 @@ gtag('config', 'AW-366761144');
 </header>
 
   <div class="breadcrumb">
-    <a href="/">Home</a>
+    <a href="https://www.azuspirits.co.uk/">Home</a>
     <span>›</span>
-    <a href="/gin-gifts">Gin Tasting Gift Sets</a>
+    <a href="https://www.azuspirits.co.uk/gin-gifts">Gin Tasting Gift Sets</a>
     <span>›</span>
     <span>Yorkshire Gins</span>
   </div>
@@ -902,7 +1123,7 @@ gtag('config', 'AW-366761144');
 <div class="mobile-hero-image">
   <!-- Image Counter -->
   <div class="image-counter">
-    <span class="current-image">1</span> / <span class="total-images">3</span>
+    <span class="current-image">1</span> / <span class="total-images">2</span>
   </div>
 
   <!-- Navigation Arrows -->
@@ -911,16 +1132,13 @@ gtag('config', 'AW-366761144');
 
   <!-- Carousel Images -->
   <div class="mobile-carousel" id="mobileCarousel">
-    <img src="/images/products/yorkshire-gin-tasting-set.jpg" 
+    <img src="https://www.azuspirits.co.uk/images/products/yorkshire-gin-tasting-set.jpg" 
            alt="Yorkshire Gins Tasting Gift Set"
          class="product-image">
-    <img src="/images/products/yorkshire-gin-alt.jpg" 
-           alt="Yorkshire Craft Gins"
-         class="product-image">
-    <img src="/images/products/six-30ml-bottles.jpg" 
-           alt="Six Premium 30ml Bottles"
-         class="product-image">
-
+    <img src="https://www.azuspirits.co.uk/images/products/gin-gift-set.jpg" 
+           alt="Yorkshire Craft Gins" class="product-image">
+        
+  
     
   </div>
 
@@ -928,21 +1146,21 @@ gtag('config', 'AW-366761144');
   <div class="carousel-dots">
     <button class="carousel-dot active" onclick="goToImage(0)"></button>
     <button class="carousel-dot" onclick="goToImage(1)"></button>
-    <button class="carousel-dot" onclick="goToImage(2)"></button>
+    
   </div>
   
 </div>
 
     <div class="product-image-container">
-      <img src="/images/products/yorkshire-gin-tasting-set.jpg" 
+      <img src="https://www.azuspirits.co.uk/images/products/yorkshire-gin-tasting-set.jpg" 
            alt="Yorkshire Gins Tasting Gift Set"
            class="product-image">
       
-      <img src="/images/products/yorkshire-gin-alt.jpg" 
+      <img src="https://www.azuspirits.co.uk/images/products/gin-gift-set.jpg" 
            alt="Yorkshire Craft Gins"
            class="product-image">
       
-      <img src="/images/products/six-30ml-bottles.jpg" 
+      <img src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg" 
            alt="Six Premium 30ml Bottles"
            class="product-image">
     </div>
@@ -1020,7 +1238,74 @@ gtag('config', 'AW-366761144');
   </div>
 
   
+  <!-- YOU MIGHT ALSO LIKE SECTION -->
+<section class="you-might-like">
+  <div class="container">
+    <h2>You Might Also Like</h2>
+    <p class="section-subtitle">Continue your whisky journey with these exceptional collections</p>
+    
+    <div class="product-grid">
+      
+      <!-- Cotswolds Gins -->
+      <div class="product-card">
+        <a href="https://www.azuspirits.co.uk/products/cotswolds-gin-tasting-gift-set/" aria-label="Shop Cotswolds Gins Gift Set">
+          <div class="product-image-wrapper">
+            <img src="https://www.azuspirits.co.uk/images/products/cotswolds-gin-gift-alt2.jpg" alt="Shop Cotswolds Gins Tasting Set">
+          </div>
+          <div class="product-card-content">
+            <h3>Cotswolds Craft Gins </h3>
+            <p class="product-card-description">Explore England's most beautiful countryside through six exceptional craft gins. Featuring unique botanical blends and local ingredients that capture the essence of the Cotswolds.</p>
+            <div class="product-card-price">£52.00</div>
+            <span class="shop-now-link">Taste The Cotswolds →</span> 
+          </div>
+        </a>
+      </div>
 
+      <!-- London Gin (sale item) -->
+      <div class="product-card sale-item">
+        <div class="sale-badge">20% OFF</div>
+        <a href="https://www.azuspirits.co.uk/products/london-gin-tasting-gift-set" aria-label="Shop London Gins Gift Set">
+          <div class="product-image-wrapper">
+            <img src="https://www.azuspirits.co.uk/images/products/london-gin-tasting.jpg" alt="London Gin Tasting Gift Set">
+          </div>
+          <div class="product-card-content">
+            <h3>Six London Gins </h3>
+            <p class="product-card-description">Limited time offer! Six iconic London distilleries including Sacred Old Tom and Portobello Road No. 171</p>
+            <div class="product-card-price">
+              <span class="original-price">£52.00</span>
+              <span class="sale-price">£41.60</span>
+            </div>
+            <span class="shop-now-link">Shop Sale →</span>
+          </div>
+        </a>
+      </div>
+      
+      
+      <!-- Devon Gin  -->
+      <div class="product-card sale-item">
+        
+        <a href="https://www.azuspirits.co.uk/products/devon-gin-tasting-set/" aria-label="Shop Devon Gins Gift Set">
+          <div class="product-image-wrapper">
+            <img src="https://www.azuspirits.co.uk/images/products/devon-gin-tasting.jpg" alt="Devon Gin Tasting Gift Set">
+          </div>
+          <div class="product-card-content">
+            <h3>Devon Craft Gins</h3>
+            <p class="product-card-description">Discover six premium craft gins from Devon's finest craft distilleries. </p>
+            <div class="product-card-price">
+            £52.00
+             
+            </div>
+            <span class="shop-now-link">Shop Sale →</span>
+          </div>
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+  
   <footer class="site-footer">
     
     <div class="container">
@@ -1031,10 +1316,10 @@ gtag('config', 'AW-366761144');
           <h4>Information</h4>
           <nav class="footer-nav">
             <ul>
-              <li><a href="/about-us">About Us</a></li>
-              <li><a href="/shipping-returns">Shipping & Returns</a></li>
-              <li><a href="/terms">Terms & Conditions</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="https://www.azuspirits.co.uk/about-us">About Us</a></li>
+              <li><a href="https://www.azuspirits.co.uk/shipping-returns">Shipping & Returns</a></li>
+              <li><a href="https://www.azuspirits.co.uk/terms">Terms & Conditions</a></li>
+              <li><a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a></li>
             </ul>
           </nav>
         </div>
@@ -1200,4 +1485,5 @@ if (carousel) {
   
 </body>
 </html>
+
 

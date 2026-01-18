@@ -32,6 +32,15 @@
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.azuspirits.co.uk" />
+  
+  <!-- Performance: Preload critical resources -->
+  <link rel="preload" href="https://www.azuspirits.co.uk/images/products/tasting-gift-sets.jpg" as="image" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://code.jquery.com" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="https://www.azuspirits.co.uk/sitemap.xml" />
 
   <!-- Schema markup remains the same -->
   <script type="application/ld+json">
@@ -199,35 +208,80 @@
           }
         }
       },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "Product",
-          "name": "London Gins Tasting Set",
-          "description": "Six iconic distilleries: Sacred Old Tom, Portobello Road No. 171, Little Bird, Half Hitch, Doghouse Renegade & Jensen's Bermondsey",
-          "image": "https://www.azuspirits.co.uk/images/products/london-gin-gift-set.jpg",
-          "offers": {
-            "@type": "Offer",
-            "price": "52.00",
-            "priceCurrency": "GBP",
-            "availability": "https://schema.org/InStock",
-            "url": "https://www.azuspirits.co.uk/products/london-gin-tasting-gift-set"
-          },
-          "brand": {
-            "@type": "Brand",
-            "name": "Azu Spirits"
-          }
-        }
-      }
+     {
+  "@type": "ListItem",
+  "position": 5,
+  "item": {
+    "@type": "Product",
+    "name": "London Gins Tasting Set",
+    "description": "Six iconic distilleries: Sacred Old Tom, Portobello Road No. 171, Little Bird, Half Hitch, Doghouse Renegade & Jensen's Bermondsey",
+    "image": "https://www.azuspirits.co.uk/images/products/london-gin-gift-set.jpg",
+    "offers": {
+      "@type": "Offer",
+      "price": "41.60",
+      "priceCurrency": "GBP",
+      "priceValidUntil": "2026-02-28",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.azuspirits.co.uk/products/london-gin-tasting-gift-set"
+    },
+    "brand": {
+      "@type": "Brand",
+      "name": "Azu Spirits"
+    }
+  }
+}
     ]
+  }
+  </script>
+  
+  <!-- 5. FAQ SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What's included in a tasting set?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each tasting set includes 6 x 30ml bottles of premium spirits, a blind tasting guide with expert tips, information cards about each bottle's flavour profile and production techniques, and a wax-sealed reveal envelope. All sets come in gift-ready presentation packaging with free UK delivery."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How long does delivery take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer free DPD next-day delivery across the UK. Orders placed before 2pm are dispatched the same day for next working day delivery."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Are these tasting sets good for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! Our tasting sets are perfect for both beginners and connoisseurs. The blind tasting format helps you discover your preferences without bias, and our comprehensive guide provides expert tips to enhance your experience. The Six Styles of Scotch set is particularly popular with beginners."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can I buy these as gifts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Our tasting sets make exceptional gifts for whisky and gin lovers. Each set arrives in premium gift-ready packaging. They're perfect for birthdays, Father's Day, Christmas, retirements, anniversaries, or any special occasion."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What makes Azu Spirits different from other whisky gift sets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We specialise in blind tasting experiences that help you discover your preferences without brand bias. Our sets feature rare and aged expressions (like 18 and 22-year whiskies) that aren't typically available in tasting format. We're also featured at prestigious UK markets and pride ourselves on expert curation and premium presentation."
+      }
+    }]
   }
   </script>
   
   <!-- Google Fonts - Updated with proper weights -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   
   <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -589,7 +643,7 @@
 
   .hero-slide-1 {
     background-image: url('https://www.azuspirits.co.uk/images/products/tasting-gift-sets.jpg');
-  }
+  } 
 
   .overlay {
     background: rgba(0, 0, 0, 0.6);
@@ -1804,10 +1858,151 @@
     font-size: 14px;
   }
 }
+/* Trust Bar */
+.trust-bar {
+  background: #f8f8f8;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.trust-bar-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-icon {
+  font-size: 20px;
+}
+
+/* Mobile */
+@media (max-width: 868px) {
+  .trust-bar-content {
+    font-size: 12px;
+    gap: 15px;
+  }
+  
+  .trust-icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-bar-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+    
+    /* Intro Section */
+.intro-section {
+  padding: 40px 20px;
+  background: white;
+}
+
+.intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+.intro-content strong {
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 868px) {
+  .intro-content p {
+    font-size: 16px;
+  }
+}
+   /* FAQ Section */
+.faq-section {
+  padding: 60px 20px;
+  background: white;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #2c2c2c;
+}
+
+.faq-item {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-item h3 {
+  font-size: 18px;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+  text-transform: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.faq-item p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 868px) {
+  .faq-section h2 {
+    font-size: 26px;
+  }
+  
+  .faq-item h3 {
+    font-size: 16px;
+  }
+  
+  .faq-item p {
+    font-size: 14px;
+  }
+} 
+    
+    
   </style>
   
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script> 
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -1816,41 +2011,44 @@ gtag('config', 'AW-366761144');
 </script>
 </head>
 <body>
- 
+
 
 <header class="site-header">
   <div class="header-inner container">
-    <img src="images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='./'">
+    <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits - Premium Whisky & Gin Tasting Gift Sets" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='./'">
     
-    <div class="header-right">
-      <nav class="site-nav" id="siteNav">
+    <div class="header-right"> 
+      <nav class="site-nav" id="siteNav"  aria-label="Main navigation">
         <ul>
-          <li><a href="./">Home</a></li>
+          <li><a href="https://www.azuspirits.co.uk/">Home</a></li>
           
           <li class="has-dropdown">
-            <a href="tasting-gift-sets/">Tasting Gift Sets</a>
+            <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
             <ul class="dropdown-menu">
-              <li><a href="whisky-gifts/">Scotch Whisky</a></li>
-              <li><a href="gin-gifts/">Premium Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-gifts/">Premium Gin</a></li>
             </ul>
           </li>
           
           <li class="has-dropdown">
             <a href="sharing-boxes/">Sharing Boxes</a>
             <ul class="dropdown-menu">
-              <li><a href="whisky-sharing-boxes/">Scotch Whisky</a></li>
-              <li><a href="gin-sharing-boxes/">Premium Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/">Premium Gin</a></li>
             </ul>
           </li>
-          <li><a href="about-us/">About</a></li>
-          <li><a href="blog/">Blog</a></li>
+          <li><a href="https://www.azuspirits.co.uk/about-us/">About</a></li>
+          <li><a href="https://www.azuspirits.co.uk/blog/">Blog</a></li>
         </ul>
       </nav>
       
-      <div class="cart-icon" onclick="window.location.href='cart/'">
-        🛒
-        <span class="cart-count">0</span>
-      </div>
+    <div class="cart-icon" 
+     onclick="window.location.href='https://www.azuspirits.co.uk/cart/'" 
+     role="button" 
+     aria-label="View shopping cart">
+  🛒
+  <span class="cart-count" aria-live="polite">0</span>
+</div>
       
       <button class="nav-toggle" onclick="toggleNav()">☰</button>
     </div>
@@ -1864,18 +2062,47 @@ gtag('config', 'AW-366761144');
       <h1>Unique Scotch Whisky & Gin Tasting Gift Sets</h1>
       <h2>Enthralling and informative blind-tasting challenges showcasing the best British spirits. Outstanding gifts for curious beginners or seasoned enthusiasts.</h2>
       <div class="cta-buttons">
-        <a href="/whisky-gifts" class="primary-cta">Shop Whisky Sets</a>
-        <a href="/gin-gifts" class="primary-cta">Shop Gin Sets</a>
+        <a href="https://www.azuspirits.co.uk/whisky-gifts" class="primary-cta" aria-label="Shop Premium Scotch Whisky Tasting Sets" onclick="gtag('event', 'cta_click', {'event_category': 'engagement', 'event_label': 'shop_whisky_sets_hero'});">Shop Whisky Sets</a>
+        <a href="https://www.azuspirits.co.uk/gin-gifts" class="primary-cta" aria-label="Shop Craft Gin Tasting Sets" onclick="gtag('event', 'cta_click', {'event_category': 'engagement', 'event_label': 'shop_gin_sets_hero'});">Shop Gin Sets</a>
       </div>
       <h3>Including Free DPD Shipping</h3>
     </div>
   </div>
     
 </section>
+  
+  <!-- Trust Bar -->
+<section class="trust-bar">
+  <div class="trust-bar-content">
+    <div class="trust-item">
+      <span class="trust-icon"></span>
+      <span>Free UK Delivery</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon"></span>
+      <span>Featured at Premium UK Markets</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon"></span>
+      <span>Gift-Ready Packaging</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon"></span>
+      <span>Expert Curation</span>
+    </div>
+  </div>
+</section>
+  
+  <!-- Intro Section with SEO-Rich Content -->
+<section class="intro-section">
+  <div class="intro-content">
+    <p>Discover the finest <strong>whisky and gin tasting sets</strong> in the UK. Each expertly curated collection features <strong>6 x 30ml premium bottles</strong>, perfect for blind tasting experiences that help you explore Scotland's legendary distilleries and England's finest craft gin producers. From rare 18-year single malts to award-winning craft gins, our tasting sets showcase diverse flavour profiles—smooth and sweet to bold and peaty—all delivered free to your door.</p>
+  </div>
+</section>
  
 <section class="gift-trust-banner">
   <div class="container">
-    <button class="scroll-to-details" onclick="scrollToSection('whats-in-box')">
+    <button class="scroll-to-details" onclick="scrollToSection('whats-in-box')" aria-label="Scroll to what makes our tasting sets special section">
       What Make Our Tasting Sets Special ↓
     </button>
   </div>
@@ -1889,7 +2116,7 @@ gtag('config', 'AW-366761144');
       
        <div class="featured-box">
         <div class="featured-image">
-          <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt2.jpg" alt="Six styles of Scotch whisky tasting set for beginners">
+          <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt2.jpg" alt="Six styles of Scotch whisky tasting set for beginners" loading="lazy">
           <span class="price-badge">£63</span>
         </div>
         <div class="featured-content">
@@ -1902,7 +2129,7 @@ gtag('config', 'AW-366761144');
             </p>
           </div>
           <p style="font-size: 14px; margin-top: 12px;">From smooth & sweet to bold & peaty. Discover your perfect style before investing in full bottles.</p>
-          <a href="/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">Find Your Style</a>
+          <a href="https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta" aria-label="Shop Six Styles of Scotch Tasting Gift Set">Find Your Style</a>
         </div>
       </div>
       
@@ -1910,7 +2137,7 @@ gtag('config', 'AW-366761144');
   <div class="featured-image">
     <span class="special-offer-badge">20% OFF!</span>
     
-    <img src="https://www.azuspirits.co.uk/images/products/london-gin-gift-set.jpg" alt="London craft gin tasting set">
+    <img src="https://www.azuspirits.co.uk/images/products/london-gin-gift-set.jpg" alt="London craft gin tasting set" loading="lazy">
     <span class="price-badge"><s>£52</s> £41.60</span>
   </div>
   <div class="featured-content">
@@ -1930,13 +2157,13 @@ gtag('config', 'AW-366761144');
       💡 Use code <strong>EXPLORELONDON</strong> at checkout
     </p>
     
-    <a href="/products/london-gin-tasting-gift-set" class="featured-cta">Shop 20% Off Sale</a>
+    <a href="https://www.azuspirits.co.uk/products/london-gin-tasting-gift-set" class="featured-cta" aria-label="Shop London Craft Gins Tasting Gift Set">Shop 20% Off Sale</a>
   </div>
 </div>
       
       <div class="featured-box">
         <div class="featured-image">
-          <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland whisky tasting set">
+          <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland whisky tasting set" loading="lazy">
           <span class="price-badge">£58</span>
         </div>
         <div class="featured-content">
@@ -1949,13 +2176,13 @@ gtag('config', 'AW-366761144');
             </p>
           </div>
           <p style="font-size: 14px; margin-top: 12px;">Tour Scotland's legendary regions. Can you identify each distillery's signature character?</p>
-          <a href="/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Explore Scotland</a>
+          <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set" class="featured-cta" aria-label="Shop Regions of Scotland Whisky Gift Set">Explore Scotland</a>
         </div>
       </div>
 
       <div class="featured-box">
         <div class="featured-image">
-          <img src="https://www.azuspirits.co.uk/images/products/luxury-single-malt.jpg" alt="Luxury single malt whisky tasting set">
+          <img src="https://www.azuspirits.co.uk/images/products/luxury-single-malt.jpg" alt="Luxury single malt whisky tasting set" loading="lazy">
           <span class="price-badge">£110</span>
         </div>
         <div class="featured-content">
@@ -1969,13 +2196,13 @@ gtag('config', 'AW-366761144');
             </p>
           </div>
           <p style="font-size: 14px; margin-top: 12px;">Ultra-premium whiskies rarely available in tasting format. An exceptional collection for the discerning enthusiast.</p>
-          <a href="/products/luxury-single-malt-whisky-tasting-set" class="featured-cta">Experience Luxury</a>
+          <a href="https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set" class="featured-cta" aria-label="Shop Luxury Single Malt Tasting Gift Set">Experience Luxury</a>
         </div>
       </div>
 
       <div class="featured-box">
         <div class="featured-image">
-          <img src="https://www.azuspirits.co.uk/images/products/cotswolds-gin-gift-alt1.jpg" alt="Cotswolds craft gin tasting set">
+          <img src="https://www.azuspirits.co.uk/images/products/cotswolds-gin-gift-alt1.jpg" alt="Cotswolds craft gin tasting set" loading="lazy">
           <span class="price-badge">£52</span>
         </div>
         <div class="featured-content">
@@ -1987,7 +2214,7 @@ gtag('config', 'AW-366761144');
             </p>
           </div>
           <p style="font-size: 14px; margin-top: 12px;">Each distillery crafts unique expressions celebrating local botanicals and traditional methods.</p>
-          <a href="/products/cotswolds-gin-tasting-gift-set" class="featured-cta">Taste the Cotswolds</a>
+          <a href="https://www.azuspirits.co.uk/products/cotswolds-gin-tasting-gift-set" class="featured-cta" aria-label="Shop Cotswolds Craft Gin Gift Set">Taste the Cotswolds</a>
         </div>
       </div>
       
@@ -2038,7 +2265,7 @@ gtag('config', 'AW-366761144');
   
   <section class="gift-trust-banner">
   <div class="container">
-    <button class="scroll-to-details" onclick="scrollToSection('featured-collections')">
+    <button class="scroll-to-details" onclick="scrollToSection('featured-collections')" aria-label="View tasting collections">
       Back to our collections
     </button>
   </div>
@@ -2052,34 +2279,67 @@ gtag('config', 'AW-366761144');
     <div class="gift-guide-grid">
       
       <div class="gift-card">
-        <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/six-styles-wide.png"></div>
+        <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/six-styles-wide.png" loading="lazy"></div>
         <h3>For the Whisky Beginner</h3>
         <p>New to whisky? Our Six Styles set explores every flavour profile from smooth to peated.</p>
-        <a href="/products/scotch-whisky-tasting-set-for-beginners" class="gift-cta">Shop Six Styles →</a>
+        <a href="https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners" class="gift-cta" aria-label="Shop Gifts for Whisky Beginner">Shop Six Styles →</a>
       </div>
       
       <div class="gift-card">
-        <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/luxury-set-wide.png"></div>
+        <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/luxury-set-wide.png" loading="lazy"></div>
         <h3>For the Connoisseur</h3>
         <p>Exceptional aged expressions worth over £1,000. The ultimate luxury whisky experience.</p>
-        <a href="/products/luxury-single-malt-whisky-tasting-set" class="gift-cta">Shop Luxury →</a>
+        <a href="https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set" class="gift-cta" aria-label="Shop Gifts for Whisky Lover">Shop Luxury →</a>
       </div>
       
       <div class="gift-card">
-         <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/whisky-gifts-wide.png"></div>
+         <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/whisky-gifts-wide.png" loading="lazy"></div>
         <h3>Under £60</h3>
         <p>Premium tasting experiences that won't break the bank. Perfect for thoughtful gifting.</p>
-        <a href="/whisky-gifts" class="gift-cta">Shop Whisky Sets →</a>
+        <a href="https://www.azuspirits.co.uk/whisky-gifts" class="gift-cta" aria-label="Shop Scotch Whisky Gifts">Shop Whisky Sets →</a>
       </div>
       
       <div class="gift-card">
-        <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/gin-lovers-gift-wide.png"></div>
+        <div><img class="gift-image" src="https://www.azuspirits.co.uk/images/products/gin-lovers-gift-wide.png" loading="lazy"></div>
         <h3>For Gin Lovers</h3>
         <p>Award-winning craft distilleries from the Cotswolds and London. Botanical excellence.</p>
-        <a href="/gin-gifts" class="gift-cta">Shop Gin Sets →</a>
+        <a href="https://www.azuspirits.co.uk/gin-gifts" class="gift-cta" aria-label="Shop Craft Gin Gifts">Shop Gin Sets →</a>
       </div>
       
     </div>
+  </div>
+</section>
+  
+  <!-- FAQ Section -->
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <h3>What's included in a tasting set?</h3>
+      <p>Each tasting set includes 6 x 30ml bottles of premium spirits, a blind tasting guide with expert tips, information cards about each bottle's flavour profile and production techniques, and a wax-sealed reveal envelope. All sets come in gift-ready presentation packaging with free UK delivery.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>How long does delivery take?</h3>
+      <p>We offer free DPD delivery across the UK. We will offer Next Day Delivery soon but we ask for now please allow up to 3 - 5 working days.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>Are these tasting sets good for beginners?</h3>
+      <p>Absolutely! Our tasting sets are perfect for both beginners and connoisseurs. The blind tasting format helps you discover your preferences without bias, and our comprehensive guide provides expert tips to enhance your experience. The Six Styles of Scotch set is particularly popular with beginners.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>Can I buy these as gifts?</h3>
+      <p>Yes! Our tasting sets make exceptional gifts for whisky and gin lovers. Each set arrives in premium gift-ready packaging. They're perfect for birthdays, Father's Day, Christmas, retirements, anniversaries, or any special occasion.</p>
+    </div>
+    
+    <div class="faq-item">
+      <h3>What makes Azu Spirits different from other whisky gift sets?</h3>
+      <p>We specialise in blind tasting experiences that help you discover your preferences without brand bias. Our sets feature rare and aged expressions (like 18 and 22-year whiskies) that aren't typically available in tasting format. We're also featured at prestigious UK markets and pride ourselves on expert curation and premium presentation.</p>
+    </div>
+    
   </div>
 </section>
 
@@ -2093,25 +2353,25 @@ gtag('config', 'AW-366761144');
     <div class="credentials-grid">
       
       <div class="credential-card">
-        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/charterhouse-christmas.png"></div>
+        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/charterhouse-christmas.png" loading="lazy"></div>
         <h3>The Charterhouse London</h3>
         <p>Historic venue</p>
       </div>
       
       <div class="credential-card">
-        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/fulham-palace-show.png"></div>
+        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/fulham-palace-show.png" loading="lazy"> </div>
         <h3>Fulham Palace Christmas Market</h3>
         <p>Premium festive market</p>
       </div>
       
       <div class="credential-card">
-        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/country-living-fair.png"></div>
+        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/country-living-fair.png" loading="lazy"></div>
         <h3>Country Living Magazine Glasgow</h3>
         <p>Scotland's premier market</p>
       </div>
       
       <div class="credential-card">
-        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/royal-highland-show.png"></div>
+        <div><img class="credential-logo" src="https://www.azuspirits.co.uk/images/markets/royal-highland-show.png" loading="lazy"></div>
         <h3>The Royal Highland Show</h3>
         <p>Scotland's biggest event</p>
       </div>
@@ -2146,7 +2406,7 @@ gtag('config', 'AW-366761144');
           </ul>
           
           <div class="cta-wrapper">
-            <a href="/bottleshop" class="comparison-cta">Full Bottle Shop Coming Soon</a>
+            <a href="https://www.azuspirits.co.uk/bottleshop" class="comparison-cta" aria-label="View Bottle Shop">Full Bottle Shop Coming Soon</a>
           </div>
         </div>
       </div>
@@ -2177,7 +2437,7 @@ gtag('config', 'AW-366761144');
           <p class="value-note">From £52 • Bottles worth over £300</p>
           
           <div class="cta-wrapper">
-            <a href="/tasting-gift-sets/" class="comparison-cta primary">Shop Tasting Sets →</a>
+            <a href="https://www.azuspirits.co.uk/tasting-gift-sets/" class="comparison-cta primary" aria-label="Shop Premium Tasting">Shop Tasting Sets →</a>
           </div>
         </div>
       </div>
@@ -2200,10 +2460,10 @@ gtag('config', 'AW-366761144');
           <h4>Information</h4>
           <nav class="footer-nav">
             <ul>
-              <li><a href="/shipping-returns">Shipping & Returns</a></li>
-              <li><a href="/terms">Terms & Conditions</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/cookie-policy">Cookie Policy</a></li>
+              <li><a href="https://www.azuspirits.co.uk/shipping-returns">Shipping & Returns</a></li>
+              <li><a href="https://www.azuspirits.co.uk/terms">Terms & Conditions</a></li>
+              <li><a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a></li>
+              <li><a href="https://www.azuspirits.co.uk/cookie-policy">Cookie Policy</a></li>
             </ul>
           </nav>
         </div>
@@ -2240,9 +2500,11 @@ gtag('config', 'AW-366761144');
 
   <script>
     function toggleNav() {
-      const nav = document.getElementById('siteNav');
-      nav.classList.toggle('open');
-    }
+  const nav = document.getElementById('siteNav');
+  const toggle = document.querySelector('.nav-toggle');
+  const isOpen = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', isOpen);
+}
     
     document.addEventListener('DOMContentLoaded', function() {
       if (window.innerWidth <= 768) {
@@ -2374,4 +2636,3 @@ function scrollToSection(sectionClass) {
   
 </body>
 </html>
-

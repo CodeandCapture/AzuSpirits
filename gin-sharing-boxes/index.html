@@ -122,19 +122,52 @@
   }
   </script>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts - Updated with proper weights -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* Base Styles */
+  /* Base Styles */
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Main Section Headings - Playfair Display for elegance */
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    /* Sub-headings and Product Titles - Montserrat for clean modern feel */
+    h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Body text */
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Buttons and CTAs */
+    button, .primary-cta, .featured-cta, .gift-cta {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     /* Christmas Theme Colors */
@@ -314,7 +347,7 @@
 
     /* Hero Section */
     section.hero {
-      background-image: url('/images/products/craft-gin-tasting-sharing-box.jpg');
+      background-image: url('https://www.azuspirits.co.uk/images/products/craft-gin-tasting-sharing-box.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -809,37 +842,37 @@ gtag('config', 'AW-366761144');
   
  <header class="site-header">
   <div class="header-inner container">
-    <img src="/images/brand/logo.jpg" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/'">
+    <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Whisky and Gin Tasting Gift Sets" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='/'">
     
     <div class="header-right">
       <nav class="site-nav" id="siteNav">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="https://www.azuspirits.co.uk/">Home</a></li>
           
           <!-- Dropdown for Tasting Gift Sets -->
           <li class="has-dropdown">
-            <a href="/tasting-gift-sets/">Tasting Gift Sets</a>
+            <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
             <ul class="dropdown-menu">
-              <li><a href="/whisky-gifts/">Scotch Whisky</a></li>
-              <li><a href="/gin-gifts/">Premium Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/whisky-gifts/">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-gifts/">Premium Gin</a></li>
             </ul>
           </li>
           
           <!-- Dropdown for Sharing Boxes -->
           <li class="has-dropdown">
-            <a href="/sharing-boxes/">Sharing Boxes</a>
+            <a href="https://www.azuspirits.co.uk/sharing-boxes/">Sharing Boxes</a>
             <ul class="dropdown-menu">
-              <li><a href="/whisky-sharing-boxes/">Scotch Whisky</a></li>
-              <li><a href="/gin-sharing-boxes/">Premium Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/">Premium Gin</a></li>
             </ul>
           </li>
-          <li><a href="/about-us/">About</a></li>
-          <li><a href="/blog/">Blog</a></li>
+          <li><a href="https://www.azuspirits.co.uk/about-us/">About</a></li>
+          <li><a href="https://www.azuspirits.co.uk/blog/">Blog</a></li>
         </ul>
       </nav>
       
       <!-- Cart Icon -->
-      <div class="cart-icon" onclick="window.location.href='/cart/'">
+      <div class="cart-icon" onclick="window.location.href='https://www.azuspirits.co.uk/cart/'" aria-label="View Shopping Cart">
         🛒
         <span class="cart-count">0</span>
       </div>
@@ -883,7 +916,7 @@ gtag('config', 'AW-366761144');
         <!-- Six Styles of Scotch -->
         <div class="featured-box">
           <div class="featured-image">
-            <img src="/images/products/craft-gin-tasting-sharing-box.jpg" 
+            <img src="https://www.azuspirits.co.uk/images/products/craft-gin-tasting-sharing-box.jpg" 
                  alt="South West Specialist Gin Tasting Sharing Box"
                  loading="lazy">
             <span class="price-badge">£100</span>
@@ -898,7 +931,7 @@ gtag('config', 'AW-366761144');
               </p>
             </div>
             <p>From moorland botanicals, innovative production techniques and coastal characters, explore the taste of the South West</p>
-            <a href="/products/south-west-specialist-sharing-box" class="featured-cta">Shop Now</a>
+            <a href="https://www.azuspirits.co.uk/products/south-west-specialist-sharing-box" alt="Shop South West Gins Sharing Box" class="featured-cta">Shop Now</a>
           </div>
         </div>
 
@@ -906,7 +939,7 @@ gtag('config', 'AW-366761144');
         <!-- Founder's Selection -->
         <div class="featured-box">
           <div class="featured-image">
-            <img src="/images/products/gin-tasting-at-home-experience.jpeg" 
+            <img src="https://www.azuspirits.co.uk/images/products/gin-tasting-at-home-experience.jpeg" 
                  alt="Cotswolds Gin Sharing Tasting Box"
                  loading="lazy">
             <span class="price-badge">£100</span>
@@ -921,7 +954,7 @@ gtag('config', 'AW-366761144');
               </p>
             </div>
             <p>Featuring six exquisite craft gins from in and around the Cotswolds, showcasing premium distilleries.</p>
-            <a href="/products/cotswolds-gin-sharing-box" class="featured-cta">Discover the Cotswolds</a>
+            <a href="https://www.azuspirits.co.uk/products/cotswolds-gin-sharing-box" aria-label="Shop Cotswolds Gin Sharing Box" class="featured-cta">Discover the Cotswolds</a>
           </div>
         </div>
         
@@ -940,7 +973,7 @@ gtag('config', 'AW-366761144');
         <div><img src="https://images.squarespace-cdn.com/content/v1/633173e1a70a2f5479127ed6/15523aed-456a-4ad3-b512-6a12c2fe11b2/71983_Little+Bird+Logo_Black+%26+Gold.png" alt="Little Bird Gin" loading="lazy"></div>
         <div><img src="https://www.siblingdistillery.com/wp-content/uploads/2022/11/Sibling_Gin_logo_final_gold.png" alt="Sibling Distillery" loading="lazy"></div>
       </div>
-      <h3>Explore their distinct characteristics and find your favourite style.<br>A 10% discount code is included in each tasting box to purchase your favourite bottle at full size.</h3>
+     
     </div>
   </section>
 <section class="whats-in-box">
@@ -951,28 +984,28 @@ gtag('config', 'AW-366761144');
 
     <!-- Item 1: Six Numbered Bottles -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="/images/products/gin-tasting-at-home-experience.jpeg" alt="Six Numbered Bottles" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="https://www.azuspirits.co.uk/images/products/gin-tasting-at-home-experience.jpeg" alt="Six Numbered Bottles" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; ">6 Numbered Bottles</p>
       <p style="font-size: 16px;">Each containing 100ml, perfect for groups. Carefully selected for their quality and diversity</p>
     </div>
 
     <!-- Item 2: Tasting Guide -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="/images/products/south-west-specialist-sharing.png" alt="Tasting Guide" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="https://www.azuspirits.co.uk/images/products/south-west-specialist-sharing.png" alt="Tasting Guide" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Tasting Guide</p>
       <p style="font-size: 16px;">Helpful notes and tips for our blind gin tasting</p>
     </div>
 
     <!-- Item 3: Info Cards -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="/images/products/gin-tasting-box.jpeg" alt="Information Cards" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="https://www.azuspirits.co.uk/images/products/gin-tasting-box.jpeg" alt="Information Cards" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Information Cards</p>
       <p style="font-size: 16px;">Provides insights into the flavour characteristics and production techniques to help you identify the six diverse craft gins. </p>
     </div>
 
     <!-- Item 4: Wax-Sealed Envelope -->
     <div style="width: 250px; text-align: center; padding-bottom: 20px;">
-      <img src="/images/products/wax-sealed-envelope-alt1.jpg" alt="Wax-Sealed Envelope" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
+      <img src="https://www.azuspirits.co.uk/images/products/wax-sealed-envelope-alt1.jpg" alt="Wax-Sealed Envelope" style="width: 100%; height: 60%; object-fit: cover; margin-bottom: 10px;">
       <p style="font-weight: bold; font-size: 18px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Wax-Sealed Envelope</p>
       <p style="font-size: 16px;">Contains your blind tasting results & more information about the distilleries and where to buy a bottle.</p>
     </div>
@@ -1005,10 +1038,10 @@ gtag('config', 'AW-366761144');
           <h4>Information</h4>
           <nav class="footer-nav">
             <ul>
-              <li><a href="/shipping-returns">Shipping & Returns</a></li>
-              <li><a href="/terms">Terms & Conditions</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/cookie-policy">Cookie Policy</a></li>
+              <li><a href="https://www.azuspirits.co.uk/shipping-returns">Shipping & Returns</a></li>
+              <li><a href="https://www.azuspirits.co.uk/terms">Terms & Conditions</a></li>
+              <li><a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a></li>
+              <li><a href="https://www.azuspirits.co.uk/cookie-policy">Cookie Policy</a></li>
             </ul>
           </nav>
         </div>

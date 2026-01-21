@@ -80,28 +80,55 @@
   }
   </script>
   
-   <!-- Product Schema -->
-
+  <!-- Product Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "Luxury Single Malt Whisky Tasting Gift Set",
-  "description": "Six exceptional single malt Scotch whiskies including rare and aged expressions. The very finest single malts for whisky connoisseurs, worth over £1000.",
+  "name": "Luxury Single Malt Whisky Tasting Set",
+  "description": "An exceptional collection of six premium aged single malts. Features rare and distinguished expressions from renowned distilleries. Presented in blind tasting format with comprehensive tasting guide and reveal envelope. The ultimate gift for serious whisky connoisseurs.",
   "image": "https://www.azuspirits.co.uk/images/products/luxury-single-malt.jpg",
   "brand": {
     "@type": "Brand",
     "name": "Azu Spirits"
   },
-  "sku": "AZU-LUXURY-WHISKY-001",
+  "productID": "AZU-LUXURY-WHISKY-001",
+  "gtin": "5070002588191",
   "offers": {
     "@type": "Offer",
-    "url": "https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set",
+    "url": "https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set/",
     "priceCurrency": "GBP",
     "price": "110.00",
-    "priceValidUntil": "2025-12-31",
+    "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0.00",
+        "currency": "GBP"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "GB"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        }
+      }
+    },
     "seller": {
       "@type": "Organization",
       "name": "Azu Spirits Ltd"
@@ -121,6 +148,7 @@
   }
 }
 </script>
+
   
   <!-- Breadcrumb Schema -->
   <script type="application/ld+json">

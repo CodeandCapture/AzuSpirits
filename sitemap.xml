@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.azuspirits.co.uk/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,42 +12,57 @@
   <!-- Main Shop & Category Pages -->
   <url>
     <loc>https://www.azuspirits.co.uk/tasting-gift-sets/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/whisky-gifts/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/gin-gifts/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- NEW: Premium Whisky Gifts Landing Page -->
+  <url>
+    <loc>https://www.azuspirits.co.uk/premium-whisky-gifts/</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.azuspirits.co.uk/sharing-boxes/</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/whisky-sharing-boxes/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/gin-sharing-boxes/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/christmas-gifts/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -55,28 +70,28 @@
   <!-- Whisky Tasting Sets -->
   <url>
     <loc>https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -84,42 +99,42 @@
   <!-- Gin Tasting Sets -->
   <url>
     <loc>https://www.azuspirits.co.uk/products/london-gin-tasting-gift-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/devon-gin-tasting-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/cotswolds-gin-tasting-gift-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/yorkshire-gin-tasting-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/british-gins-tasting-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/south-west-gin-tasting-set/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -127,35 +142,35 @@
   <!-- Sharing Boxes -->
   <url>
     <loc>https://www.azuspirits.co.uk/products/six-styles-of-scotch-whisky-sharing/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/founders-selection-whisky-sharing-box/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/south-west-specialist-sharing-box/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/cotswolds-gin-sharing-box/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/british-gins-sharing-box/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -163,14 +178,14 @@
   <!-- Christmas Crackers -->
   <url>
     <loc>https://www.azuspirits.co.uk/products/london-gin-christmas-crackers/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/products/whisky-christmas-crackers/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -178,28 +193,28 @@
   <!-- About & Info Pages -->
   <url>
     <loc>https://www.azuspirits.co.uk/about-us/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/shipping-returns/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/privacy/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/terms/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -207,7 +222,7 @@
   <!-- Blog Main Page -->
   <url>
     <loc>https://www.azuspirits.co.uk/blog/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

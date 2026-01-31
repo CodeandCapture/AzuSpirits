@@ -19,7 +19,7 @@
     "@type": "Product",
     "name": "South West Gin Tasting Gift Set | 6 Premium Craft Gins | Azu Spirits",
     "description": "Six premium craft gins from across the South West. Perfect for gin lovers and countryside enthusiasts.",
-    "image": "https://www.azuspirits.co.uk/images/products/devon-gins.jpg",
+    "image": "https://www.azuspirits.co.uk/images/products/south-west-craft-gin-gift-alt1.jpg",
     "brand": {
       "@type": "Brand",
       "name": "Azu Spirits"
@@ -30,7 +30,7 @@
       "url": "https://www.azuspirits.co.uk/products/south-west-gin-tasting-set",
       "priceCurrency": "GBP",
       "price": "50.00",
-      "priceValidUntil": "2025-12-31",
+      "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition",
       "seller": {
@@ -133,7 +133,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <style>
+ <style>
     * {
       margin: 0;
       padding: 0;
@@ -279,7 +279,6 @@
       color: #333;
       position: relative;
       z-index: 1001;     
-       
     }
 
     .header-right {
@@ -339,27 +338,135 @@
       margin: 0 8px;
     }
 
-    /* Product Container */
+    /* Product Container - Updated for stacked layout */
     .product-container {
       max-width: 1200px;
       margin: 3rem auto;
       padding: 0 2rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      display: block; /* Changed from grid */
     }
 
+    /* Universal Image Carousel - Works on ALL screen sizes */
+    .mobile-hero-image {
+      display: block;
+      order: 0;
+      margin-bottom: 3rem; /* Increased spacing */
+      position: relative;
+      overflow: hidden;
+      max-width: 800px; /* Constrain width on desktop */
+      margin: 0 auto 3rem; /* Center it */
+    }
+
+    .mobile-carousel {
+      display: flex;
+      transition: transform 0.3s ease;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .mobile-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-carousel .product-image {
+      min-width: 100%;
+      scroll-snap-align: start;
+      margin-bottom: 0;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Carousel Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ddd;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: var(--gin-green);
+      width: 24px;
+      border-radius: 5px;
+    }
+
+    /* Navigation Arrows */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+
+    .carousel-arrow:hover {
+      background: var(--gin-green);
+      color: white;
+    }
+
+    .carousel-arrow:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .carousel-arrow-left {
+      left: 10px;
+    }
+
+    .carousel-arrow-right {
+      right: 10px;
+    }
+
+    /* Image counter */
+    .image-counter {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    /* Product details section - now full width */
+    .product-details {
+      max-width: 800px; /* Constrain content width for readability */
+      margin: 0 auto; /* Center the content */
+    }
+
+    /* Hide the old static desktop images */
     .product-image-container {
-      position: sticky;
-      top: 120px;
-      height: fit-content;
+      display: none;
     }
 
     .product-image {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
       margin-bottom: 2rem;
     }
 
@@ -367,10 +474,9 @@
       margin-bottom: 0;
     }
 
-    /* Product Details */
     .product-details h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.5em;
       color: #1a1a1a;
       font-weight: 600;
       text-transform: uppercase;
@@ -378,7 +484,7 @@
       font-family: 'Playfair Display', serif;
       line-height: 1.4;
     }
-
+    
     .product-subtitle {
       font-size: 1.1rem;
       color: #666;
@@ -405,7 +511,7 @@
       margin-left: 15px;
     }
 
-       /* Premium Spirits Highlight Box */
+    /* Premium Spirits Highlight Box */
     .premium-spirits-box {
       background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
       padding: 20px;
@@ -424,7 +530,6 @@
       font-weight: 600;
       font-family: 'Playfair Display', serif;
     }
-
 
     .spirit-list {
       list-style: none;
@@ -693,154 +798,162 @@
       margin: 0;
     }
     
-     /* YOU MIGHT ALSO LIKE SECTION */
-.you-might-like {
-  background: #f8f8f8;
-  padding: 4rem 2rem;
-  margin-top: 4rem;
-}
+    /* YOU MIGHT ALSO LIKE SECTION */
+    .you-might-like {
+      background: #f8f8f8;
+      padding: 4rem 2rem;
+      margin-top: 4rem;
+    }
 
-.you-might-like .container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+    .you-might-like .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.you-might-like h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #1a1a1a;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+    .you-might-like h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-.section-subtitle {
-  text-align: center;
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: 3rem;
-  font-style: italic;
-}
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
 
-.product-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  position: relative;
-}
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: relative;
+    }
 
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-}
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
 
-.product-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
+    .product-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
 
-.product-image-wrapper {
-  width: 100%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  background: #f5f5f5;
-}
+    .product-image-wrapper {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
 
-.product-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+    .product-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-.product-card:hover .product-image-wrapper img {
-  transform: scale(1.05);
-}
+    .product-card:hover .product-image-wrapper img {
+      transform: scale(1.05);
+    }
 
-.product-card-content {
-  padding: 1.5rem;
-}
+    .product-card-content {
+      padding: 1.5rem;
+    }
 
-.product-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-  color: #1a1a1a;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #1a1a1a;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
 
-.product-card-description {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: #666;
-  margin-bottom: 1rem;
-  min-height: 4.8rem;
-}
+    .product-card-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 1rem;
+      min-height: 4.8rem;
+    }
 
-.product-card-price {
-  font-size: 1.5rem;
-  color: #A4343A;
-  font-weight: bold;
-  margin-bottom: 0.8rem;
-  font-family: 'Playfair Display', serif;
-}
+    .product-card-price {
+      font-size: 1.5rem;
+      color: #A4343A;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
+    }
 
-.shop-now-link {
-  color: #A4343A;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
+    .shop-now-link {
+      color: #A4343A;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
 
-.product-card:hover .shop-now-link {
-  transform: translateX(5px);
-}
+    .product-card:hover .shop-now-link {
+      transform: translateX(5px);
+    }
 
-/* Sale Badge */
-.sale-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #A4343A;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  z-index: 2;
-  letter-spacing: 1px;
-}
+    /* Sale Badge */
+    .sale-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #A4343A;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 2;
+      letter-spacing: 1px;
+    }
 
-.original-price {
-  text-decoration: line-through;
-  color: #999;
-  font-size: 1.1rem;
-  margin-right: 0.5rem;
-}
+    .original-price {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 1.1rem;
+      margin-right: 0.5rem;
+    }
 
-.sale-price {
-  color: #A4343A;
-}
-    
-    /* Mobile Hero Image - hidden on desktop */
-    .mobile-hero-image {
-      display: none;
+    .sale-price {
+      color: #A4343A;
     }
 
     /* Mobile Styles */
     @media (max-width: 868px) {
+      .mobile-hero-image {
+        max-width: 100%;
+        margin: 0 0 2rem 0;
+      }
+      
+      .product-details {
+        max-width: 100%;
+      }
+      
+      .product-container {
+        padding: 0 1rem 1rem;
+      }
+
       .christmas-banner {
         font-size: 12px;
         padding: 10px;
@@ -903,22 +1016,6 @@
         font-size: 0.95rem;
       }
 
-      .product-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .product-details {
-        order: 1;
-      }
-
-      .product-image-container {
-        order: 2;
-        position: relative;
-        top: 0;
-        margin-top: 2rem;
-      }
-
       .product-details h1 {
         font-size: 1.6rem;
       }
@@ -937,32 +1034,6 @@
         gap: 10px;
       }
 
-      .cart-notification {
-        right: 10px;
-        left: 10px;
-        min-width: auto;
-      }
-      
-      /* Show mobile hero image */
-      .mobile-hero-image {
-        display: block;
-        order: 0;  /* Shows first */
-        margin-bottom: 2rem;
-      }
-
-      .mobile-hero-image .product-image {
-        margin-bottom: 0;
-      }
-
-      /* Hide the full image gallery on mobile */
-      .product-image-container {
-        display: none;
-      }
-
-      .product-details {
-        order: 1;
-      }
-        /* You Might Also Like - Mobile */
       .product-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -986,7 +1057,6 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
-
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -1059,23 +1129,59 @@ gtag('config', 'AW-366761144');
   <!-- Product Section -->
   <div class="product-container">
       <!-- MOBILE HERO IMAGE - Shows first on mobile only -->
-    <div class="mobile-hero-image">
-      <img src="https://www.azuspirits.co.uk/images/products/devon-gins.jpg" 
-           alt="Product Name"
-           class="product-image">
-    </div>
+  <div class="mobile-hero-image">
+  <!-- Image Counter -->
+  <div class="image-counter">
+    <span class="current-image">1</span> / <span class="total-images">7</span>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button class="carousel-arrow carousel-arrow-left" onclick="previousImage()">‹</button>
+  <button class="carousel-arrow carousel-arrow-right" onclick="nextImage()">›</button>
+
+  <!-- Carousel Images -->
+  <div class="mobile-carousel" id="mobileCarousel">
+ 
+      <img src="https://www.azuspirits.co.uk/images/products/south-west-craft-gin-gift-alt1.jpg" 
+         alt="South West gin gift" 
+         class="product-image">
+     <img src="https://www.azuspirits.co.uk/images/products/south-west-craft-gin-gift-alt5.jpg" 
+         alt="premium craft gin tasting gift" 
+         class="product-image">
+     <img src="https://www.azuspirits.co.uk/images/products/south-west-gin-gift (2).jpg" 
+         alt="premium gin gift" 
+         class="product-image">
+    <img src="https://www.azuspirits.co.uk/images/products/south-west-gin-gift-alt1.jpg" 
+         alt="Unusual gift for gin lovers" 
+         class="product-image">
+    <img src="https://www.azuspirits.co.uk/images/products/south-west-gin-gift-set (3).jpg" 
+         alt="premium craft gin tasting gift" 
+         class="product-image">
+    <img src="https://www.azuspirits.co.uk/images/products/south-west-gin-gift-set.jpg" 
+         alt="premium craft gin gift" 
+         class="product-image">
+      <img src="https://www.azuspirits.co.uk/images/products/whisky-gift-set-gift-note.jpg" 
+         alt="Unusual gift for a Scotch whisky lover" 
+         class="product-image">
+  
+     
     
-    <!-- Product Images -->
-    <div class="product-image-container">
-      <img src="https://www.azuspirits.co.uk/images/products/devon-gin-tasting.jpg" 
-           alt="South West Gin Tasting Gift Set"
-           class="product-image">
-      
-      <img src="https://www.azuspirits.co.uk/images/products/wax-seal-gin.jpg" 
-           alt="Devon and cornwall gin tasting kit"
-           class="product-image">
-      
-    </div>
+    
+  </div>
+
+  <!-- Carousel Dots -->
+  <div class="carousel-dots">
+    <button class="carousel-dot active" onclick="goToImage(0)"></button>
+    <button class="carousel-dot" onclick="goToImage(1)"></button>
+    <button class="carousel-dot" onclick="goToImage(2)"></button>
+    <button class="carousel-dot" onclick="goToImage(3)"></button>
+    <button class="carousel-dot" onclick="goToImage(4)"></button>
+    <button class="carousel-dot" onclick="goToImage(5)"></button>
+     <button class="carousel-dot" onclick="goToImage(6)"></button>
+     
+  </div>
+  
+</div>
 
     <!-- Product Details -->
     <div class="product-details">
@@ -1318,5 +1424,100 @@ gtag('config', 'AW-366761144');
     }
     
   </script>
+    <script>
+// Universal Image Carousel (works on mobile AND desktop)
+let currentImageIndex = 0;
+const carousel = document.getElementById('mobileCarousel');
+const dots = document.querySelectorAll('.carousel-dot');
+const totalImages = dots.length;
+
+function updateCarousel() {
+  if (!carousel) return;
+  
+  const imageWidth = carousel.offsetWidth;
+  carousel.scrollTo({
+    left: imageWidth * currentImageIndex,
+    behavior: 'smooth'
+  });
+  
+  // Update dots
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentImageIndex);
+  });
+  
+  // Update counter
+  const currentImageSpan = document.querySelector('.current-image');
+  if (currentImageSpan) {
+    currentImageSpan.textContent = currentImageIndex + 1;
+  }
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % totalImages;
+  updateCarousel();
+}
+
+function previousImage() {
+  currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+  updateCarousel();
+}
+
+function goToImage(index) {
+  currentImageIndex = index;
+  updateCarousel();
+}
+
+// Touch/Swipe support (mobile and touch-enabled devices)
+if (carousel) {
+  let startX = 0;
+  let isDragging = false;
+
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  carousel.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextImage();
+      } else {
+        previousImage();
+      }
+    }
+  });
+
+  // Update on scroll
+  carousel.addEventListener('scroll', () => {
+    const imageWidth = carousel.offsetWidth;
+    const newIndex = Math.round(carousel.scrollLeft / imageWidth);
+    if (newIndex !== currentImageIndex) {
+      currentImageIndex = newIndex;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentImageIndex);
+      });
+      const currentImageSpan = document.querySelector('.current-image');
+      if (currentImageSpan) {
+        currentImageSpan.textContent = currentImageIndex + 1;
+      }
+    }
+  });
+}
+
+// Keyboard navigation (desktop)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    previousImage();
+  } else if (e.key === 'ArrowRight') {
+    nextImage();
+  }
+});
+</script>
 </body>
 </html>

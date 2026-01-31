@@ -408,9 +408,7 @@
       max-width: 1200px;
       margin: 3rem auto;
       padding: 0 2rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      display: block;
     }
 
     .product-image-container {
@@ -431,6 +429,11 @@
       margin-bottom: 0;
     }
 
+    .product-details {
+  max-width: 800px; /* Constrain content width for readability */
+  margin: 0 auto; /* Center the content */
+}
+    
     /* Product Details */
     .product-details h1 {
       font-size: 2rem;
@@ -680,109 +683,132 @@
     }
 
    
-        /* Mobile Hero Image - hidden on desktop */
-    .mobile-hero-image {
-      display: none;
-    }
-     /* Mobile Image Carousel */
+        /* REMOVE THIS ENTIRE @media BLOCK for mobile-only carousel */
+/* Instead, use this universal approach: */
+
+/* Universal Image Carousel - Works on ALL screen sizes */
+.mobile-hero-image {
+  display: block;
+  order: 0;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 75%; /* Same as your desktop product images */
+  margin: 0 auto 2rem;
+}
+
+.mobile-carousel {
+  display: flex;
+  transition: transform 0.3s ease;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-carousel .product-image {
+  min-width: 100%;
+  scroll-snap-align: start;
+  margin-bottom: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carousel-dot.active {
+  background: var(--luxury-gold); /* Changed from gin-green to match your theme */
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+.carousel-arrow:hover {
+  background: var(--luxury-gold);
+  color: white;
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow-left {
+  left: 10px;
+}
+
+.carousel-arrow-right {
+  right: 10px;
+}
+
+/* Image counter */
+.image-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* Hide the old static desktop images */
+.product-image-container {
+  display: none;
+}
+
+/* Mobile adjustments */
 @media (max-width: 868px) {
-  /* ... your existing mobile styles ... */
-
-  /* Mobile Hero Image Carousel */
-  .mobile-hero-image {
-    display: block;
-    order: 0;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
+ .mobile-hero-image {
+    max-width: 100%;
+    margin: 0 0 2rem 0;
   }
-
-  .mobile-carousel {
-    display: flex;
-    transition: transform 0.3s ease;
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+  
+  .product-details {
+    max-width: 100%;
   }
-
-  .mobile-carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+  
+  .product-container {
+    padding: 0 1rem 1rem;
   }
-
-  .mobile-carousel .product-image {
-    min-width: 100%;
-    scroll-snap-align: start;
-    margin-bottom: 0;
-  }
-
-  /* Carousel Dots */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-  }
-
-  .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ddd;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .carousel-dot.active {
-    background: var(--gin-green);
-    width: 24px;
-    border-radius: 5px;
-  }
-
-  /* Navigation Arrows */
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    transition: all 0.3s;
-  }
-
-  .carousel-arrow:active {
-    transform: translateY(-50%) scale(0.95);
-  }
-
-  .carousel-arrow-left {
-    left: 10px;
-  }
-
-  .carousel-arrow-right {
-    right: 10px;
-  }
-
-  /* Image counter */
-  .image-counter {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    z-index: 10;
-  }
+}
   .christmas-banner {
         font-size: 12px;
         padding: 10px;
@@ -810,6 +836,242 @@
       letter-spacing: 2px;
    
     }
+}
+    
+    /* Premium Spirits Showcase - Refined */
+.premium-spirits-showcase {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  
+}
+
+.premium-spirits-showcase h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.showcase-intro {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Carousel Container */
+.spirits-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 1.5rem;
+}
+
+/* Spirit Cards */
+.spirit-card {
+  min-width: calc(33.333% - 1rem);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.spirit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: var(--luxury-gold);
+}
+
+.spirit-image-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+    .spirit-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+    
+.region-badge {
+  position: absolute;  /* ADD THIS */
+  bottom: 8px;         /* ADD THIS */
+  left: 50%;           /* ADD THIS */
+  transform: translateX(-50%);  /* ADD THIS */
+  background: rgba(212, 175, 55, 0.95);  /* Update to match your gold */
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;  /* ADD THIS */
+}
+
+.spirit-card h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem 0;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.spirit-series {
+  font-size: 0.85rem;
+  color: var(--luxury-gold);
+  margin: 0 0 0.8rem 0;
+  font-weight: 500;
+}
+
+.spirit-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  opacity: 0;
+}
+
+.spirit-card:hover .spirit-details {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.spirit-details p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #e5e5e5;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: var(--luxury-gold);
+  color: white;
+  border-color: #c9a962;
+  box-shadow: 0 4px 12px rgba(201, 169, 98, 0.3);
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background: var(--luxury-gold);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .spirit-card {
+    min-width: calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .spirits-carousel {
+    padding: 0 50px;
+  }
+  
+  .spirit-card {
+    min-width: 100%;
+  }
+  
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+}
+    
+
+/* Responsive */
+@media (max-width: 968px) {
+  .spirit-card {
+    min-width: calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .spirits-carousel {
+    padding: 0 50px;
+  }
+  
+  .spirit-card {
+    min-width: 100%;
+  }
+  
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
 }
 
     /* Footer Styles */
@@ -1257,6 +1519,8 @@
         gap: 1.5rem;
       }
     }
+    
+  
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
@@ -1324,6 +1588,8 @@ gtag('config', 'AW-366761144');
     <span>Regions of Scotland</span>
   </div>
 
+  <section>
+    
   <!-- Product Section -->
   <div class="product-container">
       
@@ -1331,7 +1597,7 @@ gtag('config', 'AW-366761144');
 <div class="mobile-hero-image">
   <!-- Image Counter -->
   <div class="image-counter">
-    <span class="current-image">1</span> / <span class="total-images">4</span>
+    <span class="current-image">1</span> / <span class="total-images">6</span>
   </div>
 
   <!-- Navigation Arrows -->
@@ -1343,16 +1609,22 @@ gtag('config', 'AW-366761144');
     <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" 
          alt="Regions of Scotland Whisky Tasting Set" 
          class="product-image">
-    <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-alt3.jpg" 
+    <img src="https://www.azuspirits.co.uk/images/products/whisky-tasting-set-alt1.jpg" 
          alt="Blind tasting guide and bottles" 
          class="product-image">
-    <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-alt2.jpg" 
+    <img src="https://www.azuspirits.co.uk/images/products/premium-single-malt-whisky-gift.jpg" 
          alt="Whisky tasting gift set" 
          class="product-image">
     <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-alt1.jpg" 
          alt="Six Scotch whisky samples" 
          class="product-image">
+     <img src="https://www.azuspirits.co.uk/images/products/scotch-whisky-gift-set.jpg" 
+         alt="Six Scotch whisky samples" 
+         class="product-image">
     
+       <img src="https://www.azuspirits.co.uk/images/products/whisky-gift-set-packaging.jpg" 
+         alt="Scotch whisky gift packaging" 
+         class="product-image">
   </div>
 
   <!-- Carousel Dots -->
@@ -1361,6 +1633,8 @@ gtag('config', 'AW-366761144');
     <button class="carousel-dot" onclick="goToImage(1)"></button>
     <button class="carousel-dot" onclick="goToImage(2)"></button>
      <button class="carousel-dot" onclick="goToImage(3)"></button>
+    <button class="carousel-dot" onclick="goToImage(4)"></button>
+       <button class="carousel-dot" onclick="goToImage(5)"></button>
   </div>
   
 </div>
@@ -1404,57 +1678,7 @@ gtag('config', 'AW-366761144');
       <button class="add-to-cart-btn" onclick="addProductToCart()">
         Add to Cart
       </button>
-
-  
-
-      <!-- Premium Spirits Highlight -->
-      <div class="premium-spirits-box">
-        <h3>✨ Six Legendary Distilleries Across Scotland</h3>
-        <ul class="spirit-list">
-          <li>
-            <span class="region-badge">SPEYSIDE</span>
-            <div>
-              <div class="spirit-name">Glenfiddich 15 Year Solera</div>
-              <div class="spirit-detail">Award-winning 15-year expression</div>
-            </div>
-          </li>
-          <li>
-            <span class="region-badge">LOWLAND</span>
-            <div>
-              <div class="spirit-name">Bladnoch Vinaya</div>
-              <div class="spirit-detail">Soft and grassy Lowland malt</div>
-            </div>
-          </li>
-          <li>
-            <span class="region-badge">HIGHLAND</span>
-            <div>
-              <div class="spirit-name">Dalmore 12</div>
-              <div class="spirit-detail">Rich and fruity Highland malt</div>
-            </div>
-          </li>
-          <li>
-            <span class="region-badge">ISLAY</span>
-            <div>
-              <div class="spirit-name">Kilchoman Machir Bay</div>
-              <div class="spirit-detail">Farm distillery, light fruits and smoke</div>
-            </div>
-          </li>
-          <li>
-            <span class="region-badge">CAMPBELTOWN</span>
-            <div>
-              <div class="spirit-name">Glen Scotia 15 Year</div>
-              <div class="spirit-detail">Premium 15-year aged</div>
-            </div>
-          </li>
-          <li>
-            <span class="region-badge">ISLANDS</span>
-            <div>
-              <div class="spirit-name">Ledaig 10 Year</div>
-              <div class="spirit-detail">Bold maritime character</div>
-            </div>
-          </li>
-        </ul>
-      </div>
+     
 
       <div class="product-description">
         <p><strong>Journey through all six whisky-making regions of Scotland.</strong> From the gentle Lowlands to the peaty powerhouses of Islay, each dram tells the story of its terroir and craftsmanship.</p>
@@ -1462,7 +1686,107 @@ gtag('config', 'AW-366761144');
         <p>This <strong>blind tasting challenge</strong> tests your palate: can you identify which whisky comes from which region? Features two premium <strong>15-year expressions</strong> (Glenfiddich and Glen Scotia) alongside perfectly curated representatives of each Scottish region.</p>
       </div>
 
-      <!-- Features -->
+   
+      
+      <div class="premium-spirits-showcase">
+  <h3> The Six Single Malts</h3>
+  <p class="showcase-intro">Take a tour through the Scottish regions with six premium single malts</p>
+  
+  <div class="spirits-carousel">
+    <button class="carousel-btn prev" aria-label="Previous whisky">‹</button>
+    
+    <div class="carousel-track-container">
+      <div class="carousel-track">
+        
+        <!-- Glenfiddich 15 Solera -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src= "https://www.azuspirits.co.uk/images/bottleshop/glenfiddich-solera-700ml.jpg" alt="Glenfiddich 15">
+            <span class="region-badge">Speyside</span>
+          </div>
+          <h4>Glenfiddich Solera 15</h4>
+          <p class="spirit-series">Soft sweet sherry</p>
+          <div class="spirit-details">
+            <p>15-year-old whiskies from Oloroso sherry, bourbon and virgin oak casks are married together in a Solera Vat that has never been emptied. The complex layers of sherry and spice compliment Glenfiddichs unpeated and soft spirit. </p>
+          </div>
+        </div>
+
+        <!-- Dalmore 12 -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src="https://www.azuspirits.co.uk/images/bottleshop/dalmore-12-700ml.jpg" alt="Dalmore 12">
+            <span class="region-badge">Highlands</span>
+          </div>
+          <h4>Dalmore 12</h4>
+          <p class="spirit-series">Rich chocolate & orange</p>
+          <div class="spirit-details">
+            <p>Matured in American oak bourbon casks before being transferred to Oloroso sherry, this is sweet and rich. A full-bodied Highlander with classic chocolate and orange Dalmore flavours. </p>
+          </div>
+        </div>
+
+        <!-- Glen Scotia 15 -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src="https://www.azuspirits.co.uk/images/bottleshop/glen-scotia.jpg" alt="Premium Aged Single Malt Whisky">
+            <span class="region-badge">Campbeltown</span>
+          </div>
+          <h4>Glen Scotia 15</h4>
+          <p class="spirit-series">Spicy and rich</p>
+          <div class="spirit-details">
+            <p>Unpeated and matured in a combination of first fill and re-fill American Oak casks, this is vanilla forward with spicy aromatic fruits. </p>
+          </div>
+        </div>
+
+        <!-- Ledaig 10 -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src= "https://www.azuspirits.co.uk/images/bottleshop/ledaig-10.jpg" alt="Premium Scotch Whisky Gift">
+            <span class="region-badge">Isle of Mull</span>
+          </div>
+          <h4>Ledaig 10</h4>
+          <p class="spirit-series">Smoky, vanilla. & maritime</p>
+          <div class="spirit-details">
+            <p>The peated expression from the Tobermory distillery on the Isle of Mull. An underlying coastal character, light to medium bodied spirit with powerful peat smoke. Matured in ex-bourbon casks.</p>
+          </div>
+        </div>
+
+        <!-- Bladnoch Vinaya -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src="https://www.azuspirits.co.uk/images/bottleshop/bladnoch-vinaya-700ml.jpg" alt="Bladnoch Whisky">
+            <span class="region-badge">Lowland</span>
+          </div>
+          <h4>Bladnoch Vinaya</h4>
+          <p class="spirit-series">Grassy and floral</p>
+          <div class="spirit-details">
+            <p>Bladnoch is the most southerly distillery in Scotland. Matured in first fill bourbon and first fill sherry casks, this is floral with a bold oak spice. Delicate, floral with a creamy mouthfeel.</p>
+          </div>
+        </div>
+
+        <!-- Kilchoman Machir Bay-->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+  <img src="https://www.azuspirits.co.uk/images/bottleshop/kilchoman-machir-bay-700ml.jpg" alt="Kilchoman Single Malt Whisky">
+  <span class="region-badge">Islay</span>
+</div>
+        
+          <h4>Kilchoman Machir Bay</h4>
+          <p class="spirit-series">Fruits and smoke</p>
+          <div class="spirit-details">
+            <p>Warm peat smoke, citrus and tropical fruits. Spice, cracked black pepper and sherried fruits. Matured in Oloroso sherry butts and American oak bourbon barrels.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <button class="carousel-btn next" aria-label="Next whisky">›</button>
+  </div>
+  
+  <div class="carousel-dots"></div>
+</div>
+      
+        <!-- Features -->
       <div class="product-features">
         <h3>What's Included</h3>
         <ul>
@@ -1485,6 +1809,9 @@ gtag('config', 'AW-366761144');
     </div>
   </div>
 
+  </section>
+  
+ 
 <!-- YOU MIGHT ALSO LIKE SECTION -->
 <section class="you-might-like">
   <div class="container">
@@ -1631,15 +1958,15 @@ gtag('config', 'AW-366761144');
   }
 
   </script>
-     <script>
-      // Mobile Image Carousel
+    <script>
+// Universal Image Carousel (works on mobile AND desktop)
 let currentImageIndex = 0;
 const carousel = document.getElementById('mobileCarousel');
 const dots = document.querySelectorAll('.carousel-dot');
 const totalImages = dots.length;
 
 function updateCarousel() {
-  if (!carousel) return; // Only run on mobile
+  if (!carousel) return;
   
   const imageWidth = carousel.offsetWidth;
   carousel.scrollTo({
@@ -1674,7 +2001,7 @@ function goToImage(index) {
   updateCarousel();
 }
 
-// Swipe support
+// Touch/Swipe support (mobile and touch-enabled devices)
 if (carousel) {
   let startX = 0;
   let isDragging = false;
@@ -1684,29 +2011,23 @@ if (carousel) {
     isDragging = true;
   });
 
-  carousel.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-  });
-
   carousel.addEventListener('touchend', (e) => {
     if (!isDragging) return;
     isDragging = false;
     
-    
-    
     const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
     
-    if (Math.abs(diff) > 50) { // Minimum swipe distance
+    if (Math.abs(diff) > 50) {
       if (diff > 0) {
-        nextImage(); // Swipe left
+        nextImage();
       } else {
-        previousImage(); // Swipe right
+        previousImage();
       }
     }
   });
 
-  // Update on scroll (for manual scrolling)
+  // Update on scroll
   carousel.addEventListener('scroll', () => {
     const imageWidth = carousel.offsetWidth;
     const newIndex = Math.round(carousel.scrollLeft / imageWidth);
@@ -1722,7 +2043,104 @@ if (carousel) {
     }
   });
 }
-    </script>
+
+// Keyboard navigation (desktop)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    previousImage();
+  } else if (e.key === 'ArrowRight') {
+    nextImage();
+  }
+});
+</script>
+  <script>
+// Whisky Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.carousel-track');
+  const cards = Array.from(track.children);
+  const nextButton = document.querySelector('.carousel-btn.next');
+  const prevButton = document.querySelector('.carousel-btn.prev');
+  const dotsContainer = document.querySelector('.premium-spirits-showcase .carousel-dots');
   
+  // Determine cards per view based on screen size
+  function getCardsPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 968) return 2;
+    return 3;
+  }
+  
+  let cardsPerView = getCardsPerView();
+  let currentIndex = 0;
+  const maxIndex = Math.max(0, cards.length - cardsPerView);
+  
+  // Create dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    const numDots = maxIndex + 1;
+    for (let i = 0; i < numDots; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => moveToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+  
+  // Update carousel position
+  function updateCarousel() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 24; // 1.5rem
+    const moveAmount = -(currentIndex * (cardWidth + gap));
+    track.style.transform = `translateX(${moveAmount}px)`;
+    
+    // Update dots
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+  
+  // Move to specific slide
+  function moveToSlide(targetIndex) {
+    currentIndex = Math.max(0, Math.min(targetIndex, maxIndex));
+    updateCarousel();
+  }
+  
+  // Next button
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+  
+  // Previous button
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+  
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newCardsPerView = getCardsPerView();
+      if (newCardsPerView !== cardsPerView) {
+        cardsPerView = newCardsPerView;
+        currentIndex = 0;
+        createDots();
+        updateCarousel();
+      }
+    }, 250);
+  });
+  
+  // Initialize
+  createDots();
+  updateCarousel();
+});
+</script>
 </body>
 </html>

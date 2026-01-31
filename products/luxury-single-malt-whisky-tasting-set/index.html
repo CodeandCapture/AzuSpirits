@@ -2069,5 +2069,95 @@ document.addEventListener('keydown', (e) => {
   }
 });
 </script>
+  
+  <script>
+// Whisky Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.carousel-track');
+  const cards = Array.from(track.children);
+  const nextButton = document.querySelector('.carousel-btn.next');
+  const prevButton = document.querySelector('.carousel-btn.prev');
+  const dotsContainer = document.querySelector('.premium-spirits-showcase .carousel-dots');
+  
+  // Determine cards per view based on screen size
+  function getCardsPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 968) return 2;
+    return 3;
+  }
+  
+  let cardsPerView = getCardsPerView();
+  let currentIndex = 0;
+  const maxIndex = Math.max(0, cards.length - cardsPerView);
+  
+  // Create dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    const numDots = maxIndex + 1;
+    for (let i = 0; i < numDots; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => moveToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+  
+  // Update carousel position
+  function updateCarousel() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 24; // 1.5rem
+    const moveAmount = -(currentIndex * (cardWidth + gap));
+    track.style.transform = `translateX(${moveAmount}px)`;
+    
+    // Update dots
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+  
+  // Move to specific slide
+  function moveToSlide(targetIndex) {
+    currentIndex = Math.max(0, Math.min(targetIndex, maxIndex));
+    updateCarousel();
+  }
+  
+  // Next button
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+  
+  // Previous button
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+  
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newCardsPerView = getCardsPerView();
+      if (newCardsPerView !== cardsPerView) {
+        cardsPerView = newCardsPerView;
+        currentIndex = 0;
+        createDots();
+        updateCarousel();
+      }
+    }, 250);
+  });
+  
+  // Initialize
+  createDots();
+  updateCarousel();
+});
+</script>
 </body>
 </html>

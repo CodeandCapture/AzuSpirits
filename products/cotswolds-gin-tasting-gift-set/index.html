@@ -368,15 +368,125 @@
       margin: 0 8px;
     }
 
-    /* Product Container */
+     /* Product Container - Updated for stacked layout */
     .product-container {
       max-width: 1200px;
       margin: 3rem auto;
       padding: 0 2rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      display: block; /* Changed from grid */
     }
+
+    /* Universal Image Carousel - Works on ALL screen sizes */
+    .mobile-hero-image {
+      display: block;
+      order: 0;
+      margin-bottom: 3rem; /* Increased spacing */
+      position: relative;
+      overflow: hidden;
+      max-width: 800px; /* Constrain width on desktop */
+      margin: 0 auto 3rem; /* Center it */
+    }
+
+    .mobile-carousel {
+      display: flex;
+      transition: transform 0.3s ease;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .mobile-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-carousel .product-image {
+      min-width: 100%;
+      scroll-snap-align: start;
+      margin-bottom: 0;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Carousel Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ddd;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: var(--gin-green);
+      width: 24px;
+      border-radius: 5px;
+    }
+
+    /* Navigation Arrows */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+
+    .carousel-arrow:hover {
+      background: var(--gin-green);
+      color: white;
+    }
+
+    .carousel-arrow:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .carousel-arrow-left {
+      left: 10px;
+    }
+
+    .carousel-arrow-right {
+      right: 10px;
+    }
+
+    /* Image counter */
+    .image-counter {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    /* Product details section - now full width */
+    .product-details {
+      max-width: 800px; /* Constrain content width for readability */
+      margin: 0 auto; /* Center the content */
+    }
+
 
     .product-image-container {
       position: sticky;
@@ -721,111 +831,7 @@
       margin: 0;
     }
     
-    /* Mobile Hero Image - hidden on desktop */
-    .mobile-hero-image {
-      display: none;
-    }
-    
-     /* Mobile Image Carousel */
-@media (max-width: 868px) {
-  /* ... your existing mobile styles ... */
-
-  /* Mobile Hero Image Carousel */
-  .mobile-hero-image {
-    display: block;
-    order: 0;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .mobile-carousel {
-    display: flex;
-    transition: transform 0.3s ease;
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .mobile-carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-  }
-
-  .mobile-carousel .product-image {
-    min-width: 100%;
-    scroll-snap-align: start;
-    margin-bottom: 0;
-  }
-
-  /* Carousel Dots */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-  }
-
-  .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ddd;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .carousel-dot.active {
-    background: var(--gin-green);
-    width: 24px;
-    border-radius: 5px;
-  }
-
-  /* Navigation Arrows */
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    transition: all 0.3s;
-  }
-
-  .carousel-arrow:active {
-    transform: translateY(-50%) scale(0.95);
-  }
-
-  .carousel-arrow-left {
-    left: 10px;
-  }
-
-  .carousel-arrow-right {
-    right: 10px;
-  }
-
-  /* Image counter */
-  .image-counter {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    z-index: 10;
-  }
-}
+   
     
     
       /* YOU MIGHT ALSO LIKE SECTION */
@@ -1047,10 +1053,7 @@
     order: 1;
   }
 
-  /* Hide desktop image gallery on mobile */
-  .product-image-container {
-    display: none;
-  }
+ 
 
   .product-details h1 {
     font-size: 1.6rem;
@@ -1173,7 +1176,7 @@ gtag('config', 'AW-366761144');
 <div class="mobile-hero-image">
   <!-- Image Counter -->
   <div class="image-counter">
-    <span class="current-image">1</span> / <span class="total-images">4</span>
+    <span class="current-image">1</span> / <span class="total-images">5</span>
   </div>
 
   <!-- Navigation Arrows -->
@@ -1194,6 +1197,9 @@ gtag('config', 'AW-366761144');
     <img src="https://www.azuspirits.co.uk/images/products/cotswolds-craft-gin.jpg" 
          alt="Six Cotswolds gin samples" 
          class="product-image">
+     <img src="https://www.azuspirits.co.uk/images/products/whisky-gift-set-gift-note.jpg" 
+         alt="Unusual gift for a gin lover" 
+         class="product-image">
     
   </div>
 
@@ -1203,24 +1209,11 @@ gtag('config', 'AW-366761144');
     <button class="carousel-dot" onclick="goToImage(1)"></button>
     <button class="carousel-dot" onclick="goToImage(2)"></button>
      <button class="carousel-dot" onclick="goToImage(3)"></button>
+    <button class="carousel-dot" onclick="goToImage(4)"></button>
   </div>
   
 </div>
-    
-    <!-- Product Images -->
-    <div class="product-image-container">
-      <img src="/images/products/cotswolds-gin-gift-alt1.jpg" 
-           alt="Craft Gins of the Cotswolds Tasting Gift Set"
-           class="product-image">
-      
-      <img src="/images/products/cotswolds-gin-gift-alt2.jpg" 
-           alt="Cotswolds Gin Set - Bottles Detail"
-           class="product-image">
-      
-      <img src="/images/products/cotswolds-gin-gift.jpg" 
-           alt="Six Premium 30ml Bottles"
-           class="product-image">
-    </div>
+  
 
     <!-- Product Details -->
     <div class="product-details">
@@ -1450,15 +1443,15 @@ gtag('config', 'AW-366761144');
     
   </script>
   
-    <script>
-      // Mobile Image Carousel
+  <script>
+// Universal Image Carousel (works on mobile AND desktop)
 let currentImageIndex = 0;
 const carousel = document.getElementById('mobileCarousel');
 const dots = document.querySelectorAll('.carousel-dot');
 const totalImages = dots.length;
 
 function updateCarousel() {
-  if (!carousel) return; // Only run on mobile
+  if (!carousel) return;
   
   const imageWidth = carousel.offsetWidth;
   carousel.scrollTo({
@@ -1493,7 +1486,7 @@ function goToImage(index) {
   updateCarousel();
 }
 
-// Swipe support
+// Touch/Swipe support (mobile and touch-enabled devices)
 if (carousel) {
   let startX = 0;
   let isDragging = false;
@@ -1503,29 +1496,23 @@ if (carousel) {
     isDragging = true;
   });
 
-  carousel.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-  });
-
   carousel.addEventListener('touchend', (e) => {
     if (!isDragging) return;
     isDragging = false;
     
-    
-    
     const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
     
-    if (Math.abs(diff) > 50) { // Minimum swipe distance
+    if (Math.abs(diff) > 50) {
       if (diff > 0) {
-        nextImage(); // Swipe left
+        nextImage();
       } else {
-        previousImage(); // Swipe right
+        previousImage();
       }
     }
   });
 
-  // Update on scroll (for manual scrolling)
+  // Update on scroll
   carousel.addEventListener('scroll', () => {
     const imageWidth = carousel.offsetWidth;
     const newIndex = Math.round(carousel.scrollLeft / imageWidth);
@@ -1541,7 +1528,16 @@ if (carousel) {
     }
   });
 }
-    </script>
+
+// Keyboard navigation (desktop)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    previousImage();
+  } else if (e.key === 'ArrowRight') {
+    nextImage();
+  }
+});
+</script>
   
 </body>
 </html>

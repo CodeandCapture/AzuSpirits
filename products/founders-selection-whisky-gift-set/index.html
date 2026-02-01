@@ -277,7 +277,7 @@
 
 .premium-badge {
   background: #A4343A;
-  color: white;
+  align-items: center; color: white;
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 12px;
@@ -492,9 +492,7 @@
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 2rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: block;
         }
 
         .product-image-container {
@@ -517,6 +515,11 @@
             margin-bottom: 0;
         }
 
+    .product-details {
+  max-width: 800px; /* Constrain content width for readability */
+  margin: 0 auto; /* Center the content */
+}
+      
         .product-details h1 {
             font-size: 2rem;
             margin-bottom: 0.5rem;
@@ -666,107 +669,133 @@
             box-shadow: 0 6px 20px rgba(164, 52, 58, 0.3);
         }
     
-  /* Mobile Image Carousel */
-@media (max-width: 868px) {
-  /* ... your existing mobile styles ... */
+  
+        /* REMOVE THIS ENTIRE @media BLOCK for mobile-only carousel */
+/* Instead, use this universal approach: */
 
-  /* Mobile Hero Image Carousel */
-  .mobile-hero-image {
-    display: block;
-    order: 0;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .mobile-carousel {
-    display: flex;
-    transition: transform 0.3s ease;
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .mobile-carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-  }
-
-  .mobile-carousel .product-image {
-    min-width: 100%;
-    scroll-snap-align: start;
-    margin-bottom: 0;
-  }
-
-  /* Carousel Dots */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-  }
-
-  .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ddd;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .carousel-dot.active {
-    background: var(--whisky-red);
-    width: 24px;
-    border-radius: 5px;
-  }
-
-  /* Navigation Arrows */
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    transition: all 0.3s;
-  }
-
-  .carousel-arrow:active {
-    transform: translateY(-50%) scale(0.95);
-  }
-
-  .carousel-arrow-left {
-    left: 10px;
-  }
-
-  .carousel-arrow-right {
-    right: 10px;
-  }
-
-  /* Image counter */
-  .image-counter {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    z-index: 10;
-  }
+/* Universal Image Carousel - Works on ALL screen sizes */
+.mobile-hero-image {
+  display: block;
+  order: 0;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 75%; /* Same as your desktop product images */
+  margin: 0 auto 2rem;
 }
 
+.mobile-carousel {
+  display: flex;
+  transition: transform 0.3s ease;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-carousel .product-image {
+  min-width: 100%;
+  scroll-snap-align: start;
+  margin-bottom: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carousel-dot.active {
+  background: var(--luxury-gold); /* Changed from gin-green to match your theme */
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+.carousel-arrow:hover {
+  background: var(--luxury-gold);
+  color: white;
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow-left {
+  left: 10px;
+}
+
+.carousel-arrow-right {
+  right: 10px;
+}
+
+/* Image counter */
+.image-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* Hide the old static desktop images */
+.product-image-container {
+  display: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 868px) {
+ .mobile-hero-image {
+    max-width: 100%;
+    margin: 0 0 2rem 0;
+  }
+  
+  .product-details {
+    max-width: 100%;
+  }
+  
+  .product-container {
+    padding: 0 1rem 1rem;
+  }
+}
 
         /* Footer Styles */
     .site-footer {
@@ -1245,7 +1274,7 @@ gtag('config', 'AW-366761144');
 <div class="mobile-hero-image">
   <!-- Image Counter -->
   <div class="image-counter">
-    <span class="current-image">1</span> / <span class="total-images">3</span>
+    <span class="current-image">1</span> / <span class="total-images">4</span>
   </div>
 
   <!-- Navigation Arrows -->
@@ -1258,9 +1287,10 @@ gtag('config', 'AW-366761144');
          class="product-image">
     <img src="https://www.azuspirits.co.uk/images/products/whisky-tasting-gift.jpg" alt="Blind tasting guide and numbered bottles in Scotch whisky gift box"
          class="product-image">
-    <img src="https://www.azuspirits.co.uk/images/products/whisky-gift-alt1.jpg" alt="Six 30ml Scotch whisky samples from iconic distilleries"  
+    <img src="https://www.azuspirits.co.uk/images/products/premium-single-malt-whisky-gift.jpg" alt="Six 30ml Scotch whisky samples from iconic distilleries"  
          class="product-image">
-   
+     <img src="https://www.azuspirits.co.uk/images/products/whisky-tasting-set-packaging.jpg" alt="Six 30ml Scotch whisky samples from iconic distilleries"  
+         class="product-image">
     
   </div>
 
@@ -1269,20 +1299,12 @@ gtag('config', 'AW-366761144');
     <button class="carousel-dot active" onclick="goToImage(0)"></button>
     <button class="carousel-dot" onclick="goToImage(1)"></button>
     <button class="carousel-dot" onclick="goToImage(2)"></button>
-     
+     <button class="carousel-dot" onclick="goToImage(3)"></button>
   </div>
   
 </div>
    
 
-    
-        <div class="product-image-container">
-            <img src="https://www.azuspirits.co.uk/images/products/whisky-tasting-gift-set.jpg" alt="Whisky tasting gift set featuring six single malt whiskies." class="product-image">
-           <img src="https://www.azuspirits.co.uk/images/products/whisky-tasting-gift.jpg" alt="Blind tasting guide and numbered bottles in Scotch whisky gift box" class="product-image">
-            <img src="https://www.azuspirits.co.uk/images/products/whisky-gift-alt1.jpg" alt="Six 30ml Scotch whisky samples from iconic distilleries" class="product-image">
-            
-          
-        </div>
 
      <div class="product-details">
     <h1>The Founders Selection</h1>
@@ -1303,25 +1325,15 @@ gtag('config', 'AW-366761144');
        
   
        <div class="premium-spirits-box">
-  <h3>✨ Handpicked by Our Founder</h3>
-  <ul class="spirit-list">
-    <li>
-      <span class="premium-badge">Exclusively Single Malt Scotch</span>
-      
-    </li>
-    <li>
-      <div class="spirit-detail">Carefully curated selection showcasing diversity across Scotland's finest distilleries</div>
-    </li>
-    <li>
-      <div class="spirit-detail">Occasionally includes an extra special surprise dram</div>
-    </li>
+  <h3>✨ Six Single Malts Handpicked by Specialists</h3>
+  
   </ul>
 </div>
        
     <div class="product-description">
-        <p><strong>Handpicked by our founder</strong>, this limited edition whisky tasting set features six premium single malts from our range—and occasionally an extra special surprise dram. It's a showcase of quality, variety, and thoughtful curation.</p>
+        <p>Handpicked by our founder, this limited edition whisky tasting set features six premium single malts from our range—and occasionally an extra special surprise dram. It's a showcase of quality, variety, and thoughtful curation.</p>
         
-        <p>Designed for <strong>sharing and discovery</strong>, this blind tasting experience challenges you to identify each whisky by taste alone, making it perfect for a fun night in or a unique whisky gift.</p>
+        <p>Designed for sharing and discovery, this blind tasting experience challenges you to identify each whisky by taste alone, making it perfect for a fun night in or a unique whisky gift.</p>
         
         <p>The selection includes outstanding expressions such as Dalmore 12, Lagavulin 16, Oban 14, Glenfiddich Fire & Cane, Old Pulteney 18, Glenlivet Founders Reserve, Bruichladdich Classic Laddie, Balblair 15, Laphroaig 10, Edradour 10, and Glenmorangie Lasanta 12.</p>
     </div>
@@ -1574,6 +1586,189 @@ if (carousel) {
   });
 }
     </script>
+   <script>
+// Universal Image Carousel (works on mobile AND desktop)
+let currentImageIndex = 0;
+const carousel = document.getElementById('mobileCarousel');
+const dots = document.querySelectorAll('.carousel-dot');
+const totalImages = dots.length;
 
+function updateCarousel() {
+  if (!carousel) return;
+  
+  const imageWidth = carousel.offsetWidth;
+  carousel.scrollTo({
+    left: imageWidth * currentImageIndex,
+    behavior: 'smooth'
+  });
+  
+  // Update dots
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentImageIndex);
+  });
+  
+  // Update counter
+  const currentImageSpan = document.querySelector('.current-image');
+  if (currentImageSpan) {
+    currentImageSpan.textContent = currentImageIndex + 1;
+  }
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % totalImages;
+  updateCarousel();
+}
+
+function previousImage() {
+  currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+  updateCarousel();
+}
+
+function goToImage(index) {
+  currentImageIndex = index;
+  updateCarousel();
+}
+
+// Touch/Swipe support (mobile and touch-enabled devices)
+if (carousel) {
+  let startX = 0;
+  let isDragging = false;
+
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  carousel.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextImage();
+      } else {
+        previousImage();
+      }
+    }
+  });
+
+  // Update on scroll
+  carousel.addEventListener('scroll', () => {
+    const imageWidth = carousel.offsetWidth;
+    const newIndex = Math.round(carousel.scrollLeft / imageWidth);
+    if (newIndex !== currentImageIndex) {
+      currentImageIndex = newIndex;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentImageIndex);
+      });
+      const currentImageSpan = document.querySelector('.current-image');
+      if (currentImageSpan) {
+        currentImageSpan.textContent = currentImageIndex + 1;
+      }
+    }
+  });
+}
+
+// Keyboard navigation (desktop)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    previousImage();
+  } else if (e.key === 'ArrowRight') {
+    nextImage();
+  }
+});
+</script>
+  <script>
+// Whisky Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.carousel-track');
+  const cards = Array.from(track.children);
+  const nextButton = document.querySelector('.carousel-btn.next');
+  const prevButton = document.querySelector('.carousel-btn.prev');
+  const dotsContainer = document.querySelector('.premium-spirits-showcase .carousel-dots');
+  
+  // Determine cards per view based on screen size
+  function getCardsPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 968) return 2;
+    return 3;
+  }
+  
+  let cardsPerView = getCardsPerView();
+  let currentIndex = 0;
+  const maxIndex = Math.max(0, cards.length - cardsPerView);
+  
+  // Create dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    const numDots = maxIndex + 1;
+    for (let i = 0; i < numDots; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => moveToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+  
+  // Update carousel position
+  function updateCarousel() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 24; // 1.5rem
+    const moveAmount = -(currentIndex * (cardWidth + gap));
+    track.style.transform = `translateX(${moveAmount}px)`;
+    
+    // Update dots
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+  
+  // Move to specific slide
+  function moveToSlide(targetIndex) {
+    currentIndex = Math.max(0, Math.min(targetIndex, maxIndex));
+    updateCarousel();
+  }
+  
+  // Next button
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+  
+  // Previous button
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+  
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newCardsPerView = getCardsPerView();
+      if (newCardsPerView !== cardsPerView) {
+        cardsPerView = newCardsPerView;
+        currentIndex = 0;
+        createDots();
+        updateCarousel();
+      }
+    }, 250);
+  });
+  
+  // Initialize
+  createDots();
+  updateCarousel();
+});
+</script>
 </body>
 </html>

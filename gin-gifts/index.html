@@ -901,25 +901,51 @@ gtag('config', 'AW-366761144');
 </script>
 </head>
 <body>
-<!-- Slim Promo Bar -->
+<!-- Split Promo Bar — Main Pages -->
 <div id="promo-bar" style="
-  background: linear-gradient(135deg, #0f4123 0%, #165B33 50%, #0f4123 100%);
+  background: linear-gradient(135deg, #165B33 0%, #1e7a44 50%, #165B33 100%);
   color: white;
   text-align: center;
   padding: 11px 50px 11px 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.3px;
   position: relative;
   animation: slideDown 0.6s ease-out 0.3s both;
   z-index: 200;
 ">
-  <a href="https://www.azuspirits.co.uk/mothers-day-gin-gifts/" 
-     style="color: white; text-decoration: none;"
-     aria-label="Shop Mother's Day gin gift sets">
-    🌸 The perfect Mother's Day gift — six regional craft gins she'll love. 
-    &nbsp;<strong>Use MOTHERSDAYGIFT for 10% off</strong>&nbsp; →
+  <span style="opacity: 0.85; margin-right: 14px;">🌸 Mother's Day gifts — use <strong>MOTHERSDAYGIFT</strong> for 10% off</span>
+
+  <a href="https://www.azuspirits.co.uk/mothers-day-gin-gifts/" style="
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 5px 16px;
+    font-size: 13px;
+    margin-right: 8px;
+    transition: background 0.2s;
+  " onmouseover="this.style.background='rgba(255,255,255,0.28)'"
+     onmouseout="this.style.background='rgba(255,255,255,0.15)'"
+     aria-label="Shop Mother's Day gin gifts">
+    Gin Gifts →  
+  </a>
+
+  <a href="https://www.azuspirits.co.uk/mothers-day-whisky-gifts/" style="
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 5px 16px;
+    font-size: 13px;
+    transition: background 0.2s;
+  " onmouseover="this.style.background='rgba(255,255,255,0.28)'"
+     onmouseout="this.style.background='rgba(255,255,255,0.15)'"
+     aria-label="Shop Mother's Day whisky gifts">
+    Whisky Gifts →
   </a>
 
   <button onclick="document.getElementById('promo-bar').style.display='none'"
@@ -933,7 +959,6 @@ gtag('config', 'AW-366761144');
       line-height: 1; padding: 4px;
     ">✕</button>
 </div>
-  
 <header class="site-header">
   <div class="header-inner container">
     <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Whisky and Gin Gift Sets" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='https://www.azuspirits.co.uk/'">

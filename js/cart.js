@@ -186,7 +186,7 @@ const products = {
         name: 'South West Craft Gin Tasting Gift Set',
         price: 50.00,
         priceId: 'price_1SQA7EDLWuae7NssnnHeOJSQ',
-        image: '/images/products/devon-gins.jpg'
+        image: 'https://www.azuspirits.co.uk/images/products/south-west-gin-gift-set.jpg'
     },
 
 

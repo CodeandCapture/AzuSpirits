@@ -822,7 +822,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-366761144');
 </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script type="module">
+  import { inject } from "https://cdn.jsdelivr.net/npm/@vercel/analytics/dist/analytics.js";
+  inject();
+</script>
 </head>
 <body>
 <a href="https://www.azuspirits.co.uk/products/london-gin-tasting-gift-set/"  aria-label="Shop London Gins Tasting Gift Set"  style="color: white; text-decoration: none; display: block; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">

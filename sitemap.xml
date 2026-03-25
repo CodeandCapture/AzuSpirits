@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.azuspirits.co.uk/</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,14 +12,14 @@
   <!-- Main Shop & Category Pages -->
   <url>
     <loc>https://www.azuspirits.co.uk/tasting-gift-sets/</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   
   <url>
     <loc>https://www.azuspirits.co.uk/whisky-gifts/</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -27,6 +27,14 @@
   <url>
     <loc>https://www.azuspirits.co.uk/gin-gifts/</loc>
     <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- NEW: Birthday Whisky Gift Landing Page -->
+  <url>
+    <loc>https://www.azuspirits.co.uk/birthday-whisky-gift/</loc>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -67,7 +75,7 @@
     <priority>0.8</priority>
   </url>
   
-   <url>
+  <url>
     <loc>https://www.azuspirits.co.uk/mothers-day-whisky-gifts/</loc>
     <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -236,9 +244,17 @@
   <!-- Blog Main Page -->
   <url>
     <loc>https://www.azuspirits.co.uk/blog/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Posts - Gift Guides -->
+  <url>
+    <loc>https://www.azuspirits.co.uk/blog/birthday-whisky-gifts/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   
   <!-- Blog Posts - Whisky Content -->

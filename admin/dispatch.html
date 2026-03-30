@@ -1,1 +1,413 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dispatch Order — Azu Spirits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #A4343A;
+      --red-dark: #8B1538;
+      --black: #1a1a1a;
+      --cream: #f5f0eb;
+      --border: #e8e0d8;
+      --text: #333;
+      --muted: #888;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 48px 20px 80px;
+      color: var(--text);
+    }
+
+    /* HEADER */
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .page-header .logo {
+      height: 56px;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* CARD */
+    .card {
+      background: white;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      padding: 40px;
+      width: 100%;
+      max-width: 560px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    /* FORM */
+    .field {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: var(--black);
+      background: #fdfcfb;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--red);
+      background: white;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #c8c0b8;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+      line-height: 1.6;
+    }
+
+    .field-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+
+    /* SUBMIT */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover { background: var(--red-dark); }
+    .btn:active { transform: scale(0.99); }
+    .btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+    /* STATUS MESSAGES */
+    .status {
+      display: none;
+      margin-top: 20px;
+      padding: 16px 20px;
+      border-radius: 3px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .status.success {
+      display: block;
+      background: #f0faf4;
+      border: 1px solid #a8d5b8;
+      color: #2d6e4a;
+    }
+
+    .status.error {
+      display: block;
+      background: #fdf2f2;
+      border: 1px solid #f0c0c0;
+      color: #8B1538;
+    }
+
+    .status strong { display: block; margin-bottom: 4px; }
+
+    /* ORDER PREVIEW */
+    .order-preview {
+      display: none;
+      background: #fdfcfb;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    .order-preview.visible { display: block; }
+
+    .order-preview .preview-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .order-preview .preview-item {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 4px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+
+    .order-preview .preview-item:last-child { border-bottom: none; }
+
+    .order-preview .preview-total {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--red);
+      margin-top: 10px;
+    }
+
+    /* LOOKUP BUTTON */
+    .lookup-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .lookup-row input { flex: 1; }
+
+    .btn-lookup {
+      padding: 12px 18px;
+      background: var(--black);
+      color: white;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-lookup:hover { background: #333; }
+    .btn-lookup:disabled { background: #ccc; cursor: not-allowed; }
+
+    @media (max-width: 600px) {
+      .card { padding: 28px 20px; }
+      .page-header h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits" class="logo" />
+    <h1>Dispatch an Order</h1>
+    <p>Internal use only</p>
+  </div>
+
+  <div class="card">
+
+    <!-- STEP 1: CUSTOMER EMAIL -->
+    <div class="field">
+      <label>Customer Email Address *</label>
+      <div class="lookup-row">
+        <input type="email" id="customerEmail" placeholder="customer@example.com" autocomplete="off" />
+        <button class="btn-lookup" id="lookupBtn" onclick="lookupOrder()">Look Up</button>
+      </div>
+      <p class="field-hint">Enter the customer's email to pull their most recent paid order from Stripe.</p>
+    </div>
+
+    <!-- ORDER PREVIEW -->
+    <div class="order-preview" id="orderPreview">
+      <div class="preview-name" id="previewName"></div>
+      <div id="previewItems"></div>
+      <div class="preview-total" id="previewTotal"></div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- STEP 2: SHIPPING DETAILS -->
+    <div class="field">
+      <label>DPD Tracking Number *</label>
+      <input type="text" id="trackingNumber" placeholder="e.g. 15001234567890" autocomplete="off" />
+    </div>
+
+    <div class="field">
+      <label>Estimated Delivery</label>
+      <input type="text" id="estimatedDelivery" placeholder="e.g. Tomorrow, Tuesday 1st April" />
+      <p class="field-hint">Optional — shown prominently in the email.</p>
+    </div>
+
+    <div class="field">
+      <label>Custom Message <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+      <textarea id="customMessage" placeholder="e.g. Just a note to say thank you for your order — hope you enjoy the tasting!"></textarea>
+      <p class="field-hint">Appears above the tracking box. Leave blank to use the default message.</p>
+    </div>
+
+    <button class="btn" id="sendBtn" onclick="sendShipping()">Send Shipping Confirmation →</button>
+
+    <div class="status" id="statusMsg"></div>
+
+  </div>
+
+  <script>
+    let orderFound = false;
+
+    async function lookupOrder() {
+      const email = document.getElementById('customerEmail').value.trim();
+      const btn = document.getElementById('lookupBtn');
+      const preview = document.getElementById('orderPreview');
+
+      if (!email) {
+        showStatus('Please enter a customer email address.', 'error');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Looking up...';
+      orderFound = false;
+      preview.classList.remove('visible');
+      clearStatus();
+
+      try {
+        // We do a dry-run POST to the API to fetch order details
+        const res = await fetch('/api/lookup-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ customerEmail: email }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.found) {
+          document.getElementById('previewName').textContent = data.customerName;
+          document.getElementById('previewItems').innerHTML = data.items
+            .map(i => `<div class="preview-item">${i.description} × ${i.quantity} — £${i.amount}</div>`)
+            .join('');
+          document.getElementById('previewTotal').textContent = `Total: ${data.currency}${data.total}`;
+          preview.classList.add('visible');
+          orderFound = true;
+          showStatus(`Order found for <strong>${data.customerName}</strong>. Fill in the tracking details below and send.`, 'success');
+        } else {
+          showStatus(data.error || 'No paid order found for this email address.', 'error');
+        }
+      } catch (err) {
+        showStatus('Could not reach the server. Check your connection.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Look Up';
+      }
+    }
+
+    async function sendShipping() {
+      const customerEmail = document.getElementById('customerEmail').value.trim();
+      const trackingNumber = document.getElementById('trackingNumber').value.trim();
+      const estimatedDelivery = document.getElementById('estimatedDelivery').value.trim();
+      const customMessage = document.getElementById('customMessage').value.trim();
+      const btn = document.getElementById('sendBtn');
+
+      if (!customerEmail) return showStatus('Please enter a customer email address.', 'error');
+      if (!trackingNumber) return showStatus('Please enter a DPD tracking number.', 'error');
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      clearStatus();
+
+      try {
+        const res = await fetch('/api/send-shipping', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ customerEmail, trackingNumber, estimatedDelivery, customMessage }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          showStatus(`✓ Shipping confirmation sent to <strong>${customerEmail}</strong>.<br>Customer: ${data.customerName}`, 'success');
+          // Reset form
+          document.getElementById('trackingNumber').value = '';
+          document.getElementById('estimatedDelivery').value = '';
+          document.getElementById('customMessage').value = '';
+          document.getElementById('orderPreview').classList.remove('visible');
+          document.getElementById('customerEmail').value = '';
+          orderFound = false;
+        } else {
+          showStatus(`Failed to send: ${data.error || 'Unknown error'}`, 'error');
+        }
+      } catch (err) {
+        showStatus('Could not reach the server. Check your connection and try again.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Shipping Confirmation →';
+      }
+    }
+
+    function showStatus(msg, type) {
+      const el = document.getElementById('statusMsg');
+      el.innerHTML = msg;
+      el.className = `status ${type}`;
+    }
+
+    function clearStatus() {
+      const el = document.getElementById('statusMsg');
+      el.className = 'status';
+      el.innerHTML = '';
+    }
+
+    // Allow Enter key to trigger lookup
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('customerEmail').addEventListener('keydown', e => {
+        if (e.key === 'Enter') lookupOrder();
+      });
+    });
+  </script>
+
+</body>
+</html>

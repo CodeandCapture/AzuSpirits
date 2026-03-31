@@ -169,7 +169,62 @@
     ]
   }
   </script>
-  
+   <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is included in the Six Styles of Scotch Whisky tasting set?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The set includes six 30ml bottles of premium single malt Scotch whisky covering six distinct style profiles, an expert blind tasting guide, individual information cards for each distillery and flavour profile, a wax-sealed reveal envelope, and a gift-ready presentation box. Free DPD delivery is included across the UK."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this whisky tasting set suitable for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — the Six Styles of Scotch set is specifically designed for people who are new to single malt Scotch or want to understand the range of flavour profiles available. The blind tasting format removes label bias and lets the recipient respond purely to what they taste. The tasting guide walks through each style clearly, with no prior knowledge required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the blind tasting work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each bottle is numbered rather than labelled. You taste all six whiskies in order, record your notes and scores using the included tasting guide, and then open the wax-sealed reveal envelope to discover what each one was. The reveal is the moment the set is designed around — it's genuinely surprising, even for experienced whisky drinkers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I add a gift message to my order?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — you can add a personalised gift message at checkout at no extra cost. The message will be included with the set on a card. There are no price labels anywhere in the packaging, so the set arrives completely gift-ready."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does delivery take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All orders are dispatched via DPD and typically arrive within 3–5 working days. Free standard delivery is included on all orders across the UK mainland."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What whiskies are in the Six Styles of Scotch set?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The set includes Ledaig 18 Year (premium aged), Auchentoshan American Oak (vanilla sweet), Glen Moray Peated (soft smoke), Oban 14 (complex and coastal), Talisker 10 (rugged maritime), and Glenkinchie 12 (malty Lowland). These are revealed only after the blind tasting is complete."
+        }
+      }
+    ]
+  }
+  </script>
   
     
     <!-- Google Fonts -->
@@ -968,6 +1023,479 @@
       color: #999;
       margin: 0;
     }
+      
+      /* ============================================================
+       GIFTING CREDENTIALS STRIP
+    ============================================================ */
+    .gifting-credentials {
+      display: flex;
+      gap: 0;
+      margin: 22px 0 26px;
+      border: 1px solid #e8e0d8;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fdfcfb;
+    }
+ 
+    .gifting-credential {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      text-align: center;
+      border-right: 1px solid #e8e0d8;
+      gap: 6px;
+    }
+ 
+    .gifting-credential:last-child {
+      border-right: none;
+    }
+ 
+    .gifting-credential .cred-icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+ 
+    .gifting-credential .cred-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+ 
+    .gifting-credential .cred-sub {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.3;
+    }
+ 
+    @media (max-width: 640px) {
+      .gifting-credentials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+ 
+      .gifting-credential {
+        border-right: 1px solid #e8e0d8;
+        border-bottom: 1px solid #e8e0d8;
+      }
+ 
+      .gifting-credential:nth-child(2),
+      .gifting-credential:nth-child(4) {
+        border-right: none;
+      }
+ 
+      .gifting-credential:nth-child(3),
+      .gifting-credential:nth-child(4) {
+        border-bottom: none;
+      }
+    }
+ 
+    /* ============================================================
+       DELIVERY ESTIMATE BLOCK
+    ============================================================ */
+    .delivery-estimate {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f9f6f3;
+      border: 1px solid #e8e0d8;
+      border-radius: 4px;
+      padding: 16px 18px;
+      margin: 0 0 24px;
+    }
+ 
+    .delivery-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+ 
+    .delivery-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+ 
+    .delivery-text strong {
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+ 
+    .delivery-text .delivery-date {
+      color: #165B33;
+      font-weight: 700;
+    }
+ 
+    .delivery-cutoff {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: #999;
+    }
+ 
+    /* ============================================================
+       PERFECT FOR SECTION
+    ============================================================ */
+    .perfect-for {
+      margin: 24px 20px;
+    }
+ 
+    .perfect-for-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+ 
+    .perfect-for-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+ 
+    .pf-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid transparent;
+    }
+ 
+    .pf-tag.occasion {
+      background: #f9f6f3;
+      border-color: #e8e0d8;
+      color: #555;
+    }
+ 
+    .pf-tag.highlight {
+      background: #1a1a1a;
+      color: white;
+    }
+ 
+    .pf-tag .tag-icon {
+      font-size: 14px;
+    }
+      
+      
+ 
+    /* ============================================================
+       FAQ ACCORDION
+    ============================================================ */
+    .product-faq {
+      margin: 32px 0 8px;
+      border-top: 1px solid #e8e0d8;
+      padding: 28px;
+    }
+ 
+    .product-faq-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+    }
+ 
+    .faq-item {
+      border-bottom: 1px solid #f0ebe8;
+    }
+ 
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 15px 0;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.5;
+    }
+ 
+    .faq-question::after {
+      content: '+';
+      font-size: 20px;
+      color: #A4343A;
+      flex-shrink: 0;
+      font-weight: 300;
+      transition: transform 0.2s ease;
+    }
+ 
+    .faq-item.open .faq-question::after {
+      transform: rotate(45deg);
+    }
+ 
+    .faq-answer {
+      display: none;
+      padding: 0 0 16px;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+ 
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+      
+       /* Premium Spirits Showcase - Refined */
+.premium-spirits-showcase {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  
+}
+
+.premium-spirits-showcase h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.showcase-intro {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Carousel Container */
+.spirits-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 1.5rem;
+}
+
+/* Spirit Cards */
+.spirit-card {
+  min-width: calc(33.333% - 1rem);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.spirit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: var(--luxury-gold);
+}
+
+.spirit-image-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+    .spirit-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+    
+.region-badge {
+  position: absolute;  /* ADD THIS */
+  bottom: 8px;         /* ADD THIS */
+  left: 50%;           /* ADD THIS */
+  transform: translateX(-50%);  /* ADD THIS */
+  background: rgba(212, 175, 55, 0.95);  /* Update to match your gold */
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;  /* ADD THIS */
+}
+
+.spirit-card h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem 0;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.spirit-series {
+  font-size: 0.8rem;
+  color: var(--luxury-gold);
+  margin: 0 0 0.8rem 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.spirit-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  opacity: 0;
+}
+
+.spirit-card:hover .spirit-details {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.spirit-details p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #e5e5e5;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: var(--luxury-gold);
+  color: white;
+  border-color: #c9a962;
+  box-shadow: 0 4px 12px rgba(201, 169, 98, 0.3);
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background: var(--luxury-gold);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .spirit-card {
+    min-width: calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .spirits-carousel {
+    padding: 0 50px;
+  }
+  
+  .spirit-card {
+    min-width: 100%;
+  }
+  
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+}
+    
+
+/* Responsive */
+@media (max-width: 968px) {
+  .spirit-card {
+    min-width: calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .spirits-carousel {
+    padding: 0 50px;
+  }
+  
+  .spirit-card {
+    min-width: 100%;
+  }
+  
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+}
+ 
     
     /* YOU MIGHT ALSO LIKE SECTION */
 .you-might-like {
@@ -1390,6 +1918,45 @@ gtag('config', 'G-FF0E8016EX');
             <h1>Six Styles of Scotch Whisky: Blind Tasting Gift Set</h1>
             <div class="product-price">£63.00
            </div>
+           <div class="product-description">
+      <p>Whether you're just starting your whisky journey or looking for a unique gift, this blind tasting set is the ideal way to explore the diverse styles of Scotch. Discover the range of flavours from smoky, rich, oily to delicate, grassy and soft. A unique tasting experience designed by specialists for Scotch whisky lovers.</p>
+      </div>
+            <!-- ============================================================
+    BLOCK 1: GIFTING CREDENTIALS STRIP
+    Paste after .product-price div
+  ============================================================ -->
+  <div class="gifting-credentials">
+    <div class="gifting-credential">
+      
+      <span class="cred-label">Gift Message</span>
+      <span class="cred-sub">Added at checkout, free</span>
+    </div>
+    <div class="gifting-credential">
+     
+      <span class="cred-label">No Price Labels</span>
+      <span class="cred-sub">Arrives gift-ready</span>
+    </div>
+    <div class="gifting-credential">
+      
+      <span class="cred-label">Premium Box</span>
+      <span class="cred-sub">Ready to give</span>
+    </div>
+    <div class="gifting-credential">
+     
+      <span class="cred-label">Free Delivery</span>
+      <span class="cred-sub">DPD, UK mainland</span>
+    </div>
+  </div>
+          
+          <div class="delivery-estimate">
+    <span class="delivery-icon">📦</span>
+    <div class="delivery-text">
+      <strong>Free Delivery</strong> — estimated arrival
+      <span class="delivery-date" id="deliveryDateRange">calculating...</span>
+      <span class="delivery-cutoff" id="deliveryCutoff"></span>
+    </div>
+  </div>
+ 
            <div class="quantity-selector">
                 <label for="quantity">Quantity:</label>
                 <div class="quantity-input">
@@ -1401,35 +1968,107 @@ gtag('config', 'G-FF0E8016EX');
 
             <button class="add-to-cart-btn" onclick="addProductToCart()">Add to Cart </button>
           
-            <!-- Premium Spirits Highlight -->
-      <div class="premium-spirits-box">
-        <h3>✨ Six Diverse Single Malts</h3>
-        <ul class="spirit-list">
-          <li>
-            <span class="region-badge">PREMIUM AGED LEDAIG 18</span>
-          </li>
-          <li>
-            <span class="region-badge">VANILLA SWEET AUCHENTOSHAN AMERICAN OAK</span>
-          </li>
-          <li>
-            <span class="region-badge">SOFT SMOKE GLEN MORAY PEATED</span>
-          </li>
-          <li>
-            <span class="region-badge">COMPLEX & COASTAL OBAN 14 </span>
-          </li>
-          <li>
-            <span class="region-badge">RUGGED MARITIME TALISKER 10 </span>
-          </li>
-          <li>
-            <span class="region-badge">MALTY LOWLAND GLENKINCHIE 12</span>
-          </li>
-        </ul>
-      </div>
+          
+          
+          <div class="premium-spirits-showcase">
+  <h3> The Single Malts</h3>
+  <p class="showcase-intro">Six diverse styles</p>
+  
+  <div class="spirits-carousel">
+    <button class="carousel-btn prev" aria-label="Previous whisky">‹</button>
+    
+    <div class="carousel-track-container">
+      <div class="carousel-track">
+        
+        <!-- Ledaig 18 --> 
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src= "https://www.azuspirits.co.uk/images/bottleshop/ledaig-18-700ml.jpg" alt="Glenfiddich 15">
+            <span class="region-badge">Premium Aged</span>
+          </div>
+          <h4>Ledaig 18</h4>
+          <p class="spirit-series">The Isle of Mull</p>
+          <div class="spirit-details">
+            <p>Peated, yet rounded with big flavour and depth from the cask. Christmas spice, dried fruits and swirling smoke. Matured for at least 18 years in ex-sherry and ex-bourbon casks. </p>
+          </div>
+        </div>
 
-            
-           <div class="product-description">
-      <p>Whether you're just starting your whisky journey or looking for a unique gift, this blind tasting set is the ideal way to explore the diverse styles of Scotch. Discover the range of flavours from smoky, rich, oily to delicate, grassy and soft. A unique tasting experience designed by specialists for Scotch whisky lovers.</p>
+        <!-- Dalmore 12 -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src="https://www.azuspirits.co.uk/images/bottleshop/auchentoshan-american-oak-700ml.jpg" alt="Auchentoshan American Oak">
+            <span class="region-badge">Vanilla Sweet</span>
+          </div>
+          <h4>Auchentoshan American Oak</h4>
+          <p class="spirit-series">The Lowlands</p>
+          <div class="spirit-details">
+            <p>Great for bourbon lovers, this release has been matured exclusively in American oak ex-bourbon, with vanilla and coconut at the forefront. </p>
+          </div>
+        </div>
+
+        <!-- Glen Scotia 15 -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src="https://www.azuspirits.co.uk/images/bottleshop/glen-moray-700ml.jpg" alt="Glen Moray Peated">
+            <span class="region-badge">Soft Smoke</span>
+          </div>
+          <h4>Glen Moray Peated</h4>
+          <p class="spirit-series">Speyside</p>
+          <div class="spirit-details">
+            <p>A smooth spirit from the sweet Speyside distillery. Glen Moray's single malts are affordable, light and palatable. This expression has gentle peat, and is a great representation of how soft a peated whisky can be.</p>
+          </div>
+        </div>
+
+        <!-- Ledaig 10 -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src= "https://www.azuspirits.co.uk/images/bottleshop/glenkinchie-12-700ml.jpg" alt="Glenkinchie 12">
+            <span class="region-badge">Grassy & Malty</span>
+          </div>
+          <h4>Glenkinchie 12</h4>
+          <p class="spirit-series">Lowlands</p>
+          <div class="spirit-details">
+            <p>Nutty, cereal tones and a thick mouthfeel. Glenkinchie has enormous stills and uses a cold run worm tub to cut down on copper contact and promote a meatier spirit.</p>
+          </div>
+        </div>
+
+        <!-- Bladnoch Vinaya -->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+            <img src="https://www.azuspirits.co.uk/images/bottleshop/oban-14-700ml.jpg" alt="Oban Whisky">
+            <span class="region-badge">Complex & Coastal</span>
+          </div>
+          <h4>Oban 14</h4>
+          <p class="spirit-series">Highlands</p>
+          <div class="spirit-details">
+            <p>Full bodied, rich and complex. Oban's worm tubs are run hot, increasing copper contact and moderating the meaty tones that are typical of a worm tub, making this a very well-balanced malt whisky.  </p>
+          </div>
+        </div>
+
+        <!-- Kilchoman Machir Bay-->
+        <div class="spirit-card">
+          <div class="spirit-image-placeholder">
+  <img src="https://www.azuspirits.co.uk/images/bottleshop/talisker-10-700ml.jpg" alt="Talissker Single Malt Whisky">
+  <span class="region-badge">Rugged Maritime</span>
+</div>
+        
+          <h4>Talisker 10</h4>
+          <p class="spirit-series">Isle of Skye</p>
+          <div class="spirit-details">
+            <p>Cracked black pepper and spice, rich oak, smoke and citrus. Complex, bold and one of the renowned classics. For those who like the slightly more fierce and spicy single malts. </p>
+          </div>
+        </div>
+
       </div>
+    </div>
+ 
+    <button class="carousel-btn next" aria-label="Next whisky">›</button>
+  </div>
+  
+  <div class="carousel-dots"></div>
+</div>
+            
+         
 
       <!-- Features -->
       <div class="product-features">
@@ -1446,6 +2085,49 @@ gtag('config', 'G-FF0E8016EX');
       </div>  
         </div>
     </div>
+  
+    <div class="perfect-for">
+    <p class="perfect-for-label">Perfect for</p>
+    <div class="perfect-for-tags">
+      <span class="pf-tag highlight">Whisky Beginners</span>
+      <span class="pf-tag occasion"> Birthdays</span>
+      <span class="pf-tag occasion"> Christmas</span>
+      <span class="pf-tag occasion"> Father's Day</span>
+      <span class="pf-tag occasion"> Corporate Gifts</span>
+      <span class="pf-tag occasion"> Celebrations</span>
+    </div>
+  </div>
+   
+  <div class="product-faq">
+    <p class="product-faq-title">Frequently asked questions</p>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">What's included in the set?</button>
+      <div class="faq-answer">Six 30ml bottles of premium single malt Scotch whisky, an expert blind tasting guide, individual distillery and flavour cards, a wax-sealed reveal envelope, and a gift-ready presentation box. Free DPD delivery is included across the UK mainland.</div>
+    </div>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Is this suitable for a complete whisky beginner?</button>
+      <div class="faq-answer">Yes — this set is specifically designed for beginners or anyone who wants to explore how different single malts can taste. The blind format removes any label pressure, and the tasting guide walks through each style clearly. No prior whisky knowledge needed.</div>
+    </div>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How does the blind tasting work?</button>
+      <div class="faq-answer">Each bottle is numbered rather than labelled. You taste all six in order, make notes and score them using the included guide, then open the wax-sealed reveal envelope to discover what each one was. The reveal is genuinely surprising — even for experienced whisky drinkers.</div>
+    </div>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Can I add a personalised gift message?</button>
+      <div class="faq-answer">Yes — add your message in the notes field at checkout, at no extra cost. It will be included on a card with the set. There are no price labels anywhere in the packaging, so everything arrives completely gift-ready.</div>
+    </div>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How long does delivery take?</button>
+      <div class="faq-answer">Orders are dispatched via DPD and typically arrive within 3–5 working days. Free standard delivery is included on all UK mainland orders. You'll receive a DPD tracking link once your order is dispatched.</div>
+    </div>
+ 
+  </div>
+ 
 
 <!-- YOU MIGHT ALSO LIKE SECTION -->
 <section class="you-might-like">
@@ -1487,7 +2169,7 @@ gtag('config', 'G-FF0E8016EX');
 
       <!-- London Gin (sale item) -->
       <div class="product-card sale-item">
-        <div class="sale-badge">20% OFF</div>
+        
         <a href="https://www.azuspirits.co.uk/products/london-gin-tasting-gift-set" aria-label="Shop London Gins Gift Set">
           <div class="product-image-wrapper">
             <img src="https://www.azuspirits.co.uk/images/products/london-gin-tasting.jpg" alt="London Gin Tasting Gift Set">
@@ -1496,10 +2178,10 @@ gtag('config', 'G-FF0E8016EX');
             <h3>London Gins Collection</h3>
             <p class="product-card-description">Limited time offer! Six iconic London distilleries including Sacred Old Tom and Portobello Road No. 171</p>
             <div class="product-card-price">
-              <span class="original-price">£52.00</span>
-              <span class="sale-price">£41.60</span>
+           £52.00
+             
             </div>
-            <span class="shop-now-link">Shop Sale →</span>
+            <span class="shop-now-link">Shop →</span>
           </div>
         </a>
       </div>
@@ -1793,7 +2475,74 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCarousel();
 });
 </script>
-
+ <script>
+    // ── DELIVERY DATE ESTIMATE ──
+    // Shows a 3–5 working day window from next dispatch day
+    // Orders before 2pm dispatch same day (Mon–Fri), after 2pm dispatch next working day
+ 
+    function calculateDeliveryWindow() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay(); // 0=Sun, 1=Mon ... 6=Sat
+ 
+      const isWeekend = day === 0 || day === 6;
+      const isAfterCutoff = hour >= 14;
+ 
+      // Determine dispatch date
+      let dispatchDate = new Date(now);
+ 
+      if (isWeekend || isAfterCutoff) {
+        // Move to next working day
+        do {
+          dispatchDate.setDate(dispatchDate.getDate() + 1);
+        } while (dispatchDate.getDay() === 0 || dispatchDate.getDay() === 6);
+      }
+ 
+      // Add 3 working days for earliest delivery
+      function addWorkingDays(date, days) {
+        let result = new Date(date);
+        let added = 0;
+        while (added < days) {
+          result.setDate(result.getDate() + 1);
+          if (result.getDay() !== 0 && result.getDay() !== 6) {
+            added++;
+          }
+        }
+        return result;
+      }
+ 
+      const earliest = addWorkingDays(dispatchDate, 2);
+      const latest = addWorkingDays(dispatchDate, 4);
+ 
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const days_short = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+ 
+      const earliestStr = `${days_short[earliest.getDay()]} ${earliest.getDate()} ${months[earliest.getMonth()]}`;
+      const latestStr = `${days_short[latest.getDay()]} ${latest.getDate()} ${months[latest.getMonth()]}`;
+ 
+      document.getElementById('deliveryDateRange').textContent = `${earliestStr} – ${latestStr}`;
+ 
+      // Show cutoff message if it's a weekday before 2pm
+      const cutoffEl = document.getElementById('deliveryCutoff');
+      if (!isWeekend && !isAfterCutoff) {
+        cutoffEl.textContent = 'Order before 2pm today for same-day dispatch.';
+      } else if (!isWeekend && isAfterCutoff) {
+        cutoffEl.textContent = 'Order now — dispatches tomorrow.';
+      } else {
+        cutoffEl.textContent = 'Order now — dispatches Monday.';
+      }
+    }
+ 
+    calculateDeliveryWindow();
+ 
+    // ── FAQ ACCORDION ──
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    }
+  </script>
+ 
 
 </body>
 </html>
+ 

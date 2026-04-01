@@ -1140,6 +1140,250 @@
 
     }
     
+      /* ============================================================
+       GIFTING CREDENTIALS STRIP
+    ============================================================ */
+    .gifting-credentials {
+      display: flex;
+      gap: 0;
+      margin: 22px 0 26px;
+      border: 1px solid #e8e0d8;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fdfcfb;
+    }
+ 
+    .gifting-credential {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 10px;
+      text-align: center;
+      border-right: 1px solid #e8e0d8;
+      gap: 6px;
+    }
+ 
+    .gifting-credential:last-child {
+      border-right: none;
+    }
+ 
+    .gifting-credential .cred-icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+ 
+    .gifting-credential .cred-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1a1a1a;
+      line-height: 1.3;
+    }
+ 
+    .gifting-credential .cred-sub {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.3;
+    }
+ 
+    @media (max-width: 640px) {
+      .gifting-credentials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+ 
+      .gifting-credential {
+        border-right: 1px solid #e8e0d8;
+        border-bottom: 1px solid #e8e0d8;
+      }
+ 
+      .gifting-credential:nth-child(2),
+      .gifting-credential:nth-child(4) {
+        border-right: none;
+      }
+ 
+      .gifting-credential:nth-child(3),
+      .gifting-credential:nth-child(4) {
+        border-bottom: none;
+      }
+    }
+ 
+    /* ============================================================
+       DELIVERY ESTIMATE BLOCK
+    ============================================================ */
+    .delivery-estimate {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f9f6f3;
+      border: 1px solid #e8e0d8;
+      border-radius: 4px;
+      padding: 16px 18px;
+      margin: 0 0 24px;
+    }
+ 
+    .delivery-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+ 
+    .delivery-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+    }
+ 
+    .delivery-text strong {
+      color: #1a1a1a;
+      font-weight: 700;
+    }
+ 
+    .delivery-text .delivery-date {
+      color: #165B33;
+      font-weight: 700;
+    }
+ 
+    .delivery-cutoff {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: #999;
+    }
+ 
+    /* ============================================================
+       PERFECT FOR SECTION
+    ============================================================ */
+    .perfect-for {
+      margin: 24px 20px;
+    }
+ 
+    .perfect-for-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+ 
+    .perfect-for-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+ 
+    .pf-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid transparent;
+    }
+ 
+    .pf-tag.occasion {
+      background: #f9f6f3;
+      border-color: #e8e0d8;
+      color: #555;
+    }
+ 
+    .pf-tag.highlight {
+      background: #1a1a1a;
+      color: white;
+    }
+ 
+    .pf-tag .tag-icon {
+      font-size: 14px;
+    }
+      
+      
+ 
+    /* ============================================================
+       FAQ ACCORDION
+    ============================================================ */
+    .product-faq {
+      margin: 32px 0 8px;
+      border-top: 1px solid #e8e0d8;
+      padding: 28px;
+    }
+ 
+    .product-faq-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+    }
+ 
+    .faq-item {
+      border-bottom: 1px solid #f0ebe8;
+    }
+ 
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 15px 0;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.5;
+    }
+ 
+    .faq-question::after {
+      content: '+';
+      font-size: 20px;
+      color: #A4343A;
+      flex-shrink: 0;
+      font-weight: 300;
+      transition: transform 0.2s ease;
+    }
+ 
+    .faq-item.open .faq-question::after {
+      transform: rotate(45deg);
+    }
+ 
+    .faq-answer {
+      display: none;
+      padding: 0 0 16px;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+    
+       .faq-answer a {
+  color: #A4343A;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+ 
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+      
+    
     /* Premium Spirits Showcase - Refined */
 .premium-spirits-showcase {
   margin: 3rem 0;
@@ -1645,12 +1889,8 @@ gtag('config', 'G-FF0E8016EX');
       <span class="luxury-badge">✧ The Luxury Collection ✧</span>
       
       <h1>Luxury Single Malt Whisky Blind Tasting Gift Set</h1>
-      <div class="gift-appeal-banner">
-        <span class="gift-icon"></span>
-        The Ultimate Gift for Whisky Lovers · Luxury Gift Box · Free DPD Delivery
-      </div>
       <h3 class="product-subtitle">Exclusive Gift Set For The Whisky Connoisseur <br> 6 x 30ml Exceptional Expressions</h3>
-      <p class="product-description-main">Taste the Limited Edition Bunnahabhain 1997 Pedro Ximenez 22, Tobermory 24, Edradour 21 Sherry Cask, the super-heavily peated Octomore from Bruichladdich, Dalmore Port Wood Reserve and Ledaig 18. An exclusive chance to taste such exquisite single malts and a very special whisky gift. </p>
+      <p class="product-description-main">The ultimate gift for the whisky connoisseur. An exclusive chance to taste  the Limited Edition Bunnahabhain 1997 Pedro Ximenez 22, Tobermory 24, Edradour 21 Sherry Cask, the super-heavily peated Octomore from Bruichladdich, Dalmore Port Wood Reserve and Ledaig 18. A very special whisky gift. </p>
       
       <div class="worth-badge">
         Bottles Worth Over <span class="amount">£1,000</span>
@@ -1662,6 +1902,43 @@ gtag('config', 'G-FF0E8016EX');
         £110.00
       </div>
 
+        <!-- ============================================================
+    BLOCK 1: GIFTING CREDENTIALS STRIP
+    Paste after .product-price div
+  ============================================================ -->
+  <div class="gifting-credentials">
+    <div class="gifting-credential">
+      
+      <span class="cred-label">Gift Message</span>
+      <span class="cred-sub">Added at checkout, free</span>
+    </div>
+    <div class="gifting-credential">
+     
+      <span class="cred-label">No Price Labels</span>
+      <span class="cred-sub">Arrives gift-ready</span>
+    </div>
+    <div class="gifting-credential">
+      
+      <span class="cred-label">Premium Box</span>
+      <span class="cred-sub">Ready to give</span>
+    </div>
+    <div class="gifting-credential">
+     
+      <span class="cred-label">Free Delivery</span>
+      <span class="cred-sub">DPD, UK mainland</span>
+    </div>
+  </div>
+          
+          <div class="delivery-estimate">
+    <span class="delivery-icon">📦</span>
+    <div class="delivery-text">
+      <strong>Free Delivery</strong> — estimated arrival
+      <span class="delivery-date" id="deliveryDateRange">calculating...</span>
+      <span class="delivery-cutoff" id="deliveryCutoff"></span>
+    </div>
+  </div>
+ 
+      
       <div class="quantity-selector">
         <label for="quantity">Quantity:</label>
         <div class="quantity-input">
@@ -1821,6 +2098,47 @@ gtag('config', 'G-FF0E8016EX');
     
     </div>
   </div>
+    
+      <div class="perfect-for">
+    <p class="perfect-for-label">Perfect for</p>
+    <div class="perfect-for-tags">
+      <span class="pf-tag highlight">Whisky Connoisseurs</span>
+      <span class="pf-tag occasion"> Milestone Birthdays</span>
+      <span class="pf-tag occasion"> Christmas</span>
+      <span class="pf-tag occasion"> Father's Day</span>
+      <span class="pf-tag occasion"> Celebrations</span>
+    </div>
+  </div>
+   
+  <div class="product-faq">
+    <p class="product-faq-title">Frequently asked questions</p>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">What's included in the set?</button>
+      <div class="faq-answer">Six 30ml bottles of ultra-premium single malt Scotch whisky, an expert blind tasting guide, individual distillery and flavour cards, a wax-sealed reveal envelope, and a gift-ready presentation box. Free DPD delivery is included across the UK mainland.</div>
+    </div>
+ 
+  <div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">Is the Luxury Single Malt Collection suitable as a gift for someone who doesn't drink whisky?</button>
+  <div class="faq-answer">The Luxury Collection is best suited to someone who already appreciates single malt Scotch — ideally an enthusiast or connoisseur. The expressions included, such as the Bunnahabhain 22 Year and Tobermory 24, are exceptional aged malts that reward experience and curiosity. If you're buying for someone newer to whisky, our <a href="https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners/">Six Styles of Scotch</a> set would be a better starting point.</div>
+</div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How does the blind tasting work?</button>
+      <div class="faq-answer">Each bottle is numbered rather than labelled. You taste all six in order, make notes and score them using the included guide, then open the wax-sealed reveal envelope to discover what each one was. The reveal is genuinely surprising — even for experienced whisky drinkers.</div>
+    </div>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Can I add a personalised gift message?</button>
+      <div class="faq-answer">Yes — add your message in the notes field at checkout, at no extra cost. It will be included on a card with the set. There are no price labels anywhere in the packaging, so everything arrives completely gift-ready.</div>
+    </div>
+ 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How long does delivery take?</button>
+      <div class="faq-answer">Orders are dispatched via DPD and typically arrive within 3–5 working days. Free standard delivery is included on all UK mainland orders. You'll receive a DPD tracking link once your order is dispatched.</div>
+    </div>
+ 
+  </div>
+ 
   </section>
   
   <!-- YOU MIGHT ALSO LIKE SECTION -->
@@ -2160,5 +2478,73 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCarousel();
 });
 </script>
+  
+   <script>
+    // ── DELIVERY DATE ESTIMATE ──
+    // Shows a 3–5 working day window from next dispatch day
+    // Orders before 2pm dispatch same day (Mon–Fri), after 2pm dispatch next working day
+ 
+    function calculateDeliveryWindow() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay(); // 0=Sun, 1=Mon ... 6=Sat
+ 
+      const isWeekend = day === 0 || day === 6;
+      const isAfterCutoff = hour >= 14;
+ 
+      // Determine dispatch date
+      let dispatchDate = new Date(now);
+ 
+      if (isWeekend || isAfterCutoff) {
+        // Move to next working day
+        do {
+          dispatchDate.setDate(dispatchDate.getDate() + 1);
+        } while (dispatchDate.getDay() === 0 || dispatchDate.getDay() === 6);
+      }
+ 
+      // Add 3 working days for earliest delivery
+      function addWorkingDays(date, days) {
+        let result = new Date(date);
+        let added = 0;
+        while (added < days) {
+          result.setDate(result.getDate() + 1);
+          if (result.getDay() !== 0 && result.getDay() !== 6) {
+            added++;
+          }
+        }
+        return result;
+      }
+ 
+      const earliest = addWorkingDays(dispatchDate, 2);
+      const latest = addWorkingDays(dispatchDate, 4);
+ 
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const days_short = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+ 
+      const earliestStr = `${days_short[earliest.getDay()]} ${earliest.getDate()} ${months[earliest.getMonth()]}`;
+      const latestStr = `${days_short[latest.getDay()]} ${latest.getDate()} ${months[latest.getMonth()]}`;
+ 
+      document.getElementById('deliveryDateRange').textContent = `${earliestStr} – ${latestStr}`;
+ 
+      // Show cutoff message if it's a weekday before 2pm
+      const cutoffEl = document.getElementById('deliveryCutoff');
+      if (!isWeekend && !isAfterCutoff) {
+        cutoffEl.textContent = 'Order before 2pm today for same-day dispatch.';
+      } else if (!isWeekend && isAfterCutoff) {
+        cutoffEl.textContent = 'Order now — dispatches tomorrow.';
+      } else {
+        cutoffEl.textContent = 'Order now — dispatches Monday.';
+      }
+    }
+ 
+    calculateDeliveryWindow();
+ 
+    // ── FAQ ACCORDION ──
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    }
+  </script>
+ 
 </body>
 </html>

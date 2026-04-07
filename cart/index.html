@@ -883,7 +883,6 @@ gtag('config', 'G-FF0E8016EX');
    function renderCart() {
     const cartItemsContainer = document.getElementById('cartItems');
     const subtotalEl = document.getElementById('subtotal');
-    const shippingEl = document.getElementById('shipping');
     const totalEl = document.getElementById('total');
     const checkoutBtn = document.getElementById('stripeCheckoutBtn');
 
@@ -922,15 +921,12 @@ gtag('config', 'G-FF0E8016EX');
             </div>
         </div>
     `).join('');
+const subtotal = cart.getTotal();
+const total = subtotal; // FREE SHIPPING
 
-    // Calculate totals
-    const subtotal = cart.getTotal();
-    const shipping = 0.00; // FREE SHIPPING
-    const total = subtotal + shipping;
-
-    subtotalEl.textContent = `£${subtotal.toFixed(2)}`;
-    shippingEl.textContent = `£${shipping.toFixed(2)}`;
-    totalEl.textContent = `£${total.toFixed(2)}`;
+subtotalEl.textContent = `£${subtotal.toFixed(2)}`;
+totalEl.textContent = `£${total.toFixed(2)}`;
+     
 }
 
     function updateItemQuantity(productId, newQuantity) {

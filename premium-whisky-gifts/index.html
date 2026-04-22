@@ -94,7 +94,7 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "enquiries@azuspirits.com",
+      "email": "enquiries@azuspirits.co.uk",
       "availableLanguage": "English"
     },
     "sameAs": [
@@ -200,7 +200,7 @@
        HEADER STYLES
        ============================================ */
     .site-header {
-        background: #f8f8f8;
+        background-image: #f8f8f8;
         border-bottom: 1px solid #ddd;
         padding: 20px;
     }
@@ -397,6 +397,25 @@
     text-align: center;
     font-weight: 400;
     font-size: 16px;
+  }
+  
+   .hero-slide p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  
+  .main-section { 
+    
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    margin: 5px;
+    padding: 200px 20px;
+    color: white;
+     background-image: url('https://www.azuspirits.co.uk/images/products/whisky-collections.jpg');
   }
 
   .christmas-badge {
@@ -741,7 +760,7 @@
 }
 
 .whats-in-box h3 {
-  font-size: 28px;
+  font-size: 22px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -1142,6 +1161,370 @@
       color: #999;
       margin: 0;
     }
+  
+  /* Premium Spirits Showcase - Refined */
+.premium-spirits-showcase {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  
+}
+
+.premium-spirits-showcase h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.showcase-intro {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Carousel Container */
+.spirits-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 1.5rem;
+}
+
+/* Spirit Cards */
+.spirit-card {
+  min-width: calc(33.333% - 1rem);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.spirit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: var(--luxury-gold);
+}
+
+.spirit-image-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.region-badge {
+  position: absolute;  /* ADD THIS */
+  bottom: 8px;         /* ADD THIS */
+  left: 50%;           /* ADD THIS */
+  transform: translateX(-50%);  /* ADD THIS */
+  background: rgba(212, 175, 55, 0.95);  /* Update to match your gold */
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;  /* ADD THIS */
+}
+
+.spirit-card h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem 0;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.spirit-series {
+  font-size: 0.85rem;
+  color: var(--luxury-gold);
+  margin: 0 0 0.8rem 0;
+  font-weight: 500;
+}
+
+.spirit-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  opacity: 0;
+}
+
+.spirit-card:hover .spirit-details {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.spirit-details p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #e5e5e5;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: var(--luxury-gold);
+  color: white;
+  border-color: #c9a962;
+  box-shadow: 0 4px 12px rgba(201, 169, 98, 0.3);
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background: var(--luxury-gold);
+  width: 24px;
+  border-radius: 4px;
+}
+  
+   /* Premium Spirits Showcase - Refined */
+.premium-spirits-showcase {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  
+}
+
+.premium-spirits-showcase h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.showcase-intro {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Carousel Container */
+.spirits-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  gap: 1.5rem;
+}
+
+/* Spirit Cards */
+.spirit-card {
+  min-width: calc(33.333% - 1rem);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.spirit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: var(--luxury-gold);
+}
+
+.spirit-image-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.region-badge {
+  position: absolute;  /* ADD THIS */
+  bottom: 8px;         /* ADD THIS */
+  left: 50%;           /* ADD THIS */
+  transform: translateX(-50%);  /* ADD THIS */
+  background: rgba(212, 175, 55, 0.95);  /* Update to match your gold */
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;  /* ADD THIS */
+}
+
+.spirit-card h4 {
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem 0;
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.spirit-series {
+  font-size: 0.85rem;
+  color: var(--luxury-gold);
+  margin: 0 0 0.8rem 0;
+  font-weight: 500;
+}
+
+.spirit-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  opacity: 0;
+}
+
+.spirit-card:hover .spirit-details {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.spirit-details p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #e5e5e5;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: var(--luxury-gold);
+  color: white;
+  border-color: #c9a962;
+  box-shadow: 0 4px 12px rgba(201, 169, 98, 0.3);
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background: var(--luxury-gold);
+  width: 24px;
+  border-radius: 4px;
+}
 
     /* ============================================
        MOBILE RESPONSIVE STYLES
@@ -1786,14 +2169,118 @@ gtag('config', 'G-FF0E8016EX');
 </header>
 
   
-  <!-- HERO SECTION -->
-  <section class="intro-section" style="background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%); color: white; padding: 80px 20px;">
-    <div class="intro-content">
-      <h1 style="font-size: 42px; margin-bottom: 20px; color: white;">Premium Whisky Gifts for Connoisseurs</h1>
-      <p style="font-size: 20px; color: #f0f0f0;">Exceptional luxury Scotch whisky gift sets featuring rare aged single malts from Scotland's finest distilleries</p>
+   <section class="hero-carousel">
+  
+  <div class="hero-slide hero-slide-1 active">
+      <div class="overlay"> <h1>Premium Whisky Gifts for Connoisseurs</h1>
+      <p>Exceptional Scotch whisky gift sets featuring rare aged single malts from Scotland's finest distilleries. Can the distinguished whisky lover guess which is which? Gift them something they won't have tried before with our unique <strong>blind tasting experience.</strong></p>
+        <p style="font-size: 12px; font-style: italic;">Each tasting set contains six premium single malts from renowned Scottish distilleries. Scroll down to see our themed collections.</p>
+    </div>
+     </div>
+  </section>
+  
+  <section class="main-section"></section>
+
+  <!-- What's in the Box -->
+  <section class="whats-in-box">
+    <div class="container">
+      <h3>Each whisky gift set includes</h3>
+      <div class="box-grid">
+        
+        <div class="box-item">
+          <img src="https://www.azuspirits.co.uk/images/products/tasting-guide.jpg" 
+               alt="Blind whisky tasting guide included in gift set"
+               loading="lazy">
+          <h4>A Blind Tasting Guide</h4>
+          <p>Expert tips and tasting notes to help you identify each whisky's unique characteristics</p>
+        </div>
+
+        <div class="box-item">
+          <img src="https://www.azuspirits.co.uk/images/products/tasting-cards-whisky.jpg" 
+               alt="Whisky information cards with tasting notes"
+               loading="lazy">
+          <h4>Information Cards</h4>
+          <p>Insights into flavour profiles and production techniques to guide your tasting journey</p>
+        </div>
+
+        <div class="box-item">
+          <img src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg" 
+               alt="Six 30ml bottles of premium single malt whisky"
+               loading="lazy">
+          <h4>6 x 30ml Bottles</h4>
+          <p>Six exceptional single malts, carefully selected for their diversity and quality</p>
+        </div>
+
+        <div class="box-item">
+          <img src="https://www.azuspirits.co.uk/images/products/unusual-scotch-whisky-gift.jpg" 
+               alt="Wax sealed envelope revealing whisky identities"
+               loading="lazy">
+          <h4>Wax-Sealed Reveal</h4>
+          <p>Discover the identities of each whisky along with distillery information and purchasing details</p>
+        </div>
+         
+      </div>
     </div>
   </section>
-
+  
+   <!-- FEATURED PREMIUM PRODUCTS -->
+  <section class="featured-collections">
+    <h2>Our Premium Whisky Gift Collections</h2>
+    
+    <div class="featured-grid">
+      <!-- Product 1: Luxury Single Malt -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg" alt="Luxury Single Malt Whisky Tasting Gift Set" />
+        </div>
+        <div class="featured-content">
+          <h3>Luxury Single Malt Whisky Tasting Set</h3>
+          <p class="price" style="font-size: 24px; color: #A4343A; font-weight: 600; margin: 10px 0;">£110.00</p>
+          <p>The ultimate premium whisky gift for serious connoisseurs. Six exceptional aged single malts including Tobermory 24 Year Old, Bunnahabhain 22 Year Old, and Octomore 14.4.</p>
+          <div class="bottle-highlights">
+            <p>Featured Bottles</p>
+          <p style="font-size: 13px;">The Limited Edition Bunnahabhain Moine 22 year Pedro Ximenez Finish 1997, Tobermory 24 Hebridean Series, Edradour 21 Oloroso Cask, Ledaig 18, a super-heavily peated Octomore release & Dalmore Portwood Reserve. </p>
+          </div>
+          <a href="https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set/" class="featured-cta">Discover Luxury Collection →</a>
+        </div>
+      </div>
+        
+      
+      <!-- Product 2: Regions of Scotland -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg" alt="Regions of Scotland Whisky Tasting Gift Set" />
+        </div>
+        <div class="featured-content">
+          <h3>Regions of Scotland Whisky Tasting Gift Set</h3>
+          <p class="price" style="font-size: 24px; color: #A4343A; font-weight: 600; margin: 10px 0;">£58.00</p>
+          <p>A premium journey through Scotland's six whisky-making regions. Features two 15-year expressions (Glenfiddich 15 Solera and Glen Scotia 15) alongside perfectly curated representatives.</p>
+          <div class="bottle-highlights">
+            <p>Featured Bottles</p>
+            <p style="font-size: 13px;">Six premium single malts representing all Scottish regions • Two 15-year aged expressions • Educational blind tasting challenge </p>
+          </div>
+          <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set/" class="featured-cta">Explore Regional Journey →</a>
+        </div>
+      </div>
+      
+      <!-- Product 3: Six Styles -->
+      <div class="featured-box">
+        <div class="featured-image">
+          <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt3.jpg" alt="Six Styles of Scotch Whisky Tasting Set" />
+        </div>
+        <div class="featured-content">
+          <h3>Six Styles of Scotch Whisky Tasting Set</h3>
+          <p class="price" style="font-size: 24px; color: #A4343A; font-weight: 600; margin: 10px 0;">£63.00</p>
+          <p>Perfect for whisky enthusiasts discovering their preferences. Features rare Ledaig 18 Year Old alongside five other premium single malts exploring every whisky style from smooth to peated.</p>
+          <div class="bottle-highlights">
+            <p>Featured Bottles</p>
+            <p style="font-size: 13px;">Includes rare Ledaig 18 Year Old • Six distinct whisky styles</p>
+          </div>
+          <a href="https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners/" class="featured-cta">Find Your Style →</a>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- INTRODUCTION -->
   <section class="intro-section">
     <div class="intro-content" style="max-width: 1000px; margin: 0 auto;">
@@ -1836,63 +2323,7 @@ gtag('config', 'G-FF0E8016EX');
     </div>
   </section>
 
-  <!-- FEATURED PREMIUM PRODUCTS -->
-  <section class="featured-collections">
-    <h2>Our Premium Whisky Gift Collections</h2>
-    
-    <div class="featured-grid">
-      <!-- Product 1: Luxury Single Malt -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <img src="https://www.azuspirits.co.uk/images/products/luxury-single-malt.jpg" alt="Luxury Single Malt Whisky Tasting Gift Set" />
-        </div>
-        <div class="featured-content">
-          <h3>Luxury Single Malt Whisky Tasting Set</h3>
-          <p class="price" style="font-size: 24px; color: #A4343A; font-weight: 600; margin: 10px 0;">£110.00</p>
-          <p>The ultimate premium whisky gift for serious connoisseurs. Six exceptional aged single malts including Tobermory 24 Year Old, Bunnahabhain 22 Year Old, and Octomore 14.4.</p>
-          <div class="bottle-highlights">
-            <p>Featured Bottles</p>
-            <p style="font-size: 13px;">Six premium aged single malts (15-24 years) • Rare and distinguished expressions • Worth over £1,000 in retail value </p>
-          </div>
-          <a href="https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set/" class="featured-cta">Discover Luxury Collection →</a>
-        </div>
-      </div>
-      
-      <!-- Product 2: Regions of Scotland -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland Whisky Tasting Gift Set" />
-        </div>
-        <div class="featured-content">
-          <h3>Regions of Scotland Whisky Tasting Gift Set</h3>
-          <p class="price" style="font-size: 24px; color: #A4343A; font-weight: 600; margin: 10px 0;">£58.00</p>
-          <p>A premium journey through Scotland's six whisky-making regions. Features two 15-year expressions (Glenfiddich 15 Solera and Glen Scotia 15) alongside perfectly curated representatives.</p>
-          <div class="bottle-highlights">
-            <p>Featured Bottles</p>
-            <p style="font-size: 13px;">Six premium single malts representing all Scottish regions • Two 15-year aged expressions • Educational blind tasting challenge </p>
-          </div>
-          <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set/" class="featured-cta">Explore Regional Journey →</a>
-        </div>
-      </div>
-      
-      <!-- Product 3: Six Styles -->
-      <div class="featured-box">
-        <div class="featured-image">
-          <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt3.jpg" alt="Six Styles of Scotch Whisky Tasting Set" />
-        </div>
-        <div class="featured-content">
-          <h3>Six Styles of Scotch Whisky Tasting Set</h3>
-          <p class="price" style="font-size: 24px; color: #A4343A; font-weight: 600; margin: 10px 0;">£63.00</p>
-          <p>Perfect for whisky enthusiasts discovering their preferences. Features rare Ledaig 18 Year Old alongside five other premium single malts exploring every whisky style from smooth to peated.</p>
-          <div class="bottle-highlights">
-            <p>Featured Bottles</p>
-            <p style="font-size: 13px;">Includes rare Ledaig 18 Year Old • Six distinct whisky styles</p>
-          </div>
-          <a href="https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners/" class="featured-cta">Find Your Style →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- WHAT MAKES PREMIUM -->
   <section class="intro-section" style="background: #f8f8f8;">

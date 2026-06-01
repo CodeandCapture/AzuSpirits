@@ -4,11 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Father's Day Whisky Gift | Scotch Whisky Gifts for Dad | Azu Spirits</title>
-  <meta name="description" content="The perfect Father's Day whisky gift for the dad who knows his drams. Curated blind tasting Scotch whisky gift sets featuring premium single malts from Scotland's finest distilleries. Free UK delivery." />
+  <meta name="description" content="Father's Day whisky gifts for dads who know their drams. Curated blind tasting Scotch whisky gift sets with premium single malts from Scotland's finest distilleries. Free UK delivery." />
 
   <!-- SEO META TAGS -->
   <meta name="author" content="Azu Spirits" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Father's Day Whisky Gift | Scotch Whisky Gifts for Dad | Azu Spirits" />
+  <meta name="twitter:description" content="Father's Day whisky gifts for dads who know their drams. Premium blind tasting Scotch whisky sets. Free UK delivery." />
+  <meta name="twitter:image" content="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="https://www.azuspirits.co.uk/images/brand/favicon.ico">
@@ -21,10 +27,11 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Father's Day Whisky Gift | Scotch Whisky Gifts for Dad" />
-  <meta property="og:description" content="The perfect Father's Day whisky gift. Curated Scotch whisky tasting sets for dads who know their drams. Free UK delivery in time for Father's Day." />
+  <meta property="og:description" content="Father's Day whisky gifts for dads who know their drams. Curated blind tasting Scotch whisky sets with premium single malts. Free UK delivery." />
   <meta property="og:image" content="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg" />
   <meta property="og:url" content="https://www.azuspirits.co.uk/fathers-day-whisky-gift/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Azu Spirits" />
 
   <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
@@ -54,18 +61,27 @@
   }
   </script>
 
-  <!-- CollectionPage Schema -->
+  <!-- WebPage Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Father's Day Whisky Gift",
+    "@type": "WebPage",
+    "name": "Father's Day Whisky Gift — Scotch Whisky Gifts for Dad",
     "description": "Curated Scotch whisky gift sets for Father's Day. Premium single malts from Scotland's finest distilleries, presented as a unique blind tasting experience. Free UK delivery.",
     "url": "https://www.azuspirits.co.uk/fathers-day-whisky-gift/",
+    "dateModified": "2026-06-01",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Azu Spirits",
       "url": "https://www.azuspirits.co.uk"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.azuspirits.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Whisky Gifts", "item": "https://www.azuspirits.co.uk/whisky-gifts/" },
+        { "@type": "ListItem", "position": 3, "name": "Father's Day Whisky Gift", "item": "https://www.azuspirits.co.uk/fathers-day-whisky-gift/" }
+      ]
     }
   }
   </script>
@@ -252,8 +268,17 @@
 
     .has-dropdown > a::after { content: ' ▾'; font-size: 0.8rem; margin-left: 0.3rem; }
 
+    /* ============================================
+       DROPDOWN FIX
+       - paddingTop bridges the gap between trigger and menu so hover isn't lost
+       - pointer-events: none / auto ensures invisible bridge is clickable
+       - transition delay on visibility prevents flash-disappear on slow mouse moves
+    ============================================ */
     .dropdown-menu {
-      display: none !important;
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -263,10 +288,31 @@
       min-width: 220px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       z-index: 1000;
-      margin-top: 0.5rem;
+      /* Bridge padding so mouse travel from link → menu doesn't break hover */
+      margin-top: 0;
+      padding-top: 8px;
+      /* Delay hide so a slightly slow mouse doesn't close it */
+      transition: opacity 0.15s ease, visibility 0.15s ease;
     }
 
-    .has-dropdown:hover .dropdown-menu { display: flex !important; flex-direction: column; }
+    /* Invisible bridge element that keeps hover alive in the gap */
+    .has-dropdown::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 8px; /* matches dropdown padding-top */
+      background: transparent;
+    }
+
+    .has-dropdown:hover .dropdown-menu,
+    .has-dropdown:focus-within .dropdown-menu {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     .dropdown-menu li { margin: 0 !important; border-bottom: 1px solid #f0f0f0; }
     .dropdown-menu li:last-child { border-bottom: none; }
     .dropdown-menu a { display: block; padding: 0.75rem 1rem; color: #333; text-decoration: none; transition: background 0.2s, color 0.2s; }
@@ -787,69 +833,6 @@
     }
 
     /* ============================================
-       DELIVERY URGENCY BLOCK
-    ============================================ */
-    .delivery-block {
-      background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .delivery-block h2 {
-      font-size: clamp(22px, 4vw, 32px);
-      color: white;
-      margin-bottom: 14px;
-    }
-
-    .delivery-block p { color: rgba(255,255,255,0.75); font-size: 15px; margin-bottom: 36px; }
-
-    .delivery-steps {
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      flex-wrap: wrap;
-    }
-
-    .delivery-step {
-      flex: 1;
-      min-width: 160px;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    .delivery-step::after {
-      content: '→';
-      position: absolute;
-      right: -8px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #D4AF37;
-      font-size: 20px;
-    }
-
-    .delivery-step:last-child::after { display: none; }
-
-    .delivery-step-icon { font-size: 28px; margin-bottom: 8px; }
-    .delivery-step-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #D4AF37; margin-bottom: 4px; font-weight: 600; }
-    .delivery-step-text { font-size: 13px; color: rgba(255,255,255,0.7); }
-
-    .delivery-deadline {
-      display: inline-block;
-      background: #A4343A;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 4px;
-      font-size: 15px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* ============================================
        LONG-FORM CONTENT (SEO)
     ============================================ */
     .content-section {
@@ -1002,17 +985,24 @@
       .header-inner { position: relative; }
       .header-inner img { height: 60px; margin-left: 10px; }
 
+      /* On mobile, dropdown reverts to JS-toggled block display */
       .dropdown-menu {
         position: static;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
         display: none;
         border: none;
         box-shadow: none;
         background: #f0f0f0;
         margin-top: 0.5rem;
         border-radius: 4px;
+        padding-top: 0;
+        transition: none;
       }
 
-      .has-dropdown.open .dropdown-menu { display: block !important; }
+      .has-dropdown::after { display: none; }
+      .has-dropdown.open .dropdown-menu { display: block; }
       .has-dropdown > a::after { float: right; }
       .dropdown-menu a { padding-left: 2rem; font-size: 0.95rem; }
 
@@ -1024,10 +1014,6 @@
 
       .hero-product-inner { grid-template-columns: 1fr; gap: 30px; }
       .hero-product-image img { height: 300px; }
-
-      .delivery-steps { flex-direction: column; gap: 10px; align-items: center; }
-      .delivery-step::after { content: '↓'; right: auto; top: auto; bottom: -16px; left: 50%; transform: translateX(-50%); }
-      .delivery-step:last-child::after { display: none; }
 
       .image-break { background-attachment: scroll; }
 
@@ -1048,52 +1034,52 @@
 </head>
 <body>
 
-  <!-- URGENCY BANNER -->
-  <div class="urgency-banner">
-    🎁 Father's Day is <span>21 June 2026</span> —  Use FATHERSDAY code at checkout for 10% off. Ends <span>16 June</span> 
-  </div>
+<div class="urgency-banner">
+  Treat dad to something <span>different.</span> His own tasting challenge. Add FATHERSDAY code at checkout for 10% off.
+</div>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Whisky and Gin Gift Sets" onclick="window.location.href='https://www.azuspirits.co.uk/'">
-      <div class="header-right">
-        <nav class="site-nav" id="siteNav">
-          <ul>
-            <li><a href="https://www.azuspirits.co.uk/">Home</a></li>
-            <li class="has-dropdown">
-              <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
-              <ul class="dropdown-menu">
-                <li><a href="https://www.azuspirits.co.uk/whisky-gifts/">Scotch Whisky</a></li>
-                <li><a href="https://www.azuspirits.co.uk/gin-gifts/">Craft Gin</a></li>
-                <li><a href="https://www.azuspirits.co.uk/premium-whisky-gifts/">Premium & Luxury Whisky Gifts</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="https://www.azuspirits.co.uk/sharing-boxes/">Sharing Boxes</a>
-              <ul class="dropdown-menu">
-                <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/">Scotch Whisky</a></li>
-                <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/">Premium Gin</a></li>
-              </ul>
-            </li>
-            <li><a href="https://www.azuspirits.co.uk/about-us/">About</a></li>
-            <li><a href="https://www.azuspirits.co.uk/blog/">Blog</a></li>
-          </ul>
-        </nav>
-        <div class="cart-icon" onclick="window.location.href='https://www.azuspirits.co.uk/cart/'" aria-label="View Shopping Cart">
-          🛒 <span class="cart-count">0</span>
-        </div>
-        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Whisky and Gin Gift Sets" onclick="window.location.href='https://www.azuspirits.co.uk/'">
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="https://www.azuspirits.co.uk/">Home</a></li>
+          <li class="has-dropdown">
+            <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="https://www.azuspirits.co.uk/whisky-gifts/" role="menuitem">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-gifts/" role="menuitem">Craft Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/premium-whisky-gifts/" role="menuitem">Premium &amp; Luxury Whisky Gifts</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="https://www.azuspirits.co.uk/sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/" role="menuitem">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/" role="menuitem">Premium Gin</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.azuspirits.co.uk/about-us/">About</a></li>
+          <li><a href="https://www.azuspirits.co.uk/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon" onclick="window.location.href='https://www.azuspirits.co.uk/cart/'" aria-label="View Shopping Cart">
+        🛒 <span class="cart-count">0</span>
       </div>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle menu" aria-expanded="false">☰</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
+<!-- HERO -->
+<main id="main-content">
+  <section class="hero" aria-label="Father's Day whisky gifts hero">
     <div class="hero-inner">
       <span class="hero-eyebrow">Father's Day 2026</span>
-      <h1>Father's Day Whisky Gifts</h1>
-      <p>Treat dad to something different — his own tasting challenge featuring premium single malts from Scotland's finest distilleries. Bottles he will love and a tasting experience he won't have tried before.</p>
+      <h1>Father's Day Whisky Gifts — Premium Scotch for Dad</h1>
+      <p>Treat dad to something different — his own blind tasting challenge featuring premium single malts from Scotland's finest distilleries. Bottles he will love and a tasting experience he won't have tried before.</p>
       <div class="hero-ctas">
         <a href="#hero-product" class="btn-primary">See Our Top Pick →</a>
         <a href="#all-sets" class="btn-secondary">Browse All Sets</a>
@@ -1102,147 +1088,141 @@
   </section>
 
   <!-- TRUST BAR -->
-  <div class="trust-bar">
+  <div class="trust-bar" aria-label="Trust signals">
     <div class="trust-bar-inner">
       <div class="trust-item">
-        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
         <span>Secure checkout via Stripe</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
         <span>Free tracked DPD delivery</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24"><path d="M19 8L5 8v10h14V8zm-3 6H8v-2h8v2z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 8L5 8v10h14V8zm-3 6H8v-2h8v2z"/></svg>
         <span>Dispatched within 1–2 business days</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         <span>Gift message included</span>
       </div>
     </div>
   </div>
 
   <!-- HERO PRODUCT: REGIONS OF SCOTLAND -->
-  <section class="hero-product" id="hero-product">
+  <section class="hero-product" id="hero-product" aria-labelledby="hero-product-heading">
     <div class="hero-product-inner">
       <div class="hero-product-image">
-        <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg" alt="Regions of Scotland Whisky Tasting Gift Set — Father's Day whisky gift" loading="eager">
+        <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg" alt="Regions of Scotland Whisky Tasting Gift Set — six premium single malts, one per Scottish whisky region" loading="eager" width="550" height="500">
         <span class="hero-product-badge">Our Top Father's Day Pick</span>
       </div>
       <div class="hero-product-content">
         <span class="section-tag">Regions of Scotland</span>
-        <h2>The Whisky Gift for Dads Who Like A Challenge</h2>
+        <h2 id="hero-product-heading">The Whisky Gift for Dads Who Like A Challenge</h2>
         <div class="hero-product-price">£58.00</div>
-        <p>Six premium single malts. Six regions of Scotland. One unforgettable blind tasting challenge. Including a selection of renowned and lesser-known drams, each representing one of Scotland's whisky-producing regions. Will he be able to identify the soft sherried Glenfiddich 15 Solera from Speyside or the rugged coastal Ledaig 10 from the Isle of Mull? Explore the extent regional differences have on single malt whisky, a unique experience for whisky lovers.</p>
+        <p>Six premium single malts. Six regions of Scotland. One unforgettable blind tasting challenge. Including a selection of renowned and lesser-known drams, each representing one of Scotland's whisky-producing regions. Will he be able to identify the soft sherried Glenfiddich 15 Solera from Speyside or the rugged coastal Ledaig 10 from the Isle of Mull? Explore the extent regional differences have on single malt whisky — a unique Father's Day whisky experience for any Scotch lover.</p>
         <div class="bottle-list">
           <div class="bottle-list-title">Featured Bottles</div>
-          <ul>
+          <ul aria-label="Whisky bottles included in this set">
             <li>Glenfiddich 15 Solera — Speyside</li>
             <li>Glen Scotia 15 — Campbeltown</li>
-            <li>Dalmore 12 - Highlands</li>
-            <li>Kilchoman Machir Bay - Islay </li>
-            <li>Ledaig 10 - Isle of Mull</li>
-            <li>Bladnoch Vinaya - Lowlands</li>
+            <li>Dalmore 12 — Highlands</li>
+            <li>Kilchoman Machir Bay — Islay</li>
+            <li>Ledaig 10 — Isle of Mull</li>
+            <li>Bladnoch Vinaya — Lowlands</li>
           </ul>
         </div>
-        <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set/" class="hero-product-cta">Shop Now →</a>
-       
+        <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set/" class="hero-product-cta">Shop Now — £58 with Free Delivery →</a>
       </div>
     </div>
   </section>
 
   <!-- WHAT'S IN THE BOX -->
-  <section class="section section-tinted">
+  <section class="section section-tinted" aria-labelledby="inbox-heading">
     <div class="section-header">
       <span class="section-tag">What He'll Receive</span>
-      <h2>Everything Included in Every Set</h2>
+      <h2 id="inbox-heading">Everything Included in Every Set</h2>
       <p>Each Father's Day whisky gift set arrives complete and ready to give — leave a gift note at checkout.</p>
     </div>
     <div class="box-grid">
       <div class="box-item">
-        <img src="https://www.azuspirits.co.uk/images/products/tasting-guide.jpg" alt="Blind whisky tasting guide" loading="lazy">
+        <img src="https://www.azuspirits.co.uk/images/products/tasting-guide.jpg" alt="Blind whisky tasting guide booklet" loading="lazy" width="250" height="180">
         <h4>A Blind Tasting Guide</h4>
         <p>Expert tips and tasting notes to help your dad work through each dram with confidence</p>
       </div>
       <div class="box-item">
-        <img src="https://www.azuspirits.co.uk/images/products/tasting-cards-whisky.jpg" alt="Whisky information cards" loading="lazy">
+        <img src="https://www.azuspirits.co.uk/images/products/tasting-cards-whisky.jpg" alt="Whisky information cards with flavour profiles and distillery notes" loading="lazy" width="250" height="180">
         <h4>Information Cards</h4>
         <p>Flavour profiles, production notes, and distillery context — the detail a whisky lover appreciates</p>
       </div>
       <div class="box-item">
-        <img src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg" alt="Six 30ml bottles of premium Scotch whisky" loading="lazy">
+        <img src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg" alt="Six 30ml numbered bottles of premium Scotch whisky for blind tasting" loading="lazy" width="250" height="180">
         <h4>6 × 30ml Premium Bottles</h4>
         <p>Six numbered single malts, anonymised for the blind tasting challenge</p>
       </div>
       <div class="box-item">
-        <img src="https://www.azuspirits.co.uk/images/products/unusual-scotch-whisky-gift.jpg" alt="Wax sealed reveal envelope" loading="lazy">
+        <img src="https://www.azuspirits.co.uk/images/products/unusual-scotch-whisky-gift.jpg" alt="Wax-sealed reveal envelope to open after the tasting" loading="lazy" width="250" height="180">
         <h4>Wax-Sealed Reveal</h4>
         <p>The big moment — open the envelope to discover which distilleries he just tasted</p>
       </div>
-    </div> 
+    </div>
   </section>
-  
-  
 
   <!-- IMAGE BREAK -->
-  <div class="image-break" style="background-image: url('https://www.azuspirits.co.uk/images/products/whisky-collections.jpg');">
-  
-  </div>
+  <div class="image-break" style="background-image: url('https://www.azuspirits.co.uk/images/products/whisky-collections.jpg');" role="presentation" aria-hidden="true"></div>
 
   <!-- WHY IT WORKS FOR DAD -->
-  <section class="section section-light">
+  <section class="section section-light" aria-labelledby="why-heading">
     <div class="section-header">
       <span class="section-tag">Why It Works</span>
-      <h2>Why This Is the Whisky Gift for Dad</h2>
+      <h2 id="why-heading">Why This Is the Whisky Gift for Dad</h2>
       <p>For the dad who already drinks Scotch, it can be hard to find something new. Here's what sets our tasting gifts apart.</p>
     </div>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-number">01</div>
+        <div class="why-number" aria-hidden="true">01</div>
         <h3>Exclusively Premium Single Malts</h3>
         <p>We deliberately select premium single malts from distilleries away from the mainstream. Bladnoch Vinaya, Glen Scotia 15, Ledaig 18 — these are the bottles serious whisky drinkers seek out, not the ones that line every supermarket shelf.</p>
       </div>
       <div class="why-card">
-        <div class="why-number">02</div>
+        <div class="why-number" aria-hidden="true">02</div>
         <h3>An Experience, Not Just a Drink</h3>
-        <p>The blind tasting format turns a gift into an event. It can be tasted, debated, and remembered. 30ml tasters are perfect to share or enjoy alone. Perfect for a Father's Day afternoon with a proper sit-down dram.</p>
+        <p>The blind tasting format turns a gift into an event. It can be tasted, debated, and remembered. 30ml tasters are perfect to share or enjoy alone — perfect for a Father's Day afternoon with a proper sit-down dram.</p>
       </div>
       <div class="why-card">
-        <div class="why-number">03</div>
+        <div class="why-number" aria-hidden="true">03</div>
         <h3>Curated by Someone Who Knows Whisky</h3>
-        <p>Every set is curated by a founder who spent years working in Glasgow's top whisky bars, pouring and studying Scotch professionally. These aren't generic sets— they're carefully selected by someone who genuinely loves whisky.</p>
+        <p>Every set is curated by a founder who spent years working in Glasgow's top whisky bars, pouring and studying Scotch professionally. These aren't generic sets — they're carefully selected by someone who genuinely loves whisky.</p>
       </div>
       <div class="why-card">
-        <div class="why-number">04</div>
-        <h3>Six Regions in One Gift</h3>
+        <div class="why-number" aria-hidden="true">04</div>
+        <h3>Six Regions in One Father's Day Whisky Gift</h3>
         <p>The Regions of Scotland set covers all six Scottish whisky-making regions — Speyside, Islay, Highland, Lowland, Campbeltown, and Island — in a single gift. Even experienced dads rarely get the chance to taste them side by side.</p>
       </div>
       <div class="why-card">
-        <div class="why-number">05</div>
+        <div class="why-number" aria-hidden="true">05</div>
         <h3>Arrives Ready to Give</h3>
-        <p>Free tracked DPD delivery, beautifully presented, with your personal gift message included. No last-minute wrapping panic, no trips to the post office. Order by 16 June for guaranteed Father's Day delivery.</p>
+        <p>Free tracked DPD delivery, beautifully presented, with your personal gift message included. No last-minute wrapping panic. Order by 16 June for guaranteed Father's Day 2026 delivery.</p>
       </div>
       <div class="why-card">
-        <div class="why-number">06</div>
+        <div class="why-number" aria-hidden="true">06</div>
         <h3>Genuinely Unusual</h3>
         <p>If you've been searching "unusual whisky gift for dad" — this is it. You won't find this tasting set in the supermarket, the airport, or any high street retailer. That's the point.</p>
       </div>
     </div>
   </section>
-  
- <!-- ALL WHISKY SETS -->
-  <section class="section section-tinted" id="all-sets">
+
+  <!-- ALL WHISKY SETS -->
+  <section class="section section-tinted" id="all-sets" aria-labelledby="all-sets-heading">
     <div class="section-header">
       <span class="section-tag">All Father's Day Whisky Sets</span>
-      <h2>Find the Right Whisky Gift for Your Dad</h2>
-      <p>From regional journeys to luxury aged single malts — every set is a genuine whisky experience.</p>
+      <h2 id="all-sets-heading">Find the Right Whisky Gift for Your Dad</h2>
+      <p>From regional journeys to luxury aged single malts — every set is a genuine whisky experience. Browse our full range of <a href="https://www.azuspirits.co.uk/whisky-gifts/" style="color:#A4343A;">Scotch whisky gifts</a> and <a href="https://www.azuspirits.co.uk/premium-whisky-gifts/" style="color:#A4343A;">premium whisky gifts</a>.</p>
     </div>
     <div class="products-grid">
-
-      <div class="product-card">
+      <article class="product-card">
         <div class="product-card-image">
-          <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg" alt="Regions of Scotland Whisky Tasting Gift Set" loading="lazy">
+          <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg" alt="Regions of Scotland Whisky Tasting Gift Set — six single malts, six regions" loading="lazy" width="280" height="240">
           <div class="product-card-price">£58</div>
         </div>
         <div class="product-card-body">
@@ -1250,23 +1230,21 @@
           <p>Six single malts, six regions of Scotland. Includes Glenfiddich 15 Solera and Glen Scotia 15. Our top Father's Day recommendation.</p>
           <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set/" class="product-card-cta">View Set →</a>
         </div>
-      </div>
-
-      <div class="product-card">
+      </article>
+      <article class="product-card">
         <div class="product-card-image">
-          <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt3.jpg" alt="Six Styles of Scotch Whisky Tasting Set" loading="lazy">
+          <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt3.jpg" alt="Six Styles of Scotch Whisky Tasting Set including rare Ledaig 18 Year Old" loading="lazy" width="280" height="240">
           <div class="product-card-price">£63</div>
         </div>
         <div class="product-card-body">
           <h3>Six Styles of Scotch Whisky Tasting Set</h3>
           <p>From smooth to heavily peated — featuring the rare Ledaig 18 Year Old. Ideal for the dad who wants to explore every dimension of Scotch.</p>
           <a href="https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners/" class="product-card-cta">View Set →</a>
-        </div> 
-      </div>
-
-      <div class="product-card">
+        </div>
+      </article>
+      <article class="product-card">
         <div class="product-card-image">
-          <img src="https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg" alt="Luxury Single Malt Whisky Tasting Gift Set" loading="lazy">
+          <img src="https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg" alt="Luxury Single Malt Whisky Tasting Gift Set with Tobermory 24, Bunnahabhain 22, Octomore" loading="lazy" width="280" height="240">
           <div class="product-card-price">£110</div>
         </div>
         <div class="product-card-body">
@@ -1274,43 +1252,36 @@
           <p>For the serious connoisseur. Tobermory 24, Bunnahabhain 22, Octomore 14.4 and more. Six exceptional aged expressions worth over £1,000.</p>
           <a href="https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set/" class="product-card-cta">View Set →</a>
         </div>
-      </div>
-
+      </article>
     </div>
-  </section>  
+  </section>
 
- 
-<!-- IMAGE BREAK 2 -->
-  <div class="image-break" style="background-image: url('https://www.azuspirits.co.uk/images/products/whisky-gifts-fathers-day.jpg');">
-    <div class="image-break-inner">
-      
-    </div>
-  </div>
+  <!-- IMAGE BREAK 2 -->
+  <div class="image-break" style="background-image: url('https://www.azuspirits.co.uk/images/products/whisky-gifts-fathers-day.jpg');" role="presentation" aria-hidden="true"></div>
 
   <!-- LONG-FORM SEO CONTENT -->
-  <section class="section section-light">
+  <section class="section section-light" aria-labelledby="guide-heading">
     <div class="content-section">
-      <h2>The Best Father's Day Whisky Gift for a Dad Who Knows His Scotch</h2>
+      <h2 id="guide-heading">The Best Father's Day Whisky Gift for a Dad Who Knows His Scotch</h2>
 
       <div class="content-block">
         <h3>Why Scotch Whisky Is the Perfect Father's Day Gift</h3>
-        <p>For the dad who already appreciates a good dram, it can be hard to find his perfect bottle, or something genuinely new. Whisky lovers know what they like! Rather than the same staples you see everywhere, our gift sets feature six premium single malts thoughtfully chosen by whisky lovers. Selected for their diversity, there will certainly be a couple he likes, maybe one he doesn't, but he may find something he absolutely loves.</p>
+        <p>For the dad who already appreciates a good dram, it can be hard to find his perfect bottle, or something genuinely new. Whisky lovers know what they like! Rather than the same staples you see everywhere, our Father's Day whisky gift sets feature six premium single malts thoughtfully chosen by whisky lovers. Selected for their diversity, there will certainly be a couple he likes, maybe one he doesn't, but he may find something he absolutely loves.</p>
       </div>
 
       <div class="content-block">
         <h3>What Makes Our Regions of Scotland Set the Ideal Father's Day Whisky Gift</h3>
-        <p>The Regions of Scotland set works so well as a Father's Day whisky gift as it presents an exciting tasting challenge for the whisky loving dad, and includes a variety of single malt whiskies from renowned to lesser known Scottish distilleries to offer something he may not have tried before. A Scotch whisky enthusiadst will know the names of Scotland's six whisky-making regions — Speyside, Islay, Highland, Lowland, Campbeltown, and Island — but rarely gets the chance to taste them systematically side by side. Many whisky lovers will have their favoured 'region', and this blind tasting can be genuinely surprising even for the most distinguished whisky drinker! 
-        </p>
+        <p>The Regions of Scotland set works so well as a Father's Day whisky gift as it presents an exciting tasting challenge, and includes single malts from renowned to lesser-known Scottish distilleries to offer something he may not have tried before. A Scotch whisky enthusiast will know the names of Scotland's six whisky-making regions — Speyside, Islay, Highland, Lowland, Campbeltown, and Island — but rarely gets the chance to taste them systematically side by side. Many whisky lovers will have their favoured region, and this blind tasting can be genuinely surprising even for the most distinguished whisky drinker.</p>
       </div>
 
       <div class="content-block">
         <h3>Whisky Gifts for Dad: Moving Beyond the Obvious</h3>
-        <p>Searching for a whisky gift for dad that isn't what he already has on his shelf? That's exactly the problem our sets are built to solve. High street whisky gifts tend to cluster around the same handful of brands. Our sets are built around a different philosophy: source the single malts that serious whisky bars pour but that rarely make it into the gifting mainstream. Distilleries like Glen Scotia, Tobermory, and Bunnahabhain have devoted followings among genuine enthusiasts — but they rarely show up under Father's Day displays. That's precisely what makes them the right choice.</p>
-      </div> 
+        <p>Searching for a <a href="https://www.azuspirits.co.uk/whisky-gifts/" style="color:#A4343A;">whisky gift for dad</a> that isn't what he already has on his shelf? That's exactly the problem our sets are built to solve. High street whisky gifts tend to cluster around the same handful of brands. Our sets are built around a different philosophy: source the single malts that serious whisky bars pour but that rarely make it into the gifting mainstream. Distilleries like Glen Scotia, Tobermory, and Bunnahabhain have devoted followings among genuine enthusiasts — but they rarely show up under Father's Day displays. That's precisely what makes them the right choice. For something truly indulgent, explore our <a href="https://www.azuspirits.co.uk/premium-whisky-gifts/" style="color:#A4343A;">premium whisky gifts</a>.</p>
+      </div>
 
       <div class="content-block">
         <h3>Father's Day Whisky Delivery: Ordering in Time</h3>
-        <p>Father's Day 2026 falls on Sunday 21 June. We dispatch all orders via DPD tracked delivery within 1–2 business days, and recommend ordering by 16 June to be comfortably in time. If you're cutting it close, get in touch at enquiries@azuspirits.co.uk. All delivery is free. </p>
+        <p>Father's Day 2026 falls on Sunday 21 June. We dispatch all orders via DPD tracked delivery within 1–2 business days, and recommend ordering by 16 June to be comfortably in time. If you're cutting it close, get in touch at <a href="mailto:enquiries@azuspirits.co.uk" style="color:#A4343A;">enquiries@azuspirits.co.uk</a>. All UK delivery is free with no minimum spend.</p>
       </div>
 
       <div class="content-block">
@@ -1321,17 +1292,17 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section section-tinted">
+  <section class="section section-tinted" aria-labelledby="faq-heading">
     <div class="section-header">
       <span class="section-tag">Questions</span>
-      <h2>Father's Day Whisky Gift FAQ</h2>
+      <h2 id="faq-heading">Father's Day Whisky Gift FAQ</h2>
     </div>
     <div class="faq-list">
 
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
           What is a good Father's Day whisky gift for a dad who already drinks Scotch?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <p>For a dad who already appreciates Scotch whisky, the best Father's Day gift is premium single malts he will love, with a tasting experience he won't have had before. Our Regions of Scotland Whisky Tasting Gift Set features six premium single malts — including two 15-year expressions — from each of Scotland's six whisky regions. The blind tasting format offers an entertaining challenge, and makes it genuinely surprising even for experienced dads, with the reveal element adding an exciting extra dimension.</p>
@@ -1339,9 +1310,9 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
           Will my Father's Day whisky gift arrive in time?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <p>Yes. We dispatch via DPD tracked delivery within 1–2 business days. For Father's Day 2026 (21 June), we recommend ordering by 16 June to guarantee delivery in time. If you're ordering close to the date, contact us at enquiries@azuspirits.co.uk and we'll do our best to help.</p>
@@ -1349,9 +1320,9 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
           Can I add a personal message to a Father's Day whisky gift?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <p>Yes — you can add a personalised gift message at checkout. Your Father's Day whisky gift will arrive beautifully presented and ready to give, with your message included at no extra charge.</p>
@@ -1359,9 +1330,9 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
           What makes Azu Spirits whisky gift sets different from other whisky gifts for dads?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <p>Most whisky gifts feature the same well-known bottles you can pick up at any supermarket. Azu Spirits gift sets feature genuinely unusual single malts — including 15-year aged expressions and limited releases — presented as a blind tasting challenge. It's an experience, not just a drink, and one that a whisky-loving dad will remember.</p>
@@ -1369,9 +1340,9 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
           Is free delivery included on Father's Day whisky gifts?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <p>Yes. Free tracked DPD delivery is included on every order across the UK, with no minimum spend. Your Father's Day whisky gift arrives safely packaged and ready to present.</p>
@@ -1379,9 +1350,9 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
           What is the best whisky gift for a dad who loves trying new Scotch?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer">
           <p>Our Regions of Scotland set is ideal — it covers all six Scottish whisky regions in one gift, including distilleries many whisky lovers haven't explored. For a dad who wants to go deeper, the Luxury Single Malt set features six exceptional aged expressions including rare releases. Both make outstanding Father's Day whisky gifts.</p>
@@ -1392,60 +1363,71 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section class="final-cta">
-    <h2>Give Dad a Dram He Won't Forget</h2>
+  <section class="final-cta" aria-labelledby="final-cta-heading">
+    <h2 id="final-cta-heading">Give Dad a Dram He Won't Forget</h2>
     <p>Premium Scotch whisky, expertly curated, free delivery in time for 21 June. The Father's Day whisky gift for dads who already know their way around a good single malt.</p>
     <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set/" class="btn-primary">Order the Regions of Scotland Set →</a>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="https://www.azuspirits.co.uk/shipping-returns">Shipping & Returns</a></li>
-          <li><a href="https://www.azuspirits.co.uk/terms">Terms & Conditions</a></li>
-          <li><a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a></li>
-          <li><a href="https://www.azuspirits.co.uk/cookie-policy">Cookie Policy</a></li>
-        </ul>
-      </nav>
-      <div class="site-info">
-        <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
-      </div>
-    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <ul>
+        <li><a href="https://www.azuspirits.co.uk/shipping-returns">Shipping &amp; Returns</a></li>
+        <li><a href="https://www.azuspirits.co.uk/terms">Terms &amp; Conditions</a></li>
+        <li><a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a></li>
+        <li><a href="https://www.azuspirits.co.uk/cookie-policy">Cookie Policy</a></li>
+      </ul>
+    </nav>
     <div class="site-info">
-      <p>© 2026 Azu Spirits Ltd</p>
+      <p>Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
     </div>
-  </footer>
+  </div>
+  <div class="site-info">
+    <p>© 2026 Azu Spirits Ltd</p>
+  </div>
+</footer>
 
-  <script src="/js/cart.js"></script>
-  <script>
-    function toggleNav() {
-      document.getElementById('siteNav').classList.toggle('open');
-    }
+<script src="/js/cart.js"></script>
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('siteNav');
+    const btn = document.querySelector('.nav-toggle');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+  }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      if (window.innerWidth <= 868) {
-        document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const parent = this.parentElement;
-            document.querySelectorAll('.has-dropdown').forEach(function(item) {
-              if (item !== parent) item.classList.remove('open');
-            });
-            parent.classList.toggle('open');
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 868) {
+      document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const parent = this.parentElement;
+          document.querySelectorAll('.has-dropdown').forEach(function(item) {
+            if (item !== parent) item.classList.remove('open');
           });
+          parent.classList.toggle('open');
         });
-      }
-    });
-
-    function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+      }); 
     }
-  </script>
+  });
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+</script>
 
 </body>
 </html>

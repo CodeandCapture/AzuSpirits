@@ -72,7 +72,7 @@
     },
     "url": "https://www.azuspirits.co.uk/blog/the-ancient-origins-of-distillation",
     "datePublished": "2025-11-11",
-    "dateModified": "2025-11-11",
+    "dateModified": "2026-06-03",
     "articleSection": "Whisky History"
   }
   </script>
@@ -402,7 +402,7 @@
     /* ========================================
        RELATED POSTS SECTION
        ======================================== */
-    .related-posts {
+   /.related-posts {
       background: #f8f8f8;
       padding: 60px 20px;
       margin-top: 60px;
@@ -425,6 +425,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
+      padding: 20px;
     }
 
     .related-card {
@@ -459,12 +460,22 @@
       margin-bottom: 10px;
       color: #1a1a1a;
       line-height: 1.3;
+      font-family: 'Playfair Display', serif;
     }
 
     .related-card p {
       font-size: 15px;
       color: #666;
       line-height: 1.6;
+    }
+    
+      .related-card a {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      text-decoration: none; 
+      text-align: center;
+     
     }
 
     /* ========================================
@@ -525,7 +536,27 @@
       font-size: 12px;
       color: #999;
     }
-
+    
+    .featured-cta {
+    padding: 20px;
+    display: inline-block;
+    background-color: black;
+     color: white;
+      text-transform: uppercase;
+      text-align: center;
+      
+    }
+    
+     section.main {
+    background-image: url('https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg');
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    padding: 200px 20px 30px; /* pushes text to bottom */
+    color: white; position: relative;
+  }
+  .main h3 { text-align: center; font-weight: 400;  margin: 0; }
+  .main h3 a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 3px; transition: border-color 0.3s; }
+  .main h3 a:hover { border-color: white; }
+  .overlay { background: rgba(0,0,0,0.6); padding: 20px 20px; }
     /* ========================================
        MOBILE RESPONSIVE
        ======================================== */
@@ -684,6 +715,16 @@ gtag('config', 'AW-366761144');
       <p>Fast forward to around 800 AD, and we see Islamic Alchemists developing the early stills into what they called the al-anbîq. Most likely used to make medicines, there is no explicit evidence that distillation was yet used to create spirits, but the technology existed long before and, well, it is likely!</p>
       
       <p>The al-anbîq is now known as the Alembic Still. It is widely used today in craft gin production and was the basis for the traditional Pot Still.</p>
+      
+                   
+ <section class="main">
+  <h3 class="overlay">
+    <a href="https://www.azuspirits.co.uk/single-malt-whisky-gifts/">
+     Explore premium single malt through a unique blind tasting →
+    </a>
+  </h3>
+</section>
+
 
       <h2>Alembic Still Whisky History</h2>
       <p>Credit for the development of the Alembic Still is often given to the eighth-century Arab chemist Abū Mūsā Jābir ibn Hayyān, known as the 'father of chemistry'. Credited with the creation of many types of laboratory equipment, his work contributed to the knowledge of distillation, sublimation, crystallisation, calcination, and evaporation.</p>
@@ -720,16 +761,40 @@ gtag('config', 'AW-366761144');
     <div class="related-posts-inner">
       <h2>More from Our Blog</h2>
       <div class="related-grid">
-        <!-- Related post cards would go here -->
-        <!-- Example structure:
-        <a href="#" class="related-card">
-          <img src="..." alt="...">
-          <div class="related-card-content">
-            <h3>Article Title</h3>
-            <p>Brief excerpt...</p>
+        
+        <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/distillation-scotch-whisky/"> 
+          <img src="https://www.azuspirits.co.uk/images/distilleries/whisky-production.jpg"> 
+        
+          <h3>Distillation in Scotch Whisky</h3>
+          </a>
           </div>
-        </a>
-        -->
+             
+         <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/aqua-vitae-to-scotch-whisky/"> 
+          <img src="https://www.azuspirits.co.uk/images/blog/aqua-vitae-to-scotch-whisky.jpg"> 
+        
+          <h3>Aqua Vitae to Scotch Whisky</h3>
+          </a>
+          </div>
+        
+          <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/scotch-whisky-of-rock-and-water/"> 
+          <img src="https://www.azuspirits.co.uk/images/landscapes/scotland-mountain.jpg"> 
+        
+          <h3>Scotch Whisky: Of Rock & Water</h3>
+          </a>
+          </div>
+        
+        
+          <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/maturation-scotch-whisky/"> 
+          <img src="https://www.azuspirits.co.uk/images/distilleries/maturation-scotch-whisky.jpg"> 
+        
+          <h3>Maturation in Scotch Whisky</h3>
+          </a>
+          </div>
+       
       </div>
     </div>
   </section>

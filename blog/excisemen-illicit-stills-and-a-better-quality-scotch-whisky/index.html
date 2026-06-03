@@ -77,7 +77,7 @@
     },
     "url": "https://www.azuspirits.co.uk/blog/excisemen-illicit-stills-and-a-better-quality-scotch-whisky",
     "datePublished": "2025-11-11",
-    "dateModified": "2026-03-24",
+    "dateModified": "2026-06-03",
     "articleSection": "Whisky History"
   }
   </script>
@@ -407,7 +407,7 @@
     /* ========================================
        RELATED POSTS SECTION
        ======================================== */
-    .related-posts {
+    /.related-posts {
       background: #f8f8f8;
       padding: 60px 20px;
       margin-top: 60px;
@@ -430,6 +430,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
+      padding: 20px;
     }
 
     .related-card {
@@ -464,12 +465,22 @@
       margin-bottom: 10px;
       color: #1a1a1a;
       line-height: 1.3;
+      font-family: 'Playfair Display', serif;
     }
 
     .related-card p {
       font-size: 15px;
       color: #666;
       line-height: 1.6;
+    }
+    
+      .related-card a {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      text-decoration: none; 
+      text-align: center;
+     
     }
 
     /* ========================================
@@ -530,6 +541,18 @@
       font-size: 12px;
       color: #999;
     }
+    
+      section.main {
+    background-image: url('https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg');
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    padding: 200px 20px 30px; /* pushes text to bottom */
+    color: white; position: relative;
+  }
+  .main h3 { text-align: center; font-weight: 400;  margin: 0; }
+  .main h3 a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 3px; transition: border-color 0.3s; }
+  .main h3 a:hover { border-color: white; }
+  .overlay { background: rgba(0,0,0,0.6); padding: 20px 20px; }
+
 
     /* ========================================
        MOBILE RESPONSIVE
@@ -658,7 +681,13 @@ gtag('config', 'AW-366761144');
       <p>Long before oak casks were routinely used to mature whisky, the spirit's growing popularity caught the eye of the government, and taxation soon followed. In a strange and roundabout fashion, this taxation—and the illicit distilling it spawned—played a crucial part in shaping the quality of modern Scotch whisky.</p>
       
  
-
+ <section class="main">
+  <h3 class="overlay">
+    <a href="https://www.azuspirits.co.uk/single-malt-whisky-gifts/">
+     Explore premium single malt through a unique blind tasting →
+    </a>
+  </h3>
+</section>
 
       <h2> The Birth of Whisky Taxation</h2>
       <p>The first excise duty on "everie pynt of aquavytie or strong watteris sold within the country" was introduced in Scotland in 1644. However, it was the imposition of the English Malt Tax following the Act of Union of 1707 that would cause real difficulties for distillers and fundamentally change how whisky was produced.
@@ -743,20 +772,43 @@ That danc'd awa wi' th' Exciseman."
     <div class="related-posts-inner">
       <h2>More from Our Blog</h2>
       <div class="related-grid">
-        <!-- Related post cards would go here -->
-        <!-- Example structure:
-        <a href="#" class="related-card">
-          <img src="..." alt="...">
-          <div class="related-card-content">
-            <h3>Article Title</h3>
-            <p>Brief excerpt...</p>
+        
+        <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/malting-and-mashing-making-scotch-whisky/"> 
+          <img src="https://www.azuspirits.co.uk/images/distilleries/malting.jpg"> 
+        
+          <h3>Malting & Mashing: Making Scotch Whisky</h3>
+          </a>
           </div>
-        </a>
-        -->
+             
+         <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/fermentation-scotch-whisky/"> 
+          <img src="https://www.azuspirits.co.uk/images/distilleries/fermentation.jpg"> 
+        
+          <h3>Fermentation in Scotch Whisky</h3>
+          </a>
+          </div>
+        
+          <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/scotch-whisky-of-rock-and-water/"> 
+          <img src="https://www.azuspirits.co.uk/images/landscapes/scotland-mountain.jpg"> 
+        
+          <h3>Scotch Whisky: Of Rock & Water</h3>
+          </a>
+          </div>
+        
+        
+          <div class="related-card">
+        <a href="https://www.azuspirits.co.uk/blog/maturation-scotch-whisky/"> 
+          <img src="https://www.azuspirits.co.uk/images/distilleries/maturation-scotch-whisky.jpg"> 
+        
+          <h3>Maturation in Scotch Whisky</h3>
+          </a>
+          </div>
+       
       </div>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">

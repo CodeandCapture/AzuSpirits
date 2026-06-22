@@ -60,7 +60,6 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- Added: unique-whisky-gifts -->
   <url>
     <loc>https://www.azuspirits.co.uk/unique-whisky-gifts/</loc>
     <lastmod>2026-06-19</lastmod>
@@ -69,7 +68,7 @@
   </url>
 
   <!-- Seasonal Pages -->
-  <!-- Duplicate removed — kept only the most recent entry with priority bumped -->
+
   <url>
     <loc>https://www.azuspirits.co.uk/fathers-day-whisky-gift/</loc>
     <lastmod>2026-06-19</lastmod>

@@ -810,6 +810,14 @@
 
 <div style="text-align: center; margin: 1rem 0; color: #999; font-size: 0.85rem;">or</div>
 
+<div style="margin-bottom: 1rem;">
+    <input
+        type="text"
+        id="paypalDiscountCode"
+        placeholder="Discount code (optional)"
+        style="width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">
+</div>
+
 <div id="paypal-button-container"></div>
 
                 <div class="gift-note-section">
@@ -829,8 +837,6 @@
 
              
 <div class="security-info">
-    <p><strong>Secure Payment</strong><br>
-    All transactions encrypted via Stripe.<br>Discount codes can be added at checkout</p>
   
   
                    <div class="payment-badges">
@@ -841,7 +847,7 @@
 
                 <div class="delivery-info">
                     <div class="delivery-header">
-                        <img src="/images/dpd-logo.png" alt="DPD">
+                        <img src="https://www.azuspirits.co.uk/images/dpd-logo.png" alt="DPD">
                         <h3>Tracked Delivery</h3>
                     </div>
                     <div class="delivery-details">
@@ -1026,15 +1032,16 @@
                 label: 'paypal'
             },
 
-            createOrder: async function () {
-                if (cart.items.length === 0) {
-                    alert('Your cart is empty!');
-                    return;
-                }
+          createOrder: async function () {
+    if (cart.items.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
 
-                const isGift = document.getElementById('isGiftCheckbox').checked;
-                const giftNote = isGift ? document.getElementById('giftNoteText').value.trim() : '';
-                const cartTotal = cart.getTotal();
+    const isGift = document.getElementById('isGiftCheckbox').checked;
+    const giftNote = isGift ? document.getElementById('giftNoteText').value.trim() : '';
+    const discountCode = document.getElementById('paypalDiscountCode').value.trim();
+    const cartTotal = cart.getTotal();
 
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'conversion', {
@@ -1051,22 +1058,27 @@
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            items: cart.items.map(item => ({
-                                id: item.id,
-                                quantity: item.quantity,
-                                price: item.price
-                            })),
-                            giftNote: giftNote
-                        })
-                    });
+                        items: cart.items.map(item => ({
+                            id: item.id,
+                            quantity: item.quantity,
+                            price: item.price
+                        })),
+                        giftNote: giftNote,
+                        discountCode: discountCode || undefined
+                    })
+                });
 
-                    const data = await response.json();
+                const data = await response.json();
 
-                    if (!response.ok) {
-                        throw new Error(data.error || 'Failed to create PayPal order');
-                    }
+                if (!response.ok) {
+                    throw new Error(data.error || 'Invalid discount code, please check and try again.');
+                }
 
-                    return data.id;
+                if (data.appliedCode) {
+                    console.log(`✅ Discount applied: ${data.appliedCode} (-£${data.discountAmount})`);
+                }
+
+                return data.id;
                 } catch (error) {
                     console.error('Error creating PayPal order:', error);
                     alert('There was an error starting PayPal checkout. Please try again.');

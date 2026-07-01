@@ -172,7 +172,7 @@ gtag('config', 'AW-366761144');
     <div class="success-container">
         <div class="success-icon">✓</div>
         <h1>Order Confirmed!</h1>
-        <p>Thank you for your purchase from Azu Spirits. Your order has been successfully placed and you will receive a confirmation email from Stripe shortly.</p>
+        <p>Thank you for your purchase from Azu Spirits. Your order has been successfully placed and you will receive a confirmation email shortly.</p>
         
         <div class="order-id" id="orderId">
             Loading order details...
@@ -180,7 +180,7 @@ gtag('config', 'AW-366761144');
         
         <div class="info-box">
             <h3>📦 What Happens Next?</h3>
-            <p><strong>• Confirmation Email:</strong> Check your inbox for payment confirmation from Stripe</p>
+           <p><strong>• Confirmation Email:</strong> Check your inbox for payment confirmation</p>
             <p><strong>• Order Processing:</strong> We'll prepare your tasting set with care</p>
             <p><strong>• Shipping:</strong> Your order will be dispatched within 1-2 business days</p>
             <p><strong>• Tracking:</strong> You'll receive tracking information once shipped</p>
@@ -194,44 +194,54 @@ gtag('config', 'AW-366761144');
     
     <script src="/js/cart.js"></script>
     <script>
-    // Get session ID and amount from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const sessionId = urlParams.get('session_id');
-    const orderAmount = urlParams.get('amount');
-    
+    // Get IDs and amount from URL — supports both Stripe and PayPal
+const urlParams = new URLSearchParams(window.location.search);
+const sessionId = urlParams.get('session_id');   // Stripe
+const orderId = urlParams.get('order_id');        // PayPal
+const paymentMethod = urlParams.get('method');     // 'paypal' or absent (Stripe)
+const orderAmount = urlParams.get('amount');
+
+const referenceId = sessionId || orderId;
+
+if (referenceId) {
+    // Display shortened order ID for customer reference
+    let shortId;
     if (sessionId) {
-        // Display shortened order ID for customer reference
-        const shortId = sessionId.substring(sessionId.indexOf('_') + 1, sessionId.indexOf('_') + 21);
-        document.getElementById('orderId').innerHTML = `
-            <strong>Order Reference:</strong><br>${shortId}
-        `;
-        
-        // FIRE GOOGLE ADS PURCHASE CONVERSION
-        if (orderAmount && orderAmount > 0) {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-366761144/Z7qOCOLg88EbELip8a4B',
-                'value': parseFloat(orderAmount),
-                'currency': 'GBP',
-                'transaction_id': sessionId
-            });
-            console.log('✅ Purchase conversion tracked: £' + orderAmount);
-        }
-        
-        // Clear the cart after successful purchase
-        if (typeof cart !== 'undefined') {
-            cart.clearCart();
-        } else {
-            localStorage.removeItem('azuSpiritsCart');
-        }
-        
-        // Update cart count
-        setTimeout(() => {
-            const cartCountElements = document.querySelectorAll('.cart-count');
-            cartCountElements.forEach(el => el.textContent = '0');
-        }, 100);
+        shortId = sessionId.substring(sessionId.indexOf('_') + 1, sessionId.indexOf('_') + 21);
     } else {
-        document.getElementById('orderId').textContent = 'Order ID not found';
+        shortId = orderId; // PayPal order IDs are already short and clean
     }
+
+    document.getElementById('orderId').innerHTML = `
+        <strong>Order Reference:</strong><br>${shortId}
+    `;
+
+    // FIRE GOOGLE ADS PURCHASE CONVERSION
+    if (orderAmount && orderAmount > 0) {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-366761144/Z7qOCOLg88EbELip8a4B',
+            'value': parseFloat(orderAmount),
+            'currency': 'GBP',
+            'transaction_id': referenceId
+        });
+        console.log(`✅ Purchase conversion tracked (${paymentMethod || 'stripe'}): £` + orderAmount);
+    }
+
+    // Clear the cart after successful purchase
+    if (typeof cart !== 'undefined') {
+        cart.clearCart();
+    } else {
+        localStorage.removeItem('azuSpiritsCart');
+    }
+
+    // Update cart count
+    setTimeout(() => {
+        const cartCountElements = document.querySelectorAll('.cart-count');
+        cartCountElements.forEach(el => el.textContent = '0');
+    }, 100);
+} else {
+    document.getElementById('orderId').textContent = 'Order ID not found';
+}
 </script>
 </body>
 </html>

@@ -216,6 +216,17 @@ if (referenceId) {
         <strong>Order Reference:</strong><br>${shortId}
     `;
 
+    const giftNoteParam = urlParams.get('giftNote');
+    if (giftNoteParam) {
+        const giftNoteBox = document.createElement('div');
+        giftNoteBox.style.cssText = 'background: #f9f9f9; border-left: 4px solid #A4343A; padding: 1rem; margin: 1.5rem 0; text-align: left;';
+        giftNoteBox.innerHTML = `
+            <h3 style="color: #A4343A; margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase;">🎁 Your Gift Message</h3>
+            <p style="font-style: italic; color: #555; white-space: pre-wrap; margin: 0;">${giftNoteParam}</p>
+        `;
+        document.getElementById('orderId').insertAdjacentElement('afterend', giftNoteBox);
+    }
+
     // FIRE GOOGLE ADS PURCHASE CONVERSION
     if (orderAmount && orderAmount > 0) {
         gtag('event', 'conversion', {

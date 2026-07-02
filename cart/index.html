@@ -1112,9 +1112,10 @@
                         throw new Error(result.error || 'Payment capture failed');
                     }
 
-                    const cartTotal = cart.getTotal();
-                    window.location.href = `/success.html?order_id=${result.orderId}&amount=${cartTotal}&method=paypal`;
-
+                   const cartTotal = cart.getTotal();
+                    const giftNoteParam = giftNote ? `&giftNote=${encodeURIComponent(giftNote)}` : '';
+                    window.location.href = `/success.html?order_id=${result.orderId}&amount=${cartTotal}&method=paypal${giftNoteParam}`;
+                    
                 } catch (error) {
                     console.error('Error capturing PayPal order:', error);
                     alert('There was a problem completing your PayPal payment. If you were charged, please contact us at enquiries@azuspirits.co.uk.');

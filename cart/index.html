@@ -1020,10 +1020,17 @@
         }
 
         function updateCharCount() {
-            const textarea = document.getElementById('giftNoteText');
-            const charCount = document.getElementById('charCount');
-            charCount.textContent = `${textarea.value.length}/500 characters`;
-        }
+    const textarea = document.getElementById('giftNoteText');
+    const charCount = document.getElementById('charCount');
+    const length = textarea.value.length;
+
+    if (length > 120) {
+        charCount.innerHTML = `${length}/500 characters — <span style="color: #A4343A;">if paying via PayPal, notes over 120 characters may be shortened. For longer messages, email us at enquiries@azuspirits.co.uk after checkout with your order reference.</span>`;
+    } else {
+        charCount.textContent = `${length}/500 characters`;
+    }
+}
+        
       paypal.Buttons({
             style: {
                 layout: 'vertical',

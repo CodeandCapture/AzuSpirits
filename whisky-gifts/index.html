@@ -191,24 +191,22 @@
         }
       }
     },
-    {
+  {
       "@type": "ListItem",
       "position": 4,
       "item": {
         "@type": "Product",
-        "name": "Six Styles of Scotch Whisky Sharing Box",
-        "description": "Share the whisky experience with friends and family. Six 100ml bottles exploring different Scotch styles, perfect for group tasting sessions. Includes tasting guide, information cards and reveal envelope. Larger format for social gatherings and whisky parties. Free DPD delivery.",
-        "image": "https://www.azuspirits.co.uk/images/products/six-styles-scotch-sharing.jpg",
+        "name": "The Founder's Selection Whisky Tasting Gift Set",
+        "description": "Six exceptional single malts personally curated by our founder — a surprise journey through Scotland's finest distilleries. Blind tasting format with reveal envelope, tasting guide and information cards.",
+        "image": "https://www.azuspirits.co.uk/images/products/whisky-tasting-gift-set.jpg",
         "brand": {
           "@type": "Brand",
           "name": "Azu Spirits"
         },
-        "gtin": "5070002588122",
-        "productID": "AZU-SIX-STYLES-SHARING-001",
         "offers": {
           "@type": "Offer",
-          "url": "https://www.azuspirits.co.uk/products/six-styles-of-scotch-whisky-sharing/",
-          "price": "135.00",
+          "url": "https://www.azuspirits.co.uk/products/founders-selection-whisky-gift-set/",
+          "price": "55.00",
           "priceCurrency": "GBP",
           "priceValidUntil": "2026-12-31",
           "availability": "https://schema.org/InStock",
@@ -226,6 +224,63 @@
             }
           }
         }
+      }
+    }
+  ]
+}
+</script>
+  <!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the best gifts for whisky lovers in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best gifts for whisky lovers are experiences, not just bottles. Azu Spirits' blind tasting sets feature six premium single malts in a curated challenge format — giving whisky lovers something to taste, discover and debate. Sets start at £58 with free UK delivery and include a blind tasting guide, information cards, and a wax-sealed reveal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What whisky gift is best for someone who already has a favourite bottle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a whisky lover who already knows what they like, a blind tasting set is the ideal gift. It introduces them to premium single malts they may never have tried — from distilleries like Glen Scotia, Tobermory, and Bunnahabhain — in a format that challenges their palate without the pressure of choosing a single bottle they may already own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are whisky tasting sets good gifts for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Our Six Styles of Scotch set is specifically designed to introduce whisky lovers to the full range of Scotch styles — from smooth and sweet to bold and peaty. The blind tasting guide walks them through each dram with confidence, making it a brilliant gift for someone curious about whisky but unsure where to start."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What whisky gifts are available for women?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Around 85% of Azu Spirits customers are women — either buying for themselves or as gifts. Our tasting sets are designed for anyone with a love of quality spirits. The blind tasting format is a fun, social experience that appeals just as much to women whisky lovers as to men."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add a personal message to a whisky gift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — every order includes the option to add a personalised gift message at checkout at no extra charge. Your gift arrives in premium presentation packaging, beautifully presented and ready to give."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly will my whisky gift be delivered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If purchased before 2pm we can deliver within 2 working days. Orders after will be dispatched the following day via DPD Next Day Delivery. Free UK delivery is included on every order — no minimum spend."
       }
     }
   ]
@@ -449,23 +504,17 @@
 
     /* Hero Section */
     section.hero {
-      background-image: url('https://www.azuspirits.co.uk//images/products/six-styles-scotch-main.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: auto;
-      padding: 60px 20px;
-      color: white;
-      position: relative;
-    }
-
+    background-image: url('https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg');
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    padding: 20px 20px; color: white; position: relative;
+  }
     .overlay {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       padding: 40px 20px;
     }
 
     .hero h1 {
-      font-size: 30px;
+      font-size: 25px;
       text-transform: uppercase;
       font-weight: 300;
       text-align: center;
@@ -473,7 +522,7 @@
     }
     
     .hero h2 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 400;
       text-align: center;
       margin-bottom: 20px;
@@ -484,6 +533,7 @@
       text-align: center;
       font-weight: 400;
       text-transform: uppercase;
+      font-size: 14px;
     }
 
     /* Featured Collections Section */
@@ -554,7 +604,7 @@
       font-weight: 400;
       text-transform: uppercase;
       margin-bottom: 15px;
-      letter-spacing: 1px;
+      letter-spacing: 1px; 
       color: #333;
     }
 
@@ -650,6 +700,39 @@
       opacity: 1;
     }
 
+    /* Top Pick Callout */
+    .top-pick-section { background: #f8f8f8; padding: 60px 20px; }
+    .top-pick-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 50px; align-items: center;
+    }
+    .top-pick-image { position: relative; border-radius: 8px; overflow: hidden; }
+    .top-pick-image img { width: 100%; height: 380px; object-fit: cover; display: block; }
+    .top-pick-badge {
+      position: absolute; top: 20px; left: 20px;
+      background: #A4343A; color: white;
+      padding: 8px 18px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .top-pick-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+      color: #A4343A; font-weight: 600; margin-bottom: 12px;
+    }
+    .top-pick-content h2 {
+      font-size: 26px; margin: 0 0 16px 0; color: #2c2c2c;
+      text-transform: none; letter-spacing: 0;
+    }
+    .top-pick-price {
+      font-size: 26px; font-weight: 700; color: #A4343A;
+      margin-bottom: 16px; font-family: 'Playfair Display', serif;
+    }
+    @media (max-width: 868px) {
+      .top-pick-inner { grid-template-columns: 1fr; gap: 30px; }
+      .top-pick-image img { height: 280px; }
+    }
+    
     /* What's in the Box Section */
     .whats-in-box {
       background: white;
@@ -664,6 +747,8 @@
       font-weight: 400;
       letter-spacing: 1px;
     }
+    
+    .whats-in-box .section-sub { text-align: center; font-size: 15px; color: #666; max-width: 650px; margin: 0 auto 40px; }
 
     .box-grid {
       display: grid;
@@ -982,6 +1067,53 @@
   }
 }
     
+    /* Sharing Box — Hero Image Section */
+    .sharing-hero {
+      background-image: url('https://www.azuspirits.co.uk/images/products/sharing-box-whisky-tasting.jpeg');
+      background-size: cover; background-position: center;
+      position: relative; padding: 80px 20px;
+      margin-top: 40px;
+    }
+    .sharing-hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.62); }
+    .sharing-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; text-align: center; color: white; }
+    .sharing-hero-content .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: white; font-weight: 700; margin-bottom: 12px; }
+    .sharing-hero-content h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: white; margin-bottom: 16px; font-weight: 400; }
+    .sharing-hero-content p { font-size: 15px; line-height: 1.8; color: #ddd; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .sharing-list { list-style: none; padding: 0; margin: 0 auto 28px; font-size: 14px; line-height: 2.2; display: inline-block; text-align: left; }
+    .sharing-list li.gold { color: #D4AF37; }
+    .sharing-list li.light { color: #ddd; }
+    .sharing-cta { display: inline-block; background: #A4343A; color: white; padding: 14px 36px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 4px; transition: background 0.3s; margin-top: 8px; }
+    .sharing-cta:hover { background: #8B1538; }
+    
+    
+    /* SECTION MAIN */
+     section.main {
+       margin-top: 40px;
+    background-image: url('https://www.azuspirits.co.uk/images/distilleries/talisker-distillery.jpg');
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    padding: 200px 20px 30px; /* pushes text to bottom */
+    color: white; position: relative;
+  }
+  .main h3 { text-align: center; font-weight: 400; text-transform: uppercase; margin: 0; }
+  .main h3 a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 3px; transition: border-color 0.3s; }
+  .main h3 a:hover { border-color: white; }
+
+    
+    /* FAQ Section */
+    .faq-section { background: white; padding: 60px 20px; }
+    .faq-container { max-width: 900px; margin: 0 auto; }
+    .faq-section h2 {
+      text-align: center; font-size: 28px; margin-bottom: 40px;
+      color: #2c2c2c; text-transform: uppercase; letter-spacing: 1px; font-weight: 400;
+    }
+    .faq-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #eee; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-item h3 {
+      font-size: 17px; color: #2c2c2c; margin-bottom: 10px;
+      text-transform: none; letter-spacing: 0; font-weight: 600;
+    }
+    .faq-item p { color: #666; line-height: 1.7; margin: 0; font-size: 15px; }
+    
     /* Category Callout Section */
 .category-callout {
   background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
@@ -1185,6 +1317,11 @@
 
     /* Mobile Styles */
     @media (max-width: 868px) {
+      
+      section.main { padding: 120px 20px 30px; }
+      .sharing-hero { padding: 60px 20px; }
+      .sharing-hero-content h2 { font-size: 26px; }
+      
       .site-nav {
         display: none;
         position: absolute;
@@ -1336,11 +1473,36 @@ gtag('config', 'G-FF0E8016EX');
 </header>
   
   <!-- Hero Section -->
-  <section class="hero">
+<section class="hero">
     <div class="overlay">
       <h1>Premium Scotch Whisky Blind Tasting Gift Sets</h1>
-      <h2>Explore six exceptional single malts through an immersive blind tasting experience. Expertly curated collections for whisky lovers, from curious beginners to seasoned connoisseurs.</h2>
+      <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; margin-bottom: 16px;">Six distinctive single malts, an unparalleled blind tasting challenge.</p>
+      <h2>Explore exceptional single malts through an immersive blind tasting experience. Expertly curated collections for whisky lovers, from curious beginners to seasoned connoisseurs.</h2>
       <h3>Includes Free DPD Shipping</h3>
+    </div>
+  </section>
+  
+  <!-- Top Pick -->
+  <section class="top-pick-section">
+    <div class="top-pick-inner">
+      <div class="top-pick-image">
+        <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" alt="Regions of Scotland Whisky Tasting Gift Set — best gift for whisky lovers" loading="lazy">
+        <span class="top-pick-badge">Our Top Pick</span>
+      </div>
+      <div class="top-pick-content">
+        <p class="top-pick-label">Best Gift for Whisky Lovers</p>
+        <h2>Regions of Scotland Whisky Tasting Set</h2>
+        <div class="top-pick-price">£58.00</div>
+        <p>Six premium single malts. Six regions of Scotland. One unforgettable blind tasting challenge. This set is the ideal gift for any whisky lover — whether they're a seasoned enthusiast who knows their Speyside from their Islay, or someone just beginning to explore the world of Scotch.</p>
+        <div class="bottle-highlights">
+          <p><strong>Featured Bottles:</strong></p>
+          <p style="font-size: 15px; line-height: 1.6; color: #666; margin: 8px 0;">
+            Glenfiddich 15 Solera • Glen Scotia 15 • Dalmore 12<br>
+            Plus: Kilchoman Machir Bay, Ledaig 10 & Bladnoch Vinaya
+          </p>
+        </div>
+        <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Shop Now →</a>
+      </div>
     </div>
   </section>
   
@@ -1370,27 +1532,7 @@ gtag('config', 'G-FF0E8016EX');
       
       <div class="featured-grid">
         
-        <!-- Regions of Scotland -->
-        <div class="featured-box">
-          <div class="featured-image">
-            <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" 
-                 alt="Regions of Scotland whisky tasting set featuring Glenfiddich 15 and Glen Scotia 15"
-                 loading="lazy">
-            <span class="price-badge">£58</span>
-          </div>
-          <div class="featured-content">
-            <h3>Regions of Scotland</h3>
-            <div class="bottle-highlights">
-              <p><strong>Featuring 15-Year Expressions:</strong></p>
-              <p style="font-size: 15px; line-height: 1.6; color: #666; margin: 8px 0;">
-                Glenfiddich 15 Solera • Glen Scotia 15 • Dalmore 12<br>
-                Plus: Ledaig 10, Kilchoman Machir Bay & Bladnoch Vinaya
-              </p>
-            </div>
-            <p>Tour Scotland's legendary whisky-making regions. Can you identify the distinctive regional characteristics in this blind tasting challenge?</p>
-            <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Explore Scotland</a>
-          </div>
-        </div>
+  
 
         <!-- Six Styles of Scotch -->
         <div class="featured-box">
@@ -1417,7 +1559,7 @@ gtag('config', 'G-FF0E8016EX');
         <!-- Luxury Single Malt -->
         <div class="featured-box">
           <div class="featured-image">
-            <img src="https://www.azuspirits.co.uk/images/products/luxury-single-malt.jpg" 
+            <img src="https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg" 
                  alt="Luxury single malt whisky tasting set with Bunnahabhain 22 Year"
                  loading="lazy">
             <span class="price-badge">£110</span>
@@ -1434,6 +1576,28 @@ gtag('config', 'G-FF0E8016EX');
             </div>
             <p>Ultra-premium whiskies rarely available in tasting format. An exceptional collection for the discerning connoisseur. Six bottles worth over £1,000.</p>
             <a href="https://www.azuspirits.co.uk/products/luxury-single-malt-whisky-tasting-set" class="featured-cta">Experience Luxury</a>
+          </div>
+        </div>
+        
+         <!-- Regions of Scotland -->
+        <div class="featured-box">
+          <div class="featured-image">
+            <img src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-gift.jpg" 
+                 alt="Regions of Scotland whisky tasting set featuring Glenfiddich 15 and Glen Scotia 15"
+                 loading="lazy">
+            <span class="price-badge">£58</span>
+          </div>
+          <div class="featured-content">
+            <h3>Regions of Scotland</h3>
+            <div class="bottle-highlights">
+              <p><strong>Featuring 15-Year Expressions:</strong></p>
+              <p style="font-size: 15px; line-height: 1.6; color: #666; margin: 8px 0;">
+                Glenfiddich 15 Solera • Glen Scotia 15 • Dalmore 12<br>
+                Plus: Ledaig 10, Kilchoman Machir Bay & Bladnoch Vinaya
+              </p>
+            </div>
+            <p>Tour Scotland's legendary whisky-making regions. Can you identify the distinctive regional characteristics in this blind tasting challenge?</p>
+            <a href="https://www.azuspirits.co.uk/products/regions-of-scotland-whisky-tasting-set" class="featured-cta">Explore Scotland</a>
           </div>
         </div>
 
@@ -1477,44 +1641,64 @@ gtag('config', 'G-FF0E8016EX');
       </div>
     </div>
   </section>
+  
+  <!-- Callout: Single Malt Only -->
+  <section class="category-callout" style="border-left-color: #165B33;">
+    <h2>Why Single Malt Whisky?</h2>
+    <p>Blended whisky dominates most gifting ranges because it's approachable and widely recognised. 
+    But every set we make features exclusively single malt Scotch — no blends, no compromises. It's the 
+    gift that teaches as it delights, exploring the stories of the distilleries and variations in techniques. Offering an exceptional tasting experiences that even experienced whisky drinkers find more 
+    challenging than they expect.</p>
+  </section>
+  
+  <!-- Callout: Why Our Selection Is Different -->
+  <section class="category-callout" style="border-left-color: #D4AF37;">
+    <h2>Why These Distilleries?</h2>
+    <p>Every distillery we feature is chosen for it's quality and character. Single malts such as Kilchoman, Glen Scotia, Tobermory and Bladnoch have devoted followings among whisky professionals but are rarely found in standard gifting ranges. You won't find these tasting sets anywhere else — the curation and blind tasting format are exclusive to Azu Spirits.</p>
+  </section>
+  
+    <!-- DISTILLERY IMAGE SECTION — text sits at bottom of image -->
+<section class="main">
+  <h3 class="overlay">
+    <a href="https://www.azuspirits.co.uk/blog/beginners-guide-single-malt-whisky">
+      Discover what makes single malt whisky so renowned →
+    </a>
+  </h3>
 
+ </section>
+
+  
+  
   <!-- What's in the Box -->
   <section class="whats-in-box">
     <div class="container">
       <h3>What's Inside Every Tasting Set</h3>
+      <p class="section-sub">Every set arrives gift-ready — add a personal message at checkout at no extra charge.</p>
       <div class="box-grid">
         
-        <div class="box-item">
-          <img src="https://www.azuspirits.co.uk/images/products/tasting-guide.jpg" 
-               alt="Blind whisky tasting guide included in gift set"
-               loading="lazy">
-          <h4>Blind Tasting Guide</h4>
-          <p>Expert tips and tasting notes to help you identify each whisky's unique characteristics</p>
-        </div>
+         <div class="box-item">
+        <img src="https://www.azuspirits.co.uk/images/products/tasting-guide.jpg" alt="Blind whisky tasting guide" loading="lazy">
+        <h4>Blind Tasting Guide</h4>
+        <p>Expert tips and tasting notes to help identify each whisky's unique characteristics — works for beginners and seasoned drinkers alike.</p>
+      </div>
 
         <div class="box-item">
-          <img src="https://www.azuspirits.co.uk/images/products/Tasting-notes.jpg" 
-               alt="Whisky information cards with tasting notes"
-               loading="lazy">
-          <h4>Information Cards</h4>
-          <p>Insights into flavour profiles and production techniques to guide your tasting journey</p>
-        </div>
+        <img src="https://www.azuspirits.co.uk/images/products/scotch-whisky-tasting-gift.jpg" alt="Whisky distillery information cards with tasting notes" loading="lazy">
+        <h4>Distillery Information Cards</h4>
+        <p>Each card reveals the story behind a whisky — the distillery's history, production techniques, cask type, and tasting notes. Opened only after the reveal, so they deepen the experience rather than influence the tasting.</p>
+      </div>
 
-        <div class="box-item">
-          <img src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg" 
-               alt="Six 30ml bottles of premium single malt whisky"
-               loading="lazy">
-          <h4>6 x 30ml Bottles</h4>
-          <p>Six exceptional single malts, carefully selected for their diversity and quality</p>
-        </div>
+      <div class="box-item">
+        <img src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg" alt="Six 30ml bottles of premium single malt whisky" loading="lazy">
+        <h4>6 × 30ml Premium Bottles</h4>
+        <p>Six exceptional single malts, numbered but unlabelled — the blind tasting challenge starts the moment you open the box.</p>
+      </div>
 
-        <div class="box-item">
-          <img src="https://www.azuspirits.co.uk/images/products/wax-sealed-envelope.jpg" 
-               alt="Wax sealed envelope revealing whisky identities"
-               loading="lazy">
-          <h4>Wax-Sealed Reveal</h4>
-          <p>Discover the identities of each whisky along with distillery information and purchasing details</p>
-        </div>
+      <div class="box-item">
+        <img src="https://www.azuspirits.co.uk/images/products/unusual-scotch-whisky-gift.jpg" alt="Wax sealed reveal envelope with distillery information cards" loading="lazy">
+        <h4>Wax-Sealed Reveal Envelope</h4>
+        <p>Break the seal to discover each whisky's identity — distillery, expression, age statement, and where to buy a full bottle if it becomes a new favourite.</p>
+      </div>
         
       </div>
     </div>
@@ -1538,66 +1722,63 @@ gtag('config', 'G-FF0E8016EX');
     </div>
   </section>
 
-  <!-- SHARING BOX PROMOTION -->
-  <section class="value-proposition" style="margin-top: 60px;">
-    <div class="value-comparison">
-      
-      <div class="comparison-side">
-        <div class="comparison-image">
-          <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt3.jpg" alt="Whisky Tasting Gift Sets" />
-        </div>
-        <div class="comparison-content">
-          <div class="option-badge">Tasting Sets</div>
-          <h3>Perfect for Solo Exploration</h3>
-          <p class="option-description">Six 30ml bottles for individual tasting experiences</p>
-          <ul class="comparison-list">
-            <li class="pro">✓ Perfect tasting measure (30ml)</li>
-            <li class="pro">✓ Ideal for solo whisky discovery</li>
-            <li class="pro">✓ Complete blind tasting experience</li>
-            <li class="neutral">• Best for 1-2 people</li>
-          </ul>
-          <div class="value-note">
-            <strong>From £52.00</strong>
-          </div>
-          <div class="cta-wrapper">
-            <button class="comparison-cta" onclick="scrollToSection('featured-collections')">
-              Shop Tasting Gifts
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="vs-divider">
-        <span>OR</span>
-      </div>
-      
-      <div class="comparison-side highlighted">
-        <div class="comparison-image">
-          <img src="https://www.azuspirits.co.uk/images/products/six-styles-of-scotch-whisky-sharing.png" alt="Six Styles Sharing Box" />
-        </div>
-        <div class="comparison-content">
-          <div class="option-badge" style="background: #A4343A; color: white;">Sharing Box</div>
-          <h3>Perfect for Group Tastings</h3>
-          <p class="option-description">Six 100ml bottles designed for sharing and celebrations</p>
-          <ul class="comparison-list">
-            <li class="pro">✓ Over 3x more whisky (100ml bottles)</li>
-            <li class="pro">✓ Perfect for groups of 4-8 people</li>
-            <li class="pro">✓ Ideal for parties & gatherings</li>
-            <li class="pro">✓ Share the discovery with friends</li>
-          </ul>
-          <div class="value-note">
-            <strong>£135.00</strong>
-          </div>
-          <div class="cta-wrapper">
-            <a href="https://www.azuspirits.co.uk/products/six-styles-of-scotch-whisky-sharing/" class="comparison-cta primary">Explore Sharing Box →</a>
-          </div>
-        </div>
-      </div>
-      
+
+  
+  <!-- SHARING BOX — BACKGROUND IMAGE WITH OVERLAY -->
+  <section class="sharing-hero">
+    <div class="sharing-hero-overlay"></div>
+    <div class="sharing-hero-content">
+      <p class="eyebrow">For Groups</p>
+      <h2>Share Your Love of Single Malt</h2>
+      <p>Host a blind tasting evening with friends. Our group sharing boxes feature the same premium single malts in larger 100ml bottles — enough for 4–8 people to enjoy multiple drams each, debate their scores, and share the reveal together.</p>
+      <ul class="sharing-list">
+        <li>✓ Six 100ml bottles — over 3× more whisky</li>
+        <li>✓ Perfect for 4–8 people</li>
+        <li>✓ Same blind tasting format and reveal envelope</li>
+        <li>✓ Ideal for birthdays, corporate events, and dinner parties</li>
+        <li>✓ Free UK delivery</li>
+      </ul>
+      <br>
+      <a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/" class="sharing-cta">
+        Host a Tasting Evening →
+      </a>
     </div>
-    
-    <div class="value-explanation">
-      <p><strong>Hosting a whisky tasting party?</strong> Our Sharing Box format features the same exceptional whiskies in larger 100ml bottles – perfect for groups. With enough whisky for 4-8 people to enjoy multiple drams each, it's the ideal way to introduce friends and family to premium single malts. Includes everything you need: tasting guide, information cards, and reveal envelope for an unforgettable group experience.</p>
+  </section>
+  
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What are the best gifts for whisky lovers in the UK?</h3>
+        <p>The best gifts for whisky lovers are experiences, not just bottles. Our blind tasting sets feature six premium single malts in a curated challenge format — giving whisky lovers something to taste, discover and debate. Sets start at £58 with free UK delivery and include a blind tasting guide, information cards, and a wax-sealed reveal.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What whisky gift is best for someone who already has a favourite bottle?</h3>
+        <p>For a whisky lover who already knows what they like, a blind tasting set is the ideal gift. It introduces them to premium single malts they may never have tried — from distilleries like Glen Scotia, Tobermory, and Bunnahabhain — in a format that challenges their palate without the pressure of choosing a single bottle they may already own.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are whisky tasting sets good gifts for beginners?</h3>
+        <p>Absolutely. Our Six Styles of Scotch set is specifically designed to introduce whisky lovers to the full range of Scotch styles — from smooth and sweet to bold and peaty. The blind tasting guide walks them through each dram with confidence, making it a brilliant gift for someone curious about whisky but unsure where to start.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What whisky gifts are available for women?</h3>
+        <p>Over 60% of our customers are women — either buying for themselves or as gifts. Our tasting sets are designed for anyone with a love of quality spirits. The blind tasting format is a fun, social experience that appeals just as much to women whisky lovers as to men.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I add a personal message to a whisky gift?</h3>
+        <p>Yes — every order includes the option to add a personalised gift message at checkout at no extra charge. Your gift arrives in premium presentation packaging, beautifully presented and ready to give.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How quickly will my whisky gift be delivered?</h3>
+        <p>If purchased before 2pm we can deliver within 2 working days. Orders after will be dispatched the following day via DPD Next Day Delivery. Free UK delivery is included on every order — no minimum spend.</p>
+      </div>
     </div>
   </section>
   

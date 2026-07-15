@@ -1,13 +1,689 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting…</title>
-  <link rel="canonical" href="https://www.azuspirits.co.uk/">
-  <meta http-equiv="refresh" content="0; url=https://www.azuspirits.co.uk/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up to Our Newsletter | 10% Off Your First Order | Azu Spirits</title>
+  <meta name="description" content="Join the Azu Spirits newsletter for 10% off your first order, exclusive subscriber discounts, and first access to new blind tasting collections and tasting events." />
+
+  <!-- Open Graph (Facebook/LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sign Up to Our Newsletter | Azu Spirits" />
+  <meta property="og:description" content="10% off your first order, exclusive discounts, and first access to new collections and tasting events." />
+  <meta property="og:url" content="https://www.azuspirits.co.uk/newsletter/" />
+  <meta property="og:site_name" content="Azu Spirits" />
+  <meta property="og:image" content="https://www.azuspirits.co.uk/images/products/tasting-gift-sets.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sign Up to Our Newsletter | Azu Spirits" />
+  <meta name="twitter:description" content="10% off your first order, exclusive discounts, and first access to new collections and tasting events." />
+  <meta name="twitter:image" content="https://www.azuspirits.co.uk/images/products/tasting-gift-sets.jpg" />
+  <meta name="twitter:site" content="@azuspirits" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="author" content="Azu Spirits" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://www.azuspirits.co.uk/images/brand/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.azuspirits.co.uk/images/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.azuspirits.co.uk/images/brand/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.azuspirits.co.uk/images/brand/apple-touch-icon.png">
+
+  <!-- Canonical URL — UPDATE if the page lives at a different path -->
+  <link rel="canonical" href="https://www.azuspirits.co.uk/newsletter/" />
+
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="https://www.azuspirits.co.uk/sitemap.xml" />
+
+  <!-- Schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.azuspirits.co.uk"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Newsletter",
+        "item": "https://www.azuspirits.co.uk/newsletter/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       TYPOGRAPHY SYSTEM
+       ============================================ */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       HEADER STYLES
+       ============================================ */
+    .site-header {
+        background: #f8f8f8;
+        border-bottom: 1px solid #ddd;
+        padding: 20px;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 0;
+    }
+
+    .header-inner img {
+        height: 80px;
+        cursor: pointer;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .site-nav li {
+        position: relative;
+    }
+
+    .has-dropdown {
+        position: relative;
+    }
+
+    .has-dropdown > a::after {
+        content: ' ▾';
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
+    }
+
+    .dropdown-menu {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        min-width: 220px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        margin-top: 0.5rem;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+        display: flex !important;
+    }
+
+    .dropdown-menu li {
+        margin: 0 !important;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #333;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+        background: #A4343A;
+        color: white;
+    }
+
+    .site-nav li + li {
+        margin-left: 1.5rem;
+    }
+
+    .site-nav a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s;
+        font-weight: 500;
+    }
+
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .cart-icon {
+        position: relative;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #333;
+        transition: transform 0.2s;
+    }
+
+    .cart-icon:hover {
+        transform: scale(1.1);
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #A4343A;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+
+    /* ============================================
+       NEWSLETTER PAGE SECTIONS
+       ============================================ */
+    .newsletter-hero {
+      background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    .newsletter-hero h1 {
+      font-size: 36px;
+      color: #2c2c2c;
+      margin: 0 0 15px 0;
+    }
+
+    .newsletter-hero .accent-rule {
+      width: 56px;
+      height: 2px;
+      background: #A4343A;
+      margin: 0 auto 25px;
+    }
+
+    .newsletter-hero p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #555;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form-wrap {
+      background: white;
+      padding: 10px 20px 50px;
+    }
+
+    .newsletter-form-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .newsletter-smallprint {
+      background: white;
+      padding: 30px 20px 50px;
+      text-align: center;
+    }
+
+    .newsletter-smallprint p {
+      font-size: 13px;
+      color: #999;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .newsletter-smallprint a {
+      color: #999;
+      text-decoration: underline;
+    }
+
+    /* ============================================
+       COLLECTION CARDS
+       ============================================ */
+    .card-section {
+      background: #f8f8f8;
+      padding: 50px 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .collection-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+      border: 2px solid transparent;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      border-color: #A4343A;
+    }
+
+    .collection-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .collection-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .collection-card h3 {
+      font-size: 20px;
+      margin: 20px 15px 10px;
+      color: #2c2c2c;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .collection-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #666;
+      margin: 0 15px 20px;
+    }
+
+    .collection-card a {
+      display: inline-block;
+      background-color: #A4343A;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 4px;
+      margin: 0 15px 20px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .collection-card a:hover {
+      background-color: #8a2c31;
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       FOOTER STYLES
+       ============================================ */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-nav-section h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #165B33;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    .footer-nav a:hover {
+      color: #165B33;
+      padding-left: 5px;
+    }
+
+    .site-info {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      max-width: 1200px;
+      margin: 20px auto 0;
+    }
+
+    .site-info p {
+      font-size: 12px;
+      color: #999;
+      margin: 0;
+    }
+
+    /* ============================================
+       MOBILE RESPONSIVE
+       ============================================ */
+    @media (max-width: 868px) {
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+        margin-left: 10px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+
+      .has-dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .has-dropdown > a::after {
+        float: right;
+      }
+
+      .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+      }
+
+      .newsletter-hero h1 {
+        font-size: 28px;
+      }
+
+      .newsletter-hero p {
+        font-size: 15px;
+      }
+
+      .collection-card img {
+        height: 200px;
+      }
+
+      .collection-card h3 {
+        font-size: 18px;
+      }
+
+      .collection-card p {
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-366761144');
+  gtag('config', 'G-FF0E8016EX');
+  </script>
+
 </head>
 <body>
-  <p>This page has moved. <a href="https://www.azuspirits.co.uk/">Click here</a> if you're not redirected automatically.</p>
-  <script>window.location.replace("https://www.azuspirits.co.uk/");</script>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Whisky and Gin Gift Sets" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='https://www.azuspirits.co.uk/'">
+
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="https://www.azuspirits.co.uk/">Home</a></li>
+          <li class="has-dropdown">
+            <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="https://www.azuspirits.co.uk/whisky-gifts/" role="menuitem">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-gifts/" role="menuitem">Craft Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/premium-whisky-gifts/" role="menuitem">Premium &amp; Luxury Whisky Gifts</a></li>
+              <li><a href="https://www.azuspirits.co.uk/birthday-whisky-gifts/" role="menuitem">Birthday Whisky Gifts</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="https://www.azuspirits.co.uk/sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/" role="menuitem">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/" role="menuitem">Premium Gin</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.azuspirits.co.uk/about-us/">About</a></li>
+          <li><a href="https://www.azuspirits.co.uk/blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='https://www.azuspirits.co.uk/cart/'" aria-label="View Shopping Cart">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" onclick="toggleNav()" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero / headline -->
+
+<!-- Klaviyo embedded form -->
+<section class="newsletter-form-wrap">
+  <div class="newsletter-form-inner">
+    <div class="klaviyo-form-RFwH3c"></div>
+  </div>
+</section>
+
+<!-- Feature cards -->
+<section class="card-section">
+  <div class="card-grid">
+
+    <div class="collection-card">
+      <img src="https://www.azuspirits.co.uk/images/landscapes/isle-of-mull.jpg" alt="The Isle of Mull, one of the stops on the Azu Spirits Scottish Tasting Tour" />
+      <h3>The Scottish Tasting Tour</h3>
+      <p>Tasked with finding six new single malt whiskies, we are heading to the heart and home of Scotch whisky to explore new tastes, learn from the masters and discover truly Scottish stays. From Aberfeldy to Oban, the Isle of Mull and Islay. Sign up for first access to pre-orders and tickets to our tasting event at The Cridford Inn on 14th November.</p>
+    </div>
+
+    <div class="collection-card">
+      <img src="https://www.azuspirits.co.uk/images/products/birthday-whisky-gifts.jpg" alt="Azu Spirits blind whisky tasting gift set" />
+      <h3>A Blind Tasting Gift</h3>
+      <p>Explore our themed blind tasting gift sets designed to showcase the diversity of flavour in Scotch, share the stories behind each distillery, and reveal how craft and technique shape every dram.</p>
+      <a href="https://www.azuspirits.co.uk/whisky-gifts/">Shop Whisky Sets</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Small print -->
+<section class="newsletter-smallprint">
+  <p>
+    We treat your inbox the way we treat our whisky &mdash; with restraint. Unsubscribe anytime
+    with one click. You must be 18 or over. See our
+    <a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a> for how we look after your details.
+  </p>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-nav-grid">
+
+      <div class="footer-nav-section">
+        <h4>Information</h4>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="https://www.azuspirits.co.uk/shipping-returns">Shipping & Returns</a></li>
+            <li><a href="https://www.azuspirits.co.uk/terms">Terms & Conditions</a></li>
+            <li><a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a></li>
+            <li><a href="https://www.azuspirits.co.uk/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="site-info">
+      <p>© 2026 Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/cart.js"></script>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('siteNav');
+    const toggle = document.querySelector('.nav-toggle');
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+      const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+
+      dropdownParents.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const parent = this.parentElement;
+
+          document.querySelectorAll('.has-dropdown').forEach(function(item) {
+            if (item !== parent) {
+              item.classList.remove('open');
+            }
+          });
+
+          parent.classList.toggle('open');
+        });
+      });
+    }
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.has-dropdown').forEach(function(item) {
+        item.classList.remove('open');
+      });
+    }
+  });
+</script>
+
+<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/RDJxYF/klaviyo.js?company_id=RDJxYF'></script>
+<script type="text/javascript">
+//Initialize Klaviyo object on page load
+!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); </script>
+
 </body>
 </html>

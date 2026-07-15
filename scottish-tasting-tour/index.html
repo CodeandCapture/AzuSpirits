@@ -1,1 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Scottish Tasting Tour | Limited Edition Whisky Collection | Azu Spirits</title>
+  <meta name="description" content="Follow the Azu Spirits Scottish Tasting Tour — from Aberfeldy to Oban, Mull, Islay and Glasgow — as we source six new single malts for a limited edition blind tasting collection, launching 14th November with a tasting event at The Cridford Inn, Devon." />
 
+  <!-- Open Graph (Facebook/LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Scottish Tasting Tour | Azu Spirits" />
+  <meta property="og:description" content="Six new single malts. Five stops across Scotland. One mystery collection — launching 14th November. Follow the journey and get first access." />
+  <meta property="og:url" content="https://www.azuspirits.co.uk/scottish-tasting-tour/" />
+  <meta property="og:site_name" content="Azu Spirits" />
+  <meta property="og:image" content="https://www.azuspirits.co.uk/images/landscapes/isle-of-mull.jpg" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Scottish Tasting Tour | Azu Spirits" />
+  <meta name="twitter:description" content="Six new single malts. Five stops across Scotland. One mystery collection — launching 14th November." />
+  <meta name="twitter:image" content="https://www.azuspirits.co.uk/images/landscapes/isle-of-mull.jpg" />
+  <meta name="twitter:site" content="@azuspirits" />
+
+  <meta name="author" content="Azu Spirits" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://www.azuspirits.co.uk/images/brand/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.azuspirits.co.uk/images/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.azuspirits.co.uk/images/brand/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.azuspirits.co.uk/images/brand/apple-touch-icon.png">
+
+  <!-- Canonical URL — UPDATE if the page lives at a different path -->
+  <link rel="canonical" href="https://www.azuspirits.co.uk/scottish-tasting-tour/" />
+
+  <link rel="sitemap" type="application/xml" href="https://www.azuspirits.co.uk/sitemap.xml" />
+
+  <!-- Event schema for the launch tasting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "The Scottish Tasting Tour — Launch Tasting Evening",
+    "description": "A guided blind tasting of six new single malt Scotch whiskies sourced on the Azu Spirits Scottish Tasting Tour, with stories from the distilleries and the wax-sealed reveal.",
+    "startDate": "2026-11-14",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "The Cridford Inn",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Trusham",
+        "addressRegion": "Devon",
+        "addressCountry": "GB"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Azu Spirits",
+      "url": "https://www.azuspirits.co.uk"
+    },
+    "image": "https://www.azuspirits.co.uk/images/landscapes/isle-of-mull.jpg"
+  }
+  </script>
+
+  <!-- Breadcrumb schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.azuspirits.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "The Scottish Tasting Tour", "item": "https://www.azuspirits.co.uk/scottish-tasting-tour/" }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       TYPOGRAPHY SYSTEM
+       ============================================ */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       HEADER STYLES (site standard)
+       ============================================ */
+    .site-header {
+        background: #f8f8f8;
+        border-bottom: 1px solid #ddd;
+        padding: 20px;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 0;
+    }
+
+    .header-inner img {
+        height: 80px;
+        cursor: pointer;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .site-nav li {
+        position: relative;
+    }
+
+    .has-dropdown {
+        position: relative;
+    }
+
+    .has-dropdown > a::after {
+        content: ' ▾';
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
+    }
+
+    .dropdown-menu {
+        display: none !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        min-width: 220px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        margin-top: 0.5rem;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+        display: flex !important;
+    }
+
+    .dropdown-menu li {
+        margin: 0 !important;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #333;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+        background: #A4343A;
+        color: white;
+    }
+
+    .site-nav li + li {
+        margin-left: 1.5rem;
+    }
+
+    .site-nav a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s;
+        font-weight: 500;
+    }
+
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .cart-icon {
+        position: relative;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #333;
+        transition: transform 0.2s;
+    }
+
+    .cart-icon:hover {
+        transform: scale(1.1);
+    }
+
+    .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #A4343A;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+
+    /* ============================================
+       TOUR HERO
+       ============================================ */
+    .tour-hero {
+      position: relative;
+      background-image: linear-gradient(rgba(20, 15, 15, 0.55), rgba(20, 15, 15, 0.55)), url('https://www.azuspirits.co.uk/images/landscapes/isle-of-mull.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    .tour-hero .eyebrow {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #E8C6C8;
+      margin-bottom: 18px;
+    }
+
+    .tour-hero h1 {
+      font-size: 46px;
+      margin: 0 0 18px 0;
+      line-height: 1.15;
+    }
+
+    .tour-hero p {
+      font-size: 18px;
+      max-width: 620px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       INTRO
+       ============================================ */
+    .tour-intro {
+      background: white;
+      padding: 60px 20px 40px;
+    }
+
+    .tour-intro .inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tour-intro p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #555;
+      margin: 0 0 20px 0;
+    }
+
+    /* ============================================
+       THE ROUTE
+       ============================================ */
+    .tour-route {
+      background: #f8f8f8;
+      padding: 60px 20px;
+    }
+
+    .tour-route h2 {
+      text-align: center;
+      font-size: 32px;
+      color: #2c2c2c;
+      margin: 0 0 10px;
+    }
+
+    .tour-route .route-sub {
+      text-align: center;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 45px;
+      font-size: 15px;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .route-stop {
+      background: white;
+      border-radius: 8px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .route-stop:hover {
+      transform: translateY(-5px);
+      border-color: #A4343A;
+    }
+
+    .stop-number {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #A4343A 0%, #8B1538 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 22px;
+      font-family: 'Playfair Display', serif;
+      box-shadow: 0 4px 12px rgba(164, 52, 58, 0.25);
+    }
+
+    .route-stop h3 {
+      font-size: 17px;
+      color: #2c2c2c;
+      margin: 0 0 8px;
+    }
+
+    .route-stop .stop-region {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #A4343A;
+      margin-bottom: 12px;
+    }
+
+    .route-stop p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #666;
+      margin: 0;
+    }
+
+    /* ============================================
+       STORY SECTION
+       ============================================ */
+    .tour-story {
+      background: white;
+      padding: 60px 20px;
+    }
+
+    .tour-story .inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tour-story h2 {
+      font-size: 32px;
+      color: #2c2c2c;
+      margin: 0 0 25px;
+    }
+
+    .tour-story p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin: 0 0 20px;
+    }
+
+    /* ============================================
+       COLLECTION + EVENT CARDS
+       ============================================ */
+    .tour-launch {
+      background: #1F3D2B;
+      padding: 60px 20px;
+    }
+
+    .tour-launch h2 {
+      text-align: center;
+      font-size: 32px;
+      color: white;
+      margin: 0 0 10px;
+    }
+
+    .tour-launch .launch-sub {
+      text-align: center;
+      color: #C9D8CE;
+      margin: 0 auto 45px;
+      max-width: 600px;
+      font-size: 15px;
+    }
+
+    .launch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .launch-card {
+      background: white;
+      border-radius: 8px;
+      padding: 35px 30px;
+      text-align: center;
+    }
+
+    .launch-card .card-date {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #A4343A;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .launch-card h3 {
+      font-family: 'Playfair Display', serif;
+      text-transform: none;
+      letter-spacing: 0.5px;
+      font-size: 22px;
+      color: #2c2c2c;
+      margin: 0 0 15px;
+    }
+
+    .launch-card p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #666;
+      margin: 0;
+    }
+
+    /* ============================================
+       SIGNUP SECTION
+       ============================================ */
+    .tour-signup {
+      background: white;
+      padding: 60px 20px 30px;
+      text-align: center;
+    }
+
+    .tour-signup h2 {
+      font-size: 30px;
+      color: #2c2c2c;
+      margin: 0 0 15px;
+    }
+
+    .tour-signup .accent-rule {
+      width: 56px;
+      height: 2px;
+      background: #A4343A;
+      margin: 0 auto 25px;
+    }
+
+    .tour-signup p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      max-width: 620px;
+      margin: 0 auto 10px;
+    }
+
+    .tour-signup .form-inner {
+      max-width: 640px;
+      margin: 20px auto 0;
+    }
+
+    .tour-smallprint {
+      background: white;
+      padding: 20px 20px 50px;
+      text-align: center;
+    }
+
+    .tour-smallprint p {
+      font-size: 13px;
+      color: #999;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .tour-smallprint a {
+      color: #999;
+      text-decoration: underline;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background-color: #A4343A;
+      color: white;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-cta:hover {
+      background-color: #8a2c31;
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       FOOTER (site standard)
+       ============================================ */
+    .site-footer {
+      background: #f8f8f8;
+      border-top: 1px solid #ddd;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-nav-section h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #165B33;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      padding: 5px 0;
+    }
+
+    .footer-nav a:hover {
+      color: #165B33;
+      padding-left: 5px;
+    }
+
+    .site-info {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      max-width: 1200px;
+      margin: 20px auto 0;
+    }
+
+    .site-info p {
+      font-size: 12px;
+      color: #999;
+      margin: 0;
+    }
+
+    /* ============================================
+       MOBILE RESPONSIVE
+       ============================================ */
+    @media (max-width: 868px) {
+      .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+      }
+
+      .site-nav li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .header-inner {
+        position: relative;
+      }
+
+      .header-inner img {
+        height: 60px;
+        margin-left: 10px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: #f0f0f0;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+      }
+
+      .has-dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .has-dropdown > a::after {
+        float: right;
+      }
+
+      .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.95rem;
+      }
+
+      .tour-hero {
+        padding: 70px 20px;
+      }
+
+      .tour-hero h1 {
+        font-size: 30px;
+      }
+
+      .tour-hero p {
+        font-size: 15px;
+      }
+
+      .tour-route h2,
+      .tour-story h2,
+      .tour-launch h2,
+      .tour-signup h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-366761144');
+  gtag('config', 'G-FF0E8016EX');
+  </script>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Whisky and Gin Gift Sets" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='https://www.azuspirits.co.uk/'">
+
+    <div class="header-right">
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="https://www.azuspirits.co.uk/">Home</a></li>
+          <li class="has-dropdown">
+            <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="https://www.azuspirits.co.uk/whisky-gifts/" role="menuitem">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-gifts/" role="menuitem">Craft Gin</a></li>
+              <li><a href="https://www.azuspirits.co.uk/premium-whisky-gifts/" role="menuitem">Premium &amp; Luxury Whisky Gifts</a></li>
+              <li><a href="https://www.azuspirits.co.uk/birthday-whisky-gifts/" role="menuitem">Birthday Whisky Gifts</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="https://www.azuspirits.co.uk/sharing-boxes/">Sharing Boxes</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/" role="menuitem">Scotch Whisky</a></li>
+              <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/" role="menuitem">Premium Gin</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.azuspirits.co.uk/about-us/">About</a></li>
+          <li><a href="https://www.azuspirits.co.uk/blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cart Icon -->
+      <div class="cart-icon" onclick="window.location.href='https://www.azuspirits.co.uk/cart/'" aria-label="View Shopping Cart">
+        🛒
+        <span class="cart-count">0</span>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="nav-toggle" onclick="toggleNav()" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="tour-hero">
+  <div class="eyebrow">Limited Edition &middot; Launching 14th November</div>
+  <h1>The Scottish Tasting Tour</h1>
+  <p>Six new single malts. A whisky-lover's route through Scotland. One mystery collection &mdash; and you can be the very first to taste what we find.</p>
+  <a href="#signup" class="hero-cta">Get First Access</a>
+</section>
+
+<!-- Intro -->
+<section class="tour-intro">
+  <div class="inner">
+    <p>This August, the Azu Spirits family is heading to the heart and home of Scotch whisky. Tasked with finding six new single malt whiskies for an exclusive themed tasting collection, we'll be revisiting some of our very favourite distilleries &mdash; exploring new tastes, learning from the masters, and discovering truly Scottish stays along the way.</p>
+  </div>
+</section>
+
+<!-- The Route -->
+<section class="tour-route">
+  <h2>The Route</h2>
+  <p class="route-sub">From Highland Perthshire to the peat fires of the Hebrides &mdash; we'll be visiting distilleries and whisky bars to find the very best variety</p>
+  <div class="route-grid">
+    <div class="route-stop">
+      <div class="stop-number">1</div>
+      <h3>Aberfeldy</h3>
+      <div class="stop-region">Highland Perthshire</div>
+      <p>The journey begins among the hills and barley fields of the central Highlands, where Scotch whisky's heartland traditions run deepest.</p>
+    </div>
+    <div class="route-stop">
+      <div class="stop-number">2</div>
+      <h3>Oban</h3>
+      <div class="stop-region">Gateway to the Isles</div>
+      <p>The seafood capital of Scotland and our crossing point to the Hebrides &mdash; a harbour town built around its whisky.</p>
+    </div>
+    <div class="route-stop">
+      <div class="stop-number">3</div>
+      <h3>Isle of Mull</h3>
+      <div class="stop-region">The Islands</div>
+      <p>Across the water to Mull's painted harbourfront and island drams shaped by sea air and Hebridean weather.</p>
+    </div>
+    <div class="route-stop">
+      <div class="stop-number">4</div>
+      <h3>Islay</h3>
+      <div class="stop-region">The Whisky Isle</div>
+      <p>Whisky's most famous island &mdash; home of the boldest, peatiest expressions in all of Scotch.</p>
+    </div>
+
+    <div class="route-stop">
+      <div class="stop-number">5</div>
+      <h3>Glasgow</h3>
+      <div class="stop-region">Where it all began</div>
+      <p>Ellie's love for Scotch whisky was first inspired by her years living in Glasgow &mdash; working in renowned whisky bars and visiting distilleries on weeks off. The tour ends back where it all began.</p>
+    </div>
+  </div>
+</section>
+
+<!-- The Story -->
+<section class="tour-story">
+  <div class="inner">
+    <h2>Our Most Exciting Chapter Yet</h2>
+    <p>Our first Scottish tour in 2019 inspired the start of Azu Spirits &mdash; and everything we've built since: a line of themed blind tasting experiences that showcase the diversity of flavour in Scotch, share the stories behind each distillery, and reveal how craft and technique shape every dram.</p>
+    <p>After years spent perfecting the blind tasting format, hosting tastings and events, and learning what makes a dram memorable, this trip marks the start of our most exciting chapter yet. The collection we bring home will headline a Christmas season full of new launches &mdash; including something we've never made before &mdash; and lay the foundations for taking the Azu Spirits experience beyond our online home in the year ahead.</p>
+
+    <p>If you're in the Scotch whisky trade and our paths could cross around the first week of August &mdash; we'd love to hear from you.</p>
+    <a href="https://www.azuspirits.co.uk/about-us" class="hero-cta">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Launch: collection + event -->
+<section class="tour-launch">
+  <h2>Launching 14th November</h2>
+  <p class="launch-sub">Everything we find comes home to Devon in two ways &mdash; a limited edition gift set, and one evening where you taste it first.</p>
+  <div class="launch-grid">
+    <div class="launch-card">
+      <div class="card-date">Limited Edition &middot; Pre-orders Soon</div>
+      <h3>The Scottish Tasting Tour Gift Set</h3>
+      <p>Six hand-picked single malts in our signature blind tasting format &mdash; numbered bottles, tasting cards, a wax-sealed reveal, and a curated guide to the route: the distillery experiences and stays we loved, so you can follow the tour yourself.</p>
+    </div>
+    <div class="launch-card">
+      <div class="card-date">Saturday 14th November &middot; The Cridford Inn, Trusham</div>
+      <h3>The Launch Tasting Evening</h3>
+      <p>Six mystery drams, stories from the road, and the reveal &mdash; a guided blind tasting at one of Devon's loveliest thatched inns. Tickets are limited, and newsletter subscribers get first access.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Signup -->
+<section class="tour-signup" id="signup">
+  <h2>Be the First to Taste What We Find</h2>
+  <div class="accent-rule"></div>
+  <p>Sign up for first access to pre-orders and event tickets, and follow along as the journey unfolds this August.</p>
+  <div class="form-inner">
+    <div class="klaviyo-form-RFwH3c"></div>
+  </div>
+</section>
+
+<!-- Small print -->
+<section class="tour-smallprint">
+  <p>
+    One or two emails a month &mdash; never more. Unsubscribe anytime with one click. You must be 18 or over.
+    See our <a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a> for how we look after your details.
+  </p>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-nav-grid">
+
+      <div class="footer-nav-section">
+        <h4>Information</h4>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="https://www.azuspirits.co.uk/shipping-returns">Shipping & Returns</a></li>
+            <li><a href="https://www.azuspirits.co.uk/terms">Terms & Conditions</a></li>
+            <li><a href="https://www.azuspirits.co.uk/privacy">Privacy Policy</a></li>
+            <li><a href="https://www.azuspirits.co.uk/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="site-info">
+      <p>© 2026 Azu Spirits Ltd · VAT no. GB341514236 · Company no. 12234341</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/cart.js" defer></script>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('siteNav');
+    const toggle = document.querySelector('.nav-toggle');
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+      const dropdownParents = document.querySelectorAll('.has-dropdown > a');
+
+      dropdownParents.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const parent = this.parentElement;
+
+          document.querySelectorAll('.has-dropdown').forEach(function(item) {
+            if (item !== parent) {
+              item.classList.remove('open');
+            }
+          });
+
+          parent.classList.toggle('open');
+        });
+      });
+    }
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.has-dropdown').forEach(function(item) {
+        item.classList.remove('open');
+      });
+    }
+  });
+</script>
+
+<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/RDJxYF/klaviyo.js?company_id=RDJxYF'></script>
+<script type="text/javascript">
+//Initialize Klaviyo object on page load
+!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); </script>
+
+</body>
+</html>

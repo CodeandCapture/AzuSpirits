@@ -836,7 +836,78 @@
         font-size: 16px;
       }
     }
-  </style>
+  
+/* ========================================
+   SCOTTISH TASTING TOUR ANNOUNCEMENT BAR
+   ======================================== */
+
+.tour-announcement-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  width: 100%;
+  padding: 9px 20px;
+
+  background: #A4343A;
+  color: #fff;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  line-height: 1.4;
+
+  text-align: center;
+  text-decoration: none;
+
+  box-sizing: border-box;
+  transition: background 0.2s ease;
+}
+
+.tour-announcement-bar:hover {
+  background: #8B1538;
+  color: #fff;
+}
+
+.tour-announcement-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.tour-announcement-title {
+  font-weight: 600;
+}
+
+.tour-announcement-date {
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .tour-announcement-bar {
+    flex-wrap: wrap;
+    gap: 2px 5px;
+    padding: 8px 12px;
+    font-size: 9px;
+    line-height: 1.45;
+  }
+
+  .tour-announcement-title {
+    white-space: nowrap;
+  }
+
+  .tour-announcement-date {
+    flex-basis: 100%;
+  }
+
+  .tour-announcement-divider:last-of-type {
+    display: none;
+  }
+} 
+
+</style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
 <script>
@@ -849,6 +920,18 @@ gtag('config', 'G-FF0E8016EX');
 </head>
 <body>
    
+<!-- SCOTTISH TASTING TOUR PRE-ORDER BANNER -->
+<a href="/products/scottish-tasting-tour-whisky-gift-set/"
+   class="tour-announcement-bar"
+   aria-label="Pre-order The Scottish Whisky Tasting Tour">
+  <span class="tour-announcement-label">Pre-Order</span>
+  <span class="tour-announcement-divider">·</span>
+  <span class="tour-announcement-title">The Scottish Whisky Tasting Tour</span>
+  <span class="tour-announcement-divider">—</span>
+  <span class="tour-announcement-date">Dispatching from 1 October</span>
+</a>
+
+
 <header class="site-header">
   <div class="header-inner container">
     <img src="https://www.azuspirits.co.uk/images/brand/logo.jpg" alt="Azu Spirits Premium Whisky and Gin Gift Sets" style="height: 80px; margin-left: 30px; cursor: pointer;" onclick="window.location.href='https://www.azuspirits.co.uk/'">

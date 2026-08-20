@@ -192,6 +192,12 @@ const products = {
     priceId: 'price_1SLSbYDLWuae7NssO2HhSFVk',
     image: 'https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg'
   },
+          'scottish-whisky-tasting-tour-gift-set': {
+    name: 'The Scottish Whisky Tasting Tour: Blind Tasting Gift Set',
+    price: 85.00,
+    priceId: 'price_1U6J58DLWuae7NssVTDOhJcJ',
+    image: 'https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-gift-set.jpg'
+  },
 
    
 
@@ -350,4 +356,3 @@ if (!document.querySelector('#cart-notification-styles')) {
   `;
   document.head.appendChild(style);
 }
-

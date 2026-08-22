@@ -387,6 +387,91 @@
       color: #666;
       margin: 0;
     }
+    
+    /* ============================================
+   WHERE WE STAYED
+   ============================================ */
+
+.tour-stays {
+  background: white;
+  padding: 70px 20px;
+}
+
+.tour-stays .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tour-stays h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #2c2c2c;
+  margin: 0 0 10px;
+}
+
+.tour-stays .route-sub {
+  text-align: center;
+  color: #666;
+  max-width: 680px;
+  margin: 0 auto 45px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.stays-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.stay {
+  position: relative;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 30px 30px 30px 34px;
+  border-left: 4px solid #A4343A;
+  transition: all 0.3s ease;
+}
+
+.stay:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.stay h3 {
+  font-family: 'Playfair Display', serif;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  font-size: 22px;
+  color: #2c2c2c;
+  margin: 0 0 5px;
+}
+
+.stay .stop-region {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #A4343A;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.stay p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+/* Give the final stay a little more room
+   when there is an odd number of cards */
+.stay:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 520px;
+  width: 100%;
+  justify-self: center;
+}
 
     /* ============================================
        STORY SECTION
@@ -415,69 +500,138 @@
       margin: 0 0 20px;
     }
 
-    /* ============================================
-       COLLECTION + EVENT CARDS
-       ============================================ */
-    .tour-launch {
-      background: #1F3D2B;
-      padding: 60px 20px;
-    }
+   /* ============================================
+   COLLECTION + EVENT CARDS
+   ============================================ */
 
-    .tour-launch h2 {
-      text-align: center;
-      font-size: 32px;
-      color: white;
-      margin: 0 0 10px;
-    }
+.tour-launch {
+  background: #1F3D2B;
+  padding: 70px 20px;
+}
 
-    .tour-launch .launch-sub {
-      text-align: center;
-      color: #C9D8CE;
-      margin: 0 auto 45px;
-      max-width: 600px;
-      font-size: 15px;
-    }
+.tour-launch h2 {
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  margin: 0 0 10px;
+}
 
-    .launch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+.tour-launch .launch-sub {
+  text-align: center;
+  color: #C9D8CE;
+  margin: 0 auto 45px;
+  max-width: 650px;
+  font-size: 15px;
+  line-height: 1.7;
+}
 
-    .launch-card {
-      background: white;
-      border-radius: 8px;
-      padding: 35px 30px;
-      text-align: center;
-    }
+.launch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: stretch;
+}
 
-    .launch-card .card-date {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #A4343A;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
+.launch-card {
+  box-sizing: border-box;
+  background: white;
+  border-radius: 8px;
+  padding: 35px 30px;
+  text-align: center;
 
-    .launch-card h3 {
-      font-family: 'Playfair Display', serif;
-      text-transform: none;
-      letter-spacing: 0.5px;
-      font-size: 22px;
-      color: #2c2c2c;
-      margin: 0 0 15px;
-    }
+  /* Makes both cards equal height */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
-    .launch-card p {
-      font-size: 14px;
-      line-height: 1.7;
-      color: #666;
-      margin: 0;
-    }
+  /* Same border on every card prevents size mismatch */
+  border: 2px solid transparent;
 
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.launch-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+  border-color: #A4343A;
+}
+
+.launch-card .card-date {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #A4343A;
+  margin: 0 0 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.launch-card h3 {
+  font-family: 'Playfair Display', serif;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #2c2c2c;
+  margin: 0 0 18px;
+}
+
+.launch-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+/* Pushes actions/notes to the bottom of both cards */
+.launch-card-footer {
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.launch-card-cta {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #A4343A;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.launch-card-cta:hover {
+  background: #8a2c31;
+  transform: translateY(-2px);
+}
+
+.launch-card-cta:focus-visible {
+  outline: 3px solid #E8C6C8;
+  outline-offset: 3px;
+}
+
+.dispatch-note,
+.event-note {
+  margin-top: 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+    
     /* ============================================
        SIGNUP SECTION
        ============================================ */
@@ -698,7 +852,49 @@
       .tour-signup h2 {
         font-size: 26px;
       }
+      
+      .tour-stays {
+  padding: 55px 20px;
+}
+
+.tour-stays h2 {
+  font-size: 26px;
+}
+
+.tour-stays .route-sub {
+  margin-bottom: 30px;
+}
+
+.stays-grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.stay {
+  padding: 25px 24px 25px  28px;
+}
+
+
+.stay h3 {
+  font-size: 20px;
+}
+      .launch-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.launch-card {
+  padding: 30px 24px;
+}
+
+.launch-card h3 {
+  font-size: 20px;
+}
+      
     }
+    
+    
+    
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -757,77 +953,189 @@
 
 <!-- Hero -->
 <section class="tour-hero">
-  <div class="eyebrow">Limited Edition &middot; Launching this November</div>
+  <div class="eyebrow">Limited Edition &middot; Launch event November 28 <br> gift set dispatched october 1st</div>
   <h1>The Scottish Tasting Tour</h1>
-  <p>Six new single malts. A whisky-lover's route through Scotland. One mystery collection &mdash; and you can be the very first to taste what we find.</p>
-  <a href="#signup" class="hero-cta">Get First Access</a>
+  <p>Six new single malts including distillery exclusives and limited editions, hand picked from Scotland's finest distilleries. A whisky-lover's route through Scotland &mdash;  be the very first to taste what we've found.</p>
+  <a href="https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set" class="hero-cta">Pre order tasting gift set</a>
 </section>
 
 <!-- Intro -->
+
 <section class="tour-intro">
   <div class="inner">
-    <p>This August, the Azu Spirits family is heading to the heart and home of Scotch whisky. Tasked with finding six new single malt whiskies for an exclusive themed tasting collection, we'll be revisiting some of our very favourite distilleries &mdash; exploring new tastes, learning from the masters, and discovering truly Scottish stays along the way.</p>
+    <p>This August, we travelled through Scotland in search of six new single malt whiskies for an exclusive Azu Spirits tasting collection. From Highland distilleries and independent whisky shops to Hebridean islands, historic inns and some exceptional whisky bars, we followed the west coast in search of great drams &mdash; and the people and places behind them.</p>
   </div>
 </section>
 
 <!-- The Route -->
-<section class="tour-route">
-  <h2>The Route</h2>
-  <p class="route-sub">From Highland Perthshire to the peat fires of the Hebrides &mdash; we'll be visiting distilleries and whisky bars to find the very best variety</p>
-  <div class="route-grid">
-    <div class="route-stop">
-      <div class="stop-number">1</div>
-      <h3>Aberfeldy</h3>
-      <div class="stop-region">Highland Perthshire</div>
-      <p>The journey begins among the hills and barley fields of the central Highlands, where Scotch whisky's heartland traditions run deepest.</p>
-    </div>
-    <div class="route-stop">
-      <div class="stop-number">2</div>
-      <h3>Oban</h3>
-      <div class="stop-region">Gateway to the Isles</div>
-      <p>The seafood capital of Scotland and our crossing point to the Hebrides &mdash; a harbour town built around its whisky.</p>
-    </div>
-    <div class="route-stop">
-      <div class="stop-number">3</div>
-      <h3>Isle of Mull</h3>
-      <div class="stop-region">The Islands</div>
-      <p>Across the water to Mull's painted harbourfront and island drams shaped by sea air and Hebridean weather.</p>
-    </div>
-    <div class="route-stop">
-      <div class="stop-number">4</div>
-      <h3>Islay</h3>
-      <div class="stop-region">The Whisky Isle</div>
-      <p>Whisky's most famous island &mdash; home of the boldest, peatiest expressions in all of Scotch.</p>
-    </div>
 
-   
+<section class="tour-route">
+  <h2>Our Scottish Tasting Tour</h2>
+  <p class="route-sub">From the hills of Highland Perthshire to Mull and Islay, before finishing in Glasgow &mdash; this was the route we took in search of our next six whiskies.</p>
+
+  <div class="route-grid">
+
+
+<div class="route-stop">
+  <div class="stop-number">1</div>
+  <h3>Edinburgh &amp; Highland Perthshire</h3>
+  <div class="stop-region">Dalhousie Castle &rarr; Balquhidder</div>
+  <p>Our journey began with a night at Dalhousie Castle before collecting Isobel from Edinburgh and heading north-west into the Highlands. Our first proper base was Monachyle Mhor &mdash; a wonderfully wild Scottish stay with an exceptional tasting menu and a serious whisky collection.</p>
+</div>
+
+<div class="route-stop">
+  <div class="stop-number">2</div>
+  <h3>Glenturret &amp; Aberfeldy</h3>
+  <div class="stop-region">Highland Perthshire</div>
+  <p>The whisky hunt began in earnest with visits to Glenturret and Aberfeldy, meeting Ruaridh and Craig along the way. Two distilleries, two very different perspectives &mdash; and the beginning of our search for the six bottles that would make it into the collection.</p>
+</div>
+
+<div class="route-stop">
+  <div class="stop-number">3</div>
+  <h3>Oban &amp; the Isle of Mull</h3>
+  <div class="stop-region">The Hebrides</div>
+  <p>From Aberfeldy we drove west to Oban and crossed to Mull. The following morning took us north to Tobermory Distillery, followed by lunch at the family-run Isle of Mull Cheese before catching the ferry back to the mainland.</p>
+</div>
+
+<div class="route-stop"> 
+  <div class="stop-number">4</div>
+  <h3>Inveraray</h3>
+  <div class="stop-region">Argyll</div>
+  <p>Back on the mainland, the search continued beyond the distilleries. We explored independent bottlings at Loch Fyne Whiskies and spent the night at The George &mdash; a traditional Scottish inn with more than 500 whiskies tucked away in its whisky snug.</p>
+</div>
+
+<div class="route-stop">
+  <div class="stop-number">5</div>
+  <h3>Islay</h3>
+  <div class="stop-region">The Whisky Isle</div>
+  <p>Then came the pilgrimage to Islay. After sailing via Colonsay to Port Askaig, we spent our time visiting Kilchoman and Laphroaig, eating and drinking around the island, and following recommendations from the people we met &mdash; including memorable drams at Port Charlotte and Ardbeg House.</p>
+</div>
+
+<div class="route-stop">
+  <div class="stop-number">6</div>
+  <h3>Glasgow</h3>
+  <div class="stop-region">The Final Stop</div>
+  <p>Leaving Islay from Port Askaig, we crossed back to Kennacraig and made our way to Glasgow for the final night of the tour &mdash; dinner at Ubiquitous Chip, a last few drams in the West End and time to take stock of everything we'd discovered along the way.</p>
+</div>
+
+
+  </div>
+</section>
+
+<!-- Where We Stayed -->
+
+<section class="tour-stays">
+  <div class="inner">
+    <h2>Our Top Stays</h2>
+    <p class="route-sub">Castle walls, lochside hideaways and whisky-filled Scottish inns &mdash; the places we stayed became as much a part of the tour as the distilleries themselves.</p>
+
+
+<div class="stays-grid">
+  <div class="stay">
+    <h3>Dalhousie Castle</h3>
+    <div class="stop-region">Bonnyrigg</div>
+    <p>A suitably Scottish beginning &mdash; historic rooms, beautiful grounds and a great bar inside a castle that has stood for centuries.</p>
+  </div>
+
+  <div class="stay">
+    <h3>Monachyle Mhor</h3>
+    <div class="stop-region">Balquhidder</div>
+    <p>Luxury with a wild side. Creative food, quirky rooms and cabins, loch swimming and an exquisite tasting menu. A very special treat and the best food we've had in years.</p>
+  </div>
+
+  <div class="stay">
+    <h3>The George Hotel</h3>
+    <div class="stop-region">Inveraray</div>
+    <p>A warm and bustling pub hotel with large, characterful rooms, brilliant food, wonderful staff and a whisky snug holding more than 500 bottles.</p>
+  </div>
+
+  <div class="stay">
+    <h3>Hotel du Vin</h3>
+    <div class="stop-region">Glasgow</div>
+    <p>Our final stop in Glasgow's West End &mdash; homely, comfortable and relaxed. The perfect base for one last evening of Scottish food and whisky before heading home.</p>
+  </div>
+</div>
+
+
   </div>
 </section>
 
 <!-- The Story -->
+
 <section class="tour-story">
   <div class="inner">
     <h2>Our Most Exciting Chapter Yet</h2>
-    <p>Our first Scottish tour in 2019 inspired the start of Azu Spirits &mdash; and everything we've built since: a line of themed blind tasting experiences that showcase the diversity of flavour in Scotch, share the stories behind each distillery, and reveal how craft and technique shape every dram.</p>
-    <p>After years spent perfecting the blind tasting format, hosting tastings and events, and learning what makes a dram memorable, this trip marks the start of our most exciting chapter yet. The collection we bring home will headline a Christmas season full of new launches &mdash; including something we've never made before &mdash; and lay the foundations for taking the Azu Spirits experience beyond our online home in the year ahead.</p>
+    <p>Our first Scottish tour in 2019 inspired the start of Azu Spirits &mdash; and everything we've built since: a line of themed blind tasting experiences designed to showcase the extraordinary diversity of flavour in Scotch, share the stories behind each distillery and reveal how craft and technique shape every dram.</p>
+
+<p>Seven years later, we returned with a very different mission. This time we weren't simply exploring Scotland's whisky regions &mdash; we were searching for six bottles worthy of becoming our next tasting collection. Along the way, distillers, hoteliers, bartenders and whisky specialists shared the bottles they thought we shouldn't leave Scotland without trying.</p>
+
+<p>The collection we brought home marks the beginning of our most exciting chapter yet, headlining a Christmas season of new launches &mdash; including something we've never made before &mdash; and laying the foundations for taking the Azu Spirits experience beyond our online home.</p>
+
   </div>
 </section>
 
 <!-- Launch: collection + event -->
 <section class="tour-launch">
   <h2>Launching this November</h2>
-  <p class="launch-sub">Everything we find comes home to Devon in two ways &mdash; a limited edition gift set, and one evening where you taste it first.</p>
+
+  <p class="launch-sub">
+    Everything we found comes home to Devon in two ways &mdash; 
+    a limited edition gift set and a tasting evening at The Cridford Inn.
+  </p>
+
   <div class="launch-grid">
-    <div class="launch-card">
-      <div class="card-date">Limited Edition &middot; Pre-orders Soon</div>
+
+    <!-- Gift Set -->
+    <div class="launch-card launch-card-product">
+      <div class="card-date">
+        Limited Edition &middot; Pre-orders open
+      </div>
+
       <h3>The Scottish Tasting Tour Gift Set</h3>
-      <p>Six hand-picked single malts in our signature blind tasting format &mdash; numbered bottles, tasting cards, a wax-sealed reveal, and a curated guide to the route: the distillery experiences and stays we loved, so you can follow the tour yourself.</p>
+
+      <p>
+        Six hand-picked single malts in our signature blind tasting format
+        &mdash; numbered bottles, tasting cards, a wax-sealed reveal and a
+        curated guide to the route, including whisky recommendations from
+        people in the heart of Scotland.
+      </p>
+
+      <div class="launch-card-footer">
+        <a
+          href="https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set/"
+          class="launch-card-cta"
+        >
+          Pre-order the Gift Set
+        </a>
+
+        <div class="dispatch-note">
+          Dispatching from 1st October
+        </div>
+      </div>
     </div>
+
+    <!-- Launch Event -->
     <div class="launch-card">
-      <div class="card-date">Saturday 28th November &middot; The Cridford Inn, Trusham</div>
+      <div class="card-date">
+        Saturday 28th November &middot; The Cridford Inn, Trusham
+      </div>
+
       <h3>The Launch Tasting Evening</h3>
-      <p>Six mystery drams, stories from the road, and the reveal &mdash; a guided blind tasting at one of Devon's loveliest thatched inns. Tickets are limited, and newsletter subscribers get first access.</p>
+
+      <p>
+        Six mystery drams, stories from the road and the reveal &mdash;
+        a guided blind tasting at one of Devon's loveliest thatched inns.
+        Tickets are limited. Call The Cridford Inn on 01626 853694 to
+        enquire &mdash; more details coming soon.
+      </p>
+
+      <div class="launch-card-footer">
+        <div class="event-note">
+          Limited places available
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -835,7 +1143,7 @@
 <section class="tour-signup" id="signup">
   <h2>Be the First to Taste What We Find</h2>
   <div class="accent-rule"></div>
-  <p>Sign up for first access to pre-orders and event tickets, and follow along as the journey unfolds this August.</p>
+  <p>Sign up for discounts on pre orders, event information and follow along as the journey unfolds this August.</p>
   <div class="form-inner">
     <div class="klaviyo-form-RFwH3c"></div>
   </div>

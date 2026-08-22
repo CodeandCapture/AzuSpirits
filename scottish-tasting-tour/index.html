@@ -633,6 +633,135 @@
 }
     
     /* ============================================
+   TOUR PHOTO GALLERY
+   ============================================ */
+
+.tour-gallery {
+  background: #f8f8f8;
+  padding: 70px 20px;
+}
+
+.gallery-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.gallery-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #A4343A;
+  margin-bottom: 8px;
+}
+
+.gallery-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin: 0 0 12px;
+}
+
+.gallery-heading p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+
+/* Gallery layout */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  grid-template-rows: repeat(2, 230px);
+  gap: 14px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 0;
+  background: #eee;
+}
+
+.gallery-featured {
+  grid-row: 1 / 3;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+/* Subtle photo hover */
+
+.gallery-item:hover img {
+  transform: scale(1.035);
+  filter: brightness(0.92);
+}
+
+
+/* Mobile */
+
+@media (max-width: 868px) {
+
+  .tour-gallery {
+    padding: 55px 20px;
+  }
+
+  .gallery-heading {
+    margin-bottom: 30px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 26px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 180px);
+    gap: 10px;
+  }
+
+  .gallery-featured {
+    grid-row: auto;
+  }
+}
+
+
+/* Small phones */
+
+@media (max-width: 520px) {
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 145px);
+    gap: 8px;
+  }
+
+  .gallery-item {
+    border-radius: 6px;
+  }
+}
+    
+    /* ============================================
        SIGNUP SECTION
        ============================================ */
     .tour-signup {
@@ -959,6 +1088,7 @@
   <a href="https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set" class="hero-cta">Pre order tasting gift set</a>
 </section>
 
+ 
 <!-- Intro -->
 
 <section class="tour-intro">
@@ -967,6 +1097,15 @@
   </div>
 </section>
 
+     <section style="position: relative;
+      background-image: url('https://www.azuspirits.co.uk/images/distilleries/bottles-aberfeldy.JPG');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 110px 20px;">
+
+  </section>
 <!-- The Route -->
 
 <section class="tour-route">
@@ -1022,6 +1161,16 @@
   </div>
 </section>
 
+    <section style="position: relative;
+      background-image: url('https://www.azuspirits.co.uk/images/landscapes/scottish-tour-monachyle.JPG');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 110px 20px;">
+
+  </section>
+  
 <!-- Where We Stayed -->
 
 <section class="tour-stays">
@@ -1056,6 +1205,58 @@
   </div>
 </div>
 
+
+  </div>
+</section>
+  
+  <!-- Tour Gallery -->
+<section class="tour-gallery">
+  <div class="gallery-inner">
+
+    <div class="gallery-heading">
+      <div class="gallery-eyebrow">From the road</div>
+      <h2>Scenes from Scotland</h2>
+      <p>
+        A few moments from the distilleries, islands, landscapes and places
+        we discovered along the way.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <figure class="gallery-item gallery-featured">
+        <img
+          src="https://www.azuspirits.co.uk/images/landscapes/scottish-tour-monachyle-alt1.jpg"
+          alt="Scottish landscape from our tasting tour"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="gallery-item">
+        <img
+          src="https://www.azuspirits.co.uk/images/landscapes/glass-barn-cafe.jpg"
+          alt="Glass Barn Cafe"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="gallery-item">
+        <img
+          src="https://www.azuspirits.co.uk/images/landscapes/ardbeg-house-tour.jpg"
+          alt="Ardbeg House"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="gallery-item">
+        <img
+          src="https://www.azuspirits.co.uk/images/distilleries/Tobermory-distillery.jpg"
+          alt="Tobermory distillery"
+          loading="lazy"
+        >
+      </figure>
+
+    </div>
 
   </div>
 </section>

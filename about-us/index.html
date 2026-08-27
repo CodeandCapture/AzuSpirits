@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -194,6 +194,8 @@
       margin-bottom: 15px;
     }
 
+   
+    
     .hero-section p {
       font-size: 16px;
       max-width: 700px;
@@ -202,6 +204,57 @@
       color: #D4AF37;
       font-style: italic;
     }
+    
+    /* Main Section */
+    
+   .main-section {
+  padding: 35px 20px 40px;
+  background-color: #fff;
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+    
+    .main-section h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+     ..main-section h3 {
+  font-size: 22px;
+  text-transform: none;
+  margin-bottom: 18px;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+    
+    .main-section p {
+      margin-bottom: 18px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+    
+    /* Background image */
+    
+.background-image {
+  background-image: url(https://www.azuspirits.co.uk/images/distilleries/whisky-maturation-aberfeldy.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 240px;
+  position: relative;
+}
+    @media (max-width: 600px) {
+  .background-image {
+    min-height: 160px;
+  }
+}
 
     /* Story Section with Photo */
     .story-section {
@@ -213,7 +266,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
-      align-items: center;
+       align-items: start;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -227,6 +280,17 @@
       letter-spacing: 1px;
     }
 
+     .story-content h3 {
+     
+      font-size: 25px;
+      text-transform: uppercase;
+       margin-bottom: 20px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+      
+    }
+    
     .story-content p {
       margin-bottom: 18px;
       font-size: 15px;
@@ -234,25 +298,454 @@
       line-height: 1.7;
     }
 
-    .story-photo {
-      width: 100%;
-      height: 400px;
-      background: #f0f0f0;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-      font-style: italic;
-      overflow: hidden;
-    }
+ /* ========================================
+   STORY FILM PHOTO PAIR
+   ======================================== */
 
-    .story-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.story-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+  max-width: 520px;
+   margin-top: 55px;
+}
 
+.story-film-photo {
+  margin: 0;
+}
+
+.story-film-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.story-film-photo figcaption {
+  padding-top: 8px;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.story-film-photo:nth-child(2) {
+  margin-top: 16px;
+}
+
+
+/* tablet */
+
+@media (max-width: 868px) {
+
+  .story-photo-pair {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+}
+
+
+/* mobile */
+
+@media (max-width: 520px) {
+
+  .story-photo-pair {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .story-film-photo:nth-child(2) {
+    margin-top: 18px;
+  }
+
+  .story-film-photo figcaption {
+    font-size: 10px;
+  }
+
+}
+
+   /* ========================================
+   AZU STORY MEMORY GALLERY
+   Landscape archive photography
+   ======================================== */
+
+.azu-memory-section {
+  padding: 55px 20px;
+  background: #f8f8f8;
+}
+
+.azu-memory-header {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.azu-memory-header .eyebrow,
+.tour-content .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #A4343A;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.azu-memory-header h2,
+.tour-content h2 {
+  margin: 0 0 16px;
+  color: #333;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.azu-memory-header p {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* landscape image grid */
+
+.azu-memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.azu-memory-card {
+  margin: 0;
+}
+
+.azu-memory-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.azu-memory-card figcaption {
+  padding: 9px 2px 0;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+
+/* tablet */
+
+@media (max-width: 868px) {
+
+  .azu-memory-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+    
+    
+
+
+/* mobile */
+
+@media (max-width: 600px) {
+
+  .azu-memory-section {
+    padding: 45px 20px;
+  }
+
+  .azu-memory-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .azu-memory-card img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+}
+    
+    /* ========================================
+   CURRENT AZU PRODUCT GALLERY
+   ======================================== */
+
+.azu-product-gallery {
+  padding: 65px 20px;
+  background: #fff;
+}
+
+.azu-product-gallery-header {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.azu-product-gallery-header .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #A4343A;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.azu-product-gallery-header h2 {
+  margin: 0 0 14px;
+  color: #333;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.azu-product-gallery-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* Editorial gallery */
+
+.azu-product-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  grid-template-rows: 220px 220px;
+  gap: 14px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.azu-product-image {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f4f4f4;
+}
+
+.azu-product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.azu-product-image-main {
+  grid-row: 1 / 3;
+}
+
+
+/* optional small captions */
+
+.azu-product-image {
+  position: relative;
+}
+
+.azu-product-image figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  margin: 0;
+  padding: 5px 8px;
+  background: rgba(255,255,255,0.92);
+  color: #555;
+  font-size: 10px;
+  letter-spacing: .3px;
+}
+
+
+/* tablet */
+
+@media (max-width: 868px) {
+
+  .azu-product-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 320px 220px;
+  }
+
+  .azu-product-image-main {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+
+}
+
+
+/* mobile */
+
+@media (max-width: 600px) {
+
+  .azu-product-gallery {
+    padding: 50px 20px;
+  }
+
+  .azu-product-gallery-header h2 {
+    font-size: 24px;
+  }
+
+  .azu-product-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .azu-product-image-main {
+    grid-column: auto;
+  }
+
+  .azu-product-image {
+    aspect-ratio: 3 / 2;
+  }
+
+  .azu-product-image img {
+    height: 100%;
+  }
+
+}
+
+/* ========================================
+   SCOTTISH TASTING TOUR FEATURE
+   ======================================== */
+
+.scottish-tour-section {
+  padding: 70px 20px;
+  background: #fff;
+}
+
+.scottish-tour-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 55px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-content p {
+  margin: 0 0 18px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.tour-content .tour-intro {
+  color: #333;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.tour-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 14px 28px;
+  background: #A4343A;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.tour-button:hover {
+  background: #8B1538;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.tour-photo-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-rows: 230px 230px;
+  gap: 12px;
+}
+
+.tour-photo-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.tour-photo-main {
+  grid-row: 1 / 3;
+}
+
+
+/* Responsive */
+
+@media (max-width: 368px) {
+
+  .azu-memory-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .azu-memory-card img {
+    height: auto;
+    max-width: 500px;
+  } 
+
+  .scottish-tour-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .tour-photo-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 280px 180px;
+  }
+
+  .tour-photo-main {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 820px) {
+
+  .azu-memory-section,
+  .scottish-tour-section {
+    padding: 50px 20px;
+  }
+
+  .azu-memory-header h2,
+  .tour-content h2 {
+    font-size: 24px;
+  }
+
+  .tour-photo-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .tour-photo-main {
+    grid-column: auto;
+  }
+
+  .tour-photo-grid img {
+    height: 240px;
+  }
+}
+    
     /* Why Choose Section */
     .why-choose-section {
       background: #f8f8f8;
@@ -696,7 +1189,7 @@ gtag('config', 'G-FF0E8016EX');
     <li class="has-dropdown">
       <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="https://www.azuspirits.co.uk/whisky-gifts/" role="menuitem">Scotch Whisky</a></li>
+        <li><a href="https://www.azuspirits.co.uk/whisky-gifts/" role="menuitem">Scotch Whisky</a></li> 
         <li><a href="https://www.azuspirits.co.uk/gin-gifts/" role="menuitem">Craft Gin</a></li>
         <li><a href="https://www.azuspirits.co.uk/premium-whisky-gifts/" role="menuitem">Premium &amp; Luxury Whisky Gifts</a></li>
         <li><a href="https://www.azuspirits.co.uk/birthday-whisky-gifts/" role="menuitem">Birthday Whisky Gifts</a></li>
@@ -729,73 +1222,269 @@ gtag('config', 'G-FF0E8016EX');
   <section class="hero-section">
     <div class="container">
       <h1>About Azu Spirits</h1>
+      
+   
     </div>
   </section>
+  
+  <section class="main-section">
+     <h3>We find exceptional things and create memorable ways to discover them.</h3>
 
-  <!-- Story Section with Photo -->
-  <section class="story-section">
-    <div class="container">
-      <div class="story-grid">
-        
-        <div class="story-content">
-          <h2>Our Story</h2>
-          <p>Founded by Ellie Asthana Gibson, Azu Spirits brings years of industry expertise directly to your door. From working in Glasgow's top whisky bars to showcasing brands at UK festivals and crafting cocktails at Melbourne's acclaimed 1806 bar, every product we select reflects genuine hands-on experience.</p>
-          
-          <p>What started as a personal passion for understanding the production and science behind spirits has evolved into a carefully curated online shop. We champion craft producers, celebrate regional diversity, and share the fascinating stories that make each bottle special.</p>
+        <p>
+          Azu Spirits is an independent British spirits company built around curiosity,
+          good taste and the pleasure of discovery. We curate exceptional Scotch whisky
+          and British spirits, then create experiences that invite you to taste, compare,
+          question what you think you know—and discover something worth knowing.
+        </p>
+  </section>
+  
+  <section class="background-image"></section>
 
-          <p>Since 2021, we've built a reputation for thoughtful curation and industry knowledge—selecting spirits not just for quality, but for their character, craftsmanship, and the stories they tell.</p>
-        </div>
+  <!-- Story Section -->
+<section class="story-section">
+  <div class="container">
 
-        <div class="story-photo">
-          <!-- REPLACE THIS PLACEHOLDER WITH YOUR PHOTO -->
-          <img src="/images/brand/azu-spirits-young.JPEG" alt="Ellie Gibson at whisky festival" />
-         
-        </div>
+    <div class="story-grid">
+
+      <!-- LEFT COLUMN: STORY -->
+      <div class="story-content">
+
+ 
+
+        <h2>Our Story</h2>
+
+        <p>
+          Azu began with a fascination for why things taste the way they do.
+        </p>
+
+        <p>
+          Founder Ellie Asthana Gibson discovered the extraordinary diversity of single
+          malt whisky while living in Glasgow in 2016. Working in whisky bars and at
+          festivals led to writing about the science, production and stories behind
+          Scotch; later, time behind the bar at Melbourne's 1806 deepened that
+          fascination with spirits, flavour and hospitality.
+        </p>
+
+        <p>
+          Along the way, one particular ritual stood out. Within the drinks industry,
+          tasting blind is commonplace: remove the label and suddenly reputation,
+          price, age and expectation disappear. You're left with what's actually in
+          the glass.
+        </p>
+
+        <p>
+          <strong>Why wasn't that experience more readily available to everyone?</strong>
+        </p>
+
+        <p>
+          That question became Azu Spirits.
+        </p>
+
+        <p>
+          We began by hosting tastings, before creating sharing boxes during 2020 and
+          eventually developing our blind tasting gift collections. Today, every Azu
+          collection is designed to bring some of that original experience into your
+          home: carefully chosen spirits, stories worth discovering, a little
+          anticipation—and the reveal waiting until the end.
+        </p>
 
       </div>
+      <!-- END LEFT COLUMN -->
+
+
+      <!-- RIGHT COLUMN: FILM PHOTOS -->
+      <div class="story-photo-pair">
+
+        <figure class="story-film-photo">
+          <img
+            src="https://www.azuspirits.co.uk/images/memories/ubiquitous-chip-2015.jpg"
+            alt="Ellie Gibson drinking whisky in Glasgow"
+            loading="lazy"
+          >
+          <figcaption>
+            Glasgow — the beginning of a fascination with Scotch whisky.
+          </figcaption>
+        </figure>
+
+        <figure class="story-film-photo">
+          <img
+            src="https://www.azuspirits.co.uk/images/memories/oran-mor-2016-whisky.png"
+            alt="Ellie nosing whisky at Òran Mór in Glasgow"
+            loading="lazy"
+          >
+          <figcaption>
+            Tasting whisky at Òran Mór during Ellie's time working at the whisky bar.
+          </figcaption>
+        </figure>
+
+      </div>
+      <!-- END RIGHT COLUMN -->
+
     </div>
-  </section>
+
+  </div>
+</section>
+  
+  <!-- GLASGOW 2016 / EARLY AZU STORY -->
+<section class="azu-memory-section">
+  <div class="container">
+
+    <div class="azu-memory-header">
+      
+ 
+    </div>
+
+    <div class="azu-memory-grid">
+<div class="azu-memory-header">
+  <span class="eyebrow">Scotland, 2016</span>
+  <h2>Where It Started</h2>
+  <p>
+    A few early memories from distilleries, bars and a growing fascination
+    with the people, places and processes behind Scotch whisky.
+  </p>
+</div>
+      <figure class="azu-memory-card">
+        <img
+          src="https://www.azuspirits.co.uk/images/memories/dewars-old-distillery-visit.jpg"
+          alt="A visit to Aberfeldy, the Home of Dewars in 2016"
+          loading="lazy"
+        >
+        <figcaption>
+          A visit to Aberfeldy, the Home of Dewars in 2016
+        </figcaption>
+      </figure>
+
+          <figure class="azu-memory-card">
+        <img
+          src="https://www.azuspirits.co.uk/images/memories/old-distillery-photos-2016.jpg"
+          alt="Distillery visits in 2016"
+          loading="lazy"
+        >
+        <figcaption>
+          Distillery visits turned curiosity about flavour into a fascination with
+          production, place and the people behind the spirit.
+        </figcaption>
+      </figure>
+         <figure class="azu-memory-card">
+        <img
+          src="https://www.azuspirits.co.uk/images/memories/old-distillery-visit-edradour.jpg"
+          alt="A visit to Edradour Distillery in Scotland in 2016"
+          loading="lazy"
+        >
+       <figcaption>
+  A visit to Edradour Distillery in 2016.
+</figcaption>
+      </figure>
+      
+
+    </div>
+
+  </div>
+</section>
 
   <!-- Why Choose Section -->
   <section class="why-choose-section">
     <div class="container">
-      <h2>Why Choose Azu Spirits</h2>
+   <h2>Why Azu?</h2>
       <div class="features-grid">
         
         <div class="feature-box">
-          <h3>Industry Expertise</h3>
-          <p>Every bottle is selected based on years of professional experience in bars, festivals, and tasting rooms. We understand what makes a spirit truly exceptional—from cask influence to botanical balance.</p>
+          <h3>TASTE FIRST. LABEL SECOND.</h3>
+          <p>Our bottles are numbered rather than identified, so the name on the label can't make the decision for you. Taste, compare and choose your favourites before opening the reveal. You may confirm everything you thought you knew—or find yourself completely wrong. That's part of the fun.</p>
         </div>
 
         <div class="feature-box">
-          <h3>Blind Tasting Experience</h3>
-          <p>Our unique blind tasting sets let you explore spirits the way professionals do. Remove preconceptions, test your palate, and discover new favourites through guided comparison.</p>
+          <h3>CHOSEN FOR A REASON</h3>
+          <p>We don't simply assemble six miniatures. Every collection is curated as a tasting: exceptional spirits selected for their quality, character and the conversation they create together. From limited releases and distillery exclusives to bottles worth discovering from lesser-known producers, if it's in an Azu box, there's a reason we want you to try it.</p>
         </div>
 
         <div class="feature-box">
-          <h3>Thoughtful Curation</h3>
-          <p>From delicate Lowland whiskies to bold Islay malts, floral London Dry to contemporary craft gins—we showcase the incredible diversity within each category with carefully themed collections.</p>
+          <h3>THE STORY BEHIND THE GLASS</h3>
+          <p>Taste is only the beginning. Distilleries, people, places, ingredients, casks and production all leave their mark. Our guides reveal the stories behind each spirit and explore why it tastes the way it does—without turning a good drink into a lecture.</p>
         </div>
 
-        <div class="feature-box">
-          <h3>Personal Service</h3>
-          <p>Direct access to expertise. Need recommendations? Building a collection? We're here to help with personalised advice based on genuine knowledge and passion for great spirits.</p>
-        </div>
+       
 
       </div>
     </div>
   </section>
 
-  <!-- Product Photo Section -->
-  <section class="product-showcase">
-    <div class="container">
-      <div class="product-photo">
-        <!-- REPLACE THIS PLACEHOLDER WITH YOUR PRODUCT PHOTO -->
-        <img src="/images/products/tasting-gift-sets.jpg" alt="Azu Spirits Tasting Gift Sets" />
-        
-      </div>
+<!-- CURRENT AZU PRODUCT GALLERY -->
+<section class="azu-product-gallery">
+
+  <div class="container">
+
+    <div class="azu-product-gallery-header">
+
+      <span class="eyebrow">Inside an Azu tasting</span>
+
+      <h2>Curated. Tasted Blind. Revealed Last.</h2>
+
+      <p>
+        Every collection brings together carefully selected spirits,
+        guided tasting and the anticipation of discovering what has
+        actually been in your glass.
+      </p>
+
     </div>
-  </section>
+
+
+    <div class="azu-product-grid">
+
+      <!-- Main / strongest product image -->
+      <figure class="azu-product-image azu-product-image-main">
+        <img
+          src="https://www.azuspirits.co.uk/images/products/regions-of-scotland-whisky-gift-unusual.jpg"
+          alt="Azu Spirits blind tasting gift set with numbered bottles"
+          loading="lazy"
+        >
+      </figure>
+
+
+      <!-- Detail: numbered bottles -->
+      <figure class="azu-product-image">
+        <img
+          src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg"
+          alt="Numbered bottles in an Azu Spirits blind tasting"
+          loading="lazy"
+        >
+      </figure>
+
+
+      <!-- Detail: wax seal / reveal -->
+      <figure class="azu-product-image">
+        <img
+          src="https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg"
+          alt="Wax sealed reveal from an Azu Spirits tasting"
+          loading="lazy"
+        >
+      </figure>
+
+
+      <!-- Detail: tasting guide -->
+      <figure class="azu-product-image">
+        <img
+          src="https://www.azuspirits.co.uk/images/products/unique-scotch-whisky-gift-alt4.jpg"
+          alt="Azu Spirits guided tasting notes and tasting set"
+          loading="lazy"
+        >
+      </figure>
+
+
+      <!-- Lifestyle / poured whisky -->
+      <figure class="azu-product-image">
+        <img
+          src="https://www.azuspirits.co.uk/images/products/whisky-tasting-gift-set.jpg"
+          alt="Azu Spirits Scotch whisky tasting experience"
+          loading="lazy"
+        >
+      </figure>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- Contact Section -->
   <section class="contact-section" id="contact">
@@ -893,4 +1582,5 @@ gtag('config', 'G-FF0E8016EX');
   <script src="/js/age-gate.js"></script>
 </body>
 </html>
+
 

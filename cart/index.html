@@ -853,7 +853,7 @@
             
             <div class="trust-item">
                 <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-                <span>Free UK Shipping with DPD</span>
+               <span>UK Delivery Only · Free DPD Shipping</span>
             </div>
             <div class="trust-item">
                 <svg viewBox="0 0 24 24"><path d="M19 8L5 8v10h14V8zm-3 6H8v-2h8v2z"/></svg>
@@ -869,6 +869,7 @@
 
             <div class="cart-summary">
                 <h2>Order Summary</h2>
+          
                 <div class="summary-row">
                     <span>Subtotal</span>
                     <span id="subtotal">£0.00</span>
@@ -888,6 +889,20 @@
                     <span id="total">£0.00</span>
                 </div>
 
+              <div style="
+    margin: 1rem 0 1.25rem;
+    padding: 0.9rem 1rem;
+    background: #f9f6f3;
+    border: 1px solid #e8e0d8;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+">
+    <strong style="color: #A4343A;">UK delivery only</strong><br>
+    We currently ship Azu Spirits orders to UK delivery addresses only.
+</div>
                <button class="checkout-btn" id="stripeCheckoutBtn" onclick="checkoutWithStripe()">
     Secure Checkout with Stripe
 </button>

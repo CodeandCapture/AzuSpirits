@@ -323,7 +323,9 @@
           <input type="email" id="customerEmail" placeholder="customer@example.com" autocomplete="off" />
           <button class="btn-lookup" id="lookupBtn" onclick="lookupOrder()">Look Up</button>
         </div>
-        <p class="field-hint">Enter the customer's email to pull their most recent paid order from Stripe.</p>
+       <p class="field-hint">
+  Enter the customer's email to find their most recent paid Stripe or PayPal order.
+</p>
       </div>
 
       <div class="order-preview" id="orderPreview">
@@ -395,45 +397,162 @@
     });
 
     // ── ORDER LOOKUP ──
-    async function lookupOrder() {
-      const email = document.getElementById('customerEmail').value.trim();
-      const btn = document.getElementById('lookupBtn');
-      const preview = document.getElementById('orderPreview');
+   async function lookupOrder() {
+  const email =
+    document.getElementById('customerEmail').value.trim();
 
-      if (!email) { showStatus('Please enter a customer email address.', 'error'); return; }
+  const btn =
+    document.getElementById('lookupBtn');
 
-      btn.disabled = true;
-      btn.textContent = 'Looking up...';
-      preview.classList.remove('visible');
-      clearStatus();
+  const preview =
+    document.getElementById('orderPreview');
 
-      try {
-        const res = await fetch('https://azu-spirits-backend.vercel.app/api/lookup-order', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ customerEmail: email }),
-        });
+  const previewName =
+    document.getElementById('previewName');
 
-        const data = await res.json();
+  const previewItems =
+    document.getElementById('previewItems');
 
-        if (res.ok && data.found) {
-          document.getElementById('previewName').textContent = data.customerName;
-          document.getElementById('previewItems').innerHTML = data.items
-            .map(i => `<div class="preview-item">${i.description} × ${i.quantity} — £${i.amount}</div>`)
-            .join('');
-          document.getElementById('previewTotal').textContent = `Total: ${data.currency}${data.total}`;
-          preview.classList.add('visible');
-          showStatus(`Order found for <strong>${data.customerName}</strong>. Fill in the tracking details below and send.`, 'success');
-        } else {
-          showStatus(data.error || 'No paid order found for this email address.', 'error');
-        }
-      } catch (err) {
-        showStatus('Could not reach the server. Check your connection.', 'error');
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Look Up';
+  const previewTotal =
+    document.getElementById('previewTotal');
+
+  if (!email) {
+    showStatus(
+      'Please enter a customer email address.',
+      'error'
+    );
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Looking up...';
+
+  preview.classList.remove('visible');
+  previewName.textContent = '';
+  previewItems.replaceChildren();
+  previewTotal.textContent = '';
+
+  clearStatus();
+
+  try {
+    const res = await fetch(
+      'https://azu-spirits-backend.vercel.app/api/lookup-order',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          customerEmail: email,
+        }),
       }
+    );
+
+    const data = await res.json();
+
+    if (!res.ok || !data.found) {
+      throw new Error(
+        data.message ||
+        data.error ||
+        'No paid order was found for this email address.'
+      );
     }
+
+    const provider =
+      data.paymentProvider === 'paypal'
+        ? 'PayPal'
+        : 'Stripe';
+
+    const currencyCode =
+      data.currency || 'GBP';
+
+    const currencyFormatter =
+      new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: currencyCode,
+      });
+
+    previewName.textContent =
+      data.customerName || 'Customer';
+
+    const items =
+      Array.isArray(data.items)
+        ? data.items
+        : [];
+
+    if (items.length === 0) {
+      const emptyItem =
+        document.createElement('div');
+
+      emptyItem.className = 'preview-item';
+      emptyItem.textContent =
+        'No item details were returned.';
+
+      previewItems.appendChild(emptyItem);
+    } else {
+      items.forEach((item) => {
+        const itemRow =
+          document.createElement('div');
+
+        itemRow.className = 'preview-item';
+
+        const amount =
+          Number(item.amount);
+
+        const formattedAmount =
+          Number.isFinite(amount)
+            ? currencyFormatter.format(amount)
+            : item.amount;
+
+        itemRow.textContent =
+          `${item.description || 'Order item'} × ` +
+          `${item.quantity || 1} — ${formattedAmount}`;
+
+        previewItems.appendChild(itemRow);
+      });
+    }
+
+    const total =
+      Number(data.total);
+
+    const formattedTotal =
+      Number.isFinite(total)
+        ? currencyFormatter.format(total)
+        : data.total;
+
+    previewTotal.textContent =
+      `Total: ${formattedTotal} · Paid via ${provider}`;
+
+    preview.classList.add('visible');
+
+    showStatus(
+      `Order found for <strong>${escapeHtml(
+        data.customerName || 'Customer'
+      )}</strong> via ${provider}. ` +
+      'Fill in the tracking details below and send.',
+      'success'
+    );
+  } catch (err) {
+    console.error('Order lookup failed:', err);
+
+    showStatus(
+      err.message ||
+      'Could not look up the order.',
+      'error'
+    );
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Look Up';
+  }
+}
+    function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
 
     // ── SEND SHIPPING EMAIL ──
     async function sendShipping() {

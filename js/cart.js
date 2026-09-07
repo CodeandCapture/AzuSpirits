@@ -20,7 +20,17 @@ class ShoppingCart {
 
   // Add item to cart
   addItem(product) {
+
+  const catalogProduct = products[product.id];
+
+  if (catalogProduct?.stock === 'sold-out') {
+    alert('Sorry, this product is currently sold out.');
+    return;
+  }
+
     const existingItem = this.items.find(item => item.id === product.id);
+
+
     
     if (existingItem) {
       existingItem.quantity += product.quantity || 1;
@@ -117,12 +127,15 @@ class ShoppingCart {
   }
 
   // Get items for Stripe checkout
-  getCheckoutItems() {
-    return this.items.map(item => ({
+ getCheckoutItems() {
+  return this.items
+    .filter(item => products[item.id]?.stock !== 'sold-out')
+    .map(item => ({
       price: item.priceId,
       quantity: item.quantity
     }));
-  }
+}
+        
 }
 
 // Initialize cart globally
@@ -135,68 +148,81 @@ const products = {
     name: 'Craft Gins of the Cotswolds Tasting Gift Set',
     price: 52.00,
     priceId: 'price_1SLSSSDLWuae7NssXA2c2K50',
-    image: 'https://www.azuspirits.co.uk/images/products/cotswolds-gin-gift-alt1.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/cotswolds-gin-gift-alt1.jpg',
+    stock: 'in-stock'
   },
   'london-gins-tasting-gift': {
     name: 'London Gin Tasting Gift Set',
     price: 52.00,
     priceId: 'price_1SLSUCDLWuae7NssKYS4Jx7b',
-    image: 'https://www.azuspirits.co.uk/images/products/london-gins.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/london-gins.jpg',
+    stock: 'in-stock'
   },
   'devon-gins-tasting-gift': {
     name: 'Devon Gins Tasting Set',
     price: 52.00,
     priceId: 'price_1SLSd6DLWuae7NssLsJuYrMT',
-    image: 'https://www.azuspirits.co.uk/images/products/devon-gin-tasting.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/devon-gin-tasting.jpg',
+    stock: 'in-stock'
   },
   'yorkshire-gin-gift-set': {
     name: 'Yorkshire Gin Gift Set',
     price: 52.00,
     priceId: 'price_1SLSX1DLWuae7NssYC9gC2aT',
-    image: 'https://www.azuspirits.co.uk/images/products/yorkshire-gin-tasting-set.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/yorkshire-gin-tasting-set.jpg',
+    stock: 'in-stock'    
+    
   },
   'great-british-gin-tasting-set': {
     name: 'Great British Gins Tasting Gift Set',
     price: 50.00,
     priceId: 'price_1SQAMzDLWuae7NsskqfiVv5J',
-    image: 'https://www.azuspirits.co.uk/images/products/great-british-gins.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/great-british-gins.jpg',
+    stock: 'sold-out'
   },
         'south-west-gin-tasting-set': {
         name: 'South West Craft Gin Tasting Gift Set',
         price: 50.00,
         priceId: 'price_1SQA7EDLWuae7NssnnHeOJSQ',
-        image: 'https://www.azuspirits.co.uk/images/products/south-west-gin-gift-set.jpg'
+        image: 'https://www.azuspirits.co.uk/images/products/south-west-gin-gift-set.jpg',
+        stock: 'in-stock'    
     },
 
   'regions-of-scotland-whisky-tasting-set': {
     name: 'Regions of Scotland Whisky Tasting Gift Set',
     price: 58.00,
     priceId: 'price_1SLSdlDLWuae7Nss8iCw26SW',
-    image: 'https://www.azuspirits.co.uk/images/products/whisky-tasting-set-alt1.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/whisky-tasting-set-alt1.jpg',
+    stock: 'in-stock'    
   },
   'six-styles-scotch-whisky-tasting-set': {  // ← FIXED: Now matches product page!
     name: 'Six Styles of Scotch Tasting Gift Set',
     price: 63.00,
     priceId: 'price_1SLSeHDLWuae7Nss2SEy0Fmy',
-    image: 'https://www.azuspirits.co.uk/images/products/six-styles-scotch-main.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/six-styles-scotch-main.jpg',
+    stock: 'in-stock'    
   },
   'founders-selection-whisky-gift-set': {
     name: 'Founders Selection Whisky Gift Set',
     price: 55.00,
     priceId: 'price_1SLSZ8DLWuae7NssGHl64wqJ',
-    image: 'https://www.azuspirits.co.uk/images/products/whisky-tasting-gift-set.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/whisky-tasting-gift-set.jpg',
+    stock: 'sold-out'
   },
   'luxury-single-malt-whisky': {
     name: 'Luxury Single Malt Whisky Tasting Gift Set',
     price: 110.00,
     priceId: 'price_1SLSbYDLWuae7NssO2HhSFVk',
-    image: 'https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/luxury-scotch-whisky-gift-alt4.jpg',
+    stock: 'in-stock'    
+     
   },
           'scottish-whisky-tasting-tour-gift-set': {
     name: 'The Scottish Whisky Tasting Tour: Blind Tasting Gift Set',
     price: 85.00,
     priceId: 'price_1U6J58DLWuae7NssVTDOhJcJ',
-    image: 'https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-gift-set.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-gift-set.jpg',
+     stock: 'in-stock' 
   },
 
    
@@ -206,22 +232,24 @@ const products = {
    name: 'Six Styles of Scotch Whisky Sharing Box',
    price: 135.00,
    priceId: 'price_1SP3AjDLWuae7Nssc66stjRA',
-    image: 'https://www.azuspirits.co.uk/images/products/six-styles-of-scotch-whisky-sharing.png'
+   image: 'https://www.azuspirits.co.uk/images/products/six-styles-of-scotch-whisky-sharing.png',
+   stock: 'sold-out'        
   },
 
   'limited-edition-single-malt-sharing':  {
 name: 'The Founders Selection Whisky Sharing Box',
 price: 115.00,
 priceId: 'price_1SQb16DLWuae7Nss4HRygByM',
-image: 'https://www.azuspirits.co.uk/images/products/scotch-whisky-tasting-box.JPG'
-    
+image: 'https://www.azuspirits.co.uk/images/products/scotch-whisky-tasting-box.JPG',
+stock: 'sold-out'    
   },
 
   'south-west-gin-sharing-box': {
 name: 'South West Craft Gin Sharing Box',
 price: 100.00,
 priceId: 'price_1SQn3qDLWuae7NssJ2V53SfR',
-image: 'https://www.azuspirits.co.uk/images/products/south-west-specialist-sharing.png' 
+image: 'https://www.azuspirits.co.uk/images/products/south-west-specialist-sharing.png',
+stock: 'in-stock'         
     
   },
 
@@ -229,7 +257,8 @@ image: 'https://www.azuspirits.co.uk/images/products/south-west-specialist-shari
 name: 'British Gins Sharing Box',
 price: 95.00,
 priceId: 'price_1SQoDmDLWuae7NssHmWPO8a4',
-image: 'https://www.azuspirits.co.uk/images/products/gin-tasting-at-home-experience.jpeg'
+image: 'https://www.azuspirits.co.uk/images/products/gin-tasting-at-home-experience.jpeg',
+stock: 'sold-out'
   
   },
 
@@ -237,7 +266,8 @@ image: 'https://www.azuspirits.co.uk/images/products/gin-tasting-at-home-experie
     name: 'Cotswolds Gins Sharing Box',
     price: 100.00,
     priceId: 'price_1SQoODDLWuae7Nss7y2OGzs1',
-     image: 'https://www.azuspirits.co.uk/images/products/cotswolds-gins-tasting-sharing.JPG'
+    image: 'https://www.azuspirits.co.uk/images/products/cotswolds-gins-tasting-sharing.JPG',
+    stock: 'sold-out'
     
   },
   
@@ -246,14 +276,16 @@ image: 'https://www.azuspirits.co.uk/images/products/gin-tasting-at-home-experie
     name: 'Luxury Whisky Christmas Crackers',
     price: 58.00,
     priceId: 'price_1SLSiIDLWuae7NssttgxBG5i',
-    image: 'https://www.azuspirits.co.uk/images/products/christmas-crackers-whisky-alt1.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/christmas-crackers-whisky-alt1.jpg',
+    stock: 'sold-out',
   },
 
     'craft-gin-christmas-crackers': {
     name: 'Craft Gin Christmas Crackers',
     price: 52.00,
     priceId: 'price_1SMYUCDLWuae7Nss0MtD8DfQ',
-    image: 'https://www.azuspirits.co.uk/images/products/london-gins-christmas-crackers-alt1.jpg'
+    image: 'https://www.azuspirits.co.uk/images/products/london-gins-christmas-crackers-alt1.jpg',
+    stock: 'sold-out'
   }
 };
 
@@ -265,6 +297,11 @@ function addToCart(productId, productName, productPrice, productImage, priceId) 
   if (!priceId && products[productId]) {
     priceId = products[productId].priceId;
     console.log('✓ Found priceId:', priceId);  // Debug log
+  }
+        
+         if (products[productId]?.stock === 'sold-out') {
+    alert('Sorry, this product is currently sold out.');
+    return;
   }
   
   if (!priceId) {

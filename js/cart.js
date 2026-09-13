@@ -233,7 +233,7 @@ const products = {
    price: 135.00,
    priceId: 'price_1SP3AjDLWuae7Nssc66stjRA',
    image: 'https://www.azuspirits.co.uk/images/products/six-styles-of-scotch-whisky-sharing.png',
-   stock: 'sold-out'        
+   stock: 'in-stock'        
   },
 
   'limited-edition-single-malt-sharing':  {

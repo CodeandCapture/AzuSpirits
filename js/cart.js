@@ -241,7 +241,7 @@ name: 'The Founders Selection Whisky Sharing Box',
 price: 115.00,
 priceId: 'price_1SQb16DLWuae7Nss4HRygByM',
 image: 'https://www.azuspirits.co.uk/images/products/scotch-whisky-tasting-box.JPG',
-stock: 'sold-out'    
+stock: 'in-stock'     
   },
 
   'south-west-gin-sharing-box': {

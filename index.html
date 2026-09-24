@@ -2066,6 +2066,56 @@
   }
 } 
 
+
+  /* Scottish Tasting Tour editorial feature */
+  .tour-story {
+    background: #f5f1ed;
+    padding: 72px 20px;
+  }
+  .tour-story-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 70px);
+    align-items: center;
+  }
+  .tour-story-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+  .tour-story-eyebrow {
+    color: #96343a;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+  .tour-story h2 {
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.2;
+    margin: 0 0 20px;
+    color: #292424;
+  }
+  .tour-story-copy > p:not(.tour-story-eyebrow) {
+    max-width: 56ch;
+    color: #46403d;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 25px;
+  }
+  .tour-story-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 15px 22px; }
+  .tour-story-actions a:focus-visible { outline: 3px solid #A4343A; outline-offset: 4px; }
+  .tour-story-link { color: #74242b; font-weight: 700; text-underline-offset: 4px; }
+  @media (max-width: 760px) {
+    .tour-story { padding: 48px 20px; }
+    .tour-story-inner { grid-template-columns: 1fr; }
+  }
+
 </style>
   
   <!-- Google tag (gtag.js) -->
@@ -2182,7 +2232,7 @@ gtag('config', 'G-FF0E8016EX');
     </div>
     <div class="trust-item">
       <span class="trust-icon"></span>
-      <span>Expert Curation</span>
+      <span>Selected through distillery visits and tasting</span>
     </div>
   </div>
 </section>
@@ -2190,7 +2240,7 @@ gtag('config', 'G-FF0E8016EX');
   <!-- Intro Section with SEO-Rich Content -->
 <section class="intro-section">
   <div class="intro-content">
-    <p>Discover the finest <strong>whisky and gin tasting sets</strong> in the UK. Each expertly curated collection features <strong>6 x 30ml premium bottles</strong>, perfect for blind tasting experiences that help you explore Scotland's legendary distilleries and England's finest craft gin producers. From rare 18-year single malts to award-winning craft gins, our tasting sets showcase diverse flavour profiles—smooth and sweet to bold and peaty—all delivered free to your door.</p>
+    <p>Discover the finest <strong>whisky and gin tasting sets</strong> in the UK. Each expertly curated collection features <strong>6 x 30ml premium bottles</strong>, perfect for blind tasting experiences that help you explore Scotland's legendary distilleries and England's finest craft gin producers. From premium aged single malts such as the 18-year Ledaig in our Six Styles or Tobermory 24 in the Luxury Set, to award-winning craft gins from local areas across the UK, our themed tasting sets showcase diverse flavour profiles—smooth and sweet to bold and peaty—all delivered free to your door.</p>
   </div>
 </section>
 
@@ -2324,7 +2374,23 @@ gtag('config', 'G-FF0E8016EX');
     </div>
   </div>
 </section>
-  
+
+<!-- Distillery story: supports the featured gift sets -->
+<section class="tour-story" aria-labelledby="tour-story-title">
+  <div class="tour-story-inner">
+    <img class="tour-story-photo" src="https://www.azuspirits.co.uk/images/scottish-tasting-tour/glenturret-hero.jpg" alt="The Glenturret Distillery visited on Azu Spirits’ Scottish Tasting Tour" loading="lazy" decoding="async" width="auto" height='300'>
+    <div class="tour-story-copy">
+      <p class="tour-story-eyebrow">Behind the Scottish Tasting Tour</p>
+      <h2 id="tour-story-title">Chosen with curiosity, shared as a gift</h2>
+      <p>We visit Scotland’s distilleries and speak with the people making the whisky. Those conversations help us choose single malts with distinct characters for a blind tasting experience you can share or give as a gift.</p>
+      <div class="tour-story-actions">
+        <a class="featured-cta" href="https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set/">Explore the Scottish Tasting Tour gift set</a>
+        <a class="tour-story-link" href="https://www.azuspirits.co.uk/blog/glenturret-distillery-whisky-character/">Read our Glenturret visit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="whats-in-box" id="whats-in-box">
     <div class="container">
       <h3>What's Inside Every Tasting Set</h3>

@@ -676,7 +676,21 @@
 
     }
 
-  </style>
+  
+    /* Sold out product */
+    .add-to-cart-btn.sold-out {
+      background: #999;
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .add-to-cart-btn.sold-out:hover {
+      background: #999;
+      transform: none;
+      box-shadow: none;
+    }
+
+</style>
 
 
   <!-- Google Analytics -->
@@ -746,7 +760,7 @@
             <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
             <ul class="dropdown-menu" role="menu">
               <li>
-                <a href="https://www.azuspirits.co.uk/single-malt-whisky-gifts/" role="menuitem">Single Malt Whisky</a>
+                <a href="https://www.azuspirits.co.uk/whisky-gifts/" role="menuitem">Whisky Gifts</a>
               </li>
               <li>
                 <a href="https://www.azuspirits.co.uk/gin-gifts/" role="menuitem">Premium British Gin</a>
@@ -958,6 +972,7 @@
 
   <!-- Cart -->
   <script src="/js/cart.js"></script>
+<script src="/js/product-stock.js"></script>
 
 
   <!-- Navigation -->

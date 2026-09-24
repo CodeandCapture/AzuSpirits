@@ -1822,6 +1822,20 @@
   }
 } 
 
+
+    /* Sold out product */
+    .add-to-cart-btn.sold-out {
+      background: #999;
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .add-to-cart-btn.sold-out:hover {
+      background: #999;
+      transform: none;
+      box-shadow: none;
+    }
+
 </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
@@ -1863,7 +1877,7 @@ gtag('config', 'G-FF0E8016EX');
             <a href="https://www.azuspirits.co.uk/tasting-gift-sets/">Tasting Gift Sets</a>
             <ul class="dropdown-menu" role="menu">
               <li>
-                <a href="https://www.azuspirits.co.uk/single-malt-whisky-gifts/" role="menuitem">Single Malt Whisky</a>
+                <a href="https://www.azuspirits.co.uk/whisky-gifts/" role="menuitem">Whisky Gifts</a>
               </li>
               <li>
                 <a href="https://www.azuspirits.co.uk/gin-gifts/" role="menuitem">Premium British Gin</a>
@@ -2410,6 +2424,7 @@ gtag('config', 'G-FF0E8016EX');
 
 
   <script src="/js/cart.js"></script>
+<script src="/js/product-stock.js"></script>
 
   <script>
     function toggleNav() {

@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.azuspirits.co.uk/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -29,6 +29,11 @@
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Upcoming Event -->
+  <url>
+    <loc>https://www.azuspirits.co.uk/scottish-tasting-tour-event/</loc>
   </url>
 
   <!-- Landing Pages -->
@@ -59,27 +64,6 @@
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://www.azuspirits.co.uk/gifts-for-whisky-lovers/</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://www.azuspirits.co.uk/single-malt-whisky-gifts/</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://www.azuspirits.co.uk/unique-whisky-gifts/</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
   <!-- Seasonal Pages -->
@@ -293,6 +277,10 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://www.azuspirits.co.uk/newsletter/</loc>
+  </url>
+
   <!-- Blog -->
   <url>
     <loc>https://www.azuspirits.co.uk/blog/</loc>
@@ -316,11 +304,10 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Scottish Tasting Tour Series -->
   <url>
-    <loc>https://www.azuspirits.co.uk/blog/birthday-whisky-gifts/</loc>
-    <lastmod>2026-03-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <loc>https://www.azuspirits.co.uk/blog/glenturret-distillery-whisky-character/</loc>
+    <lastmod>2026-09-24</lastmod>
   </url>
 
   <!-- Blog Posts — Whisky Content -->

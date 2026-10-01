@@ -2822,46 +2822,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
   <script>
-  function calculateDeliveryWindow() {
-  const now = new Date();
-  const hour = now.getHours();
-  const day = now.getDay();
-
-  // Base date: today if before 2pm on a weekday, otherwise next working day
-  let baseDate = new Date(now);
-
-  const isWeekend = day === 0 || day === 6;
-  const isAfterCutoff = hour >= 14;
-
-  if (isAfterCutoff || isWeekend) {
-    // Move to next working day
-    do {
-      baseDate.setDate(baseDate.getDate() + 1);
-    } while (baseDate.getDay() === 0 || baseDate.getDay() === 6);
-  }
-
-  // Add 3 calendar days from base
-  const deliveryDate = new Date(baseDate);
-  deliveryDate.setDate(deliveryDate.getDate() + 2);
-
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const days_short = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-
-  const dateStr = `${days_short[deliveryDate.getDay()]} ${deliveryDate.getDate()} ${months[deliveryDate.getMonth()]}`;
-
-  document.getElementById('deliveryDateRange').textContent = dateStr;
-
-  // Cutoff message
+  // Estimates use UK time. Working days here are Monday–Friday (bank holidays not excluded).
+function calculateDeliveryWindow(now = new Date()) {
+  const dateEl = document.getElementById('deliveryDateRange');
   const cutoffEl = document.getElementById('deliveryCutoff');
-  if (!isWeekend && !isAfterCutoff) {
-    cutoffEl.textContent = 'Order before 2pm for same-day dispatch.';
-  } else if (!isWeekend && isAfterCutoff) {
-    cutoffEl.textContent = 'Dispatches tomorrow.';
-  } else {
-    cutoffEl.textContent = 'Dispatches Monday.';
-  }
+  if (!dateEl || !cutoffEl) return;
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/London', year: 'numeric', month: 'numeric', day: 'numeric',
+    hour: 'numeric', hourCycle: 'h23'
+  }).formatToParts(now).map(p => [p.type, p.value]));
+  const today = new Date(Date.UTC(+parts.year, +parts.month - 1, +parts.day));
+  const working = d => d.getUTCDay() !== 0 && d.getUTCDay() !== 6;
+  const nextWorking = d => {
+    do { d.setUTCDate(d.getUTCDate() + 1); } while (!working(d));
+    return d;
+  };
+  const dispatch = new Date(today);
+  const sameDay = working(today) && +parts.hour < 14;
+  if (!sameDay) nextWorking(dispatch);
+  const arrival = new Date(dispatch);
+  for (let i = 0; i < 3; i++) nextWorking(arrival);
+  const tourId = 'scottish-whisky-tasting-tour-gift-set';
+  const tour = document.body.dataset.productId === tourId ||
+    (typeof cart !== 'undefined' && cart.items.some(item => item.id === tourId));
+  // Initial tour arrivals start Wednesday 7 October 2026. Later orders get a later estimate.
+  const launchArrival = new Date(Date.UTC(2026, 9, 7));
+  if (tour && arrival < launchArrival) arrival.setTime(launchArrival.getTime());
+  const format = d => new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long'
+  }).format(d);
+  dateEl.textContent = format(arrival);
+  cutoffEl.textContent = tour
+    ? 'Your order includes the Scottish Tasting Tour; this estimate allows for the tour box. Free UK mainland delivery included.'
+    : sameDay ? 'Order before 2pm for same-day dispatch.' : 'Dispatches ' + format(dispatch) + '.';
+  const estimate = dateEl.closest('.delivery-estimate');
+  if (estimate && typeof cart !== 'undefined') estimate.hidden = cart.items.length === 0;
 }
-
 calculateDeliveryWindow();
   </script>
  <script>

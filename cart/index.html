@@ -1003,6 +1003,7 @@
             const subtotalEl = document.getElementById('subtotal');
             const totalEl = document.getElementById('total');
             const checkoutBtn = document.getElementById('stripeCheckoutBtn');
+            calculateDeliveryWindow();
 
             if (cart.items.length === 0) {
                 cartItemsContainer.innerHTML = `

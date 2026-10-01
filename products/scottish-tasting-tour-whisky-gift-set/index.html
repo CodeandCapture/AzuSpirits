@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
   <title>Scottish Whisky Tasting Tour | Blind Tasting Gift Set | Azu Spirits</title>
 
 <meta name="description"
-      content="Pre-order The Scottish Whisky Tasting Tour: six exceptional single malts in a blind tasting gift set with guide, tasting cards and sealed reveal. £85.">
+      content="Shop The Scottish Whisky Tasting Tour: six exceptional single malts in a blind tasting gift set with guide, tasting cards and sealed reveal. £85.">
   
 <meta name="author" content="Azu Spirits">
 
@@ -29,7 +28,7 @@
       content="The Scottish Whisky Tasting Tour | Blind Tasting Gift Set">
 
 <meta property="og:description"
-      content="Six exceptional single malts. One blind tasting journey through Scotland. Pre-order the limited-edition Scottish Whisky Tasting Tour for £85.">
+      content="Six exceptional single malts. One blind tasting journey through Scotland. Shop the limited-edition Scottish Whisky Tasting Tour for £85.">
 
 <meta property="og:url"
       content="https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set/">
@@ -57,7 +56,7 @@
       content="The Scottish Whisky Tasting Tour | Blind Tasting Gift Set">
 
 <meta name="twitter:description"
-      content="Six exceptional single malts. One blind tasting journey through Scotland. Limited-edition pre-order £85.">
+      content="Six exceptional single malts. One blind tasting journey through Scotland. Limited edition. Out now for £85.">
 
 <meta name="twitter:image"
       content="https://www.azuspirits.co.uk/images/social/scottish-whisky-tasting-tour-social.jpg">
@@ -69,7 +68,7 @@
 <!-- PRODUCT META -->
 <meta property="product:price:amount" content="85.00">
 <meta property="product:price:currency" content="GBP">
-<meta property="product:availability" content="preorder">
+<meta property="product:availability" content="in stock">
 <meta property="product:condition" content="new">
   
   <!-- ORGANIZATION SCHEMA -->
@@ -148,7 +147,7 @@
     "url": "https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set/",
     "priceCurrency": "GBP",
     "price": "85.00",
-    "availability": "https://schema.org/PreOrder",
+    "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition",
     "priceValidUntil": "2026-10-01",
     "seller": {
@@ -1264,6 +1263,12 @@ section {
   font-style: italic;
   font-weight: 600;
 }
+    
+    .whisky-name {
+  
+  font-weight: 700;
+  color: #A4343A;
+}
 
 /* Carousel Container */
 .spirits-carousel {
@@ -2215,7 +2220,7 @@ gtag('config', 'G-FF0E8016EX');
     <div class="tour-preorder-content">
 
       <span class="tour-preorder-kicker">
-        Limited Edition · Pre-Order Now
+        Limited Edition · OUT NOW
       </span>
 
       <h2>
@@ -2227,12 +2232,15 @@ gtag('config', 'G-FF0E8016EX');
       </p>
 
       <p class="tour-preorder-description">
-  Six exceptional single malts, including Kilchoman 20 Year Old,
-  Aberfeldy 21 Pauillac Finish and Tobermory 21 Manzanilla Finish. Includes distillery-exclusive and limited-edition bottlings.
+  Six exceptional single malts, including distillery-exclusive and limited-edition bottlings.
   Hand-selected on our journey through Scotland and presented completely
-  blind. Full whisky list revealed soon.
+        blind. </p>
+ <p class="tour-preorder-description">       Including
+  <span class="whisky-name">Kilchoman 20 Year Old</span>,
+  <span class="whisky-name">Aberfeldy 21 Pauillac Finish</span>,  <span class="whisky-name">Ledaig Castaway</span>, <span class="whisky-name">Glenturret Eclosion</span>,  <span class="whisky-name">Laphroaig Lore</span>
+  and <span class="whisky-name">Tobermory 21 Manzanilla Finish</span>.
 </p>
-      
+
       <p class="tour-preorder-subtitle">Includes:<br><br>Six numbered bottles<br> Blind Tasting Guide <br>Spirit information cards <br> Wax-sealed 'reveal' envelope</p>
       
      <p class="tour-small-details">
@@ -2245,7 +2253,7 @@ gtag('config', 'G-FF0E8016EX');
       </div>
 
       <p class="tour-preorder-saving">
-        Pre-order and save £10 · Dispatching from 1 October
+        Save £10 · Last chance for exclusive discount!
       </p>
 <!-- Quantity -->
 <div class="quantity-selector">
@@ -2270,15 +2278,15 @@ gtag('config', 'G-FF0E8016EX');
      <button
   class="tour-preorder-button"
   onclick="addProductToCart()">
-  Pre-Order The Tasting Set
+  Order The Tasting Set
 </button>
 <div class="delivery-estimate preorder-delivery">
   <span class="delivery-icon">📦</span>
 
   <div class="delivery-text">
-    <strong>Pre-order now</strong><br>
-    <span class="delivery-date">Dispatching from 1 October</span><br>
-    <span class="delivery-cutoff">
+    <strong>Estimated arrival</strong><br>
+    <span class="delivery-date" id="deliveryDateRange">Wednesday 7 October</span><br>
+    <span class="delivery-cutoff" id="deliveryCutoff">
       Free UK mainland delivery included
     </span>
   </div>
@@ -2332,8 +2340,8 @@ gtag('config', 'G-FF0E8016EX');
   </div>
 
   <div class="gifting-credential">
-    <span class="cred-label">Pre-Order</span>
-    <span class="cred-sub">Dispatching from 1 October</span>
+    <span class="cred-label">OUT NOW</span>
+    <span class="cred-sub">Estimated arrival from Wednesday 7 October</span>
   </div>
 
 </div>
@@ -2357,12 +2365,10 @@ gtag('config', 'G-FF0E8016EX');
 
   <div class="faq-item">
     <button class="faq-question" onclick="toggleFaq(this)">
-      When will my pre-order arrive?
+      When will my order arrive?
     </button>
     <div class="faq-answer">
-      The Scottish Whisky Tasting Tour is available to pre-order now,
-      with orders dispatching from 1 October. Free UK mainland delivery
-      is included.
+      The Scottish Whisky Tasting Tour is out now. Initial orders have an estimated arrival of Wednesday 7 October. Later orders may arrive later; see the estimate above. Free UK mainland delivery is included.
     </div>
   </div>
 
@@ -2822,46 +2828,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
   <script>
-  function calculateDeliveryWindow() {
-  const now = new Date();
-  const hour = now.getHours();
-  const day = now.getDay();
-
-  // Base date: today if before 2pm on a weekday, otherwise next working day
-  let baseDate = new Date(now);
-
-  const isWeekend = day === 0 || day === 6;
-  const isAfterCutoff = hour >= 14;
-
-  if (isAfterCutoff || isWeekend) {
-    // Move to next working day
-    do {
-      baseDate.setDate(baseDate.getDate() + 1);
-    } while (baseDate.getDay() === 0 || baseDate.getDay() === 6);
-  }
-
-  // Add 3 calendar days from base
-  const deliveryDate = new Date(baseDate);
-  deliveryDate.setDate(deliveryDate.getDate() + 2);
-
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const days_short = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-
-  const dateStr = `${days_short[deliveryDate.getDay()]} ${deliveryDate.getDate()} ${months[deliveryDate.getMonth()]}`;
-
-  document.getElementById('deliveryDateRange').textContent = dateStr;
-
-  // Cutoff message
+  // Estimates use UK time. Working days here are Monday–Friday (bank holidays not excluded).
+function calculateDeliveryWindow(now = new Date()) {
+  const dateEl = document.getElementById('deliveryDateRange');
   const cutoffEl = document.getElementById('deliveryCutoff');
-  if (!isWeekend && !isAfterCutoff) {
-    cutoffEl.textContent = 'Order before 2pm for same-day dispatch.';
-  } else if (!isWeekend && isAfterCutoff) {
-    cutoffEl.textContent = 'Dispatches tomorrow.';
-  } else {
-    cutoffEl.textContent = 'Dispatches Monday.';
-  }
+  if (!dateEl || !cutoffEl) return;
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/London', year: 'numeric', month: 'numeric', day: 'numeric',
+    hour: 'numeric', hourCycle: 'h23'
+  }).formatToParts(now).map(p => [p.type, p.value]));
+  const today = new Date(Date.UTC(+parts.year, +parts.month - 1, +parts.day));
+  const working = d => d.getUTCDay() !== 0 && d.getUTCDay() !== 6;
+  const nextWorking = d => {
+    do { d.setUTCDate(d.getUTCDate() + 1); } while (!working(d));
+    return d;
+  };
+  const dispatch = new Date(today);
+  const sameDay = working(today) && +parts.hour < 14;
+  if (!sameDay) nextWorking(dispatch);
+  const arrival = new Date(dispatch);
+  for (let i = 0; i < 3; i++) nextWorking(arrival);
+  const tourId = 'scottish-whisky-tasting-tour-gift-set';
+  const tour = document.body.dataset.productId === tourId ||
+    (typeof cart !== 'undefined' && cart.items.some(item => item.id === tourId));
+  // Initial tour arrivals start Wednesday 7 October 2026. Later orders get a later estimate.
+  const launchArrival = new Date(Date.UTC(2026, 9, 7));
+  if (tour && arrival < launchArrival) arrival.setTime(launchArrival.getTime());
+  const format = d => new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long'
+  }).format(d);
+  dateEl.textContent = format(arrival);
+  cutoffEl.textContent = tour
+    ? 'Your order includes the Scottish Tasting Tour; this estimate allows for the tour box. Free UK mainland delivery included.'
+    : sameDay ? 'Order before 2pm for same-day dispatch.' : 'Dispatches ' + format(dispatch) + '.';
+  const estimate = dateEl.closest('.delivery-estimate');
+  if (estimate && typeof cart !== 'undefined') estimate.hidden = cart.items.length === 0;
 }
-
 calculateDeliveryWindow();
   </script>
  <script>

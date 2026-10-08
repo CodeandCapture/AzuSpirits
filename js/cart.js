@@ -219,7 +219,7 @@ const products = {
   },
           'scottish-whisky-tasting-tour-gift-set': {
     name: 'The Scottish Whisky Tasting Tour: Blind Tasting Gift Set',
-    price: 85.00,
+    price: 95.00,
     priceId: 'price_1U6J3rDLWuae7Nssh3BL24dh',
     image: 'https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-gift-set.jpg',
      stock: 'in-stock' 

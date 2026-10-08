@@ -2855,8 +2855,6 @@ function calculateDeliveryWindow(now = new Date()) {
   cutoffEl.textContent = tour
     ? 'Your order includes the Scottish Tasting Tour; this estimate allows for the tour box. Free UK mainland delivery included.'
     : sameDay ? 'Order before 2pm for same-day dispatch.' : 'Dispatches ' + format(dispatch) + '.';
-  const estimate = dateEl.closest('.delivery-estimate');
-  if (estimate && typeof cart !== 'undefined') estimate.hidden = cart.items.length === 0;
 }
 calculateDeliveryWindow();
   </script>

@@ -367,29 +367,44 @@
   </div>
 
   <script>
-    // ── CHANGE THIS TO YOUR CHOSEN PASSWORD ──
-    const DISPATCH_PASSWORD = 'azu-dispatch-2026';
+    const API_BASE = "https://azu-spirits-backend.vercel.app";
+    let adminToken = sessionStorage.getItem("dispatch_token") || "";
+    let selectedOrder = null;
 
     // Track the last successfully dispatched email
     let lastDispatchedEmail = null;
 
-    function checkPassword() {
-      const input = document.getElementById('passwordInput').value;
+    async function checkPassword() {
+      const input = document.getElementById('passwordInput');
       const error = document.getElementById('pwError');
-      if (input === DISPATCH_PASSWORD) {
+      error.textContent = '';
+      try {
+        const response = await fetch(`${API_BASE}/api/dispatch-login`, {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({password:input.value})
+        });
+        const data = await response.json();
+        if (!response.ok || !data.token) throw new Error(data.error || 'Login failed');
+        adminToken = data.token;
+        sessionStorage.setItem('dispatch_token', adminToken);
+        input.value = '';
         document.getElementById('passwordScreen').style.display = 'none';
         document.getElementById('mainContent').classList.add('visible');
-        sessionStorage.setItem('dispatch_auth', 'true');
-      } else {
-        error.textContent = 'Incorrect password. Please try again.';
-        document.getElementById('passwordInput').value = '';
-        document.getElementById('passwordInput').focus();
-      }
+      } catch (err) { error.textContent = err.message; input.value = ''; input.focus(); }
     }
-
-    if (sessionStorage.getItem('dispatch_auth') === 'true') {
+    if (adminToken) {
       document.getElementById('passwordScreen').style.display = 'none';
       document.getElementById('mainContent').classList.add('visible');
+    }
+    function requireLoginOnExpiry(response) {
+      if (response.status === 401) {
+        adminToken = '';
+        selectedOrder = null;
+        sessionStorage.removeItem('dispatch_token');
+        document.getElementById('mainContent').classList.remove('visible');
+        document.getElementById('passwordScreen').style.display = 'flex';
+        throw new Error('Session expired. Please log in again.');
+      }
     }
 
     document.getElementById('passwordInput').addEventListener('keydown', e => {
@@ -424,6 +439,7 @@
     return;
   }
 
+  selectedOrder = null;
   btn.disabled = true;
   btn.textContent = 'Looking up...';
 
@@ -441,6 +457,7 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${adminToken}`,
         },
         body: JSON.stringify({
           customerEmail: email,
@@ -448,6 +465,7 @@
       }
     );
 
+    requireLoginOnExpiry(res);
     const data = await res.json();
 
     if (!res.ok || !data.found) {
@@ -458,6 +476,7 @@
       );
     }
 
+    selectedOrder = {customerEmail:email.toLowerCase(),paymentProvider:data.paymentProvider,orderId:data.orderId};
     const provider =
       data.paymentProvider === 'paypal'
         ? 'PayPal'
@@ -565,6 +584,7 @@
 
       if (!customerEmail) return showStatus('Please enter a customer email address.', 'error');
       if (!trackingNumber) return showStatus('Please enter a DPD tracking number.', 'error');
+      if (!selectedOrder || selectedOrder.customerEmail !== customerEmail.toLowerCase()) return showStatus('Look up this email again before sending.', 'error');
 
       btn.disabled = true;
       btn.textContent = 'Sending...';
@@ -573,10 +593,11 @@
       try {
         const res = await fetch('https://azu-spirits-backend.vercel.app/api/send-shipping', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ customerEmail, trackingNumber, estimatedDelivery, customMessage }),
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${adminToken}` },
+          body: JSON.stringify({ customerEmail, trackingNumber, estimatedDelivery, customMessage, paymentProvider:selectedOrder.paymentProvider, orderId:selectedOrder.orderId }),
         });
 
+        requireLoginOnExpiry(res);
         const data = await res.json();
 
         if (res.ok) {
@@ -584,7 +605,9 @@
 
           // Store email for review scheduling and show the review button
           lastDispatchedEmail = customerEmail;
-          reviewBtn.classList.add('visible');
+          selectedOrder = null;
+          // Review scheduling is currently disabled.
+          // reviewBtn.classList.add('visible');
           reviewBtn.disabled = false;
           reviewBtn.textContent = '＋ Schedule Review Email (12 days)';
 

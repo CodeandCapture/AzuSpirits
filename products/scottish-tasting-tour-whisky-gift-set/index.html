@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -172,10 +171,10 @@
   }
   </script>
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;1,100&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
   
   
   <style>
@@ -484,7 +483,7 @@ section {
   border-bottom: 1px solid #d8d2cb;
   background-image: 
         linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.7)),
-    url("https://www.azuspirits.co.uk/images/landscapes/scottish-loch.JPG");
+    url("https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -953,7 +952,7 @@ section {
    MOBILE
    ============================================================ */
 
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
 
   .tour-preorder {
     margin: 3.5rem auto;
@@ -2028,6 +2027,25 @@ section {
 
 }
 
+
+/* Product gallery: tablet layout stacks at 1024px. */
+.tour-gallery { position: relative; min-width: 0; }
+.tour-gallery-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.tour-gallery-track::-webkit-scrollbar { display: none; }
+.tour-gallery-slide { flex: 0 0 100%; min-width: 0; margin: 0; scroll-snap-align: start; }
+.tour-preorder-image .tour-gallery-slide img { width: 100%; height: auto; min-height: 0; aspect-ratio: 1 / 1; object-fit: contain; background: #f2f0ed; }
+.tour-gallery-arrow { position: absolute; top: 45%; width: 44px; height: 44px; border: 1px solid #ddd; border-radius: 50%; background: #fff; color: #A4343A; font-size: 28px; cursor: pointer; }
+.tour-gallery-arrow.prev { left: 12px; }
+.tour-gallery-arrow.next { right: 12px; }
+.tour-gallery-dots { display: flex; justify-content: center; gap: 10px; padding: 16px; }
+.tour-gallery-dot { width: 14px; height: 14px; padding: 0; border-radius: 50%; border: 1px solid #A4343A; background: transparent; cursor: pointer; }
+.tour-gallery-dot[aria-current="true"] { background: #A4343A; }
+.tour-gallery button:focus-visible, .tour-gallery-track:focus-visible { outline: 3px solid #A4343A; outline-offset: 3px; }
+@media (max-width: 1024px) {
+  .tour-preorder-image { width: 100%; max-width: 680px; justify-self: center; }
+  .tour-preorder-content { padding: 2.5rem 1.5rem; }
+}
+
 </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-366761144"></script>
@@ -2060,7 +2078,7 @@ gtag('config', 'G-FF0E8016EX');
     </li>
     <li class="has-dropdown">
       <a href="https://www.azuspirits.co.uk/sharing-boxes/">Sharing Boxes</a>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu" role="menu"> 
         <li><a href="https://www.azuspirits.co.uk/whisky-sharing-boxes/" role="menuitem">Scotch Whisky</a></li>
         <li><a href="https://www.azuspirits.co.uk/gin-sharing-boxes/" role="menuitem">Premium Gin</a></li>
       </ul>
@@ -2088,51 +2106,13 @@ gtag('config', 'G-FF0E8016EX');
   <div class="hero-slide">
     <h1>The Scottish Tasting Tour</h1>
     <h2>An exclusive blind tasting collection featuring six hand-selected single malts from the finest Scottish distilleries</h2>
-    <p class="hero-small-detail">6 x 30ml bottles • A Guide • Tasting cards • wax-sealed envelope</p>
+    <p class="hero-small-detail">6 x 30ml bottles • Guide & spirit information • wax-sealed envelope</p>
     </div>
     
   
   </section>
   
-<section class="scotland-journey">
 
-  <div class="scotland-journey-gallery">
-
-    <div class="scotland-journey-image">
-      <img
-        src="https://www.azuspirits.co.uk/images/landscapes/scotland-tour-distilleries.jpg"
-        alt="Whisky journey through Scotland">
-    </div>
-
-    <div class="scotland-journey-image">
-      <img
-        src="https://www.azuspirits.co.uk/images/landscapes/scotland-tour-tasting.jpg"
-        alt="Visiting Scottish whisky distilleries">
-    </div>
-
-    <div class="scotland-journey-image">
-      <img
-        src="https://www.azuspirits.co.uk/images/landscapes/scotland-tour-tobermory.jpg"
-        alt="Selecting Scotch single malt whisky">
-    </div>
-
-  </div>
-
-
-  <div class="scotland-journey-statement">
-
-    <span class="scotland-journey-kicker">
-      The Story Behind The Collection
-    </span>
-
-    <h2>
-      We went to Scotland in search of six extraordinary whiskies.
-    </h2>
-
-  </div>
-
-</section>
-  
 <!-- ============================================================
      ORDER CTA
      ============================================================ -->
@@ -2142,16 +2122,18 @@ gtag('config', 'G-FF0E8016EX');
   <div class="tour-preorder-inner">
 
     <!-- PRODUCT IMAGE -->
-    <div class="tour-preorder-image">
-      <img
-        src="https://www.azuspirits.co.uk/images/products/six-30ml-bottles.jpg"
-        alt="The Scottish Tasting Tour Blind Whisky Tasting Gift Set">
-      
-      <div class="tour-image-overlay">
-  <span>Photos Coming Soon!</span>
+    <div class="tour-preorder-image tour-gallery" role="region" aria-roledescription="carousel" aria-label="Scottish Tasting Tour product images">
+<div class="tour-gallery-track" tabindex="0" aria-label="Product photos. Use left and right arrows to browse."><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product-alt3.jpg" alt="Scottish Tasting Tour gift set — product view" fetchpriority="high"></figure> 
+<figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product.jpg" alt="Scottish Tasting Tour gift set — additional product view" loading="lazy"></figure>
+<figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product-wax-seal.jpg" alt="Scottish Tasting Tour gift set — collection view" loading="lazy"></figure><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product-alt2.jpg" alt="Scottish Tasting Gift Set" loading="lazy"></figure><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-gift-set-alt4.jpg" alt="Scottish Single Malt Gift Set" loading="lazy"></figure></div>
+<button type="button" class="tour-gallery-arrow prev" aria-label="Previous product image">‹</button>
+<button type="button" class="tour-gallery-arrow next" aria-label="Next product image">›</button>
+<div class="tour-gallery-dots"><button type="button" class="tour-gallery-dot" aria-label="Show product image 1" aria-current="true"></button>
+<button type="button" class="tour-gallery-dot" aria-label="Show product image 2" aria-current="false"></button>
+<button type="button" class="tour-gallery-dot" aria-label="Show product image 3" aria-current="false"></button>
+      <button type="button" class="tour-gallery-dot" aria-label="Show product image 4" aria-current="false"></button> <button type="button" class="tour-gallery-dot" aria-label="Show product image 5" aria-current="false"></button></div>
+<span class="tour-gallery-status" role="status" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);">Image 1 of 5</span>
 </div>
-      
-    </div>
 
 
     <!-- ORDER DETAILS -->
@@ -2170,7 +2152,7 @@ gtag('config', 'G-FF0E8016EX');
       </p>
 
       <p class="tour-preorder-description">
-  Six exceptional single malts presented as a unique blind tasting. Featuring Kilchoman 20 Year Old, Aberfeldy 21 Pauillac Finish, Ledaig Castaway, Tobermory 21 Manzanilla Finish, Laphroaig Lore and Glenturret Eclosion.  Hand-selected on our journey through Scotland and presented completely
+  Six exceptional single malts presented as a unique blind tasting. Featuring <strong>Kilchoman 20 Year Old</strong>, <strong>Aberfeldy 21 Pauillac Finish</strong>, <strong>Ledaig Castaway</strong>,<strong> Tobermory 21 Manzanilla Finish</strong>,<strong> Laphroaig Lore</strong> and <strong>Glenturret Eclosion</strong>.  Hand-selected on our journey through Scotland and presented completely
   blind. 
 </p>
       
@@ -2299,7 +2281,10 @@ gtag('config', 'G-FF0E8016EX');
       When will my order arrive?
     </button>
     <div class="faq-answer">
-      The Scottish Whisky Tasting Tour is out now. Estimated delivery is three working days after dispatch; see the current estimate above. We dispatch Monday to Friday, with a 2pm cutoff for same-day dispatch. Free UK mainland delivery is included.
+     The Scottish Whisky Tasting Tour is out now. Estimated arrival is three working days after dispatch. Orders placed before 2pm on
+weekdays are scheduled for same-day dispatch; otherwise, dispatch
+is scheduled for the next working day. Free UK mainland delivery
+is included.
     </div>
   </div>
 
@@ -2308,9 +2293,7 @@ gtag('config', 'G-FF0E8016EX');
       What's included in the set?
     </button>
     <div class="faq-answer">
-      Six 30ml single malt Scotch whiskies, a blind tasting guide,
-      tasting cards, a wax-sealed reveal envelope and our whisky
-      lover's guide to Scotland, all presented in a gift-ready box.
+      Six 30ml single malt Scotch whiskies, an A3 illustrated guide including information on each single malt whisky included, a wax-sealed envelope containing the 'reveal' cards and further information on each spirit, presented in a gift-ready box.
     </div>
   </div>
 
@@ -2351,37 +2334,7 @@ gtag('config', 'G-FF0E8016EX');
 </div>
   </section>
   
-  <!-- ============================================================
-     MORE DETAILS / EXPLORE CURRENT RANGE
-     ============================================================ -->
 
-<section class="tour-coming-soon">
-
-  <span class="eyebrow">
-    The Journey Continues
-  </span>
-
-  <h2>
-    More From The Scottish Tasting Tour Coming Soon
-  </h2>
-
-  <p>
-    We'll be revealing the full collection, the distilleries behind
-    the six whiskies and our personal whisky lover's route through
-    Scotland over the coming weeks.
-  </p>
-
-  <p class="tour-coming-soon-small">
-    In the meantime, discover our current collection of blind whisky
-    tasting gift sets.
-  </p>
-
-  <a href="https://www.azuspirits.co.uk/whisky-gifts/"
-     class="btn tour-current-range-button">
-    Explore Our Current Whisky Range
-  </a>
-
-</section>
   
  
   <!-- Footer -->
@@ -2657,8 +2610,9 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCarousel();
 });
 </script>
-  <script>
-  function calculateDeliveryWindow(now = new Date()) {
+   <script>
+  // Estimates use UK time. Working days here are Monday–Friday (bank holidays not excluded).
+function calculateDeliveryWindow(now = new Date()) {
   const dateEl = document.getElementById('deliveryDateRange');
   const cutoffEl = document.getElementById('deliveryCutoff');
   if (!dateEl || !cutoffEl) return;
@@ -2670,19 +2624,28 @@ document.addEventListener('DOMContentLoaded', function() {
   const working = d => d.getUTCDay() !== 0 && d.getUTCDay() !== 6;
   const nextWorking = d => {
     do { d.setUTCDate(d.getUTCDate() + 1); } while (!working(d));
+    return d;
   };
   const dispatch = new Date(today);
   const sameDay = working(today) && +parts.hour < 14;
   if (!sameDay) nextWorking(dispatch);
   const arrival = new Date(dispatch);
-  // Three weekdays after dispatch; bank holidays are not excluded.
   for (let i = 0; i < 3; i++) nextWorking(arrival);
+  const tourId = 'scottish-whisky-tasting-tour-gift-set';
+  const tour = document.body.dataset.productId === tourId ||
+    (typeof cart !== 'undefined' && cart.items.some(item => item.id === tourId));
+  // Initial tour arrivals start Wednesday 7 October 2026. Later orders get a later estimate.
+  const launchArrival = new Date(Date.UTC(2026, 9, 7));
+  if (tour && arrival < launchArrival) arrival.setTime(launchArrival.getTime());
   const format = d => new Intl.DateTimeFormat('en-GB', {
     timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long'
   }).format(d);
   dateEl.textContent = format(arrival);
-  cutoffEl.textContent = (sameDay ? 'Order before 2pm for same-day dispatch.'
-    : 'Dispatches ' + format(dispatch) + '.') + ' Free UK mainland delivery included.';
+  cutoffEl.textContent = tour
+    ? 'Your order includes the Scottish Tasting Tour; this estimate allows for the tour box. Free UK mainland delivery included.'
+    : sameDay ? 'Order before 2pm for same-day dispatch.' : 'Dispatches ' + format(dispatch) + '.';
+  const estimate = dateEl.closest('.delivery-estimate');
+  if (estimate && typeof cart !== 'undefined') estimate.hidden = cart.items.length === 0;
 }
 calculateDeliveryWindow();
   </script>
@@ -2694,5 +2657,35 @@ calculateDeliveryWindow();
       item.classList.toggle('open');
     }
  </script>
+
+<script>
+(() => {
+  const gallery = document.querySelector('.tour-gallery');
+  if (!gallery) return;
+  const track = gallery.querySelector('.tour-gallery-track');
+  const dots = [...gallery.querySelectorAll('.tour-gallery-dot')];
+  let active = 0;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function go(index) {
+    active = (index + dots.length) % dots.length;
+    track.scrollTo({ left: active * track.clientWidth, behavior: reduced.matches ? 'auto' : 'smooth' });
+  }
+  gallery.querySelector('.prev').addEventListener('click', () => go(active - 1));
+  gallery.querySelector('.next').addEventListener('click', () => go(active + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => go(index)));
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.preventDefault(); go(active + (e.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  track.addEventListener('scroll', () => {
+    active = Math.max(0, Math.min(dots.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
+    dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === active)));
+    gallery.querySelector('.tour-gallery-status').textContent = `Image ${active + 1} of ${dots.length}`;
+  }, { passive: true });
+  window.addEventListener('resize', () => track.scrollTo({ left: active * track.clientWidth, behavior: 'instant' }));
+})();
+</script>
+
 </body>
 </html>

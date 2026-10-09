@@ -523,6 +523,169 @@
        font-style: italic;
     }
 
+    
+/* ==========================================
+   SCOTTISH TASTING TOUR - NEW RELEASE
+   ========================================== */
+
+.scottish-tour-banner {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 540px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 90px 24px;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.68)
+    ),
+    url('https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product-alt1.JPG');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+  text-align: center;
+}
+
+.scottish-tour-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* New release label */
+.scottish-tour-label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 22px;
+}
+
+/* Main heading */
+.scottish-tour-banner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin: 0 0 24px;
+}
+
+.scottish-tour-banner h2 span {
+  display: block;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Gold decorative line */
+.scottish-tour-line {
+  width: 65px;
+  height: 2px;
+  background: #d4af77;
+  margin: 0 auto 26px;
+}
+
+/* Introductory statement */
+.scottish-tour-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+/* Supporting description */
+.scottish-tour-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #f0ece8;
+  max-width: 580px;
+  margin: 0 auto 34px;
+}
+
+/* Shop button */
+.scottish-tour-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  padding: 16px 34px;
+  background: #A4343A;
+  color: #ffffff;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: 1px solid #A4343A;
+  border-radius: 3px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.scottish-tour-button:hover {
+  background: #8B1538;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.scottish-tour-button:focus-visible {
+  outline: 3px solid #f1d6aa;
+  outline-offset: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+  .scottish-tour-banner {
+    min-height: 480px;
+    padding: 70px 22px;
+    background-position: center;
+  }
+
+  .scottish-tour-banner h2 {
+    font-size: 44px;
+  }
+
+  .scottish-tour-intro {
+    font-size: 27px;
+  }
+
+  .scottish-tour-description {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .scottish-tour-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px 20px;
+  }
+}
+
+    
      /* ============================================
        HERO CAROUSEL
        ============================================ */
@@ -2268,6 +2431,44 @@ gtag('config', 'G-FF0E8016EX');
 </div>
     
   </section>
+  
+  
+<!-- SCOTTISH TASTING TOUR PROMOTION -->
+<section class="scottish-tour-banner"
+         aria-labelledby="scottish-tour-title">
+
+  <div class="scottish-tour-content">
+
+    <span class="scottish-tour-label">
+      NEW RELEASE · OUT NOW
+    </span>
+
+    <h2 id="scottish-tour-title">
+      Scottish Tasting Tour
+      <span>Gift Set</span>
+    </h2>
+
+    <div class="scottish-tour-line"></div>
+
+    <p class="scottish-tour-intro">
+      Come on a journey with us...
+    </p>
+
+    <p class="scottish-tour-description">
+     Six premium single malts hand-selected during our tour of Scottish distilleries. Including Aberfeldy 21 Pauillac Finish, Tobermory 21 Manzanilla, Ledaig Castaway, Glenturret Eclosion, Laphroaig Lore and Kilchoman 20 in a unique blind tasting experience.
+    </p>
+
+    <a
+      href="https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set/"
+      class="scottish-tour-button">
+      Explore the Gift Set
+      <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+
+</section>
+
   
    
 <section class="gift-trust-banner">

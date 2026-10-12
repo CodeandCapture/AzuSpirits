@@ -937,9 +937,9 @@
 </div>
 
               <div style="margin: 16px 0;">
-  <label for="paypalDeliveryPhone">
-    Delivery contact number for PayPal
-  </label>
+ <label for="paypalDeliveryPhone">
+  Delivery contact number for PayPal (optional)
+</label>
   <input
     type="tel"
     id="paypalDeliveryPhone"
@@ -1184,19 +1184,22 @@
   }
 
   const deliveryPhone =
-    document.getElementById('paypalDeliveryPhone').value.trim();
+  document.getElementById('paypalDeliveryPhone').value.trim();
 
-  const digits = deliveryPhone.replace(/\D/g, '');
+const digits = deliveryPhone.replace(/\D/g, '');
 
-  if (
+if (
+  deliveryPhone &&
+  (
     !/^\+?[\d\s().-]+$/.test(deliveryPhone) ||
     digits.length < 10 ||
     digits.length > 15
-  ) {
-    alert('Please enter a valid delivery contact number for PayPal.');
-    document.getElementById('paypalDeliveryPhone').focus();
-    throw new Error('Delivery contact number required');
-  }
+  )
+) {
+  alert('Please enter a valid delivery contact number, or leave it blank.');
+  document.getElementById('paypalDeliveryPhone').focus();
+  throw new Error('Invalid delivery contact number');
+}
 
   const isGift = document.getElementById('isGiftCheckbox').checked;
   const giftNote = isGift

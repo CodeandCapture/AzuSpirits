@@ -2574,34 +2574,61 @@ function calculateDeliveryWindow(now = new Date()) {
   const dateEl = document.getElementById('deliveryDateRange');
   const cutoffEl = document.getElementById('deliveryCutoff');
   if (!dateEl || !cutoffEl) return;
-  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/London', year: 'numeric', month: 'numeric', day: 'numeric',
-    hour: 'numeric', hourCycle: 'h23'
-  }).formatToParts(now).map(p => [p.type, p.value]));
-  const today = new Date(Date.UTC(+parts.year, +parts.month - 1, +parts.day));
-  const working = d => d.getUTCDay() !== 0 && d.getUTCDay() !== 6;
-  const nextWorking = d => {
-    do { d.setUTCDate(d.getUTCDate() + 1); } while (!working(d));
-    return d;
-  };
-  const dispatch = new Date(today);
-  const sameDay = working(today) && +parts.hour < 14;
-  if (!sameDay) nextWorking(dispatch);
+
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/London',
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric'
+    }).formatToParts(now).map(p => [p.type, p.value])
+  );
+
+  const dispatch = new Date(
+    Date.UTC(+parts.year, +parts.month - 1, +parts.day)
+  );
+
+  // One working day for dispatch: Monday to Friday.
+  do {
+    dispatch.setUTCDate(dispatch.getUTCDate() + 1);
+  } while (
+    dispatch.getUTCDay() === 0 ||
+    dispatch.getUTCDay() === 6
+  );
+
+  // Two delivery days: Monday to Saturday, excluding Sunday.
   const arrival = new Date(dispatch);
-  for (let i = 0; i < 3; i++) nextWorking(arrival);
-  const tourId = 'scottish-whisky-tasting-tour-gift-set';
-  const tour = document.body.dataset.productId === tourId ||
-    (typeof cart !== 'undefined' && cart.items.some(item => item.id === tourId));
-  // Initial tour arrivals start Wednesday 7 October 2026. Later orders get a later estimate.
-  const launchArrival = new Date(Date.UTC(2026, 9, 7));
-  if (tour && arrival < launchArrival) arrival.setTime(launchArrival.getTime());
-  const format = d => new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long'
-  }).format(d);
-  dateEl.textContent = format(arrival);
-  cutoffEl.textContent = tour
-    ? 'Your order includes the Scottish Tasting Tour; this estimate allows for the tour box. Free UK mainland delivery included.'
-    : sameDay ? 'Order before 2pm for same-day dispatch.' : 'Dispatches ' + format(dispatch) + '.';
+  for (let i = 0; i < 2; i++) {
+    do {
+      arrival.setUTCDate(arrival.getUTCDate() + 1);
+    } while (arrival.getUTCDay() === 0);
+  }
+
+  dateEl.textContent = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'UTC',
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long'
+  }).format(arrival);
+
+  cutoffEl.innerHTML =
+    'Free UK mainland delivery.<br>' +
+    'Prefer a particular delivery date? Email ' +
+    '<a href="mailto:enquiries@azuspirits.co.uk">' +
+    'enquiries@azuspirits.co.uk</a> before ordering.';
+
+  // Hide the estimate only on an empty cart page.
+  const isCartPage = /^\/cart(?:\/|\.html|$)/.test(
+    window.location.pathname
+  );
+  const estimate = dateEl.closest('.delivery-estimate');
+
+  if (estimate) {
+    estimate.hidden =
+      isCartPage &&
+      typeof cart !== 'undefined' &&
+      cart.items.length === 0;
+  }
 }
 calculateDeliveryWindow();
   </script>

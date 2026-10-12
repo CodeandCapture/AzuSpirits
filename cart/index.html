@@ -922,15 +922,39 @@
 </button>
 
 <div style="text-align: center; margin: 1rem 0; color: #999; font-size: 0.85rem;">or</div>
+              
+              <div>
+                <h3>Pay with PayPal</h3>
+              </div>
 
 <div style="margin-bottom: 1rem;">
     <input
         type="text"
         id="paypalDiscountCode"
-        placeholder="Discount code (optional)"
-        style="width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">
+        placeholder="Discount code (If Using Paypal)"
+        style="display:block; width:100%; box-sizing:border-box;
+           padding:12px; margin-top:8px;">
 </div>
 
+              <div style="margin: 16px 0;">
+  <label for="paypalDeliveryPhone">
+    Delivery contact number for PayPal
+  </label>
+  <input
+    type="tel"
+    id="paypalDeliveryPhone"
+    autocomplete="tel"
+    placeholder="e.g. 07700 900123"
+    aria-describedby="paypalPhoneHelp"
+    style="display:block; width:100%; box-sizing:border-box;
+           padding:12px; margin-top:8px;"
+  >
+  <small id="paypalPhoneHelp">
+    Used for delivery enquiries. For gifts, enter a number
+    suitable for contacting about the delivery.
+  </small>
+</div>
+              
 <div id="paypal-button-container"></div>
 
                 <div class="gift-note-section">
@@ -1153,26 +1177,37 @@
                 label: 'paypal'
             },
 
-          createOrder: async function () {
-    if (cart.items.length === 0) {
-        alert('Your cart is empty!');
-        return;
-    }
+         createOrder: async function () {
+  if (cart.items.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
 
-    const isGift = document.getElementById('isGiftCheckbox').checked;
-    const giftNote = isGift ? document.getElementById('giftNoteText').value.trim() : '';
-    const discountCode = document.getElementById('paypalDiscountCode').value.trim();
-    const cartTotal = cart.getTotal();
+  const deliveryPhone =
+    document.getElementById('paypalDeliveryPhone').value.trim();
 
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-366761144/8GCmCOjg88EbELip8a4B',
-                        'value': cartTotal,
-                        'currency': 'GBP',
-                        'transaction_id': ''
-                    });
-                    console.log('✅ Begin Checkout conversion tracked (PayPal): £' + cartTotal);
-                }
+  const digits = deliveryPhone.replace(/\D/g, '');
+
+  if (
+    !/^\+?[\d\s().-]+$/.test(deliveryPhone) ||
+    digits.length < 10 ||
+    digits.length > 15
+  ) {
+    alert('Please enter a valid delivery contact number for PayPal.');
+    document.getElementById('paypalDeliveryPhone').focus();
+    throw new Error('Delivery contact number required');
+  }
+
+  const isGift = document.getElementById('isGiftCheckbox').checked;
+  const giftNote = isGift
+    ? document.getElementById('giftNoteText').value.trim()
+    : '';
+
+  const discountCode =
+    document.getElementById('paypalDiscountCode').value.trim();
+
+  const cartTotal = cart.getTotal();
+
 
                 try {
                     const response = await fetch('https://azu-spirits-backend.vercel.app/api/create-paypal-order', {
@@ -1206,35 +1241,55 @@
                 }
             },
 
-            onApprove: async function (data) {
-                const isGift = document.getElementById('isGiftCheckbox').checked;
-                const giftNote = isGift ? document.getElementById('giftNoteText').value.trim() : '';
+          onApprove: async function (data) {
+  const isGift = document.getElementById('isGiftCheckbox').checked;
+  const giftNote = isGift
+    ? document.getElementById('giftNoteText').value.trim()
+    : '';
 
-                try {
-                    const response = await fetch('https://azu-spirits-backend.vercel.app/api/capture-paypal-order', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            orderID: data.orderID,
-                            giftNote: giftNote
-                        })
-                    });
+  const deliveryPhone =
+    document.getElementById('paypalDeliveryPhone').value.trim();
 
-                    const result = await response.json();
+  try {
+    const response = await fetch(
+      'https://azu-spirits-backend.vercel.app/api/capture-paypal-order',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          orderID: data.orderID,
+          giftNote: giftNote,
+          deliveryPhone: deliveryPhone
+        })
+      }
+    );
 
-                    if (!response.ok || !result.success) {
-                        throw new Error(result.error || 'Payment capture failed');
-                    }
+    const result = await response.json();
 
-                   const cartTotal = cart.getTotal();
-                    const giftNoteParam = giftNote ? `&giftNote=${encodeURIComponent(giftNote)}` : '';
-                    window.location.href = `/success.html?order_id=${result.orderId}&amount=${cartTotal}&method=paypal${giftNoteParam}`;
-                    
-                } catch (error) {
-                    console.error('Error capturing PayPal order:', error);
-                    alert('There was a problem completing your PayPal payment. If you were charged, please contact us at enquiries@azuspirits.co.uk.');
-                }
-            },
+    if (!response.ok || !result.success) {
+      throw new Error(result.error || 'Payment capture failed');
+    }
+
+    const cartTotal = cart.getTotal();
+    const giftNoteParam = giftNote
+      ? `&giftNote=${encodeURIComponent(giftNote)}`
+      : '';
+
+    window.location.href =
+      `/success.html?order_id=${result.orderId}` +
+      `&amount=${cartTotal}&method=paypal${giftNoteParam}`;
+
+  } catch (error) {
+    console.error('Error capturing PayPal order:', error);
+    alert(
+      'We could not confirm your PayPal payment. ' +
+      'Please check your PayPal activity before trying again, ' +
+      'or contact enquiries@azuspirits.co.uk.'
+    );
+  }
+},
 
             onCancel: function (data) {
                 console.log('PayPal checkout cancelled by buyer');

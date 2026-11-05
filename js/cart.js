@@ -274,18 +274,18 @@ stock: 'sold-out'
 
   'luxury-whisky-christmas-crackers': {
     name: 'Luxury Whisky Christmas Crackers',
-    price: 58.00,
-    priceId: 'price_1SLSiIDLWuae7NssttgxBG5i',
-    image: 'https://www.azuspirits.co.uk/images/products/christmas-crackers-whisky-alt1.jpg',
-    stock: 'sold-out',
+    price: 99.00,
+    priceId: 'price_1UYEfzDLWuae7Nss6NrWc5MM',
+    image: 'https://www.azuspirits.co.uk/images/products/christmas-crackers-2026',
+    stock: 'in-stock',
   },
 
     'craft-gin-christmas-crackers': {
     name: 'Craft Gin Christmas Crackers',
-    price: 52.00,
-    priceId: 'price_1SMYUCDLWuae7Nss0MtD8DfQ',
-    image: 'https://www.azuspirits.co.uk/images/products/london-gins-christmas-crackers-alt1.jpg',
-    stock: 'sold-out'
+    price: 75.00,
+    priceId: 'price_1UYEiyDLWuae7NssZDswhyAj',
+    image: 'https://www.azuspirits.co.uk/images/products/gin-christmas-crackers-2026',
+    stock: 'in-stock'
   }
 };
 

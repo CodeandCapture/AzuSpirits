@@ -2647,7 +2647,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
     <script>
-  // Estimates use UK time. Working days here are Monday–Friday (bank holidays not excluded).
+// Estimates use UK time. Working days here are Monday–Friday (bank holidays not excluded).
+// TEMPORARY: Country Living Fair hold. Orders placed before Mon 16 Nov 2026
+// are dispatched Mon 16 Nov and arrive Wed 18 Nov. Remove this block after that date.
+const FAIR_HOLD_ENDS = Date.UTC(2026, 10, 16);
+const FAIR_HOLD_ARRIVAL = Date.UTC(2026, 10, 18);
+
 function calculateDeliveryWindow(now = new Date()) {
   const dateEl = document.getElementById('deliveryDateRange');
   const cutoffEl = document.getElementById('deliveryCutoff');
@@ -2662,24 +2667,31 @@ function calculateDeliveryWindow(now = new Date()) {
     }).formatToParts(now).map(p => [p.type, p.value])
   );
 
-  const dispatch = new Date(
+  const today = new Date(
     Date.UTC(+parts.year, +parts.month - 1, +parts.day)
   );
 
-  // One working day for dispatch: Monday to Friday.
-  do {
-    dispatch.setUTCDate(dispatch.getUTCDate() + 1);
-  } while (
-    dispatch.getUTCDay() === 0 ||
-    dispatch.getUTCDay() === 6
-  );
+  let arrival;
 
-  // Two delivery days: Monday to Saturday, excluding Sunday.
-  const arrival = new Date(dispatch);
-  for (let i = 0; i < 2; i++) {
+  if (today.getTime() < FAIR_HOLD_ENDS) {
+    arrival = new Date(FAIR_HOLD_ARRIVAL);
+  } else {
+    // One working day for dispatch: Monday to Friday.
+    const dispatch = new Date(today);
     do {
-      arrival.setUTCDate(arrival.getUTCDate() + 1);
-    } while (arrival.getUTCDay() === 0);
+      dispatch.setUTCDate(dispatch.getUTCDate() + 1);
+    } while (
+      dispatch.getUTCDay() === 0 ||
+      dispatch.getUTCDay() === 6
+    );
+
+    // Two delivery days: Monday to Saturday, excluding Sunday.
+    arrival = new Date(dispatch);
+    for (let i = 0; i < 2; i++) {
+      do {
+        arrival.setUTCDate(arrival.getUTCDate() + 1);
+      } while (arrival.getUTCDay() === 0);
+    }
   }
 
   dateEl.textContent = new Intl.DateTimeFormat('en-GB', {
@@ -2709,7 +2721,7 @@ function calculateDeliveryWindow(now = new Date()) {
   }
 }
 calculateDeliveryWindow();
-  </script>
+</script>
  <script>
     // ── FAQ ACCORDION ──
     function toggleFaq(btn) {

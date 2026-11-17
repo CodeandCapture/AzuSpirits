@@ -526,169 +526,20 @@ is included."
 
     
     
-    .christmas-banner {
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  min-height: 540px;
+   
+/* =====================================================
+   AZU SPIRITS — HOMEPAGE FEATURE BANNERS
+   Christmas + Scottish Tasting Tour
+   ===================================================== */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Shared banner structure */
 
-  padding: 90px 24px;
-
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.3)
-    ),
-    url('https://www.azuspirits.co.uk/images/products/azu-christmas-crackers-web.jpeg');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: #ffffff;
-  text-align: center;
-}
-
-.christmas-content {
-  position: relative;
-  z-index: 1;
-  max-width: 760px;
-  margin: 0 auto;
-}
-    
-    /* New release label */
-.christmas-label {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: white;
-  margin-bottom: 22px;
-}
-
-/* Main heading */
-.christmas-banner h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 5.5vw, 72px);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  margin: 0 0 24px;
-}
-
-.christmas-banner h2 span {
-  display: block;
-  font-weight: 400;
-  font-style: italic;
-}
-
-/* Gold decorative line */
-.christmas-line {
-  width: 65px;
-  height: 2px;
-  background: #d4af77;
-  margin: 0 auto 26px;
-}
-
-/* Introductory statement */
-.christmas-intro {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(26px, 3vw, 34px);
-  font-style: italic;
-  color: #ffffff;
-  margin-bottom: 18px;
-}
-
-/* Supporting description */
-.christmas-description {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.9;
-  color: #f0ece8;
-  max-width: 580px;
-  margin: 0 auto 34px;
-}
-
-/* Shop button */
-.christmas-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-
-  padding: 16px 34px;
-  background: #A4343A;
-  color: #ffffff;
-
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  border: 1px solid #A4343A;
-  border-radius: 3px;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.christmas-button:hover {
-  background: #8B1538;
-  color: #ffffff;
-  transform: translateY(-3px);
-}
-
-.christmas-button:focus-visible {
-  outline: 3px solid #f1d6aa;
-  outline-offset: 4px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-
-  .christmas-banner {
-    min-height: 480px;
-    padding: 70px 22px;
-    background-position: center;
-  }
-
-  .christmas-banner h2 {
-    font-size: 44px;
-  }
-
-  .christmas-intro {
-    font-size: 27px;
-  }
-
-  .christmas-description {
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-  .christmas-button {
-    width: 100%;
-    max-width: 300px;
-    padding: 16px 20px;
-  }
-}
-/* ==========================================
-   SCOTTISH TASTING TOUR - NEW RELEASE
-   ========================================== */
-
+.christmas-banner,
 .scottish-tour-banner {
   position: relative;
   isolation: isolate;
+  box-sizing: border-box;
+
   width: 100%;
   min-height: 540px;
 
@@ -696,150 +547,315 @@ is included."
   align-items: center;
   justify-content: center;
 
-  padding: 90px 24px;
-
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.3)
-    ),
-    url('https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product-alt1.JPG');
+  padding: 75px 30px;
 
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 
-  color: #ffffff;
+  color: #fff;
   text-align: center;
+
+  overflow: hidden;
 }
 
+/* Individual backgrounds */
+
+.christmas-banner {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.48),
+      rgba(0, 0, 0, 0.48)
+    ),
+    url('https://www.azuspirits.co.uk/images/products/azu-christmas-crackers-web.jpeg');
+}
+
+.scottish-tour-banner {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.48),
+      rgba(0, 0, 0, 0.48)
+    ),
+    url('https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product-alt1.JPG');
+}
+
+/* Shared content */
+
+.christmas-content,
 .scottish-tour-content {
   position: relative;
   z-index: 1;
+
+  width: 100%;
   max-width: 760px;
+
   margin: 0 auto;
+  padding: 0;
+
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* New release label */
+/* Labels */
+
+.christmas-label,
 .scottish-tour-label {
-  display: inline-block;
+  display: block;
+
+  margin: 0 auto 20px;
+
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 3px;
+  line-height: 1.6;
   text-transform: uppercase;
-  color: white;
-  margin-bottom: 22px;
+
+  color: #fff;
 }
 
-/* Main heading */
+/* Headings */
+
+.christmas-banner h2,
 .scottish-tour-banner h2 {
+  width: 100%;
+  max-width: 720px;
+
+  margin: 0 auto 23px;
+
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(42px, 5.5vw, 72px);
   font-weight: 600;
   line-height: 1.05;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  margin: 0 0 24px;
+  letter-spacing: .3px;
+
+  color: #fff;
+  text-align: center;
+
+  overflow-wrap: break-word;
 }
 
+.christmas-banner h2 span,
 .scottish-tour-banner h2 span {
   display: block;
   font-weight: 400;
   font-style: italic;
 }
 
-/* Gold decorative line */
+/* Decorative lines */
+
+.christmas-line,
 .scottish-tour-line {
   width: 65px;
   height: 2px;
+
+  margin: 0 auto 25px;
+
   background: #d4af77;
-  margin: 0 auto 26px;
 }
 
-/* Introductory statement */
+/* Introductory statements */
+
+.christmas-intro,
 .scottish-tour-intro {
+  max-width: 580px;
+
+  margin: 0 auto 18px;
+
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(26px, 3vw, 34px);
   font-style: italic;
-  color: #ffffff;
-  margin-bottom: 18px;
+  line-height: 1.3;
+
+  color: #fff;
+  text-align: center;
 }
 
-/* Supporting description */
+/* Descriptions */
+
+.christmas-description,
 .scottish-tour-description {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.9;
-  color: #f0ece8;
+  width: 100%;
   max-width: 580px;
-  margin: 0 auto 34px;
+
+  margin: 0 auto 30px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+
+  color: #f0ece8;
+  text-align: center;
 }
 
-/* Shop button */
+/* Buttons */
+
+.christmas-button,
 .scottish-tour-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
 
-  padding: 16px 34px;
-  background: #A4343A;
-  color: #ffffff;
+  box-sizing: border-box;
 
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
+  min-height: 52px;
+  padding: 15px 30px;
 
-  border: 1px solid #A4343A;
+  background: #a4343a;
+  border: 1px solid #a4343a;
   border-radius: 3px;
 
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
   transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+    background .25s ease,
+    border-color .25s ease;
 }
 
+.christmas-button:hover,
 .scottish-tour-button:hover {
-  background: #8B1538;
-  color: #ffffff;
-  transform: translateY(-3px);
+  background: #8b1538;
+  border-color: #8b1538;
+  color: #fff;
 }
 
+.christmas-button:focus-visible,
 .scottish-tour-button:focus-visible {
   outline: 3px solid #f1d6aa;
   outline-offset: 4px;
 }
 
-/* Mobile responsiveness */
+/* =====================================================
+   MOBILE LAYOUT
+   ===================================================== */
+
 @media (max-width: 768px) {
 
+  .christmas-banner,
   .scottish-tour-banner {
-    min-height: 480px;
-    padding: 70px 22px;
-    background-position: center;
+    width: 100%;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 65px 22px;
+
+    background-position: center center;
+    background-size: cover;
+
+    text-align: center;
   }
 
+  .christmas-content,
+  .scottish-tour-content {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    text-align: center;
+  }
+
+  .christmas-label,
+  .scottish-tour-label {
+    margin-bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .christmas-banner h2,
   .scottish-tour-banner h2 {
-    font-size: 44px;
+    max-width: 500px;
+    margin: 0 auto 21px;
+
+    font-size: clamp(37px, 9vw, 46px);
+    line-height: 1.08;
+
+    text-align: center;
   }
 
+  .christmas-line,
+  .scottish-tour-line {
+    margin: 0 auto 22px;
+  }
+
+  .christmas-intro,
   .scottish-tour-intro {
-    font-size: 27px;
+    margin: 0 auto 17px;
+
+    font-size: 26px;
+    line-height: 1.3;
   }
 
+  .christmas-description,
   .scottish-tour-description {
-    font-size: 13px;
-    line-height: 1.8;
+    max-width: 470px;
+
+    margin: 0 auto 27px;
+
+    font-size: 12px;
+    line-height: 1.85;
+    text-align: center;
   }
 
+  .christmas-button,
   .scottish-tour-button {
     width: 100%;
     max-width: 300px;
-    padding: 16px 20px;
+
+    min-height: 52px;
+    margin: 0 auto;
+
+    padding: 15px 17px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Smaller phones */
+
+@media (max-width: 380px) {
+
+  .christmas-banner,
+  .scottish-tour-banner {
+    padding: 52px 18px;
+  }
+
+  .christmas-banner h2,
+  .scottish-tour-banner h2 {
+    font-size: 36px;
+  }
+
+  .christmas-intro,
+  .scottish-tour-intro {
+    font-size: 23px;
+  }
+
+  .christmas-description,
+  .scottish-tour-description {
+    font-size: 11px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .christmas-button,
+  .scottish-tour-button {
+    transition: none;
   }
 }
 

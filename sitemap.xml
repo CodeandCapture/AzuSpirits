@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.azuspirits.co.uk/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
 
   <url>
     <loc>https://www.azuspirits.co.uk/whisky-gifts/</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -94,9 +94,9 @@
 
   <url>
     <loc>https://www.azuspirits.co.uk/christmas-gifts/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.9</priority>
   </url>
 
   <!-- Sharing Boxes -->
@@ -246,9 +246,9 @@
 
   <url>
     <loc>https://www.azuspirits.co.uk/products/whisky-christmas-crackers/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
 
   <!-- About & Info Pages -->

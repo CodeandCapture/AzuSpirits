@@ -13,7 +13,7 @@
 
 <meta
   name="description"
-  content="Pre-order Azu Spirits luxury whisky Christmas crackers for 2026. Six premium single malt whiskies, festive surprises and a tasting guide."
+  content="Pre-order Azu Spirits luxury whisky Christmas crackers, arriving 1 December. Six premium single malt whiskies, festive surprises and a tasting guide."
 >
 
   <meta
@@ -51,7 +51,7 @@
 
   <meta
     property="og:image"
-    content="https://www.azuspirits.co.uk/images/brand/logo.jpg"
+    content="https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-inside-alt2.jpeg"
   >
 
   <meta property="og:locale" content="en_GB">
@@ -72,7 +72,7 @@
 
   <meta
     name="twitter:image"
-    content="https://www.azuspirits.co.uk/images/brand/logo.jpg"
+    content="https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-inside-alt2.jpeg"
   >
 
   <meta name="twitter:site" content="@azuspirits">
@@ -108,7 +108,7 @@
   "name": "Luxury Single Malt Whisky Christmas Crackers",
   "description": "A luxury Christmas cracker set featuring six hand-selected premium single malt Scotch whiskies. Each cracker contains a 30ml whisky tasting bottle, festive hat and joke. Includes a whisky tasting guide. Presented as a festive whisky discovery experience by Azu Spirits.",
   "image": [
-    "https://www.azuspirits.co.uk/images/products/christmas-crackers-2026.jpg"
+    "https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-inside-alt2.jpeg"
   ],
   "url": "https://www.azuspirits.co.uk/products/whisky-christmas-crackers/",
   "brand": {
@@ -145,7 +145,7 @@
       "name": "When will my order be dispatched?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The final packaging design has been signed off and is currently being printed by Shaftesbury UK. We expect to receive the finished packaging on 17 November 2026 and will begin preparing and dispatching pre-orders once it arrives."
+        "text": "We have recieved the crackers and started fulfilment, we will start sending via DPD Next Day delivery on the last week of November."
       }
     },
     {
@@ -172,14 +172,7 @@
         "text": "We are aiming for all pre-orders to arrive by 1 December 2026, comfortably ahead of Christmas. Delivery dates are estimates and may be affected by production or courier delays."
       }
     },
-    {
-      "@type": "Question",
-      "name": "Why aren't there finished product photos yet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The design has been approved and the packaging is currently in production with Shaftesbury UK. We're expecting the finished crackers in November and will share product photography once they're ready."
-      }
-    },
+   
     {
       "@type": "Question",
       "name": "How does the tasting experience work?",
@@ -300,12 +293,67 @@
   box-sizing: border-box;
 }
 
+
+/* ---------- BODY ---------- */
+
 body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: #333;
-  background: #fff;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background: var(--white);
 }
+
+
+/* ---------- GLOBAL TYPOGRAPHY ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--azu-red);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--azu-red-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
 
 /* ==========================
        HEADER
@@ -444,6 +492,57 @@ body {
   cursor: pointer;
 }
 
+     /* ============================================================
+   HERO-SLIDE
+   ============================================================ */
+    
+    .hero-slide {
+    
+  border-right: none;
+  border-bottom: 1px solid #d8d2cb;
+  background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.7)),
+    url("https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-inside-alt2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+      padding: 50px;
+      
+      
+    }
+
+    .hero-slide h1 {
+  
+      color: white;
+      padding-top: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-align: center;
+      
+    }
+    
+    .hero-slide h2 {
+    
+    color: white;
+    font-style: italic;
+    font-size: 28px;
+      padding: 20px;
+      text-align: center;
+     
+    }
+    
+    .hero-small-detail {
+    
+       display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: white;
+      text-align: center;
+      
+    }
+  
 /* Product Container */
 
 .product-container {
@@ -2351,6 +2450,25 @@ html {
     padding: 90px 22px 85px;
   }
 }
+  
+  /* Product gallery: tablet layout stacks at 1024px. */
+.tour-gallery { position: relative; min-width: 0; }
+.tour-gallery-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.tour-gallery-track::-webkit-scrollbar { display: none; }
+.tour-gallery-slide { flex: 0 0 100%; min-width: 0; margin: 0; scroll-snap-align: start; }
+.tour-preorder-image .tour-gallery-slide img { width: 100%; height: auto; min-height: 0; aspect-ratio: 1 / 1; object-fit: contain; background: #f2f0ed; }
+.tour-gallery-arrow { position: absolute; top: 45%; width: 44px; height: 44px; border: 1px solid #ddd; border-radius: 50%; background: #fff; color: #A4343A; font-size: 28px; cursor: pointer; }
+.tour-gallery-arrow.prev { left: 12px; }
+.tour-gallery-arrow.next { right: 12px; }
+.tour-gallery-dots { display: flex; justify-content: center; gap: 10px; padding: 16px; }
+.tour-gallery-dot { width: 14px; height: 14px; padding: 0; border-radius: 50%; border: 1px solid #A4343A; background: transparent; cursor: pointer; }
+.tour-gallery-dot[aria-current="true"] { background: #A4343A; }
+.tour-gallery button:focus-visible, .tour-gallery-track:focus-visible { outline: 3px solid #A4343A; outline-offset: 3px; }
+@media (max-width: 1024px) {
+  .tour-preorder-image { width: 100%; max-width: 680px; justify-self: center; }
+  .tour-preorder-content { padding: 2.5rem 1.5rem; }
+}
+
 </style>
 
 
@@ -2456,102 +2574,40 @@ html {
   <!-- BLIND CHRISTMAS LAUNCH -->
   <main>
 
-<section class="coming-soon blind-launch">
 
-  <div class="coming-soon-inner">
-
-    
-
-    <!-- PRE-ORDER EYEBROW -->
-    <p class="coming-soon-eyebrow">
-      CHRISTMAS 2026 · PRE-ORDER NOW
-    </p>
-
-    <!-- MAIN HEADLINE -->
-    <h1>
-      Single Malt Whisky<br>
-      <em>Christmas Crackers</em>
-    </h1>
-
-    <div class="blind-divider"></div>
-
-    <!-- INTRODUCTION -->
-    <h2 class="launch-headline">
-      Six extraordinary drams.<br>
-      Six festive surprises.<br>
-      One unforgettable Christmas table.
-    </h2>
-
-    <p class="launch-lead">
-      A Christmas tradition, reimagined for whisky lovers.
-      Six premium single malts inside luxury Christmas crackers, hand-selected by Azu Spirits on our tour of Scotland.
-    </p>
-
-    <p class="launch-lead launch-collaboration">
-      Designed in collaboration with
-      <a
-        href="https://wrightboxes.co.uk/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Wright Boxes</a>,
-      with packaging produced by
-      <a
-        href="https://www.shaftesburyuk.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Shaftesbury UK</a>.
-    </p>
-
-    <!-- WHAT'S INCLUDED -->
-    <div class="launch-includes">
-      <span class="launch-includes-title">
-        Inside every cracker
-      </span>
-
-      <p>
-        A 30ml single malt whisky tasting bottle,
-        a festive hat and a joke.
-      </p>
-
-      <p class="launch-guide">
-        A tasting guide is included with the set.
-      </p>
+  <section>
+  <div class="hero-slide">
+    <h1>Luxury Scotch Whisky Christmas Crackers</h1>
+    <h2>Six exceptional single malts. One festive blind tasting experience.</h2>
+    <p class="hero-small-detail">6 x 30ml bottles • Tasting Guide • Wax-sealed envelopes</p>
     </div>
-
-    <!-- WAX SEAL MESSAGE -->
-    <p class="launch-signature">
-      Taste. Discover. Decide for yourself.
-      <span>
-        Break the wax seal to reveal what's inside.
-      </span>
-    </p>
-
-    <!-- DELIVERY INFORMATION -->
-    <p class="launch-delivery">
-      <span class="launch-delivery-dot"></span>
-      Pre-order now · Expected delivery by 1 December 2026
-    </p>
-
-    <!-- CTA -->
-    <a
-      href="#pre-order"
-      class="coming-soon-btn"
-    >
-      Pre-Order Now
-      <span aria-hidden="true">↓</span>
-    </a>
-
-    <p class="launch-photo-note">
-      Product photography coming soon.
-    </p>
-
-  </div>
-
-</section>
-
     
-    <section>
-      
+  
+  </section>
+  
+
+<!-- ============================================================
+     ORDER CTA
+     ============================================================ -->
+
+<section class="tour-preorder">
+
+  <div class="tour-preorder-inner">
+
+    <!-- PRODUCT IMAGE -->
+    <div class="tour-preorder-image tour-gallery" role="region" aria-roledescription="carousel" aria-label="Scotch Whisky Christmas Crackers product images">
+<div class="tour-gallery-track" tabindex="0" aria-label="Product photos. Use left and right arrows to browse."><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-alt4.jpeg" alt="Scotch Whisky Christmas Cracker Set" fetchpriority="high"></figure> 
+<figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/azu-christmas-crackers-web.jpeg" alt="Scotch single malt tasting gift set" loading="lazy"></figure>
+<figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/azu-xmas-cracker-set.jpeg" alt="Scotch whisky blind tasting Christmas crackers" loading="lazy"></figure><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-alt4.jpeg" alt="Single malt whisky tasting Christmas Crackers" loading="lazy"></figure><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-alt2.jpeg" alt="Blind tasting bottles in premium whisky gift set" loading="lazy"></figure><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-inside-alt2.jpeg" alt="Whisky Christmas Crackers" loading="lazy"></figure><figure class="tour-gallery-slide"><img src="https://www.azuspirits.co.uk/images/products/azu-whisky-crackers-inside-alt1.jpeg" alt="Whisky tasting Christmas gift" loading="lazy"></figure></div>
+<button type="button" class="tour-gallery-arrow prev" aria-label="Previous product image">‹</button>
+<button type="button" class="tour-gallery-arrow next" aria-label="Next product image">›</button>
+<div class="tour-gallery-dots"><button type="button" class="tour-gallery-dot" aria-label="Show product image 1" aria-current="true"></button>
+<button type="button" class="tour-gallery-dot" aria-label="Show product image 2" aria-current="false"></button>
+<button type="button" class="tour-gallery-dot" aria-label="Show product image 3" aria-current="false"></button>
+      <button type="button" class="tour-gallery-dot" aria-label="Show product image 4" aria-current="false"></button> <button type="button" class="tour-gallery-dot" aria-label="Show product image 5" aria-current="false"></button><button type="button" class="tour-gallery-dot" aria-label="Show product image 6" aria-current="false"></button><button type="button" class="tour-gallery-dot" aria-label="Show product image 7" aria-current="false"></button></div>
+<span class="tour-gallery-status" role="status" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);">Image 1 of 7</span>
+</div>
+
         <!-- Product Section -->
   <div class="product-container">
     
@@ -2565,7 +2621,13 @@ html {
         £99.00
       </div>
        <div class="product-description">
-       <p>More than a Christmas table decoration: each cracker brings a 30ml whisky tasting bottle, festive hat and joke, with a tasting guide to help reveal the story behind every dram. Scroll down to see the single malts selected.</p>
+       <p>Make Christmas a little more interesting with six exceptional single malt Scotch whiskies, presented in luxury Christmas crackers.<br>
+
+Each cracker contains a 30ml whisky tasting bottle, a festive hat, a Christmas joke and a mini wax-sealed envelope concealing the identity of the whisky.<br>
+
+Taste each expression blind, explore its character using the included tasting guide, and make your own predictions before breaking the seal to reveal what's inside.<br>
+
+A little whisky discovery, a little friendly competition, and a rather different kind of Christmas cracker.</p>
         
         
       </div>
@@ -2578,10 +2640,7 @@ html {
   <div class="delivery-text">
     <strong>Complimentary Delivery by 1 December</strong>
 
-    <span class="delivery-cutoff">
-      Pre-order fulfilment expected to begin
-      from 17 November 2026
-    </span>
+   
   </div>
 </div>
 
@@ -2733,17 +2792,7 @@ html {
       <details class="faq-item">
         <summary>When will my order be dispatched?</summary>
         <div class="faq-answer">
-          <p>
-            The final packaging design has been signed off
-            and is currently being printed by
-            <a href="https://www.shaftesburyuk.com"
-               target="_blank"
-               rel="noopener noreferrer">Shaftesbury UK</a>.
-          </p>
-          <p>
-            We expect to receive the finished packaging
-            on 17 November 2026 and will begin preparing
-            and dispatching pre-orders once it arrives.
+          <p> We have recieved the crackers and started fulfilment, we will start sending via DPD Next Day delivery on the last week of November.
           </p>
         </div>
       </details>
@@ -2754,12 +2803,11 @@ html {
           <p>
             Each set contains six luxury Christmas crackers.
             Every cracker includes a 30ml premium single malt
-            Scotch whisky tasting bottle, a festive hat
-            and a joke.
+            Scotch whisky tasting bottle, a festive hat, joke and a wax-sealed envelope revealing each spirit.
           </p>
           <p>
             A tasting guide is also included with the set,
-            helping you explore each whisky.
+            helping you explore each whisky and take the blind tasting challenge.
           </p>
         </div>
       </details>
@@ -2796,20 +2844,7 @@ html {
         </div>
       </details>
 
-      <details class="faq-item">
-        <summary>Why aren't there finished product photos yet?</summary>
-        <div class="faq-answer">
-          <p>
-            The design has been approved and the packaging
-            is currently in production with Shaftesbury UK.
-          </p>
-          <p>
-            We're expecting the finished crackers in
-            November and will share product photography
-            once they're ready.
-          </p>
-        </div>
-      </details>
+ 
 
       <details class="faq-item">
         <summary>How does the tasting experience work?</summary>
@@ -3154,6 +3189,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-
+<script>
+(() => {
+  const gallery = document.querySelector('.tour-gallery');
+  if (!gallery) return;
+  const track = gallery.querySelector('.tour-gallery-track');
+  const dots = [...gallery.querySelectorAll('.tour-gallery-dot')];
+  let active = 0;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function go(index) {
+    active = (index + dots.length) % dots.length;
+    track.scrollTo({ left: active * track.clientWidth, behavior: reduced.matches ? 'auto' : 'smooth' });
+  }
+  gallery.querySelector('.prev').addEventListener('click', () => go(active - 1));
+  gallery.querySelector('.next').addEventListener('click', () => go(active + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => go(index)));
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.preventDefault(); go(active + (e.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  track.addEventListener('scroll', () => {
+    active = Math.max(0, Math.min(dots.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
+    dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === active)));
+    gallery.querySelector('.tour-gallery-status').textContent = `Image ${active + 1} of ${dots.length}`;
+  }, { passive: true });
+  window.addEventListener('resize', () => track.scrollTo({ left: active * track.clientWidth, behavior: 'instant' }));
+})();
+</script>
 </body>
 </html>

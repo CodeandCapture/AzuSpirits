@@ -200,7 +200,7 @@ const products = {
     price: 63.00,
     priceId: 'price_1SLSeHDLWuae7Nss2SEy0Fmy',
     image: 'https://www.azuspirits.co.uk/images/products/six-styles-scotch-main.jpg',
-    stock: 'in-stock'    
+    stock: 'sold-out'   
   },
   'founders-selection-whisky-gift-set': {
     name: 'Founders Selection Whisky Gift Set',
@@ -233,7 +233,7 @@ const products = {
    price: 135.00,
    priceId: 'price_1SP3AjDLWuae7Nssc66stjRA',
    image: 'https://www.azuspirits.co.uk/images/products/six-styles-of-scotch-whisky-sharing.png',
-   stock: 'in-stock'        
+   stock: 'sold-out'        
   },
 
   'limited-edition-single-malt-sharing':  {

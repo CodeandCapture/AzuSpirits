@@ -1383,6 +1383,36 @@
 
     
     }
+    
+    /* Sold out badge on whisky gifts */
+.featured-image {
+    position: relative;
+}
+
+.sold-out-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #8b1538;
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+/* Sold out button styling */
+.sold-out-cta {
+    display: inline-block;
+    background: #777 !important;
+    color: #fff !important;
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.9;
+}
 /* ========================================
    SCOTTISH TASTING TOUR ANNOUNCEMENT BAR
    ======================================== */
@@ -1453,6 +1483,8 @@
     display: none;
   }
 } 
+    
+    
 
 </style>
   <!-- Google tag (gtag.js) -->
@@ -1645,27 +1677,35 @@ gtag('config', 'G-FF0E8016EX');
             <a href="https://www.azuspirits.co.uk/products/scottish-tasting-tour-whisky-gift-set/" class="featured-cta">Explore Scotland</a>
           </div>
         </div>
-        <!-- Six Styles of Scotch -->
-        <div class="featured-box">
-          <div class="featured-image">
-            <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt2.jpg" 
-                 alt="Six styles of Scotch whisky tasting set for beginners featuring Ledaig 18"
-                 loading="lazy">
-            <span class="price-badge">£63</span>
-          </div>
-          <div class="featured-content">
-            <h3>Six Styles of Single Malt Scotch</h3>
-            <div class="bottle-highlights">
-              <p><strong>Includes Rare 18-Year Expression:</strong></p>
-              <p style="font-size: 15px; line-height: 1.6; color: #666; margin: 8px 0;">
-                Ledaig 18 (£100+ bottle) • Oban 14 • Talisker 10<br>
-                Plus: Glenkinchie 12, Auchentoshan American Oak & Glen Moray Peated
-              </p>
-            </div>
-            <p>From smooth and sweet to bold and peaty. Perfect for beginners discovering their preferred style before investing in full bottles.</p>
-            <a href="https://www.azuspirits.co.uk/products/scotch-whisky-tasting-set-for-beginners" class="featured-cta">Find Your Style</a>
-          </div>
-        </div>
+       ```html
+<!-- Six Styles of Scotch -->
+<div class="featured-box">
+  <div class="featured-image">
+    <img src="https://www.azuspirits.co.uk/images/products/six-styles-scotch-alt2.jpg"
+         alt="Six styles of Scotch whisky tasting set for beginners featuring Ledaig 18"
+         loading="lazy">
+
+    <span class="price-badge">£63</span>
+    <span class="sold-out-badge">SOLD OUT</span>
+  </div>
+
+  <div class="featured-content">
+    <h3>Six Styles of Single Malt Scotch</h3>
+
+    <div class="bottle-highlights">
+      <p><strong>Includes Rare 18-Year Expression:</strong></p>
+      <p style="font-size: 15px; line-height: 1.6; color: #666; margin: 8px 0;">
+        Ledaig 18 (£100+ bottle) • Oban 14 • Talisker 10<br>
+        Plus: Glenkinchie 12, Auchentoshan American Oak & Glen Moray Peated
+      </p>
+    </div>
+
+    <p>From smooth and sweet to bold and peaty. Perfect for beginners discovering their preferred style before investing in full bottles.</p>
+
+    <span class="featured-cta sold-out-cta">Currently Sold Out</span>
+  </div>
+</div>
+
 
         <!-- Luxury Single Malt -->
         <div class="featured-box">

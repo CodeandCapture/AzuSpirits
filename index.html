@@ -525,6 +525,163 @@ is included."
     }
 
     
+    
+    .christmas-banner {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 540px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 90px 24px;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('https://www.azuspirits.co.uk/images/products/azu-christmas-crackers-web.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+  text-align: center;
+}
+
+.christmas-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+}
+    
+    /* New release label */
+.christmas-label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 22px;
+}
+
+/* Main heading */
+.christmas-banner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin: 0 0 24px;
+}
+
+.christmas-banner h2 span {
+  display: block;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Gold decorative line */
+.christmas-line {
+  width: 65px;
+  height: 2px;
+  background: #d4af77;
+  margin: 0 auto 26px;
+}
+
+/* Introductory statement */
+.christmas-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+/* Supporting description */
+.christmas-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #f0ece8;
+  max-width: 580px;
+  margin: 0 auto 34px;
+}
+
+/* Shop button */
+.christmas-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  padding: 16px 34px;
+  background: #A4343A;
+  color: #ffffff;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border: 1px solid #A4343A;
+  border-radius: 3px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.christmas-button:hover {
+  background: #8B1538;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.christmas-button:focus-visible {
+  outline: 3px solid #f1d6aa;
+  outline-offset: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+  .christmas-banner {
+    min-height: 480px;
+    padding: 70px 22px;
+    background-position: center;
+  }
+
+  .christmas-banner h2 {
+    font-size: 44px;
+  }
+
+  .christmas-intro {
+    font-size: 27px;
+  }
+
+  .christmas-description {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .christmas-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px 20px;
+  }
+}
 /* ==========================================
    SCOTTISH TASTING TOUR - NEW RELEASE
    ========================================== */
@@ -544,7 +701,7 @@ is included."
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.68)
+      rgba(0, 0, 0, 0.3)
     ),
     url('https://www.azuspirits.co.uk/images/products/scottish-tasting-tour-product-alt1.JPG');
 
@@ -2383,6 +2540,7 @@ gtag('config', 'G-FF0E8016EX');
     
 </section>
   
+    
   <!-- Trust Bar -->
 <section class="trust-bar">
   <div class="trust-bar-content">
@@ -2411,6 +2569,55 @@ gtag('config', 'G-FF0E8016EX');
     <p>Discover the finest <strong>whisky and gin tasting sets</strong> in the UK. Each expertly curated collection features <strong>6 x 30ml premium bottles</strong>, perfect for blind tasting experiences that help you explore Scotland's legendary distilleries and England's finest craft gin producers. From premium aged single malts such as the 18-year Ledaig in our Six Styles or Tobermory 24 in the Luxury Set, to award-winning craft gins from local areas across the UK, our themed tasting sets showcase diverse flavour profiles—smooth and sweet to bold and peaty—all delivered free to your door.</p>
   </div>
 </section>
+  
+  
+<section class="christmas-banner"
+         aria-labelledby="christmas-title">
+
+  <div class="christmas-content">
+
+    <span class="christmas-label">
+      Something Different for Christmas
+    </span>
+
+    <h2 id="christmas-title">
+      Blind Tasting Christmas Crackers
+      <span></span>
+    </h2>
+
+    <div class="christmas-line"></div>
+
+    <p class="christmas-intro">
+      Six exceptional spirits. Six festive surprises.
+      One unforgettable tasting experience.
+    </p>
+
+    <p class="christmas-description">
+      Bring a little mystery to the Christmas table with
+      our luxury blind tasting Christmas crackers. Inside
+      each of the six crackers is a 30ml premium spirit,
+      accompanied by a festive hat, a Christmas joke and
+      a wax-sealed envelope concealing its identity.
+
+      Gather friends and family, explore the flavours using
+      the included tasting guide, and see who can guess
+      what's in their glass before breaking the seal.
+    </p>
+
+    <a
+      href="https://www.azuspirits.co.uk/products/whisky-christmas-crackers/"
+      class="christmas-button">
+     Pre Order Whisky Crackers
+      <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+  
+
 
 
   <section style="padding: 60px 20px">

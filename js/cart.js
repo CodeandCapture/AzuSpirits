@@ -276,7 +276,7 @@ stock: 'sold-out'
     name: 'Luxury Whisky Christmas Crackers',
     price: 99.00,
     priceId: 'price_1UYEfzDLWuae7Nss6NrWc5MM',
-    image: 'https://www.azuspirits.co.uk/images/products/christmas-crackers-2026',
+    image: 'https://www.azuspirits.co.uk/images/products/azu-whisky-christmas-crackers-inside-alt2.jpeg',
     stock: 'in-stock',
   },
 
